@@ -1,0 +1,24 @@
+
+
+/* Define CSS variables */
+:root {
+  --background: #ffffff;
+  --foreground: #ffffff; /* changed to black so text shows */
+  --font-sans: system-ui, sans-serif;
+  --font-mono: monospace;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #ededed;
+  }
+}
+
+/* Apply background and text color globally */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
