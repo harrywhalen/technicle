@@ -448,41 +448,242 @@ def generate_model(
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+
+# @app.route('/api/forecast/<ticker>')
+# def forecast(ticker):
+#     try:
+#         # Income Statement
+#         ticker_obj = yf.Ticker(ticker)
+#         income_df = ticker_obj.financials.fillna(0)
+#         income_df.columns = income_df.columns.map(str)
+#         income_df = income_df.reset_index().rename(columns={"index": "Metric"})
+#         income_df = income_df.iloc[::-1].reset_index(drop=True)
+
+#         # Balance Sheet
+#         balance_df = ticker_obj.balance_sheet.fillna(0)
+#         balance_df.columns = balance_df.columns.map(str)
+#         balance_df = balance_df.reset_index().rename(columns={"index": "Metric"})
+#         balance_df = balance_df.iloc[::-1].reset_index(drop=True)
+
+#         # Cash Flow Statement
+#         cashflow_df = ticker_obj.cashflow.fillna(0)
+#         cashflow_df.columns = cashflow_df.columns.map(str)
+#         cashflow_df = cashflow_df.reset_index().rename(columns={"index": "Metric"})
+#         cashflow_df = cashflow_df.iloc[::-1].reset_index(drop=True)
+
+
+
+#         def extract_metric(df, keyword, limit=4):
+#             filtered = df.loc[df['Metric'].str.lower().str.contains(keyword.lower())]
+#             if filtered.empty:
+#                 return []
+#             vals = filtered.iloc[0, 1:].tolist()
+#             vals = vals[:limit]
+#             return [float(x) if x is not None else 0 for x in vals]
+
+#         # income statement
+#         revenue = extract_metric(income_df, 'revenue')
+#         sgna = extract_metric(income_df, 'selling general and administration')
+#         rnd = extract_metric(income_df, 'research and development')
+#         cogs = extract_metric(income_df, 'cost of revenue')
+#         niav = extract_metric(income_df, 'net income')
+#         depreciation = extract_metric(income_df, 'depreciation')
+
+#         # balance sheet
+#         accounts_receivable = extract_metric(balance_df, 'accounts receivable')
+#         accounts_payable = extract_metric(balance_df, 'accounts payable')
+#         inventory = extract_metric(balance_df, 'inventory')
+#         gross_ppe = extract_metric(balance_df, 'gross ppe')
+#         net_ppe = extract_metric(balance_df, 'net ppe')
+#         total_debt = extract_metric(balance_df, 'total debt')
+#         current_debt = extract_metric(balance_df, 'current debt')
+#         long_term_debt = extract_metric(balance_df, 'long term debt')
+#         interest_expense = extract_metric(income_df, 'interest expense')
+#         interest_income = extract_metric(income_df, 'interest income')
+#         common_stock = extract_metric(balance_df, 'common stock')
+#         retained_earnings = extract_metric(balance_df, 'retained earnings')
+#         cash = extract_metric(balance_df, 'cash and cash equivalents')
+
+#         # Cash flow
+#         capex = extract_metric(cashflow_df, 'capital expenditure')
+#         div_paid = extract_metric(cashflow_df, 'cash dividends paid')
+#         change_AR = extract_metric(cashflow_df, 'changes In account receivables')
+#         change_AP = extract_metric(cashflow_df, 'change in payable')
+#         change_inventory = extract_metric(cashflow_df, 'change in inventory')
+
+#         # ========== DEBUG SECTION - ADD THIS HERE ==========
+#         print(f"\n=== DEBUG INFO FOR TICKER: {ticker} ===")
+        
+#         # Create a dictionary of all extracted metrics for debugging
+#         metrics_debug = {
+#             # Income Statement
+#             'revenue': revenue,
+#             'sgna': sgna,
+#             'rnd': rnd,
+#             'cogs': cogs,
+#             'niav': niav,
+#             'depreciation': depreciation,
+#             'interest_expense': interest_expense,
+#             'interest_income': interest_income,
+            
+#             # Balance Sheet
+#             'accounts_receivable': accounts_receivable,
+#             'accounts_payable': accounts_payable,
+#             'inventory': inventory,
+#             'gross_ppe': gross_ppe,
+#             'net_ppe': net_ppe,
+#             'total_debt': total_debt,
+#             'current_debt': current_debt,
+#             'long_term_debt': long_term_debt,
+#             'common_stock': common_stock,
+#             'retained_earnings': retained_earnings,
+#             'cash': cash,
+            
+#             # Cash Flow
+#             'capex': capex,
+#             'div_paid': div_paid,
+#             'change_AR': change_AR,
+#             'change_AP': change_AP,
+#             'change_inventory': change_inventory
+#         }
+        
+#         # Check for empty lists and print warnings
+#         empty_metrics = []
+#         for name, values in metrics_debug.items():
+#             if not values or len(values) == 0:
+#                 empty_metrics.append(name)
+#                 print(f"⚠️  WARNING: {name} is EMPTY!")
+#             else:
+#                 print(f"✅ {name}: {values} (length: {len(values)})")
+        
+#         if empty_metrics:
+#             print(f"\n🚨 FOUND {len(empty_metrics)} EMPTY METRICS: {empty_metrics}")
+#             print("This is likely causing your index error!")
+#         else:
+#             print("✅ All metrics have data - the issue might be elsewhere")
+            
+#         print("=== END DEBUG INFO ===\n")
+#         # ========== END DEBUG SECTION ==========
+
+#         # Use named parameters to avoid order issues
+#         forecast_results = generate_model(
+#             revenue=revenue,
+#             sgna=sgna,
+#             rnd=rnd,
+#             cogs=cogs,
+#             niav=niav,
+#             depreciation=depreciation,
+#             interest_expense=interest_expense,
+#             interest_income=interest_income,
+#             accounts_receivable=accounts_receivable,
+#             accounts_payable=accounts_payable,
+#             inventory=inventory,
+#             gross_ppe=gross_ppe,
+#             net_ppe=net_ppe,
+#             total_debt=total_debt,
+#             current_debt=current_debt,
+#             long_term_debt=long_term_debt,
+#             common_stock=common_stock,
+#             retained_earnings=retained_earnings,
+#             cash=cash,
+#             capex=capex,
+#             div_paid=div_paid,
+#             change_AR=change_AR,
+#             change_AP=change_AP,
+#             change_inventory=change_inventory
+#         )
+
+#         ordered_keys = [
+#             "Revenue", "Gross Profit", "EBITDA", "Net Income", "Gross Margin", "Net Margin",
+#             "Selling General And Administration", "Research and Development", "Cost of Goods Sold",
+#             "Tax Provision", "Tax Rate for Calcs", "Operating Expenses", "Operating Income",
+#             "Accounts Receivable", "Accounts Payable", "Inventory", "Capital Expenditure",
+#             "Gross PPE", "Net PPE", "Total Assets", "Depreciation", "Total Debt", "Current Debt",
+#             "Long Term Debt", "Total Liabilities", "Cash Financial", "Interest Income",
+#             "Common Stock", "Dividends Paid", "Retained Earnings", "Total Equity",
+#             "Net Income from Continuing Operations", "Cash Flow From Continuing Investing Activities",
+#             "Cash Flow From Continuing Operating Activities", "Cash Flow From Continuing Financing Activities",
+#             "Depreciation and Amortization", "Changes in Accounts Receivable",
+#             "Changes in Accounts Payable", "Changes in Inventory", "Changes in Cash"
+#         ]
+
+#         ordered_forecast = OrderedDict((key, forecast_results[key]) for key in ordered_keys if key in forecast_results)
+
+#         response = {
+#             #"raw_income_statement": income_df.to_dict(orient='records'),
+#             #"raw_balance_sheet": balance_df.to_dict(orient='records'),
+#             #"raw_cash_flow_statement": cashflow_df.to_dict(orient='records'),
+#             "forecast": ordered_forecast
+#         }
+#         return Response(
+#     json.dumps(response, indent=2, sort_keys=False),
+#     mimetype='application/json'
+# )
+
+#     except Exception as e:
+#         print("Error:", e)
+#         return jsonify({'error': str(e)})
+
+
+
+
+import os
 
 @app.route('/api/forecast/<ticker>')
 def forecast(ticker):
     try:
-        # Income Statement
+        # Debug: Print the ticker being processed
+        print(f"Processing forecast for ticker: {ticker}")
+
+        # Fetch data from Yahoo Finance
         ticker_obj = yf.Ticker(ticker)
-        income_df = ticker_obj.financials.fillna(0)
-        income_df.columns = income_df.columns.map(str)
-        income_df = income_df.reset_index().rename(columns={"index": "Metric"})
-        income_df = income_df.iloc[::-1].reset_index(drop=True)
+
+        # Income Statement
+        try:
+            income_df = ticker_obj.financials.fillna(0)
+            income_df.columns = income_df.columns.map(str)
+            income_df = income_df.reset_index().rename(columns={"index": "Metric"})
+            income_df = income_df.iloc[::-1].reset_index(drop=True)
+        except Exception as e:
+            print(f"Error processing income statement: {e}")
+            return jsonify({'error': f"Failed to fetch income statement for {ticker}"})
 
         # Balance Sheet
-        balance_df = ticker_obj.balance_sheet.fillna(0)
-        balance_df.columns = balance_df.columns.map(str)
-        balance_df = balance_df.reset_index().rename(columns={"index": "Metric"})
-        balance_df = balance_df.iloc[::-1].reset_index(drop=True)
+        try:
+            balance_df = ticker_obj.balance_sheet.fillna(0)
+            balance_df.columns = balance_df.columns.map(str)
+            balance_df = balance_df.reset_index().rename(columns={"index": "Metric"})
+            balance_df = balance_df.iloc[::-1].reset_index(drop=True)
+        except Exception as e:
+            print(f"Error processing balance sheet: {e}")
+            return jsonify({'error': f"Failed to fetch balance sheet for {ticker}"})
 
         # Cash Flow Statement
-        cashflow_df = ticker_obj.cashflow.fillna(0)
-        cashflow_df.columns = cashflow_df.columns.map(str)
-        cashflow_df = cashflow_df.reset_index().rename(columns={"index": "Metric"})
-        cashflow_df = cashflow_df.iloc[::-1].reset_index(drop=True)
+        try:
+            cashflow_df = ticker_obj.cashflow.fillna(0)
+            cashflow_df.columns = cashflow_df.columns.map(str)
+            cashflow_df = cashflow_df.reset_index().rename(columns={"index": "Metric"})
+            cashflow_df = cashflow_df.iloc[::-1].reset_index(drop=True)
+        except Exception as e:
+            print(f"Error processing cash flow statement: {e}")
+            return jsonify({'error': f"Failed to fetch cash flow statement for {ticker}"})
 
-
-
+        # Extract metrics
         def extract_metric(df, keyword, limit=4):
-            filtered = df.loc[df['Metric'].str.lower().str.contains(keyword.lower())]
-            if filtered.empty:
+            try:
+                filtered = df.loc[df['Metric'].str.lower().str.contains(keyword.lower())]
+                if filtered.empty:
+                    return []
+                vals = filtered.iloc[0, 1:].tolist()
+                vals = vals[:limit]
+                return [float(x) if x is not None else 0 for x in vals]
+            except Exception as e:
+                print(f"Error extracting metric '{keyword}': {e}")
                 return []
-            vals = filtered.iloc[0, 1:].tolist()
-            vals = vals[:limit]
-            return [float(x) if x is not None else 0 for x in vals]
 
-        # income statement
+        # Extract data for the model
         revenue = extract_metric(income_df, 'revenue')
         sgna = extract_metric(income_df, 'selling general and administration')
         rnd = extract_metric(income_df, 'research and development')
@@ -490,7 +691,6 @@ def forecast(ticker):
         niav = extract_metric(income_df, 'net income')
         depreciation = extract_metric(income_df, 'depreciation')
 
-        # balance sheet
         accounts_receivable = extract_metric(balance_df, 'accounts receivable')
         accounts_payable = extract_metric(balance_df, 'accounts payable')
         inventory = extract_metric(balance_df, 'inventory')
@@ -505,95 +705,55 @@ def forecast(ticker):
         retained_earnings = extract_metric(balance_df, 'retained earnings')
         cash = extract_metric(balance_df, 'cash and cash equivalents')
 
-        # Cash flow
         capex = extract_metric(cashflow_df, 'capital expenditure')
         div_paid = extract_metric(cashflow_df, 'cash dividends paid')
         change_AR = extract_metric(cashflow_df, 'changes In account receivables')
         change_AP = extract_metric(cashflow_df, 'change in payable')
         change_inventory = extract_metric(cashflow_df, 'change in inventory')
 
-        # ========== DEBUG SECTION - ADD THIS HERE ==========
-        print(f"\n=== DEBUG INFO FOR TICKER: {ticker} ===")
-        
-        # Create a dictionary of all extracted metrics for debugging
-        metrics_debug = {
-            # Income Statement
-            'revenue': revenue,
-            'sgna': sgna,
-            'rnd': rnd,
-            'cogs': cogs,
-            'niav': niav,
-            'depreciation': depreciation,
-            'interest_expense': interest_expense,
-            'interest_income': interest_income,
-            
-            # Balance Sheet
-            'accounts_receivable': accounts_receivable,
-            'accounts_payable': accounts_payable,
-            'inventory': inventory,
-            'gross_ppe': gross_ppe,
-            'net_ppe': net_ppe,
-            'total_debt': total_debt,
-            'current_debt': current_debt,
-            'long_term_debt': long_term_debt,
-            'common_stock': common_stock,
-            'retained_earnings': retained_earnings,
-            'cash': cash,
-            
-            # Cash Flow
-            'capex': capex,
-            'div_paid': div_paid,
-            'change_AR': change_AR,
-            'change_AP': change_AP,
-            'change_inventory': change_inventory
-        }
-        
-        # Check for empty lists and print warnings
-        empty_metrics = []
-        for name, values in metrics_debug.items():
-            if not values or len(values) == 0:
-                empty_metrics.append(name)
-                print(f"⚠️  WARNING: {name} is EMPTY!")
-            else:
-                print(f"✅ {name}: {values} (length: {len(values)})")
-        
-        if empty_metrics:
-            print(f"\n🚨 FOUND {len(empty_metrics)} EMPTY METRICS: {empty_metrics}")
-            print("This is likely causing your index error!")
-        else:
-            print("✅ All metrics have data - the issue might be elsewhere")
-            
-        print("=== END DEBUG INFO ===\n")
-        # ========== END DEBUG SECTION ==========
+        # Debug: Print extracted metrics
+        print("Extracted Metrics:")
+        print(f"Revenue: {revenue}")
+        print(f"SG&A: {sgna}")
+        print(f"R&D: {rnd}")
+        print(f"COGS: {cogs}")
+        print(f"Net Income: {niav}")
+        print(f"Depreciation: {depreciation}")
+        # Add more debug prints for other metrics if needed
 
-        # Use named parameters to avoid order issues
-        forecast_results = generate_model(
-            revenue=revenue,
-            sgna=sgna,
-            rnd=rnd,
-            cogs=cogs,
-            niav=niav,
-            depreciation=depreciation,
-            interest_expense=interest_expense,
-            interest_income=interest_income,
-            accounts_receivable=accounts_receivable,
-            accounts_payable=accounts_payable,
-            inventory=inventory,
-            gross_ppe=gross_ppe,
-            net_ppe=net_ppe,
-            total_debt=total_debt,
-            current_debt=current_debt,
-            long_term_debt=long_term_debt,
-            common_stock=common_stock,
-            retained_earnings=retained_earnings,
-            cash=cash,
-            capex=capex,
-            div_paid=div_paid,
-            change_AR=change_AR,
-            change_AP=change_AP,
-            change_inventory=change_inventory
-        )
+        # Generate forecast data
+        try:
+            forecast_results = generate_model(
+                revenue=revenue,
+                sgna=sgna,
+                rnd=rnd,
+                cogs=cogs,
+                niav=niav,
+                depreciation=depreciation,
+                interest_expense=interest_expense,
+                interest_income=interest_income,
+                accounts_receivable=accounts_receivable,
+                accounts_payable=accounts_payable,
+                inventory=inventory,
+                gross_ppe=gross_ppe,
+                net_ppe=net_ppe,
+                total_debt=total_debt,
+                current_debt=current_debt,
+                long_term_debt=long_term_debt,
+                common_stock=common_stock,
+                retained_earnings=retained_earnings,
+                cash=cash,
+                capex=capex,
+                div_paid=div_paid,
+                change_AR=change_AR,
+                change_AP=change_AP,
+                change_inventory=change_inventory
+            )
+        except Exception as e:
+            print(f"Error generating forecast data: {e}")
+            return jsonify({'error': f"Failed to generate forecast data for {ticker}"})
 
+        # Order forecast data
         ordered_keys = [
             "Revenue", "Gross Profit", "EBITDA", "Net Income", "Gross Margin", "Net Margin",
             "Selling General And Administration", "Research and Development", "Cost of Goods Sold",
@@ -610,20 +770,30 @@ def forecast(ticker):
 
         ordered_forecast = OrderedDict((key, forecast_results[key]) for key in ordered_keys if key in forecast_results)
 
+        # Save forecast data to a JSON file in the backend folder
+        backend_folder = os.path.dirname(os.path.abspath(__file__))
+        json_file_path = os.path.join(backend_folder, 'forecast_output.json')
+
+        try:
+            with open(json_file_path, 'w') as json_file:
+                json.dump(ordered_forecast, json_file, indent=2)
+            print(f"Forecast data saved to {json_file_path}")
+        except Exception as e:
+            print(f"Error saving forecast data to file: {e}")
+            return jsonify({'error': f"Failed to save forecast data to file for {ticker}"})
+
+        # Return forecast data as response
         response = {
-            #"raw_income_statement": income_df.to_dict(orient='records'),
-            #"raw_balance_sheet": balance_df.to_dict(orient='records'),
-            #"raw_cash_flow_statement": cashflow_df.to_dict(orient='records'),
             "forecast": ordered_forecast
         }
         return Response(
-    json.dumps(response, indent=2, sort_keys=False),
-    mimetype='application/json'
-)
+            json.dumps(response, indent=2, sort_keys=False),
+            mimetype='application/json'
+        )
 
     except Exception as e:
-        print("Error:", e)
+        print("Error occurred:", e)
         return jsonify({'error': str(e)})
-
+    
 if __name__ == '__main__':
     app.run(debug=True)
