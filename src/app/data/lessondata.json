@@ -1,0 +1,59 @@
+{
+    "dcf-intro": {
+      "type": "intro",
+      "textBoxContent": "This is a DCF, or discounted cash flow analysis—a valuation method used to estimate the intrinsic value of an asset based on its expected future cash flows. By projecting those cash flows and discounting them back to present value using a rate that reflects the risk of the investment, a DCF helps determine whether an asset is undervalued or overvalued relative to its current price.",
+      "quiz": {
+        "question": "What does DCF stand for?",
+        "options": ["Direct Cash Flow", "Discounted Cash Flow", "Dynamic Capital Flow", "Debt Conversion Formula"],
+        "correctAnswer": "Discounted Cash Flow"
+      }
+    },
+    "key-metrics": {
+      "type": "spreadsheet",
+      "textBoxContent": "Key metrics like Net Sales, COGS, OPEX, and EBITDA are the building blocks of financial projections. Understanding how they relate to each other is crucial.",
+      "quiz": {
+        "question": "Which of these is NOT a key metric for a DCF?",
+        "options": ["Net Sales", "EBITDA", "Social Media Followers", "Gross Profit"],
+        "correctAnswer": "Social Media Followers"
+      },
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      }
+    },
+    "forecasting": {
+      "type": "spreadsheet",
+      "textBoxContent": "Forecasting involves projecting future financial performance. This often relies on historical trends and reasonable assumptions about growth rates and margins.",
+      "quiz": {
+        "question": "What is a common method for forecasting revenue?",
+        "options": ["Guessing", "Historical Growth Rates", "Random Number Generation", "Looking at the moon"],
+        "correctAnswer": "Historical Growth Rates"
+      },
+      "spreadsheetConfig": {
+        "initialTab": "projections"
+      }
+    },
+    "terminal-value": {
+      "type": "spreadsheet",
+      "textBoxContent": "Terminal Value captures the value of the company beyond the explicit projection period. It's typically calculated using either the Gordon Growth Model or the Exit Multiple Method.",
+      "quiz": {
+        "question": "Which model is often used for Terminal Value?",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
+      },
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      }
+    },
+    "final-valuation": {
+      "type": "spreadsheet",
+      "textBoxContent": "The final valuation sums the present value of projected free cash flows and the present value of the terminal value to arrive at the company's intrinsic value.",
+      "quiz": {
+        "question": "What does the sum of PV of UFCF and PV of Terminal Value give you?",
+        "options": ["Net Income", "Enterprise Value", "Market Cap", "Book Value"],
+        "correctAnswer": "Enterprise Value"
+      },
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      }
+    }
+  }

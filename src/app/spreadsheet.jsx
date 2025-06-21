@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { HotTable } from '@handsontable/react';
 import { registerAllModules } from 'handsontable/registry';
+import { useSpreadsheetValidator } from './hooks/useSpreadsheetValidator';
 import 'handsontable/dist/handsontable.full.min.css'; // Handsontable's CSS
 
 // Register all Handsontable modules (essential for features like cell editing, etc.)
@@ -11,6 +12,12 @@ registerAllModules();
 export default function Spreadsheet() {
     // Initial data for the spreadsheet, mimicking financial metrics
     // This is just example data. You would fetch your actual data here.
+    const correctAnswers = { "1,1": "2355"};
+    const hotTableComponent = useRef(null);
+    const checkCell = useSpreadsheetValidator(hotTableComponent, correctAnswers);
+
+
+    
 const [data, setData] = useState([
   ['', '2014A', '2015A', '2016A', '2017A', '2018A', '2019P', '2020P', '2021P', '2022P'],
   ['Revenue', 2355, 3562, 4102, 4663, 5036, 5368, 5711, 5957, 6287],
@@ -42,7 +49,13 @@ const [data, setData] = useState([
         '2019P', '2020P', '2021P', '2022P'
     ];
 
-    const hotTableComponent = useRef(null);
+    const afterChange = (changes, source) => {
+        if (changes && source !== 'loadData') {
+            changes.forEach(([row, col]) => {
+                checkCell(row, col);
+            });
+        }
+    };
 
     // useEffect for any Handsontable specific setup or cleanup
     useEffect(() => {
@@ -74,6 +87,8 @@ const [data, setData] = useState([
                 width="100%"  // Makes the table fill the width of its container
                 readOnly={false} // Allow editing cells, set to true if you want it read-only
                 contextMenu={true} // Enable right-click context menu
+                afterChange={afterChange} // Add the afterChange callback
+
                 
                 // minCols={5} // You can uncomment this if you need a minimum number of columns
                 // autoRowSize={true} // Uncomment if you want rows to auto-size
