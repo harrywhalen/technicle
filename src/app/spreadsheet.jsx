@@ -121,19 +121,6 @@ export default function Spreadsheet() {
                         },
                         className: 'htRight htMiddle'
 
-                        cells={(row, col) => {
-                        const cellProperties = {};
-                        if (highlightOn) {
-                        //if (col >= 1 && col <= 5) {
-                        //cellProperties.className = 'actuals-cell';}
-                        if (col >= 6) {
-                        cellProperties.className = 'forecasted-cell';}
-                        if (col >= 1 && (row == 6 || row == 8)) {
-                        cellProperties.className = 'derived-cell';}
-                        return cellProperties;
-                        }
-            
-                    }}
 
                         
                     }))
