@@ -33,3 +33,15 @@ body {
   border: 2px solid #ef4444 !important;
   background-color: rgba(239, 68, 68, 0.1) !important;
 }
+
+.actuals-cell {
+  color: #00ff22;
+}
+
+.forecasted-cell {
+  color: #00c3ff;
+}
+
+.derived-cell {
+  color: #ff3131;
+}

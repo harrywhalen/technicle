@@ -2,6 +2,7 @@ import TextBox from "./textbox.jsx";
 import QuizBox from "./quizbox.jsx";
 
 
+
 export default function RightSide({content, question, options, correctAnswer}) {
   return (
     <div
@@ -9,6 +10,8 @@ export default function RightSide({content, question, options, correctAnswer}) {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    marginRight: '55px',
+    marginLeft: '45px',
   
     height: 'auto',
     backgroundColor: '#ffffff',
@@ -39,6 +42,8 @@ export default function RightSide({content, question, options, correctAnswer}) {
         correctAnswer={correctAnswer}
 
     />
+
+
 
     
 
