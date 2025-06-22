@@ -3,6 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'; // Use usePathname for router access
+import Image from 'next/image';
+import NamePlate from '../assets/NamePlate.png';
 
 // Define the sections for the top navigation bar
 const navLinks = [
@@ -56,6 +58,9 @@ export default function Navbar() {
       {/* Centered Navigation (absolute center technique) */}
       <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
         <nav>
+
+
+
           <ul
             style={{
               display: 'flex',
@@ -88,42 +93,18 @@ export default function Navbar() {
                       onMouseLeave: isTechnicle ? null : (e) => e.currentTarget.style.backgroundColor = 'transparent',
                     }}
                   >
-                    {isTechnicle ? (
-                      <>
-                        {/* Ghost/Shadow Text */}
-                        <span
-                          style={{
-                            position: 'absolute',
-                            left: '-4px', // Shift left by a few pixels
+                          {isTechnicle ? (
+                            <Image
+                              src={NamePlate}
+                              alt="Technicle Logo"
+                              width={250}
+                              height={50}
+                              style={{ display: 'block' }}
+                            />
+                          ) : (
+                            link.title
+                          )}
 
-                            opacity: '0.5', // Half opacity
-                            color: 'white', // Same color as main text
-                            fontSize: '3rem', // Match main text size
-                            fontWeight: 'bold',
-                            zIndex: 0, // Ensure it's behind the main text
-                            // Prevent text selection on ghost copy
-                            userSelect: 'none',
-                            pointerEvents: 'none',
-                            textShadow: '0 0 5px rgba(255,255,255,0.2)', // Optional: subtle glow for depth
-                          }}
-                        >
-                          {link.title}
-                        </span>
-                        {/* Main Text */}
-                        <span
-                          style={{
-                            position: 'relative', // Ensure it's on top of ghost text
-                            zIndex: 1,
-                            fontSize: '3rem',
-                            fontWeight: 'bold',
-                          }}
-                        >
-                          {link.title}
-                        </span>
-                      </>
-                    ) : (
-                      link.title // Render normal link title
-                    )}
                   </Link>
                 </li>
               );
