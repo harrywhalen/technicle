@@ -35,13 +35,13 @@ body {
 }
 
 .actuals-cell {
-  color: #00ff22;
+  color: #00ff22!important;
 }
 
 .forecasted-cell {
-  color: #00c3ff;
+  color: #00c3ff!important;
 }
 
 .derived-cell {
-  color: #ff3131;
+  color: #ff3131 !important;
 }

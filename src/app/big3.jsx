@@ -4,7 +4,7 @@ import RightSide from "./rightside.jsx";
 import SpreadGang from "./spreadGang.jsx";
 import HintBox from "./hintbox.jsx";
 
-export default function Big3({currentStepContent, refresh, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn}) {
+export default function Big3({currentStepContent, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn}) {
 if (!currentStepContent) {
     return <div>Loading...</div>; // or null, or a spinner
   }
@@ -29,7 +29,6 @@ gap: '10px',
 >
 
 <SpreadGang
-refresh = {refresh}
 data = {data} 
 setData = {setData}
 highlightOn = {highlightOn}
