@@ -4,45 +4,13 @@ import React, { useRef, useEffect, useState } from 'react';
 import { HotTable } from '@handsontable/react';
 import { registerAllModules } from 'handsontable/registry';
 import 'handsontable/dist/handsontable.full.min.css';
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../lib/firebase.js";
+
+import './globals.css';
+
 registerAllModules();
 
-export default function Spreadsheet() {
-    const correctAnswers = { "1,1": "2355" };
-    const hotTableComponent = useRef(null);
+export default function Spreadsheet({highlightOn, setHighlightOn, dataLoading, hotTableComponent, data, setData,initialData, refresh}) {
 
-    const [data, setData] = useState([]);
-    const [dataLoading, setDataLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const docRef = doc(db, "models", "defaultModel");
-                const docSnap = await getDoc(docRef);
-                
-                if (docSnap.exists()) {
-                    const orderedData = docSnap.data().orderedData;
-                    // Convert from Firebase format to Handsontable format
-                    // Each item in orderedData has { label, values }
-                    const hotFormat = orderedData.map(item => [item.label, ...item.values]);
-                    setData(hotFormat);
-                } else {
-                    console.log("No document found!");
-                    setData([]); // Empty data if no document
-                }
-                
-                setDataLoading(false);
-                
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                setData([]); // Empty data on error
-                setDataLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
 
     // Column headers for the years
     const colHeaders = [
@@ -121,10 +89,22 @@ export default function Spreadsheet() {
                         },
                         className: 'htRight htMiddle'
 
+        
+                    }))]}
 
-                        
-                    }))
-                ]}
+                cells={(row, col) => {
+                const cellProperties = {};
+                if (highlightOn) {
+                //if (col >= 1 && col <= 5) {
+                //cellProperties.className = 'actuals-cell';}
+                if (col >= 6) {
+                cellProperties.className = 'forecasted-cell';}
+                if (col >= 1 && (row == 6 || row == 8)) {
+                cellProperties.className = 'derived-cell';}
+                return cellProperties;
+                }
+
+            }}
             />
         </div>
     );
