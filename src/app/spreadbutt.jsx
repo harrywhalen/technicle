@@ -1,9 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Highlighter, RotateCw, Lightbulb } from "lucide-react";
+import { BookOpen, Highlighter, RotateCw, Lightbulb, Check } from "lucide-react";
 
-export default function Spreadbutt({refresh, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn, }) {
-
+export default function Spreadbutt({refresh, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn, checkAllAnswers, getCurrentScore }) {
 
     return(
     <div
@@ -19,9 +18,9 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
         style = {{
         height: '50px',
         display: 'flex',
-        marginLeft: '800px',
+        marginLeft: '750px', // Adjusted to fit 4 buttons
         marginTop: '8px',
-        //width: '10px',
+        gap: '10px', // Add some space between buttons
     }}>
 
         <button
@@ -40,12 +39,8 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
             transition: 'background-color 0.3s ease', // Smooth transition on hover
             width: '50px',
         }}
-        //onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#297bbd'} // Darker blue on hover
-        //onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#3498db'} // Original blue
     >
-
-            <Highlighter color="#FFFFFF" size={24} />
-
+        <Highlighter color="#FFFFFF" size={24} />
     </button>
 
         <button
@@ -86,16 +81,38 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
             transition: 'background-color 0.3s ease', // Smooth transition on hover
             width: '50px',
         }}
-
     >
     <Lightbulb color="#FFFFFF" size={24} />
     </button>
 
+        {/* New Check Button */}
+        <button
+        type = "button"
+            onClick={() => {
+                if (checkAllAnswers) {
+                    checkAllAnswers(); // This will highlight cells without showing score
+                }
+            }}
+        style={{
+            backgroundColor: '#28a745', // Green background for check button
+            color: 'white', // White text
+            border: 'none', // No border
+            borderRadius: '50%', // Rounded corners for button
+            cursor: 'pointer', // Hand cursor on hover
+            fontSize: '1em',
+            fontWeight: 'bold',
+            display: 'block', // Make button a block element
+            margin: '0 auto', // Center the button horizontally
+            transition: 'background-color 0.3s ease', // Smooth transition on hover
+            width: '50px',
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#218838'} // Darker green on hover
+        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#28a745'} // Original green
+    >
+    <Check color="#FFFFFF" size={24} />
+    </button>
+
         </div>
-
-
-    
     </div>
     )
-
 }
