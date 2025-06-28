@@ -95,8 +95,8 @@ export default function Spreadsheet({highlightOn, setHighlightOn, dataLoading, h
                 cells={(row, col) => {
                 const cellProperties = {};
                 if (highlightOn) {
-                //if (col >= 1 && col <= 5) {
-                //cellProperties.className = 'actuals-cell';}
+                if (row == 1 && col == 5) {
+                cellProperties.className = 'shimmer-cell';}
                 if (col >= 6) {
                 cellProperties.className = 'forecasted-cell';}
                 if (col >= 1 && (row == 6 || row == 8)) {
