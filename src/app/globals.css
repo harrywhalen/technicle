@@ -45,3 +45,35 @@ body {
 .derived-cell {
   color: #ff3131 !important;
 }
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer-cell {
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: #f8f9fa !important; /* Base background color */
+}
+
+.shimmer-cell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 217, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.5s ease-in-out infinite;
+  pointer-events: none;
+}

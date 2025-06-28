@@ -63,7 +63,7 @@ export default function QuizBox({ question, options, correctAnswer }) {
 ) : (
     <p style={{ fontSize: '0.9em', color: '#888' }}>No options available for this quiz.</p>
 )}
-                    <button
+<button
                         type="submit"
                         style={{
                             backgroundColor: '#3498db', // Blue background for button
