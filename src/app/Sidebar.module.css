@@ -12,7 +12,7 @@
   left: 0;
   top: 0;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Ensure it's on top */
+  z-index: 160; /* Ensure it's on top */
 }
 
 .titleContainer {

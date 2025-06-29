@@ -1,22 +1,17 @@
 "use client";
 import React, { useState } from 'react';
 
-export default function QuizBox({ question, options, correctAnswer }) {
+export default function QuizBox({ question, options, correctAnswer, isCorrect, setIsCorrect, handleSubmit, selectedOption, setSelectedOption, }) {
     // State to manage the selected radio button value
-    const [selectedOption, setSelectedOption] = useState('value_estimation'); // 'value_estimation' is pre-selected as per mockup
+
+
 
     // Handler for when a radio button is changed
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
     };
 
-    // Handler for form submission (optional, can be expanded later)
-    const handleSubmit = (event) => {
-        event.preventDefault(); // Prevent default form submission behavior
-        console.log("Selected option:", selectedOption);
-        // You can add logic here to check the answer, provide feedback, etc.
-        // For now, it just logs the selection.
-    };
+
 
     return(
         <div
@@ -36,12 +31,15 @@ export default function QuizBox({ question, options, correctAnswer }) {
                     borderWidth: '3px', // Changed to 3px to match mockup
                     borderStyle: 'solid',
                     color: '#1f3a60', // Dark blue text color
-                    padding: '20px', // Padding inside the box
+                    padding: '10px', // Padding inside the box
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow
                     borderRadius: '10px 10px 0px 0px',
+                    
                 }}
             >
-<h4>
+<h4
+style = {{fontSize: '1.5em',}}
+>
     {question || "No quiz question provided."} {/* If 'question' prop is empty, show default */}
 </h4>
 
@@ -55,7 +53,7 @@ export default function QuizBox({ question, options, correctAnswer }) {
                 value={option}
                 checked={selectedOption === option}
                 onChange={handleOptionChange}
-                style={{ marginRight: '8px' }}
+                style={{ marginRight: '8px',  fontSize: '1.1em',}}
             />
             {option} {/* Display the current option text */}
         </label>
@@ -65,6 +63,7 @@ export default function QuizBox({ question, options, correctAnswer }) {
 )}
 <button
                         type="submit"
+                        onClick={handleSubmit}
                         style={{
                             backgroundColor: '#3498db', // Blue background for button
                             color: 'white', // White text
@@ -75,7 +74,7 @@ export default function QuizBox({ question, options, correctAnswer }) {
                             fontSize: '1em',
                             fontWeight: 'bold',
                             display: 'block', // Make button a block element
-                            margin: '0 auto', // Center the button horizontally
+                            marginTop: '15px',
                             transition: 'background-color 0.3s ease', // Smooth transition on hover
                         }}
                         onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#297bbd'} // Darker blue on hover
@@ -88,9 +87,14 @@ export default function QuizBox({ question, options, correctAnswer }) {
             <div
                 style={{
                     height: '3px', // Increased height to match mockup's bottom line
-                    backgroundColor: '#1f3a60', // Dark blue line
                     borderRadius: '0px 0px 15px 15px',
-                }}
+                    backgroundColor:
+                    isCorrect === true
+                        ? '#00bf63'
+                        : isCorrect === false
+                        ? '#ffdddd' // ❌ Light red if incorrect
+                        : '#1f3a60', // ⚪ Default white
+                        }}
             >
             </div>
         </div>
