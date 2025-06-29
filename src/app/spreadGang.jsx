@@ -5,99 +5,206 @@ import Spreadbutt from "./spreadbutt.jsx";
 import SpreadsheetTabs from "./spreadsheetTabs.jsx";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../lib/firebase.js";
-import { useSpreadsheetValidator } from './hooks/useSpreadsheetValidator'; // Import the validator
+import { useSpreadsheetValidator } from './hooks/useSpreadsheetValidator';
 
 export default function SpreadGang({highlightOn, setHighlightOn, hintOn, setHintOn,}) {
 
-    // Define which cells are quiz questions (these will be hidden and validated)
-    const quizCells = [
-        { row: 1, col: 1 },
-        { row: 2, col: 3 },
-        { row: 5, col: 2 },
-    ];
+    // Define how to split the data across sheets based on row labels
+    const sheetMappings = {
+        intro: {
+            name: "Summary",
+            includeRows: ["Revenue", "Net Income", "Unlevered FCF", "Terminal Value", "Discounted TV"]
+        },
+        inputs: {
+            name: "Income Statement", 
+            includeRows: ["Revenue", "COGS", "Gross Profit", "R&D Expense", "SG&A Expense", 
+                         "EBITDA", "Depreciation & Amort.", "EBIT", "Interest Expense", 
+                         "EBT", "Tax @ 25.2%", "Net Income"]
+        },
+        projections: {
+            name: "Balance Sheet",
+            includeRows: ["+ D&A", "- CapEx", "- Change in NWC"] // Cash flow items that affect balance sheet
+        },
+        valuations: {
+            name: "Cash Flow Statement",
+            includeRows: ["Net Income", "+ D&A", "- CapEx", "- Change in NWC", "Unlevered FCF", 
+                         "Discount Factor (10%)", "Discounted FCF", "Terminal Value", "Discounted TV"]
+        },
+        sensitivity: {
+            name: "Assumptions",
+            includeRows: ["Revenue", "COGS", "R&D Expense", "SG&A Expense", "Depreciation & Amort.", 
+                         "Interest Expense", "Tax @ 25.2%", "Discount Factor (10%)"]
+        }
+    };
+
+    // Define quiz cells for each sheet (adjust row numbers based on filtered data)
+    const sheetQuizCells = {
+        intro: [
+            { row: 1, col: 1 }, // Revenue
+            { row: 2, col: 3 }, // Net Income
+        ],
+        inputs: [
+            { row: 3, col: 2 }, // Gross Profit
+            { row: 5, col: 1 }, // SG&A Expense
+        ],
+        projections: [
+            { row: 0, col: 1 }, // + D&A
+            { row: 2, col: 2 }, // - Change in NWC
+        ],
+        valuations: [
+            { row: 4, col: 2 }, // Unlevered FCF
+            { row: 6, col: 1 }, // Discounted FCF
+        ],
+        sensitivity: [
+            { row: 0, col: 2 }, // Revenue assumption
+            { row: 3, col: 3 }, // SG&A assumption
+        ]
+    };
 
     const hotTableComponent = useRef(null);
-    const { checkCell, validateAllCells, setCorrectAnswers, getScore } = useSpreadsheetValidator(hotTableComponent);
+    const { checkCell, validateAllCells, setCorrectAnswers, getScore, setCurrentSheet } = useSpreadsheetValidator(hotTableComponent);
 
-    const [data, setData] = useState([]);
-    const [initialData, setInitialData] = useState([]);
-    const [displayData, setDisplayData] = useState([]); // New: data shown to user
+    // Current active tab state
+    const [activeTab, setActiveTab] = useState('intro');
+    
+    // Data for each sheet
+    const [sheetsData, setSheetsData] = useState({
+        intro: [],
+        inputs: [],
+        projections: [],
+        valuations: [],
+        sensitivity: []
+    });
+    
+    const [sheetsInitialData, setSheetsInitialData] = useState({
+        intro: [],
+        inputs: [],
+        projections: [],
+        valuations: [],
+        sensitivity: []
+    });
+    
+    const [sheetsDisplayData, setSheetsDisplayData] = useState({
+        intro: [],
+        inputs: [],
+        projections: [],
+        valuations: [],
+        sensitivity: []
+    });
+
     const [dataLoading, setDataLoading] = useState(true);
     
+    // Helper function to filter data based on sheet mapping
+    const filterDataForSheet = (fullData, sheetKey) => {
+        const mapping = sheetMappings[sheetKey];
+        if (!mapping || !fullData || fullData.length === 0) return [];
+        
+        return fullData.filter(row => {
+            const label = row[0]; // First column is the label
+            return mapping.includeRows.some(includeLabel => 
+                label && label.toString().includes(includeLabel)
+            );
+        });
+    };
+
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const docRef = doc(db, "models", "defaultModel");
                 const docSnap = await getDoc(docRef);
-
-                const ColddocRef = doc(db, "models", "defaultModel");
-                const ColddocSnap = await getDoc(ColddocRef);
+                
+                const coldDocRef = doc(db, "models", "defaultModel");
+                const coldDocSnap = await getDoc(coldDocRef);
                 
                 if (docSnap.exists()) {
                     const orderedData = docSnap.data().orderedData;
-                    const coldorderedData = ColddocSnap.data().orderedData;
+                    const coldOrderedData = coldDocSnap.exists() ? coldDocSnap.data().orderedData : orderedData;
                     
-                    // Convert from Firebase format to Handsontable format
+                    // Convert to Handsontable format
                     const hotFormat = orderedData.map(item => [item.label, ...item.values]);
-                    const coldFormat = coldorderedData.map(item => [item.label, ...item.values]);
+                    const coldFormat = coldOrderedData.map(item => [item.label, ...item.values]);
                     
-                    // Create display data with quiz cells empty
-                    const displayFormat = hotFormat.map((row, rowIndex) => 
-                        row.map((cell, colIndex) => {
-                            const isQuizCell = quizCells.some(q => q.row === rowIndex && q.col === colIndex);
-                            return isQuizCell ? '' : cell;
-                        })
-                    );
+                    console.log("Full data loaded:", hotFormat);
                     
-                    // Extract correct answers for quiz cells only
-                    const correctAnswers = {};
-                    quizCells.forEach(({ row, col }) => {
-                        if (hotFormat[row] && hotFormat[row][col] !== undefined) {
-                            correctAnswers[`${row},${col}`] = hotFormat[row][col];
-                        }
+                    // Split data across sheets
+                    const newSheetsData = {};
+                    const newSheetsInitialData = {};
+                    const newSheetsDisplayData = {};
+                    const allCorrectAnswers = {};
+                    
+                    Object.keys(sheetMappings).forEach(sheetKey => {
+                        // Filter data for this sheet
+                        const sheetHotData = filterDataForSheet(hotFormat, sheetKey);
+                        const sheetColdData = filterDataForSheet(coldFormat, sheetKey);
+                        
+                        console.log(`${sheetKey} sheet data:`, sheetHotData);
+                        
+                        // Create display data with quiz cells empty
+                        const quizCells = sheetQuizCells[sheetKey] || [];
+                        const displayFormat = sheetHotData.map((row, rowIndex) => 
+                            row.map((cell, colIndex) => {
+                                const isQuizCell = quizCells.some(q => q.row === rowIndex && q.col === colIndex);
+                                return isQuizCell ? '' : cell;
+                            })
+                        );
+                        
+                        // Extract correct answers for quiz cells
+                        quizCells.forEach(({ row, col }) => {
+                            if (sheetHotData[row] && sheetHotData[row][col] !== undefined) {
+                                allCorrectAnswers[`${sheetKey}_${row},${col}`] = sheetHotData[row][col];
+                            }
+                        });
+                        
+                        newSheetsData[sheetKey] = sheetHotData;
+                        newSheetsInitialData[sheetKey] = sheetColdData;
+                        newSheetsDisplayData[sheetKey] = displayFormat;
                     });
                     
-                    // Set all the data
-                    setData(hotFormat); // Full data (for reference)
-                    setInitialData(coldFormat); // Initial state
-                    setDisplayData(displayFormat); // What user sees
-                    setCorrectAnswers(correctAnswers); // Encoded answers for validation
+                    setSheetsData(newSheetsData);
+                    setSheetsInitialData(newSheetsInitialData);
+                    setSheetsDisplayData(newSheetsDisplayData);
+                    setCorrectAnswers(allCorrectAnswers);
                     
+                    console.log("Split data across sheets:", newSheetsDisplayData);
                 } else {
-                    console.log("No document found lil fella!");
-                    setData([]);
-                    setInitialData([]);
-                    setDisplayData([]);
+                    console.log("No document found!");
                 }
-                
-                setDataLoading(false);
-                
             } catch (error) {
                 console.error("Error fetching data:", error);
-                setData([]);
-                setInitialData([]);
-                setDisplayData([]);
-                setDataLoading(false);
             }
+            setDataLoading(false);
         };
-
+        
         fetchData();
     }, []);
 
+    // Handle tab changes
+    const handleTabChange = (newTabId) => {
+        setActiveTab(newTabId);
+        setCurrentSheet(newTabId); // Update validator's current sheet
+        console.log(`Switched to ${newTabId} sheet`);
+        console.log(`Data for ${newTabId}:`, sheetsDisplayData[newTabId]);
+    };
+
     const refresh = () => {
-        console.log("refresh triggered");
-        // Reset to initial display data (with quiz cells empty)
-        const resetDisplayData = initialData.map((row, rowIndex) => 
+        console.log("refresh triggered for", activeTab);
+        // Reset current sheet to initial display data (with quiz cells empty)
+        const quizCells = sheetQuizCells[activeTab] || [];
+        const resetDisplayData = sheetsInitialData[activeTab].map((row, rowIndex) => 
             row.map((cell, colIndex) => {
                 const isQuizCell = quizCells.some(q => q.row === rowIndex && q.col === colIndex);
                 return isQuizCell ? '' : cell;
             })
         );
-        setDisplayData([...resetDisplayData]);
+        
+        setSheetsDisplayData(prev => ({
+            ...prev,
+            [activeTab]: [...resetDisplayData]
+        }));
         console.log("Reset to:", resetDisplayData);
     };
 
-    // New function to check all quiz answers
+    // Check all quiz answers across all sheets
     const checkAllAnswers = () => {
         const result = validateAllCells();
         if (result) {
@@ -105,7 +212,7 @@ export default function SpreadGang({highlightOn, setHighlightOn, hintOn, setHint
         }
     };
 
-    // New function to get current score without showing results
+    // Get current score across all sheets
     const getCurrentScore = () => {
         const result = getScore();
         if (result) {
@@ -115,17 +222,26 @@ export default function SpreadGang({highlightOn, setHighlightOn, hintOn, setHint
         return null;
     };
 
-    // Function to handle cell changes and check answers
+    // Handle cell changes and check answers
     const handleCellChange = (changes) => {
         if (changes) {
             changes.forEach(([row, col, oldValue, newValue]) => {
-                // Check if this is a quiz cell
+                // Check if this is a quiz cell for the current sheet
+                const quizCells = sheetQuizCells[activeTab] || [];
                 const isQuizCell = quizCells.some(q => q.row === row && q.col === col);
                 if (isQuizCell) {
-                    checkCell(row, col);
+                    checkCell(row, col, activeTab); // Pass sheet identifier
                 }
             });
         }
+    };
+
+    // Update data for current sheet
+    const updateCurrentSheetData = (newData) => {
+        setSheetsDisplayData(prev => ({
+            ...prev,
+            [activeTab]: newData
+        }));
     };
 
     return(
@@ -135,27 +251,30 @@ export default function SpreadGang({highlightOn, setHighlightOn, hintOn, setHint
                 flexDirection: 'column',
             }}
         >
-            <SpreadsheetTabs/>
+            <SpreadsheetTabs
+                initialActiveTab="intro"
+                onTabChange={handleTabChange}
+            />
             <Spreadsheet
-                data={displayData} // Use displayData instead of data
-                setData={setDisplayData} // Update displayData
+                data={sheetsDisplayData[activeTab] || []} 
+                setData={updateCurrentSheetData}
                 highlightOn={highlightOn}
                 setHighlightOn={setHighlightOn}
                 dataLoading={dataLoading}
                 hotTableComponent={hotTableComponent}
                 refresh={refresh}
-                onCellChange={handleCellChange} // New prop for handling changes
+                onCellChange={handleCellChange}
             />
             <Spreadbutt
                 refresh={refresh}
-                data={displayData} // Use displayData
-                setData={setDisplayData} // Update displayData
+                data={sheetsDisplayData[activeTab] || []}
+                setData={updateCurrentSheetData}
                 highlightOn={highlightOn}
                 setHighlightOn={setHighlightOn}
                 hintOn={hintOn}
                 setHintOn={setHintOn}
-                checkAllAnswers={checkAllAnswers} // New prop
-                getCurrentScore={getCurrentScore} // New prop
+                checkAllAnswers={checkAllAnswers}
+                getCurrentScore={getCurrentScore}
             />
         </div>
     )
