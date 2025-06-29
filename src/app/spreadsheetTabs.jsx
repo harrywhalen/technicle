@@ -3,11 +3,11 @@
 import React, { useState, useEffect } from "react";
 
 const spreadsheetTabs = [
-  { name: "Intro", id: "intro" },
-  { name: "Inputs", id: "inputs" },
-  { name: "Projections", id: "projections" },
-  { name: "Valuations", id: "valuations" },
-  { name: "Sensitivity", id: "sensitivity" },
+  { name: "Summary", id: "intro" },
+  { name: "Income Statement", id: "inputs" },
+  { name: "Balance Sheet", id: "projections" },
+  { name: "Cash Flow Statement", id: "valuations" },
+  { name: "Assumptions", id: "sensitivity" },
 ];
 
 export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChange }) {
@@ -20,7 +20,7 @@ export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChang
 
 
 
-  const [shimmerIntro, SetShimmerIntro] = useState(false);
+  const [shimmerIntro, SetShimmerIntro] = useState(true);
   const [shimmerInputs, SetShimmerInputs] = useState(false);
   const [shimmerProj, SetShimmerProj] = useState(false);
   const [shimmerVal, SetShimmerVal] = useState(false);
@@ -72,7 +72,7 @@ export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChang
               width: "140px",
               padding: "10px 20px",
               cursor: "pointer",
-              fontSize: "1rem",
+              fontSize: "0.83rem",
               fontWeight: activeTab === tab.id ? "bold" : "normal",
               color: "#ffffff",
               backgroundColor: activeTab === tab.id ? "#3498db" : "transparent",
