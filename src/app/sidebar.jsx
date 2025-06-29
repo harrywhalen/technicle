@@ -1,56 +1,55 @@
 "use client";
-import React, { useState } from 'react';
-import styles from './Sidebar.module.css';
+  import React, { useState } from 'react';
+  import styles from './Sidebar.module.css';
 
-const NAVBAR_HEIGHT = '70px';
 
-// Define the initial conceptual sections
-const baseSidebarSections = [
-  {
-    title: 'What is a DCF?',
-    id: 'dcf-intro', // Matches the key in lessonContentData
-  },
-  {
-    title: 'Key Metrics',
-    id: 'key-metrics',
-  },
-  {
-    title: 'Forecasting',
-    id: 'forecasting',
-  },
-  {
-    title: 'Terminal Value',
-    id: 'terminal-value',
-  },
-  {
-    title: 'Final Valuation',
-    id: 'final-valuation',
-  },
-];
 
-// Generate the 30 step sections
-const generatedSidebarSteps = [];
-for (let i = 1; i <= 30; i++) {
-  generatedSidebarSteps.push({
-    title: `Step ${i}`,
-    id: `step-${i}`, // Matches the keys generated in lessonContentData
-  });
-}
+  export default function Sidebar({ onSectionChange, currentActiveStepId, currentStepContent }) {
 
-// Combine all sections into one array
-const sidebarSections = [...baseSidebarSections, ...generatedSidebarSteps];
+  const NAVBAR_HEIGHT = '70px';
 
-const Sidebar = ({ onSectionChange }) => {
-  // Initialize with 'dcf-intro' to match Module's default content.
-  // This ensures the correct quiz/textbox content shows up on initial load.
+  const baseSidebarSections = [
+    {
+      title: 'What is a DCF?',
+      id: 'dcf-intro',
+    },
+    {
+      title: 'Key Metrics',
+      id: 'key-metrics',
+    },
+    {
+      title: 'Forecasting',
+      id: 'forecasting',
+    },
+    {
+      title: 'Terminal Value',
+      id: 'terminal-value',
+    },
+    {
+      title: 'Final Valuation',
+      id: 'final-valuation',
+    },
+  ];
+
+  const generatedSidebarSteps = [];
+  for (let i = 1; i <= 30; i++) {
+    generatedSidebarSteps.push({
+      title: `Step ${i}`,
+      id: `step-${i}`,
+    });
+  }
+
+  const sidebarSections = [...baseSidebarSections, ...generatedSidebarSteps];
+
   const [activeSectionId, setActiveSectionId] = useState('dcf-intro');
 
   const handleSectionClick = (id) => {
     setActiveSectionId(id);
     if (onSectionChange) {
-      onSectionChange(id); // Inform the parent (Module) about the new active section
+      onSectionChange(id);
     }
   };
+
 
   return (
     <aside
@@ -60,41 +59,21 @@ const Sidebar = ({ onSectionChange }) => {
         height: `calc(100vh - ${NAVBAR_HEIGHT})`,
       }}
     >
-
-      {/* Navigation sections */}
       <nav
         style={{
           flexGrow: 1,
           overflowY: 'auto',
-          direction: 'ltr', // For scrollbar on left
-          scrollbarWidth: 'thin', // For Firefox
-          scrollbarColor: '#3498db #2c3e50', // For Firefox (thumb track)
-          '&::WebkitScrollbar': {
-            width: '8px',
-          },
-          '&::WebkitScrollbarTrack': {
-            backgroundColor: '#1f3a60',
-            borderRadius: '10px',
-          },
-          ' &::WebkitScrollbarThumb': {
-            backgroundColor: '#1f3a60',
-            borderRadius: '10px',
-            border: '2px solid #2c3e50',
-          },
-          '&::WebkitScrollbarThumb:hover': {
-            backgroundColor: '#1f3a60',
-          },
-          '&::WebkitScrollbarButton': {
-            display: 'none',
-          },
+          direction: 'ltr',
+          scrollbarWidth: 'thin',
+          scrollbarColor: '#3498db #2c3e50',
         }}
       >
         <ul
           className={styles.navList}
           style={{
-            direction: 'ltr', // Revert content direction
+            direction: 'ltr',
             paddingLeft: '0px',
-            paddingRight: '20px', // Space between content and scrollbar
+            paddingRight: '20px',
           }}
         >
           {sidebarSections.map((section) => (
@@ -112,6 +91,4 @@ const Sidebar = ({ onSectionChange }) => {
       </nav>
     </aside>
   );
-};
-
-export default Sidebar;
+}

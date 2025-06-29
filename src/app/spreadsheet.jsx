@@ -37,7 +37,7 @@ export default function Spreadsheet({highlightOn, setHighlightOn, dataLoading, h
                 justifyContent: 'center',
                 backgroundColor: '#f5f5f5',
                 border: '3px solid #1f3a60',
-                borderRadius: '0 0 8px 8px'
+                zIndex: '1',
             }}>
                 Loading spreadsheet...
             </div>
@@ -51,7 +51,7 @@ export default function Spreadsheet({highlightOn, setHighlightOn, dataLoading, h
                 backgroundColor: '#ffffff',
                 border: '3px solid #1f3a60',
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                borderRadius: '0 0 8px 8px',
+                //borderRadius: '0 0 8px 8px',
                 overflow: 'hidden',
             }}
         >

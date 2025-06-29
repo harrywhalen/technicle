@@ -4,7 +4,7 @@ import RightSide from "./rightside.jsx";
 import SpreadGang from "./spreadGang.jsx";
 import HintBox from "./hintbox.jsx";
 
-export default function Big3({currentStepContent, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn}) {
+export default function Big3({currentStepContent, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn, isCorrect, setIsCorrect, handleSubmit, selectedOption, setSelectedOption,}) {
 if (!currentStepContent) {
     return <div>Loading...</div>; // or null, or a spinner
   }
@@ -54,6 +54,11 @@ content={currentStepContent.textBoxContent}
 question={currentStepContent.quiz.question}
 options={currentStepContent.quiz.options}
 correctAnswer={currentStepContent.quiz.correctAnswer}
+isCorrect={isCorrect}
+setIsCorrect={setIsCorrect}
+handleSubmit={handleSubmit}
+selectedOption={selectedOption}
+setSelectedOption={setSelectedOption}
 />
 
 <div>
