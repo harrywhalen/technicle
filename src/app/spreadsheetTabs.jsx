@@ -20,7 +20,7 @@ export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChang
 
 
 
-  const [shimmerIntro, SetShimmerIntro] = useState(true);
+  const [shimmerIntro, SetShimmerIntro] = useState(false);
   const [shimmerInputs, SetShimmerInputs] = useState(false);
   const [shimmerProj, SetShimmerProj] = useState(false);
   const [shimmerVal, SetShimmerVal] = useState(false);

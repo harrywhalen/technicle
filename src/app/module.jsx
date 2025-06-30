@@ -62,6 +62,9 @@ export default function Module() {
       <Sidebar onSectionChange={setCurrentActiveStepId}
                 currentActiveStepId={currentActiveStepId}
                 currentStepContent={currentStepContent}
+                setCurrentActiveStepId={setCurrentActiveStepId}
+                lessonData = {lessonData}
+
       />
       <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
         <LessonName />
