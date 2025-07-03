@@ -4,7 +4,7 @@ import RightSide from "./rightside.jsx";
 import SpreadGang from "./spreadGang.jsx";
 import HintBox from "./hintbox.jsx";
 
-export default function Big3({currentStepContent, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn, isCorrect, setIsCorrect, handleSubmit, selectedOption, setSelectedOption,}) {
+export default function Big3({currentStepContent, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn, isCorrect, setIsCorrect, handleSubmit, selectedOption, setSelectedOption, refresh, sheetQuizCells, sheetBlankCells, handleTabChange, activeTab, sheetsData, setSheetsData, sheetsInitialData, setSheetsInitialData, sheetsDisplayData, setSheetsDisplayData,}) {
 if (!currentStepContent) {
     return <div>Loading...</div>; // or null, or a spinner
   }
@@ -28,6 +28,16 @@ gap: '10px',
 }}
 >
 
+  <div
+style={{
+display: 'flex',
+flexDirection: 'column',
+alignItems: 'flex-end',
+//justifyContent: 'center',
+gap: '0px',
+}}
+>
+
 <SpreadGang
 data = {data} 
 setData = {setData}
@@ -35,19 +45,34 @@ highlightOn = {highlightOn}
 setHighlightOn = {setHighlightOn}
 hintOn={hintOn}
 setHintOn={setHintOn}
+currentStepContent={currentStepContent}
+refresh={refresh}
+sheetQuizCells={sheetQuizCells}
+sheetBlankCells={sheetBlankCells}
+handleTabChange={handleTabChange}
+activeTab={activeTab}
+sheetsData={sheetsData}
+setSheetsData={setSheetsData}
+sheetsInitialData={sheetsInitialData}
+setSheetsInitialData={setSheetsInitialData}
+sheetsDisplayData={sheetsDisplayData}
+setSheetsDisplayData={setSheetsDisplayData}
 />
 
+<div>
+<HintBox
+hintOn={hintOn}
+setHintOn={setHintOn}
+hint={currentStepContent.hint} 
+/>
+</div>
 
 
-<div
-style={{
-display: 'flex',
-flexDirection: 'column',
-alignItems: 'center',
-//justifyContent: 'center',
-gap: '0px',
-}}
->
+</div>
+
+
+
+
 
   <RightSide  
 content={currentStepContent.textBoxContent} 
@@ -61,17 +86,11 @@ selectedOption={selectedOption}
 setSelectedOption={setSelectedOption}
 />
 
-<div>
-<HintBox
-hintOn={hintOn}
-setHintOn={setHintOn}
-/>
-</div>
 
 
 
 
-</div>
+
 </div>
 
 

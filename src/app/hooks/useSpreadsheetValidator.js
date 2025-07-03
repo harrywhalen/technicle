@@ -95,26 +95,42 @@ export const useSpreadsheetValidator = (hotRef) => {
   }, [hotRef, decodeAnswers]);
   
   // Check all test cells across all sheets
-  const validateAllCells = useCallback(() => {
+  const validateAllCells = useCallback((sheetKey = null) => {
+
+    const hot = hotRef.current?.hotInstance;
+  if (!hot || !encodedAnswersRef.current) return null;
+
     const correctAnswers = decodeAnswers(encodedAnswersRef.current);
     if (!correctAnswers) return;
     
-    let totalScore = 0;
-    let totalQuestions = 0;
+    const targetSheet = sheetKey || currentSheetRef.current;
+    let score = 0;
+    let total = 0;
     
-    // Count all answers across all sheets
-    Object.keys(correctAnswers).forEach(key => {
-      totalQuestions++;
-      // Note: We can't check cells from other sheets since they're not loaded
-      // This would need to be called when each sheet is active, or we'd need
-      // to store user answers separately
-    });
-    
-    console.log('Total questions across all sheets:', totalQuestions);
-    
-    // For now, just validate current sheet
-    return validateCurrentSheet();
-  }, [decodeAnswers, validateCurrentSheet]);
+  Object.keys(correctAnswers).forEach(key => {
+    if (key.startsWith(`${targetSheet}_`)) {
+      const [, coordinates] = key.split('_');
+      const [row, col] = coordinates.split(',').map(Number);
+      const cellValue = hot.getDataAtCell(row, col);
+      const correctValue = correctAnswers[key];
+
+      total++;
+      if (cellValue?.toString().trim() === correctValue?.toString().trim()) {
+        score++;
+        hot.setCellMeta(row, col, 'className', 'correct-cell');
+      } else {
+        hot.setCellMeta(row, col, 'className', 'incorrect-cell');
+      }
+    }
+  });
+
+  hot.render();
+  return {
+    score,
+    total,
+    percentage: total > 0 ? Math.round((score / total) * 100) : 0
+  };
+}, [hotRef, decodeAnswers]);
   
   // Get current score for current sheet only
   const getScore = useCallback(() => {
