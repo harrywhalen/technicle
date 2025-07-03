@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 
-export default function HintBox({ hintOn, setHintOn }) { // Now accepts a 'content' prop
+export default function HintBox({ hintOn, setHintOn, hint }) { // Now accepts a 'content' prop
         if (!hintOn) return null; // Don't render if hintOn is false
     return(
         <div
@@ -9,7 +9,6 @@ export default function HintBox({ hintOn, setHintOn }) { // Now accepts a 'conte
                 width: '400px', // Set to 300px for consistency with the right column in Big3
                 marginTop: '30px',
                 marginLeft: '0px',
-                marginRight: '110px',
             }}
         >
             <div
@@ -29,7 +28,7 @@ export default function HintBox({ hintOn, setHintOn }) { // Now accepts a 'conte
                     borderRadius: '10px',
                 }}
             >
-                {"Hint"} {/* Displays the content passed via prop */}
+                {hint} {/* Displays the content passed via prop */}
             </div>
 
         </div>

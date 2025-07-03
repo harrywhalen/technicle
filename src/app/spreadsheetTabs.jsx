@@ -10,7 +10,7 @@ const spreadsheetTabs = [
   { name: "Assumptions", id: "sensitivity" },
 ];
 
-export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChange }) {
+export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChange, }) {
   const [activeTab, setActiveTab] = useState(initialActiveTab);
 
   const handleTabClick = (tabId) => {
