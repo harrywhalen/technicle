@@ -85,32 +85,6 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
     <Lightbulb color="#FFFFFF" size={24} />
     </button>
 
-        {/* New Check Button */}
-        <button
-        type = "button"
-            onClick={() => {
-                if (checkAllAnswers) {
-                    checkAllAnswers(); // This will highlight cells without showing score
-                }
-            }}
-        style={{
-            backgroundColor: '#28a745', // Green background for check button
-            color: 'white', // White text
-            border: 'none', // No border
-            borderRadius: '50%', // Rounded corners for button
-            cursor: 'pointer', // Hand cursor on hover
-            fontSize: '1em',
-            fontWeight: 'bold',
-            display: 'block', // Make button a block element
-            margin: '0 auto', // Center the button horizontally
-            transition: 'background-color 0.3s ease', // Smooth transition on hover
-            width: '50px',
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#218838'} // Darker green on hover
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#28a745'} // Original green
-    >
-    <Check color="#FFFFFF" size={24} />
-    </button>
 
         </div>
     </div>

@@ -1,102 +1,149 @@
 "use client";
 import React, { useState } from 'react';
 
-export default function QuizBox({ question, options, correctAnswer, isCorrect, setIsCorrect, handleSubmit, selectedOption, setSelectedOption, }) {
-    // State to manage the selected radio button value
+export default function QuizBox({
+  question,
+  options,
+  correctAnswer,
+  isCorrect,
+  setIsCorrect,
+  handleSubmit,
+  selectedOption,
+  setSelectedOption,
+  Qtype,
+  nextReady,
+  setNextReady,
+  advanceStep,
+}) {
 
 
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
-    // Handler for when a radio button is changed
-    const handleOptionChange = (event) => {
-        setSelectedOption(event.target.value);
-    };
+  return (
+    <div>
+      <style>
+        {`
+          @keyframes shimmer {
+            0% {
+              left: -75%;
+            }
+            100% {
+              left: 125%;
+            }
+          }
+        `}
+      </style>
 
-
-
-    return(
+      <div
+        style={{
+          width: '350px',
+          height: '100%',
+        }}
+      >
         <div
-            style={{
-                width: '350px', // Matches the width of your TextBox for consistent column layout
-                height: '100%',
-            }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#ffffff',
+            borderColor: '#1f3a60',
+            borderWidth: '3px',
+            borderStyle: 'solid',
+            color: '#1f3a60',
+            padding: '10px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            borderRadius: '10px 10px 0px 0px',
+          }}
         >
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: '#ffffff', // White background as in mockup
-                    borderColor: '#1f3a60', // Dark blue border
-                    borderWidth: '3px', // Changed to 3px to match mockup
-                    borderStyle: 'solid',
-                    color: '#1f3a60', // Dark blue text color
-                    padding: '10px', // Padding inside the box
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow
-                    borderRadius: '10px 10px 0px 0px',
-                    
-                }}
-            >
-<h4
-style = {{fontSize: '1.5em',}}
->
-    {question || "No quiz question provided."} {/* If 'question' prop is empty, show default */}
-</h4>
+          <h4 style={{ fontSize: '1.5em' }}>
+            {question || "No quiz question provided."}
+          </h4>
 
-{options && options.length > 0 ? ( // Check if 'options' array exists and has items
-    options.map((option, index) => ( // Loop through the 'options' array to create radio buttons
-        <label key={index}>
-            <input
-                type="radio"
-                name="dcf_quiz_option" // IMPORTANT: Changed 'dcf_use' to 'dcf_quiz_option' for better uniqueness
-                                       // This name must be the same for all radios in a *single quiz group*.
-                value={option}
-                checked={selectedOption === option}
-                onChange={handleOptionChange}
-                style={{ marginRight: '8px',  fontSize: '1.1em',}}
-            />
-            {option} {/* Display the current option text */}
-        </label>
-    ))
-) : (
-    <p style={{ fontSize: '0.9em', color: '#888' }}>No options available for this quiz.</p>
-)}
-<button
-                        type="submit"
-                        onClick={handleSubmit}
-                        style={{
-                            backgroundColor: '#3498db', // Blue background for button
-                            color: 'white', // White text
-                            padding: '10px 25px', // Padding inside button
-                            border: 'none', // No border
-                            borderRadius: '5px', // Rounded corners for button
-                            cursor: 'pointer', // Hand cursor on hover
-                            fontSize: '1em',
-                            fontWeight: 'bold',
-                            display: 'block', // Make button a block element
-                            marginTop: '15px',
-                            transition: 'background-color 0.3s ease', // Smooth transition on hover
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#297bbd'} // Darker blue on hover
-                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#3498db'} // Original blue
-                    >
-                        Submit
-                    </button>
-            </div>
-            {/* The thin line below the box from your mockup */}
-            <div
-                style={{
-                    height: '3px', // Increased height to match mockup's bottom line
-                    borderRadius: '0px 0px 15px 15px',
-                    backgroundColor:
-                    isCorrect === true
-                        ? '#00bf63'
-                        : isCorrect === false
-                        ? '#ffdddd' // ❌ Light red if incorrect
-                        : '#1f3a60', // ⚪ Default white
-                        }}
+          {Qtype === "MCQ" && options && options.length > 0 ? (
+            options.map((option, index) => (
+              <label key={index}>
+                <input
+                  type="radio"
+                  name="dcf_quiz_option"
+                  value={option}
+                  checked={selectedOption === option}
+                  onChange={handleOptionChange}
+                  style={{ marginRight: '8px', fontSize: '1.1em' }}
+                />
+                {option}
+              </label>
+            ))
+          ) : Qtype === "MCQ" ? (
+            <p style={{ fontSize: '0.9em', color: '#888' }}>
+              No options available for this quiz.
+            </p>
+          ) : null}
+
+          {(Qtype === "MCQ" || Qtype === "cells" || nextReady) && (
+            <button
+              type="submit"
+              onClick={nextReady ? advanceStep : handleSubmit}
+              style={{
+                backgroundColor: nextReady ? '#00bfff' : '#3498db',
+                color: 'white',
+                padding: '10px 25px',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                fontSize: '1em',
+                fontWeight: 'bold',
+                display: 'block',
+                marginTop: '15px',
+                transition: 'background-color 0.3s ease',
+                position: 'relative',
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = '#297bbd')
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor =  nextReady ? '#00bfff' : '#3498db')
+              }
             >
-            </div>
+              {nextReady ? 'Next' : 'Submit'}
+
+              {nextReady && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: "-75%",
+                    height: "100%",
+                    width: "50%",
+                    background:
+                      "linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)",
+                    transform: "skewX(-20deg)",
+                    animation: "shimmer 2s infinite",
+                    zIndex: 1,
+                    pointerEvents: "none",
+                  }}
+                />
+              )}
+            </button>
+          )}
         </div>
-    );
+
+        {/* Bottom status line */}
+        <div
+          style={{
+            height: '3px',
+            borderRadius: '0px 0px 15px 15px',
+            backgroundColor:
+              isCorrect === true
+                ? '#00bf63'
+                : isCorrect === false
+                ? '#ffdddd'
+                : '#1f3a60',
+          }}
+        />
+      </div>
+    </div>
+  );
 }
