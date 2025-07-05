@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useImperativeHandle, forwardRef, } from 'react';
 import Spreadsheet from "./spreadsheet.jsx";
 import Spreadbutt from "./spreadbutt.jsx";
 import SpreadsheetTabs from "./spreadsheetTabs.jsx";
@@ -8,7 +8,7 @@ import { db } from "../../lib/firebase.js";
 import { useSpreadsheetValidator } from './hooks/useSpreadsheetValidator';
 import lessonData from "./data/lessondata.json"; // Import the JSON file
 
-export default function SpreadGang({
+const SpreadGang = forwardRef(({
   highlightOn, setHighlightOn,
   hintOn, setHintOn,
   currentStepContent, refresh,
@@ -16,8 +16,9 @@ export default function SpreadGang({
   activeTab, sheetsData, setSheetsData,
   sheetsInitialData, setSheetsInitialData,
   sheetsDisplayData, setSheetsDisplayData,
-  sheetBlankCells,
-}) {
+  sheetBlankCells, Qtype, TargetTab, nextReady,
+  setNextReady, currentActiveStepId,
+}, ref) => {
   const sheetMappings = {
     intro: {
       name: "Summary",
@@ -140,6 +141,7 @@ export default function SpreadGang({
     const result = validateAllCells(activeTab);
     if (result) {
       console.log(`Quiz Score: ${result.score}/${result.total} correct (${result.percentage}%)`);
+      setTimeout(() => setNextReady(result.percentage === 100), 0);
     }
   };
 
@@ -171,11 +173,20 @@ export default function SpreadGang({
     }));
   };
 
+    useImperativeHandle(ref, () => ({
+    checkAllAnswers,
+    getCurrentScore,
+  }));
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <SpreadsheetTabs
         initialActiveTab="intro"
         onTabChange={handleTabChange}
+        TargetTab={TargetTab}
+        nextReady={nextReady}
+        setNextReady={setNextReady}
+        currentActiveStepId={currentActiveStepId}
       />
       <Spreadsheet
         data={sheetsDisplayData[activeTab] || []}
@@ -200,4 +211,6 @@ export default function SpreadGang({
       />
     </div>
   );
-}
+});
+
+export default SpreadGang;

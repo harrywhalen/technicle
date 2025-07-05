@@ -7,6 +7,12 @@ import lessonData from "./data/lessondata.json"; // Import the JSON file
 import { useSpreadsheetValidator } from './hooks/useSpreadsheetValidator';
 
 export default function Module() {
+
+
+  const [nextReady, setNextReady] = useState(false);
+
+  const spreadGangRef = useRef(null);
+
   const [highlightOn, setHighlightOn] = useState(false);
   const [hintOn, setHintOn] = useState(false);
 
@@ -21,27 +27,39 @@ export default function Module() {
   const hotTableComponent = useRef(null);
 const { setCurrentSheet } = useSpreadsheetValidator(hotTableComponent);
 
-  
+const handleCheckAnswers = () => {
+  if (spreadGangRef.current) {
+    spreadGangRef.current.checkAllAnswers();
+  }
+};
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+const handleSubmit = (event) => {
+  event.preventDefault();
 
+  if (Qtype === "MCQ") {
     const result = selectedOption === correctAnswer;
     setIsCorrect(result);
-    console.log("Selected option:", selectedOption);
-    console.log("Correct answer:", correctAnswer);
-    console.log("Is correct?", result);
-  };
 
-let Quizcel_1_tab = currentStepContent?.Quizcel_1.tab;
-let Quizcel_1_Row = currentStepContent?.Quizcel_1.row;
-let Quizcel_1_column = currentStepContent?.Quizcel_1.column;
+  } else {
+    handleCheckAnswers();
+  console.log("AAAAAAHHHHHHH", Qtype)
+  }
+};
 
-let Quizcel_2_tab = currentStepContent?.Quizcel_2.tab;
-let Quizcel_2_Row = currentStepContent?.Quizcel_2.row;
-let Quizcel_2_column = currentStepContent?.Quizcel_2.column;
+let Qtype = currentStepContent?.Qtype
+let TargetTab = currentStepContent?.targetTab
 
 const sheetQuizCells = useMemo(() => {
+  if (Qtype !== "cells") {
+    return {
+      intro: [],
+      inputs: [],
+      projections: [],
+      valuations: [],
+      sensitivity: []
+    };
+  }
+
   const result = {
     intro: [],
     inputs: [],
@@ -69,9 +87,20 @@ const sheetQuizCells = useMemo(() => {
   }
 
   return result;
-}, [currentStepContent]);
+}, [currentStepContent, Qtype]);
+
 
 const sheetBlankCells = useMemo(() => {
+  if (Qtype !== "blanks") {
+    return {
+      intro: [],
+      inputs: [],
+      projections: [],
+      valuations: [],
+      sensitivity: []
+    };
+  }
+
   const result = {
     intro: [],
     inputs: [],
@@ -82,19 +111,21 @@ const sheetBlankCells = useMemo(() => {
 
   const tabsToInclude = new Set();
 
-  if (currentStepContent?.Quizcel_1?.tab)
-    tabsToInclude.add(currentStepContent.Quizcel_1.tab);
+  if (currentStepContent?.Blankcel_1?.tab)
+    tabsToInclude.add(currentStepContent.Blankcel_1.tab);
 
   for (const tab of tabsToInclude) {
     result[tab] = [];
   }
-    if (currentStepContent.Blankcel_1) {
+
+  if (currentStepContent.Blankcel_1) {
     const { tab, row, column } = currentStepContent.Blankcel_1;
     result[tab]?.push({ row, col: column });
   }
 
   return result;
-}, [currentStepContent]);
+}, [currentStepContent, Qtype]);
+
 
 
       
@@ -155,9 +186,10 @@ const sheetBlankCells = useMemo(() => {
         console.log("Reset to:", resetDisplayData);
     };
 
-  const advanceStepIfCorrect = () => {
+  const advanceStep = () => {
     setCurrentActiveStepId((prevId) => {
       const nextStep = (parseInt(prevId) + 1).toString();
+      setNextReady(false)
       if (lessonData[nextStep]) {
         console.log("Advancing to step:", nextStep);
         return nextStep;
@@ -179,7 +211,7 @@ const sheetBlankCells = useMemo(() => {
   // Advance step when correct
   useEffect(() => {
     if (isCorrect === true) {
-      advanceStepIfCorrect();
+      setNextReady(true);
     }
   }, [isCorrect]);
 
@@ -227,6 +259,13 @@ const sheetBlankCells = useMemo(() => {
             setSheetsInitialData={setSheetsInitialData}
             sheetsDisplayData={sheetsDisplayData}
             setSheetsDisplayData={setSheetsDisplayData}
+            Qtype={Qtype}
+            TargetTab={TargetTab}
+            nextReady={nextReady}
+            setNextReady={setNextReady}
+            advanceStep={advanceStep}
+            currentActiveStepId={currentActiveStepId}
+            ref={spreadGangRef}
           />
         ) : (
           <p style={{ color: '#1f3a60', textAlign: 'center', marginTop: '50px' }}>

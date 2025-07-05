@@ -10,13 +10,19 @@ const spreadsheetTabs = [
   { name: "Assumptions", id: "sensitivity" },
 ];
 
-export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChange, }) {
+export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChange, TargetTab, setNextReady, currentActiveStepId}) {
   const [activeTab, setActiveTab] = useState(initialActiveTab);
 
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId);
-    if (onTabChange) onTabChange(tabId);
-  };
+const handleTabClick = (tabId) => {
+  setActiveTab(tabId);
+  
+  if (onTabChange) onTabChange(tabId);
+
+  if (tabId === TargetTab) {
+    setNextReady(true);
+  }
+};
+
 
 
 
@@ -26,6 +32,22 @@ export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChang
   const [shimmerVal, SetShimmerVal] = useState(false);
   const [shimmerSens, setShimmerSens] = useState(false);
   const [shimmerTab, setShimmerTab] = useState(false);
+
+    useEffect(() => {
+    setNextReady(false);
+    setShimmerTab(null);
+  }, [currentActiveStepId]);
+
+  useEffect(() => {
+    if (TargetTab === 'valuations') {
+      SetShimmerVal(true);
+    }
+
+    if (activeTab === 'valuations') {
+      SetShimmerVal(false);
+    }
+  }, [TargetTab, activeTab]);
+
 
   useEffect(() => {
     if (shimmerIntro) setShimmerTab("intro");

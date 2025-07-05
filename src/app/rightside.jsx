@@ -3,7 +3,8 @@ import QuizBox from "./quizbox.jsx";
 
 
 
-export default function RightSide({content, question, options, correctAnswer, isCorrect, setIsCorrect, handleSubmit, selectedOption, setSelectedOption,}) {
+export default function RightSide({content, question, options, correctAnswer, isCorrect, setIsCorrect, handleSubmit, selectedOption, setSelectedOption, Qtype, 
+  nextReady, setNextReady, advanceStep}) {
   return (
     <div
     style={{
@@ -45,6 +46,10 @@ export default function RightSide({content, question, options, correctAnswer, is
         handleSubmit={handleSubmit}
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
+        Qtype={Qtype}
+        nextReady={nextReady}
+        setNextReady={setNextReady}
+        advanceStep={advanceStep}
 
     />
 
