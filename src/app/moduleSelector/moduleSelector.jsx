@@ -6,7 +6,7 @@ import DaProg from "./daProg.jsx";
 import ModGrid from "./modGrid.jsx";
 
 const modules = [
-  { id: 1, title1: "React Basics", title2: "React Basics", subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 1, title1: "TEST MODULE", title2: "React Basics", subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
   { id: 2, title1: "State Management", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
   { id: 3, title1: "Hooks",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
   { id: 4, title1: "Routing", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },

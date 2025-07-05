@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { signInWithPopup, signInWithRedirect, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
 import { auth, googleProvider, db } from '../../../lib/firebase';
@@ -12,6 +13,7 @@ export default function EntryBoxes({top}) {
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleUserData = async (user) => {
     try {
@@ -60,6 +62,9 @@ export default function EntryBoxes({top}) {
       
       await handleUserData(result.user);
       console.log("User authenticated:", result.user);
+      
+      // Redirect to main page after successful authentication
+      router.push('/moduleSelector');
     } catch (error) {
       console.error("Email auth error:", error);
       setError(error.message);
@@ -76,6 +81,9 @@ export default function EntryBoxes({top}) {
       const result = await signInWithPopup(auth, googleProvider);
       await handleUserData(result.user);
       console.log("Google sign-in successful:", result.user);
+      
+      // Redirect to main page after successful authentication
+      router.push('/moduleSelector');
     } catch (error) {
       console.error("Google sign-in error:", error);
       
