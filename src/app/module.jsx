@@ -5,8 +5,9 @@ import LessonName from "./lessonName.jsx";
 import Big3 from "./big3.jsx";
 import lessonData from "./data/lessondata.json"; // Import the JSON file
 import { useSpreadsheetValidator } from './hooks/useSpreadsheetValidator';
+import confetti from 'canvas-confetti';
 
-export default function Module() {
+export default function Module({setModDone}) {
 
 
   const [nextReady, setNextReady] = useState(false);
@@ -27,6 +28,50 @@ export default function Module() {
   const hotTableComponent = useRef(null);
 const { setCurrentSheet } = useSpreadsheetValidator(hotTableComponent);
 
+  const highestStepIdRef = useRef(1);
+  const TweakerStep = useRef(1);
+
+  const totalSteps = useMemo(() => Object.keys(lessonData).length, []);
+
+
+  useEffect(() => {
+    if (currentActiveStepId >= highestStepIdRef.current) {
+      highestStepIdRef.current = currentActiveStepId;
+    }
+  }, [currentActiveStepId]);
+
+const triggerConfetti = () => {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.8, x: 0.8 },
+      colors: ['#1f3a60', '#8be2ff', '#28518d', '#00bfff'],
+  });
+};
+
+  const playCorrectSoundMCQ = () => {
+    const audio = new Audio("/sounds/correct.mp3");
+    audio.play().catch(error => {
+      console.error("Error playing sound:", error);
+    });
+  };
+
+      const playWrongSoundMCQ = () => {
+  const audio = new Audio("/sounds/wrong.mp3");
+  audio.play().catch(error => {
+    console.error("Error playing sound:", error);
+  });
+};
+
+const playComplete = () => {
+  setTimeout(() => {
+    const audio = new Audio("/sounds/complete.mp3");
+    audio.play().catch(error => {
+      console.error("Error playing sound:", error);
+    });
+  }, 200); // 250 milliseconds = 0.25 seconds
+};
+
 const handleCheckAnswers = () => {
   if (spreadGangRef.current) {
     spreadGangRef.current.checkAllAnswers();
@@ -35,7 +80,8 @@ const handleCheckAnswers = () => {
 
 const handleSubmit = (event) => {
   event.preventDefault();
-
+  console.log("LOOKY HERE", currentActiveStepId)
+  
   if (Qtype === "MCQ") {
     const result = selectedOption === correctAnswer;
     setIsCorrect(result);
@@ -195,6 +241,8 @@ const sheetBlankCells = useMemo(() => {
         return nextStep;
       } else {
         console.log("No more steps.");
+        playComplete();
+        setModDone(true);
         return prevId; // Stay on current step
       }
     }); 
@@ -212,6 +260,14 @@ const sheetBlankCells = useMemo(() => {
   useEffect(() => {
     if (isCorrect === true) {
       setNextReady(true);
+      playCorrectSoundMCQ();
+      triggerConfetti();
+    }
+  }, [isCorrect]);
+
+    useEffect(() => {
+    if (isCorrect === false) {
+      playWrongSoundMCQ();
     }
   }, [isCorrect]);
 
@@ -232,10 +288,10 @@ const sheetBlankCells = useMemo(() => {
                 currentStepContent={currentStepContent}
                 setCurrentActiveStepId={setCurrentActiveStepId}
                 lessonData = {lessonData}
+                highestStep={highestStepIdRef.current}
 
       />
       <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-        <LessonName />
         {currentStepContent ? (
           <Big3
             currentStepContent={currentStepContent}
@@ -266,6 +322,9 @@ const sheetBlankCells = useMemo(() => {
             advanceStep={advanceStep}
             currentActiveStepId={currentActiveStepId}
             ref={spreadGangRef}
+            playSound={playCorrectSoundMCQ}
+            highestStep={highestStepIdRef.current}
+            totalSteps={totalSteps}
           />
         ) : (
           <p style={{ color: '#1f3a60', textAlign: 'center', marginTop: '50px' }}>

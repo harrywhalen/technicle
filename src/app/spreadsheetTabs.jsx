@@ -1,6 +1,7 @@
 
 "use client";
 import React, { useState, useEffect } from "react";
+import confetti from 'canvas-confetti';
 
 const spreadsheetTabs = [
   { name: "Summary", id: "intro" },
@@ -13,6 +14,22 @@ const spreadsheetTabs = [
 export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChange, TargetTab, setNextReady, currentActiveStepId}) {
   const [activeTab, setActiveTab] = useState(initialActiveTab);
 
+    const triggerConfettiT = () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6, x: 0.4 },
+      colors: ['#1f3a60', '#8be2ff', '#28518d', '#00bfff'],
+    });
+  };
+
+    const playCorrectSoundT = () => {
+  const audio = new Audio("/sounds/correct.mp3");
+  audio.play().catch(error => {
+    console.error("Error playing sound:", error);
+  });
+};
+
 const handleTabClick = (tabId) => {
   setActiveTab(tabId);
   
@@ -20,6 +37,8 @@ const handleTabClick = (tabId) => {
 
   if (tabId === TargetTab) {
     setNextReady(true);
+    playCorrectSoundT();
+    triggerConfettiT();
   }
 };
 

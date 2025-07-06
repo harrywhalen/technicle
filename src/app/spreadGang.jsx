@@ -7,6 +7,8 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../lib/firebase.js";
 import { useSpreadsheetValidator } from './hooks/useSpreadsheetValidator';
 import lessonData from "./data/lessondata.json"; // Import the JSON file
+import LessonName from "./lessonName.jsx";
+import confetti from 'canvas-confetti';
 
 const SpreadGang = forwardRef(({
   highlightOn, setHighlightOn,
@@ -17,7 +19,7 @@ const SpreadGang = forwardRef(({
   sheetsInitialData, setSheetsInitialData,
   sheetsDisplayData, setSheetsDisplayData,
   sheetBlankCells, Qtype, TargetTab, nextReady,
-  setNextReady, currentActiveStepId,
+  setNextReady, currentActiveStepId, playSound
 }, ref) => {
   const sheetMappings = {
     intro: {
@@ -62,6 +64,29 @@ const SpreadGang = forwardRef(({
       );
     });
   };
+
+  const triggerConfettiC = () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6, x: 0.4 },
+        colors: ['#1f3a60', '#8be2ff', '#28518d', '#00bfff'],
+    });
+  };
+
+    const playCorrectSoundC = () => {
+    const audio = new Audio("/sounds/correct.mp3");
+    audio.play().catch(error => {
+      console.error("Error playing sound:", error);
+    });
+  };
+
+      const playWrongSoundC = () => {
+  const audio = new Audio("/sounds/wrong.mp3");
+  audio.play().catch(error => {
+    console.error("Error playing sound:", error);
+  });
+};
 
   useEffect(() => {
     const fetchData = async () => {
@@ -137,13 +162,21 @@ const SpreadGang = forwardRef(({
     setCorrectAnswers(allCorrectAnswers);
   }, [sheetQuizCells, sheetsData, setCorrectAnswers]);
 
-  const checkAllAnswers = () => {
-    const result = validateAllCells(activeTab);
-    if (result) {
-      console.log(`Quiz Score: ${result.score}/${result.total} correct (${result.percentage}%)`);
-      setTimeout(() => setNextReady(result.percentage === 100), 0);
+const checkAllAnswers = () => {
+  const result = validateAllCells(activeTab);
+  if (result) {
+    console.log(`Quiz Score: ${result.score}/${result.total} correct (${result.percentage}%)`);
+    const isPerfectScore = result.percentage === 100;
+    setTimeout(() => setNextReady(isPerfectScore), 0);
+    if (isPerfectScore) {
+      playCorrectSoundC();
+      triggerConfettiC();
     }
-  };
+    else 
+    playWrongSoundC();
+  }
+};
+
 
   const getCurrentScore = () => {
     const result = getScore();

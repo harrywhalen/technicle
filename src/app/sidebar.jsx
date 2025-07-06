@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect,} from 'react';
 import styles from './Sidebar.module.css';
 import lessonData from "./data/lessondata.json"; // Import the JSON file
 
@@ -31,15 +31,24 @@ const sidebarSections = [
 
 
 
-const Sidebar = ({ onSectionChange,currentActiveStepId, setCurrentActiveStepId }) => {
+const Sidebar = ({ onSectionChange,currentActiveStepId, setCurrentActiveStepId, highestStep}) => {
   // Initialize with 'dcf-intro' to match Module's default content.
   // This ensures the correct quiz/textbox content shows up on initial load.
 
 
+
+
+
   const handleSectionClick = (id) => {
+    const idNum = parseInt(id,10);
+  if (idNum <= highestStep) {
     setCurrentActiveStepId(id);
+
     if (onSectionChange) {
       onSectionChange(id); // Inform the parent (Module) about the new active section
+    }
+    console.log("FUCK", highestStep)
+    console.log("SHIT", currentActiveStepId)
     }
   };
 
@@ -92,7 +101,7 @@ const Sidebar = ({ onSectionChange,currentActiveStepId, setCurrentActiveStepId }
             <li key={section.id} className={styles.navItem}>
               <div
                 onClick={() => handleSectionClick(section.id)}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', fontSize: '20px' }}
                 className={`${styles.navLink} ${currentActiveStepId === section.id ? styles.active : ''}`}
               >
                 {section.title}
