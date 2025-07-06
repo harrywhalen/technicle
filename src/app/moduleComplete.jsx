@@ -1,7 +1,7 @@
 import TextBox from "./textbox.jsx";
 import QuizBox from "./quizbox.jsx";
 
-export default function ModComplete() {
+export default function ModComplete({setModDone}) {
   return (
     <div
           style={{
@@ -91,6 +91,7 @@ export default function ModComplete() {
           }}
         >
           <button
+            onClick={() => setModDone(false)}
             style={{
               height: '60px',
               width: '45%',
@@ -108,6 +109,7 @@ export default function ModComplete() {
           </button>
 
           <button
+            //onClick= route to modules}
             style={{
               height: '60px',
               width: '45%',
@@ -121,7 +123,7 @@ export default function ModComplete() {
               boxShadow: '0 4px 80px rgba(0, 0, 0, 0.26)',
             }}
           >
-            Next Lesson
+            Modules
           </button>
         </div>
       </div>
@@ -146,6 +148,7 @@ export default function ModComplete() {
 >
 
 <input
+type="text" placeholder="   Enter Feedback Here!"
     style={{
     position: 'absolute',
     height: '48px',

@@ -1,8 +1,10 @@
 "use client";
 import React, { forwardRef } from 'react';
 import RightSide from "./rightside.jsx";
+import LeftSide from "./leftSide.jsx";
 import SpreadGang from "./spreadGang.jsx";
 import HintBox from "./hintbox.jsx";
+
 
 const Big3 = forwardRef((
   {
@@ -35,6 +37,10 @@ const Big3 = forwardRef((
     setNextReady,
     advanceStep,
     currentActiveStepId,
+    playSound,
+    highestStep,
+    totalSteps,
+    TweakerStep,
   },
   ref  // <-- the forwarded ref is the 2nd parameter
 ) => {
@@ -46,30 +52,29 @@ const Big3 = forwardRef((
     <div
       style={{
         height: 'auto',
-        width: '1590px',
+        width: '1600px',
         backgroundColor: '#e6f4f9',
         padding: '20px',
         marginLeft: '180px',
         borderRadius: '15px',
         boxShadow: '0 4px 18px rgba(0,0,0,0.1)',
+        marginTop: '100px',
       }}
     >
       <div
         style={{
           display: 'flex',
           flexDirection: 'row',
-          gap: '10px',
+          gap: '15px',
         }}
       >
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'flex-end',
-            gap: '0px',
           }}
         >
-          <SpreadGang
+          <LeftSide
             data={data}
             setData={setData}
             highlightOn={highlightOn}
@@ -93,12 +98,12 @@ const Big3 = forwardRef((
             nextReady={nextReady}
             setNextReady={setNextReady}
             currentActiveStepId={currentActiveStepId}
-            ref={ref}  // <-- forward ref here
+            ref={ref} // <-- forward ref here
+            playSound={playSound}
+            highestStep={highestStep}
+            totalSteps={totalSteps}
           />
 
-          <div>
-            <HintBox hintOn={hintOn} setHintOn={setHintOn} hint={currentStepContent.hint} />
-          </div>
         </div>
 
         <RightSide

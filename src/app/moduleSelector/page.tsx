@@ -24,7 +24,7 @@ export default function Home() {
         <TBL/>
       <MS/>
       </div>
-      <Bottom/>
+
     </div>
   );
 }

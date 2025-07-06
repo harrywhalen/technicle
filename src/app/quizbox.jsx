@@ -135,12 +135,7 @@ export default function QuizBox({
           style={{
             height: '3px',
             borderRadius: '0px 0px 15px 15px',
-            backgroundColor:
-              isCorrect === true
-                ? '#00bf63'
-                : isCorrect === false
-                ? '#ffdddd'
-                : '#1f3a60',
+            backgroundColor: '#1f3a60',
           }}
         />
       </div>

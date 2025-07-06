@@ -11,8 +11,8 @@ export default function RightSide({content, question, options, correctAnswer, is
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginRight: '55px',
-    marginLeft: '35px',
+    marginRight: '15px',
+    marginLeft: '25px',
   
     height: 'auto',
     backgroundColor: '#ffffff',

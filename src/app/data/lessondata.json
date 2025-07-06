@@ -1,6 +1,6 @@
 {
     "1": {
-      "name": "intro",
+      "name": "Intro",
       "textBoxContent": "This is a DCF, or discounted cash flow analysis—a valuation method used to estimate the intrinsic value of an asset based on its expected future cash flows. By projecting those cash flows and discounting them back to present value using a rate that reflects the risk of the investment, a DCF helps determine whether an asset is undervalued or overvalued relative to its current price.",
       "hint":"shling",
       "Qtype": "MCQ",
@@ -27,7 +27,7 @@
       }
     },
     "2": {
-      "name": "fuck",
+      "name": "Income Statement",
       "textBoxContent": "Key metrics like Net Sales, COGS, OPEX, and EBITDA are the building blocks of financial projections. Understanding how they relate to each other is crucial.",
       "hint":"shling",
       "Qtype": "cells",
