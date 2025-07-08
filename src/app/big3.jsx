@@ -1,7 +1,7 @@
 "use client";
 import React, { forwardRef } from 'react';
 import RightSide from "./rightside.jsx";
-import LeftSide from "./leftSide.jsx";
+import LeftSide from "./leftside.jsx";
 import SpreadGang from "./spreadGang.jsx";
 import HintBox from "./hintbox.jsx";
 

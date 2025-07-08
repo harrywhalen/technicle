@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./backslider.css";
+import "./backSlider.css";
 
 const images = [
   "/3cfbef92-0d71-4e0f-8365-2b3e4ad8a056.jpeg",
