@@ -5,121 +5,77 @@ export default function FeedbackPLZ() {
   return (
     <div
       style={{
-        height: '100px',
+        padding: '2rem 1rem',
         width: '100%',
         backgroundColor: '#1f3a60',
         color: 'white',
-        fontSize: '20px',
+        fontSize: '1.25rem', // 20px
         fontWeight: 'bold',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
         flexDirection: 'column',
-        gap: '10px',
+        gap: '1rem',
+        boxSizing: 'border-box',
       }}
     >
-
       <div
-      style={{
-        backgroundColor: '#1f3a60',
-        color: 'white',
-        fontSize: '20px',
-        fontWeight: 'bold',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        //gap: '20px',
-    }}
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
       >
-      We want your feedback!
-
+        <span
+        style={{
+          marginRight: '1rem',
+        }}
+        >We want your feedback!</span>
 
         <input
           type="text"
-            style={{
-                height: '30px',
-                width: '250px',
-                backgroundColor: '#1f3a60',
-                borderTop: '1px solid #ffffff',
-                borderLeft: '1px solid #ffffff',
-                borderRight: '1px solid ',
-                borderBottom: '1px solid #ffffff',
-                color: 'white',
-                fontSize: '14px',
-                fontWeight: 'bold',
-                marginLeft: '20px',
-            }}
-        >
-
-        </input>
-
+          style={{
+            flex: '1 1 250px',
+            maxWidth: '300px',
+            padding: '0.5rem',
+            backgroundColor: '#1f3a60',
+            border: '1px solid #ffffff',
+            color: 'white',
+            fontSize: '0.875rem',
+            fontWeight: 'bold',
+            borderRadius: '0.5rem 0 0 0.5rem',
+          }}
+        />
 
         <button
-            style={{
-                height: '34px',
-                width: '55px',
-                backgroundColor: '#3498db',
-                borderTop: '1px solid #ffffff',
-                borderRight: '1px solid #ffffff',
-                borderLeft: '1px solid #ffffff',
-                borderBottom: '1px solid #ffffff',
-                borderRadius: '0px 10px 10px 0px',
-                color: 'white',
-                fontSize: '16px',
-                fontWeight: 'bold',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
+          style={{
+            padding: '0.5rem 1rem',
+            backgroundColor: '#3498db',
+            border: '1px solid #ffffff',
+            borderRadius: '0 0.5rem 0.5rem 0',
+            color: 'white',
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+          }}
         >
-            Send
+          Send
         </button>
-
-
       </div>
 
       <div
-      style={{
-        backgroundColor: '#1f3a60',
-        color: 'white',
-        fontSize: '20px',
-        fontWeight: 'bold',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-        gap: '20px',
-    }}
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '2rem',
+          fontSize: '0.875rem',
+          fontWeight: 'normal',
+        }}
       >
-
-
-        <div
-            style={{
-                height: '30px',
-                color: 'white',
-                fontSize: '14px',
-
-            }}
-        >
-             What do you like and dislike?
-        </div>
-
-        
-        <div
-            style={{
-                height: '30px',
-                color: 'white',
-                fontSize: '14px',
-
-            }}
-        >
-             What do you want added or removed?
-        </div>
-
+        <span>What do you like and dislike?</span>
+        <span>What do you want added or removed?</span>
       </div>
-
-
-
     </div>
   );
 }

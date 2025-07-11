@@ -1,15 +1,16 @@
 {
     "1": {
-      "name": "Intro",
-      "textBoxContent": "This is a DCF, or discounted cash flow analysis—a valuation method used to estimate the intrinsic value of an asset based on its expected future cash flows. By projecting those cash flows and discounting them back to present value using a rate that reflects the risk of the investment, a DCF helps determine whether an asset is undervalued or overvalued relative to its current price.",
+      "name": "What's an Income Statement",
+      "textBoxContent": "The income statement—also called the profit and loss statement (P&L)—shows a company’s financial performance over a specific period of time. It tells us how much revenue the business earned, what it spent to earn that revenue, and how much profit (or loss) it generated as a result.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "What does DCF stand for?",
-        "options": ["Direct Cash Flow", "Discounted Cash Flow", "Dynamic Capital Flow", "Debt Conversion Formula"],
-        "correctAnswer": "Discounted Cash Flow"
+        "question": "What is the purpose of the income statement?",
+        "options": ["To show the company’s financial position at a specific point in time", "To track the changes in cash during a period", "To summarize a company’s revenues and expenses over a period, showing profit or loss", "To report how much equity the company’s shareholders own"],
+        "correctAnswer": "To summarize a company’s revenues and expenses over a period, showing profit or loss"
       },
       "targetTab": "none",
+      "TabLocked": "False",
       "Quizcel_1":{
         "tab": "intro",
         "row": 0,
@@ -21,59 +22,376 @@
         "column": 4
       },
         "Blankcel_1":{
-        "tab": "intro",
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 13,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 12,
+        "column": 1
+      },
+        "BlankFOR_1":{
+        "tab": "inputs",
         "row": 0,
-        "column": 3
+        "column": 5
+      },
+        "BlankFOR_2":{
+        "tab": "inputs",
+        "row": 1,
+        "column": 5
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
       }
     },
     "2": {
-      "name": "Income Statement",
-      "textBoxContent": "Key metrics like Net Sales, COGS, OPEX, and EBITDA are the building blocks of financial projections. Understanding how they relate to each other is crucial.",
-      "hint":"shling",
-      "Qtype": "cells",
+      "name": "Revenue",
+      "textBoxContent": "Revenue is the total amount of money a company earns from its core operations, before any expenses are subtracted.",
+      "hint":"It's stated in the textbox.",
+      "Qtype": "MCQ",
       "quiz": {
-        "question": "Which of these is NOT a key metric for a DCF?",
-        "options": ["Net Sales", "EBITDA", "Social Media Followers", "Gross Profit"],
-        "correctAnswer": "Social Media Followers"
+        "question": "What is Revenue in 2014?",
+        "options": ["470", "3562", "365817", "-1458"],
+        "correctAnswer": "365817"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
       "Quizcel_1":{
-        "tab": "intro",
+        "tab": "inputs",
         "row": 0,
         "column": 2
       },
         "Quizcel_2":{
-        "tab": "intro",
+        "tab": "inputs",
         "row": 1,
         "column": 4
       },
         "Blankcel_1":{
-        "tab": "intro",
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 13,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 12,
+        "column": 1
+      },
+        "BlankFOR_1":{
+        "tab": "inputs",
         "row": 0,
-        "column": 3
+        "column": 5
+      },
+        "BlankFOR_2":{
+        "tab": "inputs",
+        "row": 1,
+        "column": 5
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 0
       }
     },
-    "3": {
-      "name": "ben",
-      "textBoxContent": "Forecasting involves projecting future financial performance. This often relies on historical trends and reasonable assumptions about growth rates and margins.",
-      "hint":"shling",
-      "Qtype": "tabClick",
+        "3": {
+      "name": "Revenue Growth Rate",
+      "textBoxContent": "A way to forecast revenue growth is by using YoY growth from historical data. This is done by calculating the percentage change in revenue from one year to the next. Use the Excel formula =(Current Year Revenue - Prior Year Revenue) / ABS(Prior Year Revenue) to find YoY forecasted growth in the highlighted cell.",
+      "hint":"Use this formula: =((E1-D1) / D1)",
+      "Qtype": "cells",
       "quiz": {
-        "question": "What is a common method for forecasting revenue?",
-        "options": ["Guessing", "Historical Growth Rates", "Random Number Generation", "Looking at the moon"],
-        "correctAnswer": "Historical Growth Rates"
+        "question": "Find the forecasted revenue growth rate",
+        "options": ["470", "3562", "2356", "-1458"],
+        "correctAnswer": "2356"
       },
-      "targetTab": "valuations",
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 12,
+        "column": 1
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 13,
+        "column": 1
+      },
+        "BlankFOR_1":{
+        "tab": "inputs",
+        "row": 0,
+        "column": 5
+      },
+        "BlankFOR_2":{
+        "tab": "inputs",
+        "row": 1,
+        "column": 5
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
+      }
+    },
+     "4": {
+      "name": "Forecasting Revenue",
+      "textBoxContent": "Now that you have your forecasted YoY growth for revenue, we can forecast revenue. Revenue is forecasted by growing last year’s revenue by the forecasted growth rate. Use the Excel formula =Prior Year Revenue * (1 + YoY Growth) in the highlighted cell and drag it to all 3 highlighted cells to forecast 3 years of revenue.",
+      "hint":"Use the formula: = E1 * (1 + $B$13) in the first cell and drag it to the other three",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "What is Revenue?",
+        "options": ["470", "3562", "2356", "-1458"],
+        "correctAnswer": "2356"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 0,
+        "column": 5
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 0,
+        "column": 6
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 0,
+        "column": 7
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 13,
+        "column": 1
+      },
+        "BlankFOR_2":{
+        "tab": "inputs",
+        "row": 1,
+        "column": 5
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
+      }
+    },
+    "5": {
+      "name": "COGS",
+      "textBoxContent": "The second line in most income statements is Cost of Goods Sold. Cost of goods sold or COGS, is the direct expenses needed to make the product that is generating revenue.",
+      "hint":"shling",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "What does COGS stand for?",
+        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
+        "correctAnswer": "Cost of Goods Sold"
+      },
+      "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
       "Quizcel_1":{
         "tab": "intro",
-        "row": 0,
-        "column": 3
+        "row": 1,
+        "column": 13
       },
         "Quizcel_2":{
         "tab": "intro",
@@ -81,50 +399,317 @@
         "column": 4
       },
         "Blankcel_1":{
-        "tab": "intro",
-        "row": 0,
-        "column": 3
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 13,
+        "column": 1
+      },
+        "BlankFOR_2":{
+        "tab": "inputs",
+        "row": 1,
+        "column": 5
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 1
       }
     },
-    "4": {
-      "name": "aef",
-      "textBoxContent": "Terminal Value captures the value of the company beyond the explicit projection period. It's typically calculated using either the Gordon Growth Model or the Exit Multiple Method.",
-      "hint":"shling",
-      "Qtype": "MCQ",
+    "6": {
+      "name": "How do we Forecast COGS?",
+      "textBoxContent": "COGS is typically forecasted as a % of revenue. To find COGS as a % of revenue, Divide the most recent COGS by Revenue in the most recent year of historical data.",
+      "hint":"=E2/E1",
+      "Qtype": "cells",
       "quiz": {
-        "question": "Which model is often used for Terminal Value?",
+        "question": "Enter COGS / Revenue into the highlighted cell",
+        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
+        "correctAnswer": "Cost of Goods Sold"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "projections"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 13,
+        "column": 1
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "BlankFOR_2":{
+        "tab": "inputs",
+        "row": 1,
+        "column": 5
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
+      }
+    },
+      "7": {
+      "name": "Forecasting COGS",
+      "textBoxContent": "Now that we have COGS as a % of revenue we can multiply revenue for this year times our COGS % to get our COGS for this year.",
+      "hint":"use this formula and drag it to the 3 cells =F1*$B$14",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "What does COGS stand for?",
+        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
+        "correctAnswer": "Cost of Goods Sold"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "projections"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 1,
+        "column": 5
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 1,
+        "column": 6
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 1,
+        "column": 7
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
+      }
+    },
+    "8": {
+      "name": "Gross Profit",
+      "textBoxContent": "Gross Profit is the difference between a company’s revenue and its Cost of Goods Sold (COGS). It shows how much the company earns from its core products or services before accounting for operating expenses, interest, taxes, or other costs.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Gross Profit for the highlighted cells",
         "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
         "correctAnswer": "Gordon Growth Model"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
-        "initialTab": "valuations"
+        "initialTab": "intro"
       },
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 0,
-        "column": 4
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
       },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
+      "Quizcel_5":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 6
+      },
+      "Quizcel_6":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 7
       },
         "Blankcel_1":{
-        "tab": "intro",
-        "row": 0,
-        "column": 3
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
       }
     },
-    "5": {
-      "name": "inasdfetro",
-      "textBoxContent": "The final valuation sums the present value of projected free cash flows and the present value of the terminal value to arrive at the company's intrinsic value.",
-      "hint":"shling",
+    "9": {
+      "name": "Operating Expenses",
+      "textBoxContent": "Operating expenses are the costs a company incurs from its core business operations, excluding the cost of goods sold. They include items like salaries, rent, marketing, and R&D.",
+      "hint":"=E4/E1",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "What does the sum of PV of UFCF and PV of Terminal Value give you?",
-        "options": ["Net Income", "Enterprise Value", "Market Cap", "Book Value"],
-        "correctAnswer": "Enterprise Value"
+        "question": "What could another example of SG&A be?",
+        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
+        "correctAnswer": "Salaries of the sales team"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
@@ -141,9 +726,307 @@
         "column": 4
       },
         "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 3
+      }
+    },
+      "10": {
+      "name": "How to forecast Operating Expenses",
+      "textBoxContent": "Like many other metrics, Operating Expenses can be forecast as a % of revenue. To do this, divide Operating expense in 2017 by Revenue in 2017",
+      "hint":"shling",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "What could another example of SG&A be?",
+        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
+        "correctAnswer": "Salaries of the sales team"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "Quizcel_2":{
+        "tab": "intro",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
+      }
+    },
+      "11": {
+      "name": "Forecasting Operating Expenses",
+      "textBoxContent": "Now that we have Operating Expenses as a % of revenue, we can multiply revenue times that percent to forecast Operating Expenses.",
+      "hint":"=F1*$B$15",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "What could another example of SG&A be?",
+        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
+        "correctAnswer": "Salaries of the sales team"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+      "Quizcel_2":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 6
+      },
+      "Quizcel_3":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 7
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      }
+    },
+        "12": {
+      "name": "EBITDA",
+      "textBoxContent": "EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It measures a company’s operating performance by showing profit from core business activities before accounting for financial and non-cash expenses. EBITDA is often used to compare profitability across companies and industries.",
+      "hint":"=F3-F4",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Ebitda into the highlighted cells",
+        "options": [ "Beakers to study new lemonade flavors", "A company vacation", "Paying your friend to test new flavors", "Depreciation of Lab Coats"],
+        "correctAnswer": "A company vacation"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+      "Quizcel_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 6
+      },
+      "Quizcel_6":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 7
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      }
+    },
+
+        "13": {
+      "name": "Finish",
+      "textBoxContent": "The rest of the metrics on the income statement can't be forecasted without information from the Balance sheet or Cash flow statement. After you have completed the modules on the Balance sheet and Cash flow statement, their will be a final module wrapping up the model covering these and other metrics. Answer the final question to complete the module.",
+      "hint":"shling",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "How did you forecast COGS?",
+        "options": [ "as a % of Revenue based on historical data", "By totalling forecasted costs", "By subtracting Operational Expenses from Gross Profit", "By forecasting as a % of Gross Profit"],
+        "correctAnswer": "as a % of Revenue based on historical data"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_1":{
         "tab": "intro",
         "row": 0,
-        "column": 3
+        "column": 5
+      },
+        "Quizcel_2":{
+        "tab": "intro",
+        "row": 1,
+        "column": 4
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
       }
     }
   }

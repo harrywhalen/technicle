@@ -1,9 +1,8 @@
-
+"use client"
 import SpreadGang from "./spreadGang.jsx";
 import HintBox from "./hintbox.jsx";
 import LessonName from "./lessonName.jsx";
 import DaProg from "./modProgBizzy.jsx";
-
 
 
 export default function LeftSide({
@@ -34,7 +33,13 @@ ref,
 playSound,
 highestStep,
 totalSteps,
+showCoordinates,
+hotTableComponent,
+tabLocked,
+sheetBlankForecasts,
 }) {
+
+    console.log("AAAAAAHHHHHHHHHHHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHH");
 
   return (
     <div
@@ -42,7 +47,8 @@ totalSteps,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginLeft: '10px'
+    marginLeft: '0.625rem',
+
 }}
     >
 
@@ -80,6 +86,10 @@ totalSteps,
             ref={ref}  // <-- forward ref here
             playSound={playSound}
             highestStep={highestStep}
+            showCoordinates={showCoordinates}
+            hotTableComponent ={hotTableComponent }
+            tabLocked={tabLocked}
+            sheetBlankForecasts={sheetBlankForecasts}
           />
 
           <div>

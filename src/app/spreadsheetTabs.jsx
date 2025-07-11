@@ -11,7 +11,7 @@ const spreadsheetTabs = [
   { name: "Assumptions", id: "sensitivity" },
 ];
 
-export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChange, TargetTab, setNextReady, currentActiveStepId}) {
+export default function SpreadsheetTabs({ initialActiveTab = "inputs", onTabChange, TargetTab, setNextReady, currentActiveStepId, tabLocked,}) {
   const [activeTab, setActiveTab] = useState(initialActiveTab);
 
     const triggerConfettiT = () => {
@@ -31,6 +31,7 @@ export default function SpreadsheetTabs({ initialActiveTab = "intro", onTabChang
 };
 
 const handleTabClick = (tabId) => {
+  if (tabLocked === false) {
   setActiveTab(tabId);
   
   if (onTabChange) onTabChange(tabId);
@@ -39,6 +40,7 @@ const handleTabClick = (tabId) => {
     setNextReady(true);
     playCorrectSoundT();
     triggerConfettiT();
+  }
   }
 };
 

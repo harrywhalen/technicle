@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, Highlighter, RotateCw, Lightbulb, Check } from "lucide-react";
 
-export default function Spreadbutt({refresh, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn, checkAllAnswers, getCurrentScore }) {
+export default function Spreadbutt({refresh, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn, checkAllAnswers, getCurrentScore, showCoordinates }) {
 
     return(
     <div
@@ -22,6 +22,8 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
         marginTop: '8px',
         gap: '10px', // Add some space between buttons
     }}>
+
+
 
         <button
         type = "button"

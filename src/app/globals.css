@@ -44,6 +44,15 @@ body {
   color: #ff3131 !important;
 }
 
+.even-row {
+    background-color: #f9f9f9 !important; /* light gray */
+}
+
+.quizcel {
+  background-color: #8ce4ff!important;
+}
+
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);

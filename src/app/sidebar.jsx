@@ -3,30 +3,64 @@ import React, { useState, useRef, useEffect,} from 'react';
 import styles from './Sidebar.module.css';
 import lessonData from "./data/lessondata.json"; // Import the JSON file
 
-const NAVBAR_HEIGHT = '70px';
+const NAVBAR_HEIGHT = '4.375rem';
 
 // Define the initial conceptual sections
 const sidebarSections = [
   {
     title: lessonData['1'].name,
-    id: '1', // Matches the key in lessonContentData
+    id: 1, // Matches the key in lessonContentData
   },
   {
     title: lessonData['2'].name,
-    id: '2',
+    id: 2,
   },
   {
     title: lessonData['3'].name,
-    id: '3',
+    id: 3,
   },
   {
     title: lessonData['4'].name,
-    id: '4',
+    id: 4,
   },
   {
     title: lessonData['5'].name,
-    id: '5',
+    id: 5,
   },
+    {
+    title: lessonData['6'].name,
+    id: 6,
+  },
+    {
+    title: lessonData['7'].name,
+    id: 7,
+  },
+      {
+    title: lessonData['8'].name,
+    id: 8,
+  },
+        {
+    title: lessonData['9'].name,
+    id: 9,
+  },
+          {
+    title: lessonData['10'].name,
+    id: 10,
+  },
+        {
+    title: lessonData['11'].name,
+    id: 11,
+  },
+          {
+    title: lessonData['12'].name,
+    id: 12,
+  },
+        {
+    title: lessonData['13'].name,
+    id: 13,
+  },
+
+
 ];
 
 
@@ -39,18 +73,19 @@ const Sidebar = ({ onSectionChange,currentActiveStepId, setCurrentActiveStepId, 
 
 
 
-  const handleSectionClick = (id) => {
-    const idNum = parseInt(id,10);
-  if (idNum <= highestStep) {
+const handleSectionClick = (id) => {
+  // id is already a number from sidebarSections
+  if (id <= highestStep) {
     setCurrentActiveStepId(id);
 
     if (onSectionChange) {
-      onSectionChange(id); // Inform the parent (Module) about the new active section
+      onSectionChange(id); // Notify parent
     }
-    console.log("FUCK", highestStep)
-    console.log("SHIT", currentActiveStepId)
-    }
-  };
+    console.log("Highest step:", highestStep);
+    console.log("Current active step:", currentActiveStepId);
+  }
+};
+
 
   return (
     <aside
@@ -70,16 +105,16 @@ const Sidebar = ({ onSectionChange,currentActiveStepId, setCurrentActiveStepId, 
           scrollbarWidth: 'thin', // For Firefox
           scrollbarColor: '#3498db #2c3e50', // For Firefox (thumb track)
           '&::WebkitScrollbar': {
-            width: '8px',
+            width: 'thin',
           },
           '&::WebkitScrollbarTrack': {
             backgroundColor: '#1f3a60',
-            borderRadius: '10px',
+            borderRadius: '0.625rem',
           },
           ' &::WebkitScrollbarThumb': {
             backgroundColor: '#1f3a60',
-            borderRadius: '10px',
-            border: '2px solid #2c3e50',
+            borderRadius: '0.625rem',
+            border: '0.125rem solid #2c3e50',
           },
           '&::WebkitScrollbarThumb:hover': {
             backgroundColor: '#1f3a60',
@@ -93,15 +128,14 @@ const Sidebar = ({ onSectionChange,currentActiveStepId, setCurrentActiveStepId, 
           className={styles.navList}
           style={{
             direction: 'ltr', // Revert content direction
-            paddingLeft: '0px',
-            paddingRight: '20px', // Space between content and scrollbar
+            paddingRight: '1.25rem', // Space between content and scrollbar
           }}
         >
           {sidebarSections.map((section) => (
             <li key={section.id} className={styles.navItem}>
               <div
                 onClick={() => handleSectionClick(section.id)}
-                style={{ cursor: 'pointer', fontSize: '20px' }}
+                style={{ cursor: 'pointer', fontSize: '1.25rem' }}
                 className={`${styles.navLink} ${currentActiveStepId === section.id ? styles.active : ''}`}
               >
                 {section.title}
