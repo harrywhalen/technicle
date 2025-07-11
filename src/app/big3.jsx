@@ -40,40 +40,48 @@ const Big3 = forwardRef((
     playSound,
     highestStep,
     totalSteps,
-    TweakerStep,
+    tempBS,
+    showCoordinates,
+    hotTableComponent,
+    tabLocked,
+    sheetBlankForecasts,
   },
   ref  // <-- the forwarded ref is the 2nd parameter
 ) => {
   if (!currentStepContent) {
     return <div>Loading...</div>;
   }
-
+console.log("In big3 showCoordinates:", typeof showCoordinates);
+console.log("Rendering Big3 - about to render LeftSide");
   return (
+<div
+  style={{
+    height: 'auto',
+    width: '86vw', // 1600px → responsive to viewport
+    maxWidth: '100%', // Prevents overflow
+    backgroundColor: '#e6f4f9',
+    padding: '1.25rem', // 20px → rem
+    marginLeft: '10vw', // 180px → approx relative to screen
+    borderRadius: '0.9375rem', // 15px → rem
+    boxShadow: '0 0.25rem 1.125rem rgba(0, 0, 0, 0.1)', // 4px 18px → rem
+    marginTop: '6.25rem', // 100px → rem
+    boxSizing: 'border-box',
+  }}
+>
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'row',
+      gap: '0.9375rem', // 15px → rem
+    }}
+  >
     <div
       style={{
-        height: 'auto',
-        width: '1600px',
-        backgroundColor: '#e6f4f9',
-        padding: '20px',
-        marginLeft: '180px',
-        borderRadius: '15px',
-        boxShadow: '0 4px 18px rgba(0,0,0,0.1)',
-        marginTop: '100px',
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          gap: '15px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
+      
           <LeftSide
             data={data}
             setData={setData}
@@ -102,6 +110,10 @@ const Big3 = forwardRef((
             playSound={playSound}
             highestStep={highestStep}
             totalSteps={totalSteps}
+            showCoordinates={showCoordinates}
+            hotTableComponent ={hotTableComponent }
+            tabLocked={tabLocked}
+            sheetBlankForecasts={sheetBlankForecasts}
           />
 
         </div>
@@ -120,6 +132,7 @@ const Big3 = forwardRef((
           nextReady={nextReady}
           setNextReady={setNextReady}
           advanceStep={advanceStep}
+          tempBS={tempBS}
         />
       </div>
     </div>

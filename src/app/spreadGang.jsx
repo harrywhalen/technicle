@@ -19,32 +19,37 @@ const SpreadGang = forwardRef(({
   sheetsInitialData, setSheetsInitialData,
   sheetsDisplayData, setSheetsDisplayData,
   sheetBlankCells, Qtype, TargetTab, nextReady,
-  setNextReady, currentActiveStepId, playSound
+  setNextReady, currentActiveStepId, playSound, showCoordinates,
+  tabLocked, sheetBlankForecasts,
 }, ref) => {
+  console.log("SpreadGang received showCoordinates:", typeof showCoordinates);
   const sheetMappings = {
     intro: {
       name: "Summary",
-      includeRows: ["Revenue", "Net Income", "Unlevered FCF", "Terminal Value", "Discounted TV"]
+      includeRows: ["Revenue", "Gross Profit", "Gross Margin", "Operating Income", "Net Income", "Cash and Cash Equivalents"]
     },
     inputs: {
       name: "Income Statement", 
-      includeRows: ["Revenue", "COGS", "Gross Profit", "R&D Expense", "SG&A Expense", 
-                   "EBITDA", "Depreciation & Amort.", "EBIT", "Interest Expense", 
-                   "EBT", "Tax @ 25.2%", "Net Income"]
+      includeRows: ["Revenue", "Cost of Goods Sold", "Gross Profit", "Operating Expenses", 
+                    "Operating Expense", "EBITDA", "Depreciation", "Interest Expense",  "Interest Income",
+                   "EBT", "Tax Provision", "Net Income", "", "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue"]
     },
     projections: {
       name: "Balance Sheet",
-      includeRows: ["+ D&A", "- CapEx", "- Change in NWC"]
+      includeRows: ["Accounts Receivable", "Accounts Payable", "Inventory", "Capital Expenditure", "Gross PPE", "Net PPE", 
+                    "Total Assets", "Depreciation", "Total Debt", "Current Debt", "Long Term Debt", "Total Liabilities", 
+      ]
     },
     valuations: {
       name: "Cash Flow Statement",
-      includeRows: ["Net Income", "+ D&A", "- CapEx", "- Change in NWC", "Unlevered FCF", 
-                   "Discount Factor (10%)", "Discounted FCF", "Terminal Value", "Discounted TV"]
+      includeRows: ["Net Income from Continuing Operations", "Cash Flow From Continuing Investing Activities", "Cash Flow From Continuing Operating Activities", 
+                    "Cash Flow From Continuing Financing Activities", "Depreciation and Amortization", 
+                   "Changes in Accounts Receivable", "Changes in Accounts Payable", "Changes in Inventory", "Changes in Cash"]
     },
     sensitivity: {
       name: "Assumptions",
-      includeRows: ["Revenue", "COGS", "R&D Expense", "SG&A Expense", "Depreciation & Amort.", 
-                   "Interest Expense", "Tax @ 25.2%", "Discount Factor (10%)"]
+      includeRows: ["Inventory / COGS", "Revenue Growth Rate", "SGnA / Revenue", "RnD / Revenue", 
+                   "Capex / Revenue", "Accounts Receivable / Revenue", "Accounts Payable / COGS", "Interest Rate", "Dividend Payout Ratio"]
     }
   };
 
@@ -53,17 +58,18 @@ const SpreadGang = forwardRef(({
 
   const [dataLoading, setDataLoading] = useState(true);
 
-  const filterDataForSheet = (fullData, sheetKey) => {
-    const mapping = sheetMappings[sheetKey];
-    if (!mapping || !fullData || fullData.length === 0) return [];
-    
-    return fullData.filter(row => {
-      const label = row[0];
-      return mapping.includeRows.some(includeLabel => 
-        label && label.toString().includes(includeLabel)
-      );
-    });
-  };
+const filterDataForSheet = (fullData, sheetKey) => {
+  const mapping = sheetMappings[sheetKey];
+  if (!mapping || !fullData || fullData.length === 0) return [];
+  
+  return fullData.filter(row => {
+    const label = row[0];
+    return mapping.includeRows.some(includeLabel =>
+      label.toString().trim().toLowerCase() === includeLabel.trim().toLowerCase()
+    );
+  });
+};
+
 
   const triggerConfettiC = () => {
     confetti({
@@ -89,19 +95,37 @@ const SpreadGang = forwardRef(({
 };
 
   useEffect(() => {
+    
     const fetchData = async () => {
       try {
-        const docRef = doc(db, "models", "defaultModel");
+        const docRef = doc(db, "models", "AAPL 3 Statement");
         const docSnap = await getDoc(docRef);
-        const coldDocRef = doc(db, "models", "defaultModel");
+        const coldDocRef = doc(db, "models", "AAPL 3 Statement");
         const coldDocSnap = await getDoc(coldDocRef);
         
         if (docSnap.exists()) {
           const orderedData = docSnap.data().orderedData;
           const coldOrderedData = coldDocSnap.exists() ? coldDocSnap.data().orderedData : orderedData;
           
-          const hotFormat = orderedData.map(item => [item.label, ...item.values]);
-          const coldFormat = coldOrderedData.map(item => [item.label, ...item.values]);
+          const hotFormat = orderedData.map(item => {
+            if (Array.isArray(item.values)) {
+              return [item.label, ...item.values];
+            } else if (item.values !== undefined && item.values !== null) {
+              return [item.label, item.values];
+            } else {
+              return [item.label];
+            }
+          });
+
+          const coldFormat = coldOrderedData.map(item => {
+            if (Array.isArray(item.values)) {
+              return [item.label, ...item.values];
+            } else if (item.values !== undefined && item.values !== null) {
+              return [item.label, item.values];
+            } else {
+              return [item.label];
+            }
+          });
           
           const newSheetsData = {};
           const newSheetsInitialData = {};
@@ -113,12 +137,14 @@ const SpreadGang = forwardRef(({
             
             const quizCells = sheetQuizCells[sheetKey] || [];
             const blankCells = sheetBlankCells[sheetKey] || [];
-
+            const blankForecastCells = sheetBlankForecasts[sheetKey] || [];
             const displayFormat = sheetHotData.map((row, rowIndex) => 
               row.map((cell, colIndex) => {
                 const isQuizCell = quizCells.some(q => q.row === rowIndex && q.col === colIndex);
                 const isBlankCell = blankCells.some(q => q.row === rowIndex && q.col === colIndex);
-                return isQuizCell || isBlankCell ? '' : cell;
+                const isBlankForecastCell = blankForecastCells.some(q => q.row === rowIndex && q.col === colIndex);
+                return (isQuizCell || isBlankCell || isBlankForecastCell) ? '' : cell;
+
               })
             );
 
@@ -214,12 +240,13 @@ const checkAllAnswers = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <SpreadsheetTabs
-        initialActiveTab="intro"
+        initialActiveTab="inputs"
         onTabChange={handleTabChange}
         TargetTab={TargetTab}
         nextReady={nextReady}
         setNextReady={setNextReady}
         currentActiveStepId={currentActiveStepId}
+        tabLocked={tabLocked}
       />
       <Spreadsheet
         data={sheetsDisplayData[activeTab] || []}
@@ -230,6 +257,8 @@ const checkAllAnswers = () => {
         hotTableComponent={hotTableComponent}
         refresh={refresh}
         onCellChange={handleCellChange}
+        currentStepContent={currentStepContent}
+        activeTab={activeTab}
       />
       <Spreadbutt
         refresh={refresh}
@@ -241,6 +270,7 @@ const checkAllAnswers = () => {
         setHintOn={setHintOn}
         checkAllAnswers={checkAllAnswers}
         getCurrentScore={getCurrentScore}
+        showCoordinates={showCoordinates}
       />
     </div>
   );

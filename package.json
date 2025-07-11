@@ -13,6 +13,7 @@
     "canvas-confetti": "^1.9.3",
     "firebase": "^11.9.1",
     "handsontable": "^15.3.0",
+    "hyperformula": "^3.0.0",
     "lucide-react": "^0.522.0",
     "next": "15.3.3",
     "react": "^19.0.0",

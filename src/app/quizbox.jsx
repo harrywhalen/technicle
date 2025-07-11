@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function QuizBox({
   question,
@@ -14,8 +14,17 @@ export default function QuizBox({
   nextReady,
   setNextReady,
   advanceStep,
+  tempBS, // <-- Expect this prop controlling wiggle
 }) {
+  const [isWiggling, setIsWiggling] = useState(false);
 
+  useEffect(() => {
+    if (tempBS) {
+      setIsWiggling(true);
+      const timer = setTimeout(() => setIsWiggling(false), 500); // wiggle for 1 sec
+      return () => clearTimeout(timer);
+    }
+  }, [tempBS]);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -23,119 +32,142 @@ export default function QuizBox({
 
   return (
     <div>
-      <style>
-        {`
+      <style>{`
           @keyframes shimmer {
-            0% {
-              left: -75%;
-            }
-            100% {
-              left: 125%;
-            }
+            0% { left: -75%; }
+            100% { left: 125%; }
           }
-        `}
-      </style>
+          @keyframes wiggle {
+            0%, 100% { transform: translateX(0); }
+            15% { transform: translateX(-10px); }
+            30% { transform: translateX(10px); }
+            45% { transform: translateX(-10px); }
+            60% { transform: translateX(0px); }
+          }
+        `}</style>
 
       <div
         style={{
-          width: '350px',
-          height: '100%',
+          width: "450px",
+          animation: isWiggling ? "wiggle 1s ease-in-out" : "none",
         }}
       >
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#ffffff',
-            borderColor: '#1f3a60',
-            borderWidth: '3px',
-            borderStyle: 'solid',
-            color: '#1f3a60',
-            padding: '10px',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-            borderRadius: '10px 10px 0px 0px',
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "#ffffff",
+            borderColor: "#1f3a60",
+            borderWidth: "3px",
+            borderStyle: "solid",
+            color: "#1f3a60",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            borderRadius: "10px 10px 0px 0px",
+            padding: "0px 15px 0px 15px",
           }}
         >
-          <h4 style={{ fontSize: '1.5em' }}>
+          <h4 style={{ fontSize: "1.5em", textAlign: "center", height: "40px" }}>
             {question || "No quiz question provided."}
           </h4>
-
-          {Qtype === "MCQ" && options && options.length > 0 ? (
-            options.map((option, index) => (
-              <label key={index}>
-                <input
-                  type="radio"
-                  name="dcf_quiz_option"
-                  value={option}
-                  checked={selectedOption === option}
-                  onChange={handleOptionChange}
-                  style={{ marginRight: '8px', fontSize: '1.1em' }}
-                />
-                {option}
-              </label>
-            ))
-          ) : Qtype === "MCQ" ? (
-            <p style={{ fontSize: '0.9em', color: '#888' }}>
-              No options available for this quiz.
-            </p>
-          ) : null}
-
-          {(Qtype === "MCQ" || Qtype === "cells" || nextReady) && (
-            <button
-              type="submit"
-              onClick={nextReady ? advanceStep : handleSubmit}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              padding: "0px 40px 15px 40px",
+            }}
+          >
+            {Qtype === "MCQ" && options && options.length > 0 ? (
+              options.map((option, index) => (
+                <label key={index}>
+                  <input
+                    type="radio"
+                    name="dcf_quiz_option"
+                    value={option}
+                    checked={selectedOption === option}
+                    onChange={handleOptionChange}
+                    style={{
+                      marginRight: "10px",
+                      transform: "scale(1.4)",
+                      fontSize: "1.1em",
+                      marginTop: "20px",
+                    }}
+                  />
+                  {option}
+                </label>
+              ))
+            ) : Qtype === "MCQ" ? (
+              <p style={{ fontSize: "0.9em", color: "#888" }}>
+                No options available for this quiz.
+              </p>
+            ) : null}
+            <div
               style={{
-                backgroundColor: nextReady ? '#00bfff' : '#3498db',
-                color: 'white',
-                padding: '10px 25px',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                fontSize: '1em',
-                fontWeight: 'bold',
-                display: 'block',
-                marginTop: '15px',
-                transition: 'background-color 0.3s ease',
-                position: 'relative',
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = '#297bbd')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor =  nextReady ? '#00bfff' : '#3498db')
-              }
             >
-              {nextReady ? 'Next' : 'Submit'}
-
-              {nextReady && (
-                <div
+              {(Qtype === "MCQ" || Qtype === "cells" || nextReady) && (
+                <button
+                  type="submit"
+                  onClick={nextReady ? advanceStep : handleSubmit}
                   style={{
-                    position: "absolute",
-                    top: 0,
-                    left: "-75%",
-                    height: "100%",
-                    width: "50%",
-                    background:
-                      "linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)",
-                    transform: "skewX(-20deg)",
-                    animation: "shimmer 2s infinite",
-                    zIndex: 1,
-                    pointerEvents: "none",
+                    backgroundColor: nextReady ? "#00bfff" : "#3498db",
+                    color: "white",
+                    padding: "10px 20px",
+                    border: "none",
+                    borderRadius: "5px",
+                    cursor: "pointer",
+                    fontSize: "1.2em",
+                    fontWeight: "bold",
+                    display: "block",
+                    marginTop: "25px",
+                    transition: "background-color 0.3s ease",
+                    position: "relative",
+                    height: "55px",
+                    width: "120px",
                   }}
-                />
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.backgroundColor = "#297bbd")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.backgroundColor = nextReady
+                      ? "#00bfff"
+                      : "#3498db")
+                  }
+                >
+                  {nextReady ? "Next" : "Submit"}
+
+                  {nextReady && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: "-75%",
+                        height: "100%",
+                        width: "50%",
+                        background:
+                          "linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)",
+                        transform: "skewX(-20deg)",
+                        animation: "shimmer 2s infinite",
+                        zIndex: 1,
+                        pointerEvents: "none",
+                      }}
+                    />
+                  )}
+                </button>
               )}
-            </button>
-          )}
+            </div>
+          </div>
         </div>
 
         {/* Bottom status line */}
         <div
           style={{
-            height: '3px',
-            borderRadius: '0px 0px 15px 15px',
-            backgroundColor: '#1f3a60',
+            height: "3px",
+            borderRadius: "0px 0px 15px 15px",
+            backgroundColor: "#1f3a60",
           }}
         />
       </div>

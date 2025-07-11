@@ -5,7 +5,7 @@ export default function TextBox({ content }) { // Now accepts a 'content' prop
     return(
         <div
             style={{
-                width: '500px', // Set to 300px for consistency with the right column in Big3
+                width: '31.25rem' // Set to 300px for consistency with the right column in Big3
             }}
         >
             <div
@@ -14,7 +14,7 @@ export default function TextBox({ content }) { // Now accepts a 'content' prop
                     height: '100%', // Maintain a minimum height for visual consistency
                     backgroundColor: '#ffffff',
                     borderColor: '#1f3a60',
-                    borderWidth: '3px', // Changed to 3px to match QuizBox and other elements
+                    borderWidth: '0.1875rem' , // Changed to 3px to match QuizBox and other elements
                     borderStyle: 'solid',
                     color: '#1f3a60',
                     // Adjusted font size and weight to be more suitable for body text
