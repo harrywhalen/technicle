@@ -6,7 +6,7 @@ export default function FeedbackPLZ() {
     <div
       style={{
         padding: '2rem 1rem',
-        width: '100%',
+        width: '100vw',
         backgroundColor: '#1f3a60',
         color: 'white',
         fontSize: '1.25rem', // 20px
