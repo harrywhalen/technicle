@@ -46,9 +46,12 @@ sheetBlankForecasts,
     style={{
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'stretch', // Changed from 'center' to 'stretch'
     marginLeft: '0.625rem',
-
+    width: '100%', // Changed from '75%' to '100%'
+    height: '100%',
+    boxSizing: 'border-box',
+    overflow: 'hidden', // Prevent overflow
 }}
     >
 

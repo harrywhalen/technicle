@@ -1,7 +1,7 @@
 {
     "1": {
       "name": "What's an Income Statement",
-      "textBoxContent": "The income statement—also called the profit and loss statement (P&L)—shows a company’s financial performance over a specific period of time. It tells us how much revenue the business earned, what it spent to earn that revenue, and how much profit (or loss) it generated as a result.",
+      "textBoxContent": "The income statement, also called the profit and loss statement (P&L), shows a company’s financial performance over a specific period of time. It tells us how much revenue the business earned, what it spent to earn that revenue, and how much profit (or loss) it generated as a result.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {

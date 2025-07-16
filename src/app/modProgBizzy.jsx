@@ -14,7 +14,7 @@ const DaProgWidth = ((highestStep / totalSteps) * 5000)
 style = {{
     position: 'absolute',
     height: '15px',
-    width: '1000px',
+    width: '50vw',
     backgroundColor: '#184c94',
     borderWidth: '2px',
     borderStyle: 'solid',

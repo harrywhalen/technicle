@@ -49,7 +49,7 @@ export default function Spreadsheet({
   if (dataLoading) {
     return (
       <div style={{
-        width: '1000px',
+        width: '100%',
         height: '400px',
         display: 'flex',
         alignItems: 'center',
@@ -57,6 +57,7 @@ export default function Spreadsheet({
         backgroundColor: '#f5f5f5',
         border: '3px solid #1f3a60',
         zIndex: '1',
+        boxSizing: 'border-box',
       }}>
         Loading spreadsheet...
       </div>
@@ -66,11 +67,13 @@ export default function Spreadsheet({
   return (
     <div
       style={{
-        width: '1000px',
+        width: '50vw',
+        height: '70vh',
         backgroundColor: '#ffffff',
         border: '3px solid #1f3a60',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         overflow: 'hidden',
+        boxSizing: 'border-box',
       }}
     >
       <HotTable
@@ -98,7 +101,7 @@ export default function Spreadsheet({
             type: 'text',
             readOnly: true,
             className: 'htLeft htMiddle',
-            width: 150,
+            width: '15%', // Changed from fixed 120px to percentage
           },
           ...Array.from({ length: 9 }, (_, index) => ({
             data: index + 1,
@@ -107,6 +110,7 @@ export default function Spreadsheet({
               pattern: '0,0',
             },
             className: 'htRight htMiddle',
+            width: `${85/9}%`, // Distribute remaining 85% across 9 columns
           })),
         ]}
         cells={(row, col) => {

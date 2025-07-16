@@ -1,94 +1,77 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { BookOpen, Highlighter, RotateCw, Lightbulb, Check } from "lucide-react";
+import React from 'react';
+import { Highlighter, RotateCw, Lightbulb } from "lucide-react";
 
-export default function Spreadbutt({refresh, data, setData, highlightOn, setHighlightOn, hintOn, setHintOn, checkAllAnswers, getCurrentScore, showCoordinates }) {
-
-    return(
+export default function Spreadbutt({
+  refresh,
+  setHighlightOn,
+  setHintOn,
+  highlightOn,
+  hintOn,
+}) {
+  return (
     <div
-    style = {{
-        height: '70px',
-        width: '1006px',
+      style={{
+        height: '10vh',
+        width: '50vw',
         backgroundColor: '#1f3a60',
-        borderRadius: '0px 0px 10px 10px',
-
-    }}>
-
-        <div
-        style = {{
-        height: '50px',
+        borderRadius: '0 0 10px 10px',
         display: 'flex',
-        marginLeft: '750px', // Adjusted to fit 4 buttons
-        marginTop: '8px',
-        gap: '10px', // Add some space between buttons
-    }}>
-
-
-
-        <button
-        type = "button"
-            onClick={() => setHighlightOn(prev => !prev)}
-        style={{
-            backgroundColor: highlightOn ? '#64d8ff' : '#3498db', // Blue if ON, Gray if OFF
-            color: 'white', // White text
-            border: 'none', // No border
-            borderRadius: '50%', // Rounded corners for button
-            cursor: 'pointer', // Hand cursor on hover
-            fontSize: '1em',
-            fontWeight: 'bold',
-            display: 'block', // Make button a block element
-            margin: '0 auto', // Center the button horizontally
-            transition: 'background-color 0.3s ease', // Smooth transition on hover
-            width: '50px',
-        }}
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        paddingRight: '1rem',
+        boxSizing: 'border-box',
+      }}
     >
-        <Highlighter color="#FFFFFF" size={24} />
-    </button>
-
-        <button
-        type = "button"
-            onClick={refresh}
+      <div
         style={{
-            backgroundColor: '#3498db', // Blue background for button
-            color: 'white', // White text
-            border: 'none', // No border
-            borderRadius: '50%', // Rounded corners for button
-            cursor: 'pointer', // Hand cursor on hover
-            fontSize: '1em',
-            fontWeight: 'bold',
-            display: 'block', // Make button a block element
-            margin: '0 auto', // Center the button horizontally
-            transition: 'background-color 0.3s ease', // Smooth transition on hover
-            width: '50px',
+          display: 'flex',
+          gap: 'clamp(0.5rem, 2vw, 1rem)', // Scales gap with screen size
         }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#297bbd'} // Darker blue on hover
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#3498db'} // Original blue
-    >
-    <RotateCw color="#FFFFFF" size={24} />
-    </button>
-
-        <button
-        type = "button"
-            onClick={() => setHintOn(prev => !prev)}
-        style={{
-            backgroundColor: hintOn ? '#64d8ff' : '#3498db', // Blue if ON, Gray if OFF
-            color: 'white', // White text
-            border: 'none', // No border
-            borderRadius: '50%', // Rounded corners for button
-            cursor: 'pointer', // Hand cursor on hover
-            fontSize: '1em',
-            fontWeight: 'bold',
-            display: 'block', // Make button a block element
-            margin: '0 auto', // Center the button horizontally
-            transition: 'background-color 0.3s ease', // Smooth transition on hover
-            width: '50px',
-        }}
-    >
-    <Lightbulb color="#FFFFFF" size={24} />
-    </button>
-
-
-        </div>
+      >
+        {[{
+          onClick: () => setHighlightOn(prev => !prev),
+          active: highlightOn,
+          icon: <Highlighter size="clamp(1rem, 2vw, 1.5rem)" color="#FFFFFF" />
+        },
+        {
+          onClick: refresh,
+          active: false,
+          icon: <RotateCw size="clamp(1rem, 2vw, 1.5rem)" color="#FFFFFF" />
+        },
+        {
+          onClick: () => setHintOn(prev => !prev),
+          active: hintOn,
+          icon: <Lightbulb size="clamp(1rem, 2vw, 1.5rem)" color="#FFFFFF" />
+        }].map(({ onClick, active, icon }, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={onClick}
+            style={{
+              backgroundColor: active ? '#64d8ff' : '#3498db',
+              color: 'white',
+              border: 'none',
+              borderRadius: '50%',
+              cursor: 'pointer',
+              width: 'clamp(2.5rem, 5vw, 3rem)', // Responsive width
+              height: 'clamp(2.5rem, 5vw, 3rem)', // Responsive height
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'background-color 0.3s ease',
+            }}
+            onMouseEnter={e => {
+              if (!active) e.currentTarget.style.backgroundColor = '#297bbd';
+            }}
+            onMouseLeave={e => {
+              if (!active) e.currentTarget.style.backgroundColor = '#3498db';
+            }}
+          >
+            {icon}
+          </button>
+        ))}
+      </div>
     </div>
-    )
+  );
 }

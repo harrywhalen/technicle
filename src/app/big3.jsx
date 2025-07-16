@@ -5,7 +5,6 @@ import LeftSide from "./leftside.jsx";
 import SpreadGang from "./spreadGang.jsx";
 import HintBox from "./hintbox.jsx";
 
-
 const Big3 = forwardRef((
   {
     currentStepContent,
@@ -46,42 +45,46 @@ const Big3 = forwardRef((
     tabLocked,
     sheetBlankForecasts,
   },
-  ref  // <-- the forwarded ref is the 2nd parameter
+  ref
 ) => {
-  if (!currentStepContent) {
-    return <div>Loading...</div>;
-  }
-console.log("In big3 showCoordinates:", typeof showCoordinates);
-console.log("Rendering Big3 - about to render LeftSide");
+  if (!currentStepContent) return <div>Loading...</div>;
+
   return (
-<div
-  style={{
-    height: 'auto',
-    width: '86vw', // 1600px → responsive to viewport
-    maxWidth: '100%', // Prevents overflow
-    backgroundColor: '#e6f4f9',
-    padding: '1.25rem', // 20px → rem
-    marginLeft: '10vw', // 180px → approx relative to screen
-    borderRadius: '0.9375rem', // 15px → rem
-    boxShadow: '0 0.25rem 1.125rem rgba(0, 0, 0, 0.1)', // 4px 18px → rem
-    marginTop: '6.25rem', // 100px → rem
-    boxSizing: 'border-box',
-  }}
->
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'row',
-      gap: '0.9375rem', // 15px → rem
-    }}
-  >
     <div
       style={{
+        marginTop: '10vh', // Push below top bar
+        marginLeft: '10vw', // Push beside sidebar
+        width: 'calc(100vw - 10vw)',
+        minHeight: '85vh', // allow space for feedback bar below
+        backgroundColor: '#e6f4f9',
+        padding: '1rem',
+        borderRadius: '1rem',
+        boxShadow: '0 0.5rem 2rem rgba(0, 0, 0, 0.1)',
+        boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',
+        overflow: 'hidden',
       }}
     >
-      
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          gap: '1rem',
+          height: '100%',
+          flex: 1,
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            flex: '1 1 60%',
+            minWidth: '0',
+            overflow: 'hidden',
+          }}
+        >
           <LeftSide
             data={data}
             setData={setData}
@@ -106,34 +109,42 @@ console.log("Rendering Big3 - about to render LeftSide");
             nextReady={nextReady}
             setNextReady={setNextReady}
             currentActiveStepId={currentActiveStepId}
-            ref={ref} // <-- forward ref here
+            ref={ref}
             playSound={playSound}
             highestStep={highestStep}
             totalSteps={totalSteps}
             showCoordinates={showCoordinates}
-            hotTableComponent ={hotTableComponent }
+            hotTableComponent={hotTableComponent}
             tabLocked={tabLocked}
             sheetBlankForecasts={sheetBlankForecasts}
           />
-
         </div>
 
-        <RightSide
-          content={currentStepContent.textBoxContent}
-          question={currentStepContent.quiz.question}
-          options={currentStepContent.quiz.options}
-          correctAnswer={currentStepContent.quiz.correctAnswer}
-          isCorrect={isCorrect}
-          setIsCorrect={setIsCorrect}
-          handleSubmit={handleSubmit}
-          selectedOption={selectedOption}
-          setSelectedOption={setSelectedOption}
-          Qtype={Qtype}
-          nextReady={nextReady}
-          setNextReady={setNextReady}
-          advanceStep={advanceStep}
-          tempBS={tempBS}
-        />
+        <div
+          style={{
+            flex: '0 0 40%',
+            minWidth: '20rem',
+            maxWidth: '35rem',
+            overflow: 'hidden',
+          }}
+        >
+          <RightSide
+            content={currentStepContent.textBoxContent}
+            question={currentStepContent.quiz.question}
+            options={currentStepContent.quiz.options}
+            correctAnswer={currentStepContent.quiz.correctAnswer}
+            isCorrect={isCorrect}
+            setIsCorrect={setIsCorrect}
+            handleSubmit={handleSubmit}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+            Qtype={Qtype}
+            nextReady={nextReady}
+            setNextReady={setNextReady}
+            advanceStep={advanceStep}
+            tempBS={tempBS}
+          />
+        </div>
       </div>
     </div>
   );

@@ -128,14 +128,23 @@ const handleSectionClick = (id) => {
           className={styles.navList}
           style={{
             direction: 'ltr', // Revert content direction
-            paddingRight: '1.25rem', // Space between content and scrollbar
+            paddingRight: '0.8vw', // Responsive padding based on viewport
           }}
         >
           {sidebarSections.map((section) => (
             <li key={section.id} className={styles.navItem}>
               <div
                 onClick={() => handleSectionClick(section.id)}
-                style={{ cursor: 'pointer', fontSize: '1.25rem' }}
+                style={{ 
+                  cursor: 'pointer', 
+                  fontSize: `clamp(1rem, 1vw, 1rem)`, // Responsive font size that scales with sidebar
+                  lineHeight: '1.2', // Tighter line height for better fit
+                  padding: '0.4vw 0.6vw', // Responsive padding
+                  wordBreak: 'break-word', // Allow text to wrap if needed
+                  hyphens: 'auto', // Enable hyphenation for better text wrapping
+                  textAlign: 'left', // Ensure text alignment
+                  whiteSpace: 'normal', // Allow text wrapping
+                }}
                 className={`${styles.navLink} ${currentActiveStepId === section.id ? styles.active : ''}`}
               >
                 {section.title}

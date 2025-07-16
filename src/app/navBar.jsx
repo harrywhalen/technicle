@@ -16,7 +16,7 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const navbarHeight = '5rem'; // 80px = 5rem (scales with root font-size)
+  const navbarHeight = '10vh'; // 10% of viewport height
 
   return (
     <div
@@ -31,13 +31,13 @@ export default function Navbar() {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '0 5vw', // Responsive horizontal padding
-        boxShadow: '0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2)', // 2px, 5px → rems
+        boxShadow: '0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2)',
         zIndex: 1001,
         boxSizing: 'border-box',
       }}
     >
       {/* Invisible spacer for alignment */}
-      <div style={{ minWidth: '2.5rem', visibility: 'hidden' }} />
+      <div style={{ minWidth: '2vh', visibility: 'hidden' }} />
 
       {/* Center nav menu */}
       <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
@@ -49,7 +49,7 @@ export default function Navbar() {
               listStyle: 'none',
               padding: 0,
               margin: 0,
-              gap: '2rem', // Responsive spacing between links
+              gap: '2vw', // Responsive spacing between links
             }}
           >
             {navLinks.map((link) => {
@@ -63,12 +63,14 @@ export default function Navbar() {
                     style={{
                       color: 'white',
                       textDecoration: 'none',
-                      padding: isTechnicle ? '0' : '0.625rem 0.9375rem', // 10px 15px → rem
-                      borderRadius: '0.3125rem', // 5px → rem
+                      padding: isTechnicle ? '0' : '1vh 1.5vw', // Responsive padding
+                      borderRadius: '0.5vh', // Responsive border radius
                       fontWeight: 'bold',
+                      fontSize: `clamp(0.8rem, 1.2vw, 1.1rem)`, // Responsive font size
                       transition: 'background-color 0.2s ease, color 0.2s ease',
                       cursor: 'pointer',
                       position: 'relative',
+                      whiteSpace: 'nowrap', // Prevent text wrapping
                     }}
                     onMouseEnter={(e) => {
                       if (!isTechnicle)
@@ -83,9 +85,13 @@ export default function Navbar() {
                       <Image
                         src={NamePlate}
                         alt="Technicle Logo"
-                        width={250}
-                        height={50}
-                        style={{ display: 'block', maxWidth: '100%', height: 'auto' }}
+                        width={300}
+                        height={60}
+                        style={{ 
+                          display: 'block', 
+                          maxWidth: '100%', 
+                          height: 'auto'
+                        }}
                       />
                     ) : (
                       link.title
@@ -101,15 +107,15 @@ export default function Navbar() {
       {/* User icon */}
       <div
         style={{
-          minWidth: '2.5rem',
-          height: '2.5rem',
+          minWidth: '6vh',
+          height: '6vh',
           backgroundColor: 'rgba(255, 255, 255, 0.2)',
           borderRadius: '50%',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           color: 'white',
-          fontSize: '1.2rem',
+          fontSize: `clamp(0.8rem, 1.5vh, 1.2rem)`, // Responsive font size
           fontWeight: 'bold',
           cursor: 'pointer',
           transition: 'background-color 0.2s ease',
@@ -123,8 +129,8 @@ export default function Navbar() {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.5rem"
-          height="1.5rem"
+          width="3vh"
+          height="3vh"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

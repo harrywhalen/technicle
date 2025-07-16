@@ -14,14 +14,14 @@ export default function QuizBox({
   nextReady,
   setNextReady,
   advanceStep,
-  tempBS, // <-- Expect this prop controlling wiggle
+  tempBS,
 }) {
   const [isWiggling, setIsWiggling] = useState(false);
 
   useEffect(() => {
     if (tempBS) {
       setIsWiggling(true);
-      const timer = setTimeout(() => setIsWiggling(false), 500); // wiggle for 1 sec
+      const timer = setTimeout(() => setIsWiggling(false), 500);
       return () => clearTimeout(timer);
     }
   }, [tempBS]);
@@ -33,53 +33,68 @@ export default function QuizBox({
   return (
     <div>
       <style>{`
-          @keyframes shimmer {
-            0% { left: -75%; }
-            100% { left: 125%; }
-          }
-          @keyframes wiggle {
-            0%, 100% { transform: translateX(0); }
-            15% { transform: translateX(-10px); }
-            30% { transform: translateX(10px); }
-            45% { transform: translateX(-10px); }
-            60% { transform: translateX(0px); }
-          }
-        `}</style>
+        @keyframes shimmer {
+          0% { left: -75%; }
+          100% { left: 125%; }
+        }
+        @keyframes wiggle {
+          0%, 100% { transform: translateX(0); }
+          15% { transform: translateX(-10px); }
+          30% { transform: translateX(10px); }
+          45% { transform: translateX(-10px); }
+          60% { transform: translateX(0px); }
+        }
+      `}</style>
 
       <div
         style={{
-          width: "450px",
+          width: "100%",
+          height: "100%",
           animation: isWiggling ? "wiggle 1s ease-in-out" : "none",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <div
           style={{
+            flex: 1,
             display: "flex",
             flexDirection: "column",
             backgroundColor: "#ffffff",
-            borderColor: "#1f3a60",
-            borderWidth: "3px",
-            borderStyle: "solid",
+            border: "3px solid #1f3a60",
             color: "#1f3a60",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-            borderRadius: "10px 10px 0px 0px",
-            padding: "0px 15px 0px 15px",
+            borderRadius: "10px 10px 0 0",
+            padding: "1rem",
+            boxSizing: "border-box",
+            fontSize: "clamp(0.8rem, 1.2vw, 1.2rem)",
           }}
         >
-          <h4 style={{ fontSize: "1.5em", textAlign: "center", height: "40px" }}>
+          <h4 style={{ textAlign: "center", marginBottom: "1rem" }}>
             {question || "No quiz question provided."}
           </h4>
+
           <div
             style={{
+              flex: 1,
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              padding: "0px 40px 15px 40px",
+              justifyContent: "flex-start",
+              gap: "0.8rem",
+              overflowY: "auto",
             }}
           >
             {Qtype === "MCQ" && options && options.length > 0 ? (
               options.map((option, index) => (
-                <label key={index}>
+                <label
+                  key={index}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    fontSize: "clamp(0.85rem, 1.1vw, 1.2rem)",
+                    gap: "0.5rem",
+                  }}
+                >
                   <input
                     type="radio"
                     name="dcf_quiz_option"
@@ -87,86 +102,74 @@ export default function QuizBox({
                     checked={selectedOption === option}
                     onChange={handleOptionChange}
                     style={{
-                      marginRight: "10px",
-                      transform: "scale(1.4)",
-                      fontSize: "1.1em",
-                      marginTop: "20px",
+                      transform: "scale(1.3)",
                     }}
                   />
                   {option}
                 </label>
               ))
             ) : Qtype === "MCQ" ? (
-              <p style={{ fontSize: "0.9em", color: "#888" }}>
+              <p style={{ fontSize: "clamp(0.7rem, 1vw, 1rem)", color: "#888" }}>
                 No options available for this quiz.
               </p>
             ) : null}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              {(Qtype === "MCQ" || Qtype === "cells" || nextReady) && (
-                <button
-                  type="submit"
-                  onClick={nextReady ? advanceStep : handleSubmit}
-                  style={{
-                    backgroundColor: nextReady ? "#00bfff" : "#3498db",
-                    color: "white",
-                    padding: "10px 20px",
-                    border: "none",
-                    borderRadius: "5px",
-                    cursor: "pointer",
-                    fontSize: "1.2em",
-                    fontWeight: "bold",
-                    display: "block",
-                    marginTop: "25px",
-                    transition: "background-color 0.3s ease",
-                    position: "relative",
-                    height: "55px",
-                    width: "120px",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.backgroundColor = "#297bbd")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.backgroundColor = nextReady
-                      ? "#00bfff"
-                      : "#3498db")
-                  }
-                >
-                  {nextReady ? "Next" : "Submit"}
-
-                  {nextReady && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: "-75%",
-                        height: "100%",
-                        width: "50%",
-                        background:
-                          "linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)",
-                        transform: "skewX(-20deg)",
-                        animation: "shimmer 2s infinite",
-                        zIndex: 1,
-                        pointerEvents: "none",
-                      }}
-                    />
-                  )}
-                </button>
-              )}
-            </div>
           </div>
+
+          {(Qtype === "MCQ" || Qtype === "cells" || nextReady) && (
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "1.5rem" }}>
+              <button
+                type="submit"
+                onClick={nextReady ? advanceStep : handleSubmit}
+                style={{
+                  backgroundColor: nextReady ? "#00bfff" : "#3498db",
+                  color: "white",
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  fontSize: "1.2em",
+                  fontWeight: "bold",
+                  position: "relative",
+                  height: "55px",
+                  width: "120px",
+                  transition: "background-color 0.3s ease",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "#297bbd")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = nextReady
+                    ? "#00bfff"
+                    : "#3498db")
+                }
+              >
+                {nextReady ? "Next" : "Submit"}
+                {nextReady && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: "-75%",
+                      height: "100%",
+                      width: "50%",
+                      background:
+                        "linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)",
+                      transform: "skewX(-20deg)",
+                      animation: "shimmer 2s infinite",
+                      zIndex: 1,
+                      pointerEvents: "none",
+                    }}
+                  />
+                )}
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* Bottom status line */}
         <div
           style={{
-            height: "3px",
-            borderRadius: "0px 0px 15px 15px",
+            height: "5px",
+            borderRadius: "0 0 15px 15px",
             backgroundColor: "#1f3a60",
           }}
         />

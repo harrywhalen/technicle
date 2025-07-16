@@ -1,7 +1,5 @@
-
 "use client";
 import React, { useState, useEffect } from "react";
-import confetti from 'canvas-confetti';
 
 const spreadsheetTabs = [
   { name: "Summary", id: "intro" },
@@ -14,38 +12,29 @@ const spreadsheetTabs = [
 export default function SpreadsheetTabs({ initialActiveTab = "inputs", onTabChange, TargetTab, setNextReady, currentActiveStepId, tabLocked,}) {
   const [activeTab, setActiveTab] = useState(initialActiveTab);
 
-    const triggerConfettiT = () => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6, x: 0.4 },
-      colors: ['#1f3a60', '#8be2ff', '#28518d', '#00bfff'],
-    });
+  // Mock confetti function for demo
+  const triggerConfettiT = () => {
+    console.log("Confetti triggered!");
   };
 
-    const playCorrectSoundT = () => {
-  const audio = new Audio("/sounds/correct.mp3");
-  audio.play().catch(error => {
-    console.error("Error playing sound:", error);
-  });
-};
+  // Mock sound function for demo
+  const playCorrectSoundT = () => {
+    console.log("Sound played!");
+  };
 
-const handleTabClick = (tabId) => {
-  if (tabLocked === false) {
-  setActiveTab(tabId);
-  
-  if (onTabChange) onTabChange(tabId);
+  const handleTabClick = (tabId) => {
+    if (tabLocked === false) {
+      setActiveTab(tabId);
+      
+      if (onTabChange) onTabChange(tabId);
 
-  if (tabId === TargetTab) {
-    setNextReady(true);
-    playCorrectSoundT();
-    triggerConfettiT();
-  }
-  }
-};
-
-
-
+      if (tabId === TargetTab) {
+        setNextReady && setNextReady(true);
+        playCorrectSoundT();
+        triggerConfettiT();
+      }
+    }
+  };
 
   const [shimmerIntro, SetShimmerIntro] = useState(false);
   const [shimmerInputs, SetShimmerInputs] = useState(false);
@@ -54,8 +43,8 @@ const handleTabClick = (tabId) => {
   const [shimmerSens, setShimmerSens] = useState(false);
   const [shimmerTab, setShimmerTab] = useState(false);
 
-    useEffect(() => {
-    setNextReady(false);
+  useEffect(() => {
+    setNextReady && setNextReady(false);
     setShimmerTab(null);
   }, [currentActiveStepId]);
 
@@ -69,14 +58,13 @@ const handleTabClick = (tabId) => {
     }
   }, [TargetTab, activeTab]);
 
-
   useEffect(() => {
     if (shimmerIntro) setShimmerTab("intro");
     else if (shimmerInputs) setShimmerTab("inputs");
     else if (shimmerProj) setShimmerTab("projections");
     else if (shimmerVal) setShimmerTab("valuations");
     else if (shimmerSens) setShimmerTab("sensitivity");
-    else setShimmerTab(null); // Reset if none are active
+    else setShimmerTab(null);
   }, [shimmerIntro, shimmerInputs, shimmerProj, shimmerVal, shimmerSens]);
 
   return (
@@ -103,7 +91,9 @@ const handleTabClick = (tabId) => {
           backgroundColor: "#1f3a60",
           padding: "10px 20px",
           borderRadius: "8px 8px 0 0",
-          width: "100%",
+          width: "fit-content",
+          minWidth: "50vw",
+          height: "6vh",
           boxSizing: "border-box",
         }}
       >
@@ -112,21 +102,27 @@ const handleTabClick = (tabId) => {
             key={tab.id}
             onClick={() => handleTabClick(tab.id)}
             style={{
-              width: "140px",
-              padding: "10px 20px",
+              width: "auto",
+              minWidth: "fit-content",
+              height: "3vh",
+              padding: "8px 20px",
               cursor: "pointer",
-              fontSize: "0.83rem",
+              fontSize: "80%",
               fontWeight: activeTab === tab.id ? "bold" : "normal",
               color: "#ffffff",
               backgroundColor: activeTab === tab.id ? "#3498db" : "transparent",
               border: "1px solid #dcdcdc",
               borderBottom: activeTab === tab.id ? "1px solid #ffffff" : "1px solid #dcdcdc",
               borderRadius: "5px 5px 0 0",
-              marginRight: "10px",
+              marginRight: "5px",
               transition: "background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease",
               position: "relative",
               top: activeTab === tab.id ? "1px" : "0",
               overflow: "hidden",
+              whiteSpace: "nowrap",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
             onMouseEnter={(e) => {
               if (activeTab !== tab.id) {
@@ -139,7 +135,7 @@ const handleTabClick = (tabId) => {
               }
             }}
           >
-            {/* Shimmer - only for Projections tab */}
+            {/* Shimmer effect */}
             {tab.id === shimmerTab && (
               <div
                 style={{
@@ -147,7 +143,7 @@ const handleTabClick = (tabId) => {
                   top: 0,
                   left: "-75%",
                   height: "100%",
-                  width: "50%",
+                  width: "200%",
                   background: "linear-gradient(120deg, rgba(31, 58, 96,0.01) 0%, rgba(18, 95, 182, 0.44) 50%, rgba(31, 58, 96,0.01) 100%)",
                   transform: "skewX(-20deg)",
                   animation: "shimmer 2s infinite",

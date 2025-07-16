@@ -5,8 +5,8 @@ export default function LessonName() {
   return (
     <div
       style={{
-        height: '6rem', // 90px → rem
-        width: '90vw', // 1000px → viewport-based width
+        height: '10vh', // 90px → rem
+        width: '50vw', // 1000px → viewport-based width
         maxWidth: '62.5rem', // Limits it to 1000px max
         backgroundColor: '#ffffff',
         borderColor: '#1f3a60',
@@ -15,16 +15,17 @@ export default function LessonName() {
         borderRadius: '0.625rem', // 10px → rem
         boxShadow: '0 0.25rem 0.5rem rgba(0,0,0,0.1)', // 4px 8px → rem
         color: '#1f3a60',
-        fontSize: '4.375rem', // 70px → rem (you may want to scale this down for smaller screens)
+        fontSize: 'clamp(1.5rem, 3.5vw, 4.375rem)', // Responsive font size that scales with viewport
         fontWeight: 650,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: '0.9375rem', // 15px → rem
         textAlign: 'center',
+
       }}
     >
-      What is an Income Statement
+      What is an Income Statement?
     </div>
   );
 }
