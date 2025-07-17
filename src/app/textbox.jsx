@@ -30,7 +30,7 @@ export default function TextBox({ content }) {
                     alignItems: 'flex-start', // Align content to top
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Match QuizBox shadow
                     wordWrap: 'break-word',
-                    hyphens: 'auto',
+                    hyphens: 'none',
                 }}
             >
                 <div style={{ width: '100%' }}>
