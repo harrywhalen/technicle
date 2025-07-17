@@ -124,26 +124,36 @@ const Big3 = forwardRef((
           style={{
             flex: '0 0 40%',
             minWidth: '20rem',
-            maxWidth: '35rem',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'stretch',
             overflow: 'hidden',
           }}
         >
-          <RightSide
-            content={currentStepContent.textBoxContent}
-            question={currentStepContent.quiz.question}
-            options={currentStepContent.quiz.options}
-            correctAnswer={currentStepContent.quiz.correctAnswer}
-            isCorrect={isCorrect}
-            setIsCorrect={setIsCorrect}
-            handleSubmit={handleSubmit}
-            selectedOption={selectedOption}
-            setSelectedOption={setSelectedOption}
-            Qtype={Qtype}
-            nextReady={nextReady}
-            setNextReady={setNextReady}
-            advanceStep={advanceStep}
-            tempBS={tempBS}
-          />
+          <div
+            style={{
+              width: '100%',
+              maxWidth: '35rem',
+              minWidth: '20rem',
+            }}
+          >
+            <RightSide
+              content={currentStepContent.textBoxContent}
+              question={currentStepContent.quiz.question}
+              options={currentStepContent.quiz.options}
+              correctAnswer={currentStepContent.quiz.correctAnswer}
+              isCorrect={isCorrect}
+              setIsCorrect={setIsCorrect}
+              handleSubmit={handleSubmit}
+              selectedOption={selectedOption}
+              setSelectedOption={setSelectedOption}
+              Qtype={Qtype}
+              nextReady={nextReady}
+              setNextReady={setNextReady}
+              advanceStep={advanceStep}
+              tempBS={tempBS}
+            />
+          </div>
         </div>
       </div>
     </div>

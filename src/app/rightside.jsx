@@ -30,7 +30,7 @@ export default function RightSide({
         fontWeight: 'normal',
         lineHeight: '1.4',
         padding: '1rem',
-        gap: '3.55rem',
+        gap: 'clamp(1rem, 3vw, 2rem)', // Responsive gap that scales with screen size
         borderRadius: '0.625rem',
         boxShadow: '0 0.25rem 0.5rem rgba(0,0,0,0.1)',
         width: '100%',

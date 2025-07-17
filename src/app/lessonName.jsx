@@ -15,7 +15,7 @@ export default function LessonName() {
         borderRadius: '0.625rem', // 10px → rem
         boxShadow: '0 0.25rem 0.5rem rgba(0,0,0,0.1)', // 4px 8px → rem
         color: '#1f3a60',
-        fontSize: 'clamp(1.5rem, 3.5vw, 4.375rem)', // Responsive font size that scales with viewport
+        fontSize: 'clamp(1.5rem, 3vw, 4.375rem)', // Responsive font size that scales with viewport
         fontWeight: 650,
         display: 'flex',
         justifyContent: 'center',

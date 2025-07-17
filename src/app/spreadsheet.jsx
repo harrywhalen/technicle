@@ -49,8 +49,8 @@ export default function Spreadsheet({
   if (dataLoading) {
     return (
       <div style={{
-        width: '100%',
-        height: '400px',
+        width: '50vw',
+        height: '70vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -85,7 +85,7 @@ export default function Spreadsheet({
         licenseKey="non-commercial-and-evaluation"
         stretchH="all"
         width="100%"
-        height="auto"
+        height="100%"
         readOnly={false}
         contextMenu={true}
         afterChange={afterChange}

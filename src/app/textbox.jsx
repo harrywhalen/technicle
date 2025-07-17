@@ -1,33 +1,42 @@
 "use client";
 import React from 'react';
 
-export default function TextBox({ content }) { // Now accepts a 'content' prop
-    return(
+export default function TextBox({ content }) {
+    return (
         <div
             style={{
-                width: '31.25rem' // Set to 300px for consistency with the right column in Big3
+                flex: 1, // Takes equal space with QuizBox
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: 0, // Allows flex item to shrink below content size
             }}
         >
             <div
                 style={{
-                    // Removed height: '100%' and fixed height to allow content to dictate height naturally.
-                    height: '100%', // Maintain a minimum height for visual consistency
+                    flex: 1,
                     backgroundColor: '#ffffff',
                     borderColor: '#1f3a60',
-                    borderWidth: '0.1875rem' , // Changed to 3px to match QuizBox and other elements
+                    borderWidth: '3px',
                     borderStyle: 'solid',
                     color: '#1f3a60',
-                    // Adjusted font size and weight to be more suitable for body text
-                    fontSize: '1.5em', // Adjust font size relative to parent
-                    fontWeight: 'normal', // Standard font weight for body text
-                    lineHeight: '1.4', // Improved line spacing for readability
-                    padding: '15px',
+                    fontSize: 'clamp(0.5rem, 2vw, 1.5rem)', // Responsive font size that scales well
+                    fontWeight: 'normal',
+                    lineHeight: '1.4',
+                    padding: '1rem',
                     borderRadius: '10px',
+                    boxSizing: 'border-box',
+                    overflowY: 'auto', // Allows scrolling if content is too long
+                    display: 'flex',
+                    alignItems: 'flex-start', // Align content to top
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Match QuizBox shadow
+                    wordWrap: 'break-word',
+                    hyphens: 'auto',
                 }}
             >
-                {content || "No content provided."} {/* Displays the content passed via prop */}
+                <div style={{ width: '100%' }}>
+                    {content || "No content provided."}
+                </div>
             </div>
-
         </div>
     );
 }

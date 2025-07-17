@@ -31,7 +31,14 @@ export default function QuizBox({
   };
 
   return (
-    <div>
+    <div
+      style={{
+        flex: 1, // Takes equal space with TextBox
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: 0, // Allows flex item to shrink below content size
+      }}
+    >
       <style>{`
         @keyframes shimmer {
           0% { left: -75%; }
@@ -48,8 +55,7 @@ export default function QuizBox({
 
       <div
         style={{
-          width: "100%",
-          height: "100%",
+          flex: 1,
           animation: isWiggling ? "wiggle 1s ease-in-out" : "none",
           display: "flex",
           flexDirection: "column",
@@ -70,7 +76,12 @@ export default function QuizBox({
             fontSize: "clamp(0.8rem, 1.2vw, 1.2rem)",
           }}
         >
-          <h4 style={{ textAlign: "center", marginBottom: "1rem" }}>
+          <h4 style={{ 
+            textAlign: "center", 
+            marginBottom: "1rem", 
+            margin: "0 0 1rem 0",
+            fontSize: "clamp(0.9rem, 1.3vw, 1.3rem)" // Slightly larger for heading
+          }}>
             {question || "No quiz question provided."}
           </h4>
 
@@ -82,6 +93,7 @@ export default function QuizBox({
               justifyContent: "flex-start",
               gap: "0.8rem",
               overflowY: "auto",
+              minHeight: 0, // Allows scrolling when needed
             }}
           >
             {Qtype === "MCQ" && options && options.length > 0 ? (
@@ -91,8 +103,9 @@ export default function QuizBox({
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    fontSize: "clamp(0.85rem, 1.1vw, 1.2rem)",
+                    fontSize: "clamp(0.8rem, 1.1vw, 1.1rem)",
                     gap: "0.5rem",
+                    cursor: "pointer",
                   }}
                 >
                   <input
@@ -103,6 +116,7 @@ export default function QuizBox({
                     onChange={handleOptionChange}
                     style={{
                       transform: "scale(1.3)",
+                      cursor: "pointer",
                     }}
                   />
                   {option}
@@ -116,22 +130,22 @@ export default function QuizBox({
           </div>
 
           {(Qtype === "MCQ" || Qtype === "cells" || nextReady) && (
-            <div style={{ display: "flex", justifyContent: "center", marginTop: "1.5rem" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}>
               <button
                 type="submit"
                 onClick={nextReady ? advanceStep : handleSubmit}
                 style={{
                   backgroundColor: nextReady ? "#00bfff" : "#3498db",
                   color: "white",
-                  padding: "10px 20px",
+                  padding: "clamp(8px, 1vw, 12px) clamp(16px, 2vw, 24px)",
                   border: "none",
                   borderRadius: "5px",
                   cursor: "pointer",
-                  fontSize: "1.2em",
+                  fontSize: "clamp(0.9rem, 1.2vw, 1.2rem)",
                   fontWeight: "bold",
                   position: "relative",
-                  height: "55px",
-                  width: "120px",
+                  height: "clamp(40px, 6vw, 55px)",
+                  width: "clamp(100px, 15vw, 120px)",
                   transition: "background-color 0.3s ease",
                 }}
                 onMouseEnter={(e) =>
