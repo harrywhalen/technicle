@@ -7,14 +7,14 @@ const DaProgWidth = ((highestStep / totalSteps) * 5000)
 
   return (
 <div
- style={{ position: 'relative', width: '20px', marginRight: '975px', marginBottom: '35px'}}
+ style={{ position: 'relative', width: '20px', marginRight: '51vw', marginBottom: '35px'}}
 >
 
 <div
 style = {{
     position: 'absolute',
     height: '15px',
-    width: '1000px',
+    width: '52vw',
     backgroundColor: '#184c94',
     borderWidth: '2px',
     borderStyle: 'solid',

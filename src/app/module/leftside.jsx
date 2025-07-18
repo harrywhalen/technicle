@@ -46,7 +46,7 @@ content,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginLeft: '0.625rem',
+    marginLeft: '.15vw',
 
 }}
     >

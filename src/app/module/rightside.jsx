@@ -4,7 +4,7 @@ import QuizBox from "./quizbox.jsx";
 
 
 export default function RightSide({content, question, options, correctAnswer, isCorrect, setIsCorrect, handleSubmit, selectedOption, setSelectedOption, Qtype, 
-  nextReady, setNextReady, advanceStep, tempBS}) {
+  nextReady, setNextReady, advanceStep, wiggleTime}) {
   return (
 <div
   style={{
@@ -19,13 +19,13 @@ export default function RightSide({content, question, options, correctAnswer, is
     fontSize: '0.95rem',              // more consistent than em
     fontWeight: 'normal',
     lineHeight: '1.4',
-    padding: '1rem',                  // 16px
-    gap: '3.55rem',                   // 60px → rem
+    padding: '1rem',                  // 16px                 // 60px → rem
     borderRadius: '0.625rem',         // 10px → rem
     boxShadow: '0 0.25rem 0.5rem rgba(0,0,0,0.1)', // 4px 8px → rem
     width: '100%',                    // ensure it scales down on mobile
     maxWidth: '600px',                // optional: prevent it from stretching too wide
     boxSizing: 'border-box',
+    marginLeft: '3vw'
   }}
 >
 
@@ -47,7 +47,7 @@ export default function RightSide({content, question, options, correctAnswer, is
         nextReady={nextReady}
         setNextReady={setNextReady}
         advanceStep={advanceStep}
-        tempBS={tempBS}
+        wiggleTime={wiggleTime}
 
     />
 

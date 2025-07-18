@@ -7,8 +7,8 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
     return(
     <div
     style = {{
-        height: '70px',
-        width: '1006px',
+        height: '8vh',
+        width: '52.4vw',
         backgroundColor: '#1f3a60',
         borderRadius: '0px 0px 10px 10px',
 
@@ -16,7 +16,7 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
 
         <div
         style = {{
-        height: '50px',
+        height: '5.3vh',
         display: 'flex',
         marginLeft: '750px', // Adjusted to fit 4 buttons
         marginTop: '8px',

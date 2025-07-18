@@ -134,14 +134,13 @@ const triggerConfetti = () => {
   });
 };
 
-  const [tempBS, setTempBS] = useState(false);
+  const [wiggleTime, setWiggleTime] = useState(false);
 
   // Example: trigger wiggle when something happens, e.g., on button click
   const triggerWiggle = () => {
-    setTempBS(true);
+    setWiggleTime(true);
     setIsCorrect(null);
-    // Optionally reset tempBS after a bit if needed
-    setTimeout(() => setTempBS(false), 1100); // just to keep consistent
+    setTimeout(() => setWiggleTime(false), 1100); // just to keep consistent
   };
 
   const playCorrectSoundMCQ = () => {
@@ -447,7 +446,7 @@ const advanceStep = () => {
             playSound={playCorrectSoundMCQ}
             highestStep={highestStepIdRef.current}
             totalSteps={totalSteps}
-            tempBS={tempBS}
+            wiggleTime={wiggleTime}
             showCoordinates={showCoordinates}
             hotTableComponent={hotTableComponent }
             tabLocked={tabLocked}
