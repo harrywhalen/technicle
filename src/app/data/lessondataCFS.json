@@ -1,18 +1,7 @@
 {
-
-"SheetMappings": {
-
-    "inputs": {
-      "name": "Income Statement", 
-      "includeRows": ["Revenue", "Accounts Receivable", "Gross Profit", "Operating Expenses", 
-                    "Operating Expense", "EBITDA", "Depreciation", "Interest Expense",  "Interest Income",
-                   "EBT", "Tax Provision", "Net Income", "", "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue"]
-    }
-  },
-
     "1": {
-      "name": "What's an Income Statement",
-      "textBoxContent": "The income statement—also called the profit and loss statement (P&L)—shows a company’s financial performance over a specific period of time. It tells us how much revenue the business earned, what it spent to earn that revenue, and how much profit (or loss) it generated as a result.",
+      "name": "What's a Cash Flow Statement",
+      "textBoxContent": "The cash flow statement shows a company’s actual cash inflows and outflows over a specific period of time. It tells us how much cash the business generated and used in its operating, investing, and financing activities—helping us understand where the cash came from, where it went, and whether the company ended up with more or less cash at the end of the period.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {

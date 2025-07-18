@@ -7,7 +7,7 @@ const DaProgWidth = ((totalProgress / 1400) * 1000)
 
   return (
 <div
- style={{ position: 'relative', width: '200px', marginTop: '50px', marginLeft: '70px',}}
+ style={{ position: 'relative', width: '200px', marginTop: '50px', marginLeft: '40px',}}
 >
 
 <div

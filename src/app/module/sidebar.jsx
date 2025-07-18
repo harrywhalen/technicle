@@ -1,76 +1,21 @@
 "use client";
-import React, { useState, useRef, useEffect,} from 'react';
+import React, { useState, useRef, useEffect, useMemo} from 'react';
 import styles from './Sidebar.module.css';
-import lessonData from "./data/lessondata.json"; // Import the JSON file
 
 const NAVBAR_HEIGHT = '4.375rem';
 
-// Define the initial conceptual sections
-const sidebarSections = [
-  {
-    title: lessonData['1'].name,
-    id: 1, // Matches the key in lessonContentData
-  },
-  {
-    title: lessonData['2'].name,
-    id: 2,
-  },
-  {
-    title: lessonData['3'].name,
-    id: 3,
-  },
-  {
-    title: lessonData['4'].name,
-    id: 4,
-  },
-  {
-    title: lessonData['5'].name,
-    id: 5,
-  },
-    {
-    title: lessonData['6'].name,
-    id: 6,
-  },
-    {
-    title: lessonData['7'].name,
-    id: 7,
-  },
-      {
-    title: lessonData['8'].name,
-    id: 8,
-  },
-        {
-    title: lessonData['9'].name,
-    id: 9,
-  },
-          {
-    title: lessonData['10'].name,
-    id: 10,
-  },
-        {
-    title: lessonData['11'].name,
-    id: 11,
-  },
-          {
-    title: lessonData['12'].name,
-    id: 12,
-  },
-        {
-    title: lessonData['13'].name,
-    id: 13,
-  },
-
-
-];
-
-
-
-const Sidebar = ({ onSectionChange,currentActiveStepId, setCurrentActiveStepId, highestStep}) => {
+const Sidebar = ({ onSectionChange,currentActiveStepId, setCurrentActiveStepId, highestStep, modContent}) => {
   // Initialize with 'dcf-intro' to match Module's default content.
   // This ensures the correct quiz/textbox content shows up on initial load.
 
 
-
+const sidebarSections = useMemo(() => {
+  if (!modContent) return []; // Return an empty array if modContent isn't ready
+  return Object.entries(modContent).map(([key, lesson]) => ({
+    title: lesson.name,
+    id: parseInt(key),
+  }));
+}, [modContent]);
 
 
 const handleSectionClick = (id) => {

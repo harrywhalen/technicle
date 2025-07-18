@@ -37,9 +37,8 @@ showCoordinates,
 hotTableComponent,
 tabLocked,
 sheetBlankForecasts,
+content,
 }) {
-
-    console.log("AAAAAAHHHHHHHHHHHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHH");
 
   return (
     <div
@@ -52,7 +51,9 @@ sheetBlankForecasts,
 }}
     >
 
-          <LessonName />
+          <LessonName 
+          content = {content}
+          />
 
           <DaProg
           highestStep={highestStep}
@@ -90,6 +91,7 @@ sheetBlankForecasts,
             hotTableComponent ={hotTableComponent }
             tabLocked={tabLocked}
             sheetBlankForecasts={sheetBlankForecasts}
+            content = {content}
           />
 
           <div>

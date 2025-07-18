@@ -5,9 +5,7 @@ import Spreadbutt from "./spreadbutt.jsx";
 import SpreadsheetTabs from "./spreadsheetTabs.jsx";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../lib/firebase.js";
-import { useSpreadsheetValidator } from './hooks/useSpreadsheetValidator';
-import lessonData from "./data/lessondata.json"; // Import the JSON file
-import LessonName from "./lessonName.jsx";
+import { useSpreadsheetValidator } from '../hooks/useSpreadsheetValidator';
 import confetti from 'canvas-confetti';
 
 const SpreadGang = forwardRef(({
@@ -20,38 +18,9 @@ const SpreadGang = forwardRef(({
   sheetsDisplayData, setSheetsDisplayData,
   sheetBlankCells, Qtype, TargetTab, nextReady,
   setNextReady, currentActiveStepId, playSound, showCoordinates,
-  tabLocked, sheetBlankForecasts,
+  tabLocked, sheetBlankForecasts, content,
 }, ref) => {
-  console.log("SpreadGang received showCoordinates:", typeof showCoordinates);
-  const sheetMappings = {
-    intro: {
-      name: "Summary",
-      includeRows: ["Revenue", "Gross Profit", "Gross Margin", "Operating Income", "Net Income", "Cash and Cash Equivalents"]
-    },
-    inputs: {
-      name: "Income Statement", 
-      includeRows: ["Revenue", "Cost of Goods Sold", "Gross Profit", "Operating Expenses", 
-                    "Operating Expense", "EBITDA", "Depreciation", "Interest Expense",  "Interest Income",
-                   "EBT", "Tax Provision", "Net Income", "", "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue"]
-    },
-    projections: {
-      name: "Balance Sheet",
-      includeRows: ["Accounts Receivable", "Accounts Payable", "Inventory", "Capital Expenditure", "Gross PPE", "Net PPE", 
-                    "Total Assets", "Depreciation", "Total Debt", "Current Debt", "Long Term Debt", "Total Liabilities", 
-      ]
-    },
-    valuations: {
-      name: "Cash Flow Statement",
-      includeRows: ["Net Income from Continuing Operations", "Cash Flow From Continuing Investing Activities", "Cash Flow From Continuing Operating Activities", 
-                    "Cash Flow From Continuing Financing Activities", "Depreciation and Amortization", 
-                   "Changes in Accounts Receivable", "Changes in Accounts Payable", "Changes in Inventory", "Changes in Cash"]
-    },
-    sensitivity: {
-      name: "Assumptions",
-      includeRows: ["Inventory / COGS", "Revenue Growth Rate", "SGnA / Revenue", "RnD / Revenue", 
-                   "Capex / Revenue", "Accounts Receivable / Revenue", "Accounts Payable / COGS", "Interest Rate", "Dividend Payout Ratio"]
-    }
-  };
+const sheetMappings = content?.SheetMappings || {};
 
   const hotTableComponent = useRef(null);
   const { checkCell, validateAllCells, setCorrectAnswers, getScore, setCurrentSheet } = useSpreadsheetValidator(hotTableComponent);
@@ -98,9 +67,9 @@ const filterDataForSheet = (fullData, sheetKey) => {
     
     const fetchData = async () => {
       try {
-        const docRef = doc(db, "models", "AAPL 3 Statement");
+        const docRef = doc(db, "models", "MSFT 3 Statement");
         const docSnap = await getDoc(docRef);
-        const coldDocRef = doc(db, "models", "AAPL 3 Statement");
+        const coldDocRef = doc(db, "models", "MSFT 3 Statement");
         const coldDocSnap = await getDoc(coldDocRef);
         
         if (docSnap.exists()) {

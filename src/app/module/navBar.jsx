@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import NamePlate from '../assets/NamePlate.png';
+import NamePlate from '../../assets/NamePlate.png';
 
 const navLinks = [
   { title: 'Leaderboard', path: '/leaderboard' },
@@ -83,8 +83,8 @@ export default function Navbar() {
                       <Image
                         src={NamePlate}
                         alt="Technicle Logo"
-                        width={250}
-                        height={50}
+                        width={200}
+                        height={40}
                         style={{ display: 'block', maxWidth: '100%', height: 'auto' }}
                       />
                     ) : (

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { signInWithPopup, signInWithRedirect, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
-import { auth, googleProvider, db } from '../../../lib/firebase';
+import { auth, googleProvider, db } from '../../lib/firebase';
 import googleLogo from './googleLogo.png';
 
 export default function EntryBoxes({top}) {

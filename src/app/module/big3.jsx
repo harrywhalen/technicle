@@ -45,14 +45,13 @@ const Big3 = forwardRef((
     hotTableComponent,
     tabLocked,
     sheetBlankForecasts,
+    content,
   },
   ref  // <-- the forwarded ref is the 2nd parameter
 ) => {
   if (!currentStepContent) {
     return <div>Loading...</div>;
   }
-console.log("In big3 showCoordinates:", typeof showCoordinates);
-console.log("Rendering Big3 - about to render LeftSide");
   return (
 <div
   style={{
@@ -114,6 +113,7 @@ console.log("Rendering Big3 - about to render LeftSide");
             hotTableComponent ={hotTableComponent }
             tabLocked={tabLocked}
             sheetBlankForecasts={sheetBlankForecasts}
+            content = {content}
           />
 
         </div>

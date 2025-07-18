@@ -1,14 +1,54 @@
 "use client";
 import React, { useState, useEffect, useRef, useMemo  } from 'react';
+import { useSearchParams } from "next/navigation";
 import Sidebar from "./sidebar.jsx";
 import LessonName from "./lessonName.jsx";
 import Big3 from "./big3.jsx";
-import lessonData from "./data/lessondata.json"; // Import the JSON file
-import { useSpreadsheetValidator } from './hooks/useSpreadsheetValidator';
+import lessonData from "../data/lessondata.json";
+import lessonDataBS from "../data/lessondataBS.json";
+import lessonDataCFS from "../data/lessondataCFS.json";
+import { useSpreadsheetValidator } from '../hooks/useSpreadsheetValidator';
 import confetti from 'canvas-confetti';
+
+const moduleDatabase = {
+  1: {
+    title: 'React Basics',
+    content: lessonData,
+  },
+  2: {
+    title: 'State Management',
+    content: lessonDataBS,
+  },
+  3: {
+    title: 'Hooks',
+    content: lessonDataCFS,
+  },
+  4: {
+    title: 'Routing',
+    content: lessonData,
+  },
+  5: {
+    title: 'Testing',
+    content: lessonData,
+  },
+  6: {
+    title: 'Performance',
+    content: lessonData,
+  },
+  // Add the rest of your modules here...
+};
 
 export default function Module({setModDone}) {
 
+   const searchParams = useSearchParams();
+  const moduleId = parseInt(searchParams.get("moduleId")); // 👈 Get moduleId from URL
+
+  // If moduleId is missing or invalid, render fallback
+  if (!moduleId || !moduleDatabase[moduleId]) {
+    return <div>Module not found.</div>;
+  }
+
+  const modContent = moduleDatabase[moduleId]?.content;
 
   const [nextReady, setNextReady] = useState(false);
 
@@ -18,7 +58,7 @@ export default function Module({setModDone}) {
   const [hintOn, setHintOn] = useState(false);
 
   const [currentActiveStepId, setCurrentActiveStepId] = useState(1);
-  const [currentStepContent, setCurrentStepContent] = useState(lessonData['1']);
+  const [currentStepContent, setCurrentStepContent] = useState(modContent['1']);
 
   const [isCorrect, setIsCorrect] = useState(null); // null = no answer yet, true/false = result
   const [selectedOption, setSelectedOption] = useState("Discounted Cash Flow");
@@ -29,9 +69,8 @@ export default function Module({setModDone}) {
 const { setCurrentSheet } = useSpreadsheetValidator(hotTableComponent);
 
   const highestStepIdRef = useRef(1);
-  const TweakerStep = useRef(1);
 
-  const totalSteps = useMemo(() => Object.keys(lessonData).length, []);
+  const totalSteps = useMemo(() => Object.keys(modContent).length, []);
 
   const [tabLocked, setTabLocked] = useState(true);
 
@@ -317,7 +356,7 @@ const advanceStep = () => {
   setCurrentActiveStepId((prevId) => {
     const nextStep = prevId + 1; // number math
     setNextReady(false);
-    if (lessonData[nextStep.toString()]) {
+    if (modContent[nextStep.toString()]) {
       console.log("Advancing to step:", nextStep);
       return nextStep;
     } else {
@@ -356,7 +395,7 @@ const advanceStep = () => {
 
   // Update step content & reset quiz state when step ID changes
   useEffect(() => {
-    setCurrentStepContent(lessonData[currentActiveStepId.toString()]);
+    setCurrentStepContent(modContent[currentActiveStepId.toString()]);
     setIsCorrect(null);
     setSelectedOption(""); // Or a default value if you prefer
     console.log("Step updated to:", currentActiveStepId);
@@ -370,7 +409,7 @@ const advanceStep = () => {
                 currentActiveStepId={currentActiveStepId}
                 currentStepContent={currentStepContent}
                 setCurrentActiveStepId={setCurrentActiveStepId}
-                lessonData = {lessonData}
+                modContent = {modContent}
                 highestStep={highestStepIdRef.current}
 
       />
@@ -413,6 +452,7 @@ const advanceStep = () => {
             hotTableComponent={hotTableComponent }
             tabLocked={tabLocked}
             sheetBlankForecasts={sheetBlankForecasts}
+            content = {modContent}
           />
         ) : (
           <p style={{ color: '#1f3a60', textAlign: 'center', marginTop: '3.125rem', }}>

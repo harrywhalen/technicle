@@ -4,15 +4,30 @@
 
     "inputs": {
       "name": "Income Statement", 
-      "includeRows": ["Revenue", "Accounts Receivable", "Gross Profit", "Operating Expenses", 
-                    "Operating Expense", "EBITDA", "Depreciation", "Interest Expense",  "Interest Income",
-                   "EBT", "Tax Provision", "Net Income", "", "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue"]
+      "includeRows": [            "Revenue", "Cost of Goods Sold","Gross Profit", "Selling General And Administration", "Research and Development", 
+            "Operating Expenses","EBITDA", "Depreciation", "Interest Expense", "Interest Income", 
+            "EBT", "Tax Provision", "Tax Rate for Calcs",
+            "Net Income", "Gross Margin", "Net Margin", "", 
+            "Operating Income", "Cash and Cash Equivalents",
+            "Accounts Receivable", "Accounts Payable", "Inventory", "Capital Expenditure",
+            "Gross PPE", "Net PPE", "Total Assets",  "Total Debt", "Current Debt",
+            "Long Term Debt", "Total Liabilities", 
+            "Common Stock", "Dividends Paid", "Retained Earnings", "Total Equity", "Net Working Capital",
+            "Net Income from Continuing Operations", "Cash Flow From Continuing Investing Activities",
+            "Cash Flow From Continuing Operating Activities", "Cash Flow From Continuing Financing Activities",
+            "Depreciation and Amortization", "Changes in Accounts Receivable",
+            "Changes in Accounts Payable", "Changes in Inventory", "Changes in Cash", "Inventory / COGS", "Revenue Growth Rate", 
+            "SGnA / Revenue", "RnD / Revenue", "Capex / Revenue", "Accounts Receivable / Revenue", "Accounts Payable / COGS", 
+            "Inventory / COGS", "Interest Rate", "Dividend Payout Ratio", "Ebitda Margin", "Operating Margin", "Depreciation Rate",
+            "Return On Equity", "Return On Assets", "Current Ratio", "Debt / Ebitda", "Changes in Working Cap", "COGS / Revenue", "Opex / Revenue",
+            "Stock Buy Backs"        
+          ]
     }
   },
 
     "1": {
-      "name": "What's an Income Statement",
-      "textBoxContent": "The income statement—also called the profit and loss statement (P&L)—shows a company’s financial performance over a specific period of time. It tells us how much revenue the business earned, what it spent to earn that revenue, and how much profit (or loss) it generated as a result.",
+      "name": "What's a Balance Sheet",
+      "textBoxContent": "The balance sheet—also called the statement of financial position—shows a company’s financial health at a specific point in time. It tells us what the business owns (assets), what it owes (liabilities), and how much value is left for the owners (equity). The balance sheet follows the formula: Assets = Liabilities + Equity.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {
@@ -21,91 +36,12 @@
         "correctAnswer": "To summarize a company’s revenues and expenses over a period, showing profit or loss"
       },
       "targetTab": "none",
-      "TabLocked": "False",
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 0,
-        "column": 1
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
-      },
-        "Blankcel_1":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
-        "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "Blankcel_3":{
-        "tab": "inputs",
-        "row": 12,
-        "column": 1
-      },
-        "BlankFOR_1":{
-        "tab": "inputs",
-        "row": 0,
-        "column": 5
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 5
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      }
+      "TabLocked": "False"
+
     },
     "2": {
-      "name": "Revenue",
-      "textBoxContent": "Revenue is the total amount of money a company earns from its core operations, before any expenses are subtracted.",
+      "name": "Cash",
+      "textBoxContent": "SKLFJSDFJSD:LK.",
       "hint":"It's stated in the textbox.",
       "Qtype": "MCQ",
       "quiz": {
@@ -386,7 +322,7 @@
       }
     },
     "5": {
-      "name": "COGS",
+      "name": "Accounts Receivable",
       "textBoxContent": "The second line in most income statements is Cost of Goods Sold. Cost of goods sold or COGS, is the direct expenses needed to make the product that is generating revenue.",
       "hint":"shling",
       "Qtype": "MCQ",
@@ -638,7 +574,7 @@
       }
     },
     "8": {
-      "name": "Gross Profit",
+      "name": "Inventory",
       "textBoxContent": "Gross Profit is the difference between a company’s revenue and its Cost of Goods Sold (COGS). It shows how much the company earns from its core products or services before accounting for operating expenses, interest, taxes, or other costs.",
       "hint":"use the formula =F1 - F2 and drag to fill all cells",
       "Qtype": "cells",
@@ -713,7 +649,7 @@
       }
     },
     "9": {
-      "name": "Operating Expenses",
+      "name": "Prepaid Expenses",
       "textBoxContent": "Operating expenses are the costs a company incurs from its core business operations, excluding the cost of goods sold. They include items like salaries, rent, marketing, and R&D.",
       "hint":"=E4/E1",
       "Qtype": "MCQ",
@@ -787,7 +723,7 @@
       }
     },
       "10": {
-      "name": "How to forecast Operating Expenses",
+      "name": "Short term investments",
       "textBoxContent": "Like many other metrics, Operating Expenses can be forecast as a % of revenue. To do this, divide Operating expense in 2017 by Revenue in 2017",
       "hint":"shling",
       "Qtype": "cells",
@@ -856,7 +792,7 @@
       }
     },
       "11": {
-      "name": "Forecasting Operating Expenses",
+      "name": "PPE",
       "textBoxContent": "Now that we have Operating Expenses as a % of revenue, we can multiply revenue times that percent to forecast Operating Expenses.",
       "hint":"=F1*$B$15",
       "Qtype": "cells",
@@ -921,7 +857,7 @@
       }
     },
         "12": {
-      "name": "EBITDA",
+      "name": "Accoutns Payable",
       "textBoxContent": "EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It measures a company’s operating performance by showing profit from core business activities before accounting for financial and non-cash expenses. EBITDA is often used to compare profitability across companies and industries.",
       "hint":"=F3-F4",
       "Qtype": "cells",
@@ -982,7 +918,7 @@
     },
 
         "13": {
-      "name": "Finish",
+      "name": "Accrued Expenses",
       "textBoxContent": "The rest of the metrics on the income statement can't be forecasted without information from the Balance sheet or Cash flow statement. After you have completed the modules on the Balance sheet and Cash flow statement, their will be a final module wrapping up the model covering these and other metrics. Answer the final question to complete the module.",
       "hint":"shling",
       "Qtype": "MCQ",

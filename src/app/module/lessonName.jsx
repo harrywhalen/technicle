@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 
-export default function LessonName() {
+export default function LessonName({content}) {
   return (
     <div
       style={{
@@ -24,7 +24,7 @@ export default function LessonName() {
         textAlign: 'center',
       }}
     >
-      What is an Income Statement
+      <p>{content["1"].name}</p>
     </div>
   );
 }

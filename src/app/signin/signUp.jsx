@@ -34,7 +34,7 @@ return(
         borderRadius: '50px',
         opacity: '1',
         zIndex: '5',
-        boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.1)'
+        boxShadow: '0px 0px 15px rgba(0, 225, 255, 0.64)'
     }}
 >
     <SignPitch

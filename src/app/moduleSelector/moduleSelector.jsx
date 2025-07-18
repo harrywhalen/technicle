@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import {React, useState} from "react";
 import ModBox from "./moduleBox.jsx";
 import DaName from "./daName.jsx";
 import DaProg from "./daProg.jsx";
 import ModGrid from "./modGrid.jsx";
+import Collapser from "./collapser.jsx";
 
 const modules = [
   { id: 1, title1: "TEST MODULE", title2: "React Basics", subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
@@ -42,11 +43,14 @@ const modules = [
  const totalProgress = modules.reduce((sum, module) => sum + module.progress, 0);
 
 
+
+
 export default function MS() {
+  const [groupCollapsed, setCollapsed] = useState(false);
   return (
     <div
       style={{
-        height: "450px", // 500px * 0.8
+        height: groupCollapsed ? "100px" : "450px",
         width: "1400px", // 1000px * 0.8
         backgroundColor: "#e6f4f9",
         borderWidth: "2px", // 2px * 0.8
@@ -70,6 +74,9 @@ export default function MS() {
           flexDirection: "row",
         }}
       >
+        <Collapser
+        setCollapsed={setCollapsed}
+        />
         <DaName />
         <DaProg 
         totalProgress = {totalProgress}
@@ -77,9 +84,8 @@ export default function MS() {
         </div>
 
 
-        <ModGrid
-        modules={updatedModules}
-        />
+        {!groupCollapsed && <ModGrid modules={updatedModules} />}
+
 
       </div>
     </div>

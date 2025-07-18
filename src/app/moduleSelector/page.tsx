@@ -22,7 +22,15 @@ export default function Home() {
       >
         <Bullshit/>
         <TBL/>
-      <MS/>
+        <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+        >
+        <MS/>
+        </div>
+      
       </div>
 
     </div>

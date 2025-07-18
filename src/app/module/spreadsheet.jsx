@@ -5,7 +5,7 @@ import { HotTable } from '@handsontable/react';
 import { HyperFormula } from 'hyperformula';
 import { registerAllModules } from 'handsontable/registry';
 import 'handsontable/dist/handsontable.full.min.css';
-import lessonData from "./data/lessondata.json"; // Import the JSON file
+import lessonData from "../data/lessondata.json"; // Import the JSON file
 
 import './globals.css';
 

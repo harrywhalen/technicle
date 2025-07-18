@@ -24,12 +24,12 @@ export default function ModButt({butt_action, module}) {
     const queryParams = new URLSearchParams({
       moduleId: module.id || '',
       action: butt_action.toString(),
-      moduleName: module.name || '',
+      moduleName: `${module.title1}-${module.title2}`.replace(/\s+/g, '-'),
       // Add any other module data you want to pass
     });
 
     // Route to the main page with query parameters
-    router.push(`/?${queryParams.toString()}`);
+    router.push(`/module?${queryParams.toString()}`);
   };
 
   return (

@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'; // Use usePathname for router access
 import Image from 'next/image';
-import NamePlate from './NamePlate.png';
+import NamePlate from '../../assets/NamePlate.png';
 
 // Define the sections for the top navigation bar
 const navLinks = [
@@ -97,7 +97,7 @@ export default function Navbar() {
                             <Image
                               src={NamePlate}
                               alt="Technicle Logo"
-                              width={250}
+                              width={200}
                               height={50}
                               style={{ display: 'block' }}
                             />
