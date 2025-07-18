@@ -1,0 +1,21 @@
+.curved-button {
+  background-color: #007bff; /* A blue color similar to the image */
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 1000px; /* Large value to make it pill-shaped */
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none; /* Remove default focus outline */
+  position: relative; /* Needed for more advanced effects if you go that route */
+
+  /* The highlight effect */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Adjust values for desired darkness and spread */
+  transition: all 0.3s ease; /* Smooth transition on hover/active */
+}
+
+.curved-button:hover {
+  background-color: #0056b3; /* Slightly darker on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
