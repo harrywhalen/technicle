@@ -18,8 +18,9 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
         style = {{
         height: '5.3vh',
         display: 'flex',
-        marginLeft: '750px', // Adjusted to fit 4 buttons
+        marginLeft: '60%', // Adjusted to fit 4 buttons
         marginTop: '8px',
+        marginRight: '.1vw',
         gap: '10px', // Add some space between buttons
     }}>
 

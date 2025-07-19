@@ -51,14 +51,14 @@ export default function MS() {
     <div
       style={{
         height: groupCollapsed ? "100px" : "450px",
-        width: "1400px", // 1000px * 0.8
+        width: "73vw", // 1000px * 0.8
         backgroundColor: "#e6f4f9",
         borderWidth: "2px", // 2px * 0.8
         borderStyle: "solid",
         borderColor: "#00bfff",
         borderRadius: "40px", // 50px * 0.8
         marginTop: '40px',
-        marginLeft: '250px',
+        marginLeft: '13vw',
       }}
     >
       <div

@@ -36,8 +36,8 @@ export default function ModButt({butt_action, module}) {
     <div
       onClick={handleButtonClick}
       style={{
-        height: "40px", // 50px * 0.8
-        width: "72px",  // 90px * 0.8
+        height: "4.2vh", // 50px * 0.8
+        width: "4vw",  // 90px * 0.8
         backgroundColor: module.isUnlocked ? "#00bfff" : "#aaadae",
         borderWidth: "1.6px", // 2px * 0.8
         borderStyle: "solid",
@@ -48,7 +48,7 @@ export default function ModButt({butt_action, module}) {
         alignItems: "center",
         flexDirection: "column",
         color: "#ffffff",
-        fontSize: "12.8px", // 16px * 0.8
+        fontSize: ".8vw", // 16px * 0.8
         fontWeight: "bold",
         cursor: module.isUnlocked ? "pointer" : "not-allowed",
         // marginTop: "8px",       // 10px * 0.8

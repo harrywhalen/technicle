@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useImperativeHandle, forwardRef, } from 'react';
 import Spreadsheet from "./spreadsheet.jsx";
 import Spreadbutt from "./spreadbutt.jsx";
-import SpreadsheetTabs from "./spreadsheetTabs.jsx";
+import SpreadsheetTabsCopy from "./spreadsheetTabsCopy.jsx";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../lib/firebase.js";
 import { useSpreadsheetValidator } from '../hooks/useSpreadsheetValidator';
@@ -208,7 +208,7 @@ const checkAllAnswers = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <SpreadsheetTabs
+      <SpreadsheetTabsCopy
         initialActiveTab="inputs"
         onTabChange={handleTabChange}
         TargetTab={TargetTab}
