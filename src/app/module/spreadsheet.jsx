@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { HotTable } from '@handsontable/react';
 import { HyperFormula } from 'hyperformula';
 import { registerAllModules } from 'handsontable/registry';
@@ -23,10 +23,61 @@ export default function Spreadsheet({
   currentStepContent,
   activeTab,
 }) {
+  const spreadsheetContainerRef = useRef(null);
+
+  // Prevent page scrolling when hovering over spreadsheet
+  useEffect(() => {
+    const container = spreadsheetContainerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Get the spreadsheet's scrollable element
+      const hotScrollableElement = container.querySelector('.wtHolder');
+      if (hotScrollableElement) {
+        // Apply the scroll to the spreadsheet instead
+        hotScrollableElement.scrollTop += e.deltaY;
+        hotScrollableElement.scrollLeft += e.deltaX;
+      }
+    };
+
+    // Add wheel event listener with passive: false to allow preventDefault
+    container.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
   // Column headers for the years
   const colHeaders = [
     'Metric', '2014A', '2015A', '2016A', '2017A', '2018A',
     '2019P', '2020P', '2021P', '2022P'
+  ];
+
+  // Generate column letters (A, B, C, etc.)
+  const generateColumnLetters = (count) => {
+    const letters = [];
+    for (let i = 0; i < count; i++) {
+      if (i < 26) {
+        letters.push(String.fromCharCode(65 + i)); // A-Z
+      } else {
+        // For columns beyond Z, use AA, AB, AC, etc.
+        const firstLetter = String.fromCharCode(64 + Math.floor(i / 26));
+        const secondLetter = String.fromCharCode(65 + (i % 26));
+        letters.push(firstLetter + secondLetter);
+      }
+    }
+    return letters;
+  };
+
+  const columnLetters = generateColumnLetters(colHeaders.length);
+
+  // Nested headers: [column letters row, year headers row]
+  const nestedHeaders = [
+    columnLetters,
+    colHeaders
   ];
 
   const afterChange = (changes, source) => {
@@ -65,6 +116,7 @@ export default function Spreadsheet({
 
   return (
     <div
+      ref={spreadsheetContainerRef}
       style={{
         width: '52.1vw',
         backgroundColor: '#ffffff',
@@ -76,8 +128,8 @@ export default function Spreadsheet({
       <HotTable
         ref={hotTableComponent}
         data={paddedData}
-        colHeaders={colHeaders}
-        rowHeaders={false} // Disabled row headers since first column contains labels
+        nestedHeaders={nestedHeaders} // Use nestedHeaders instead of colHeaders
+        rowHeaders={true}
         autoRowSize={true}
         licenseKey="non-commercial-and-evaluation"
         stretchH="all"
