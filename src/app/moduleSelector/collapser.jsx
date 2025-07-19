@@ -10,8 +10,8 @@ export default function Collapser({setCollapsed}) {
 onClick={() => setCollapsed(prev => !prev)}
 style = {{
     position: 'relative',
-    height: '45px',
-    width: '45px',
+    height: '5vh',
+    width: '2.5vw',
     backgroundColor: '#00bfff',
     borderWidth: '2px',
     borderStyle: 'solid',

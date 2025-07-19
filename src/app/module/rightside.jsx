@@ -25,7 +25,7 @@ export default function RightSide({content, question, options, correctAnswer, is
     width: '100%',                    // ensure it scales down on mobile
     maxWidth: '600px',                // optional: prevent it from stretching too wide
     boxSizing: 'border-box',
-    marginLeft: '3vw'
+    marginLeft: '2.5vw'
   }}
 >
 
