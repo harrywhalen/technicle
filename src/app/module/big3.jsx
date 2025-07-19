@@ -63,7 +63,7 @@ const Big3 = forwardRef((
     marginLeft: '10vw', // 180px → approx relative to screen
     borderRadius: '0.9375rem', // 15px → rem
     boxShadow: '0 0.25rem 1.125rem rgba(0, 0, 0, 0.1)', // 4px 18px → rem
-    marginTop: '11vh', // 100px → rem
+    marginTop: '13vh', // 100px → rem
     boxSizing: 'border-box',
   }}
 >

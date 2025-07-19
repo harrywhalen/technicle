@@ -5,7 +5,7 @@ export default function TextBox({ content }) { // Now accepts a 'content' prop
     return(
         <div
             style={{
-                width: '31.25rem' // Set to 300px for consistency with the right column in Big3
+                width: '26vw' // Set to 300px for consistency with the right column in Big3
             }}
         >
             <div
@@ -18,7 +18,7 @@ export default function TextBox({ content }) { // Now accepts a 'content' prop
                     borderStyle: 'solid',
                     color: '#1f3a60',
                     // Adjusted font size and weight to be more suitable for body text
-                    fontSize: '1.5em', // Adjust font size relative to parent
+                    fontSize: '1.2vw', // Adjust font size relative to parent
                     fontWeight: 'normal', // Standard font weight for body text
                     lineHeight: '1.4', // Improved line spacing for readability
                     padding: '15px',

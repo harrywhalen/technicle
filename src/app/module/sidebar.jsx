@@ -80,7 +80,7 @@ const handleSectionClick = (id) => {
             <li key={section.id} className={styles.navItem}>
               <div
                 onClick={() => handleSectionClick(section.id)}
-                style={{ cursor: 'pointer', fontSize: '1.25rem' }}
+                style={{ cursor: 'pointer', fontSize: '1.05vw' }}
                 className={`${styles.navLink} ${currentActiveStepId === section.id ? styles.active : ''}`}
               >
                 {section.title}

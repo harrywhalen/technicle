@@ -1,7 +1,7 @@
 /* styles/Sidebar.module.css */
 
 .sidebar {
-  width: 150px; /* Adjust as needed */
+  width: 8vw; /* Adjust as needed */
   background-color: #2c3e50; /* Dark blue from your mockup */
   color: white;
   padding: 20px 0;
@@ -22,13 +22,13 @@
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1vw;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 .subtitle {
-  font-size: 0.9rem;
+  font-size: 1vw;
   color: #a0aec0; /* Lighter grey for subtitle */
 }
 
@@ -37,7 +37,7 @@
 }
 
 .navSectionTitle {
-  font-size: 1.1rem;
+  font-size: 1vw;
   font-weight: 600;
   padding: 10px 20px;
   color: #a0aec0;
