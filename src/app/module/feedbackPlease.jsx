@@ -100,7 +100,7 @@ export default function FeedbackPLZ() {
           value={feedback}
           onChange={(e) => setFeedback(e.target.value)}
           disabled={isDisabled || isSubmitting}
-          placeholder={isDisabled ? "Daily limit reached" : "Share your thoughts..."}
+          placeholder={isDisabled ? "Daily limit reached" : "Penny for your thoughts..."}
           onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
           style={{
             flex: '1 1 250px',
