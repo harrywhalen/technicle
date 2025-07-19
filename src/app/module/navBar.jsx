@@ -16,7 +16,7 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const navbarHeight = '5rem'; // 80px = 5rem (scales with root font-size)
+  const navbarHeight = '10vh'; // 80px = 5rem (scales with root font-size)
 
   return (
     <div

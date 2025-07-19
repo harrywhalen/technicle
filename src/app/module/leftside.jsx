@@ -45,7 +45,7 @@ content,
     style={{
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     marginLeft: '.15vw',
 
 }}

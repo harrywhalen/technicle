@@ -14,15 +14,15 @@ export default function TextBox({ content }) { // Now accepts a 'content' prop
                     height: '100%', // Maintain a minimum height for visual consistency
                     backgroundColor: '#ffffff',
                     borderColor: '#1f3a60',
-                    borderWidth: '0.1875rem' , // Changed to 3px to match QuizBox and other elements
+                    borderWidth: '.2rem' , // Changed to 3px to match QuizBox and other elements
                     borderStyle: 'solid',
                     color: '#1f3a60',
                     // Adjusted font size and weight to be more suitable for body text
-                    fontSize: '1.2vw', // Adjust font size relative to parent
+                    fontSize: '1.15rem', // Adjust font size relative to parent
                     fontWeight: 'normal', // Standard font weight for body text
                     lineHeight: '1.4', // Improved line spacing for readability
                     padding: '15px',
-                    borderRadius: '10px',
+                    borderRadius: '1rem',
                 }}
             >
                 {content || "No content provided."} {/* Displays the content passed via prop */}

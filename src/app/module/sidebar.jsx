@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect, useMemo} from 'react';
 import styles from './Sidebar.module.css';
 
-const NAVBAR_HEIGHT = '4.375rem';
+const NAVBAR_HEIGHT = '10vh';
 
 const Sidebar = ({ onSectionChange,currentActiveStepId, setCurrentActiveStepId, highestStep, modContent}) => {
   // Initialize with 'dcf-intro' to match Module's default content.

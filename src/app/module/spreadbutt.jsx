@@ -16,11 +16,11 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
 
         <div
         style = {{
-        height: '5.3vh',
+        //height: '5.3vh',
         display: 'flex',
         marginLeft: '60%', // Adjusted to fit 4 buttons
         marginTop: '8px',
-        marginRight: '.1vw',
+        marginRight: '.5rem',
         gap: '10px', // Add some space between buttons
     }}>
 
@@ -40,10 +40,11 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
             display: 'block', // Make button a block element
             margin: '0 auto', // Center the button horizontally
             transition: 'background-color 0.3s ease', // Smooth transition on hover
-            width: '50px',
+            width: '2.6rem',
+            height: '2.6rem',
         }}
     >
-        <Highlighter color="#FFFFFF" size={24} />
+        <Highlighter color="#FFFFFF" size="1.5rem" />
     </button>
 
         <button
@@ -60,12 +61,13 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
             display: 'block', // Make button a block element
             margin: '0 auto', // Center the button horizontally
             transition: 'background-color 0.3s ease', // Smooth transition on hover
-            width: '50px',
+            width: '2.6rem',
+            height: '2.6rem',
         }}
         onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#297bbd'} // Darker blue on hover
         onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#3498db'} // Original blue
     >
-    <RotateCw color="#FFFFFF" size={24} />
+    <RotateCw color="#FFFFFF" size="1.5rem" />
     </button>
 
         <button
@@ -82,10 +84,11 @@ export default function Spreadbutt({refresh, data, setData, highlightOn, setHigh
             display: 'block', // Make button a block element
             margin: '0 auto', // Center the button horizontally
             transition: 'background-color 0.3s ease', // Smooth transition on hover
-            width: '50px',
+            width: '2.6rem',
+            height: '2.6rem',
         }}
     >
-    <Lightbulb color="#FFFFFF" size={24} />
+    <Lightbulb color="#FFFFFF" size="1.5rem" />
     </button>
 
 

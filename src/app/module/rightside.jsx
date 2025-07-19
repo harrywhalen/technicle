@@ -14,13 +14,13 @@ export default function RightSide({content, question, options, correctAnswer, is
     alignSelf: 'flex-start',
     margin: '0 1.5rem 0 2rem',         // 24px left, 15px right → rem units
     backgroundColor: '#ffffff',
-    border: '3px solid #1f3a60',
+    border: '.2rem solid #1f3a60',
     color: '#1f3a60',
     fontSize: '0.95rem',              // more consistent than em
     fontWeight: 'normal',
     lineHeight: '1.4',
     padding: '1rem',                  // 16px                 // 60px → rem
-    borderRadius: '0.625rem',         // 10px → rem
+    borderRadius: '1rem',         // 10px → rem
     boxShadow: '0 0.25rem 0.5rem rgba(0,0,0,0.1)', // 4px 8px → rem
     width: '100%',                    // ensure it scales down on mobile
     maxWidth: '600px',                // optional: prevent it from stretching too wide
