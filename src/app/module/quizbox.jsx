@@ -52,7 +52,7 @@ export default function QuizBox({
 
       <div
         style={{
-          width: "450px",
+          width: "25vw",
           animation: isWiggling ? "wiggle 1s ease-in-out" : "none",
         }}
       >
@@ -68,11 +68,11 @@ export default function QuizBox({
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
             borderRadius: "10px 10px 0px 0px",
             padding: "0px 15px 0px 15px",
-            marginTop: '5vh',
+            marginTop: '4vh',
           }}
           
         >
-          <h4 style={{ fontSize: "1.5em", textAlign: "center", height: "40px" }}>
+          <h4 style={{ fontSize: "1.2vw", textAlign: "center", height: "4vh" }}>
             {question || "No quiz question provided."}
           </h4>
           <div
@@ -80,7 +80,7 @@ export default function QuizBox({
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              padding: "0px 40px 15px 40px",
+              padding: "0vh 2.5vw 3vh 2.5vw",
             }}
           >
             {Qtype === "MCQ" && options && options.length > 0 ? (
@@ -94,8 +94,8 @@ export default function QuizBox({
                     onChange={handleOptionChange}
                     style={{
                       marginRight: "10px",
-                      transform: "scale(1.4)",
-                      fontSize: "1.1em",
+                      transform: "scale(1.4vw)",
+                      fontSize: ".8vw",
                       marginTop: "2.1vh",
                     }}
                   />
@@ -103,7 +103,7 @@ export default function QuizBox({
                 </label>
               ))
             ) : Qtype === "MCQ" ? (
-              <p style={{ fontSize: "0.9em", color: "#888" }}>
+              <p style={{ fontSize: ".8vw", color: "#888" }}>
                 No options available for this quiz.
               </p>
             ) : null}
@@ -125,7 +125,7 @@ export default function QuizBox({
                     border: "none",
                     borderRadius: "5px",
                     cursor: "pointer",
-                    fontSize: "1.2em",
+                    fontSize: "1vw",
                     fontWeight: "bold",
                     display: "block",
                     marginTop: "25px",

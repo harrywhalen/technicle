@@ -103,7 +103,7 @@ const handleTabClick = (tabId) => {
           backgroundColor: "#1f3a60",
           padding: "10px 20px",
           borderRadius: "8px 8px 0 0",
-          width: "100%",
+          width: "52.4vw",
           boxSizing: "border-box",
         }}
       >

@@ -89,7 +89,7 @@ def generate_model(
     inventory = np.array(inventory[::-1])
     capex = (np.array(capex[::-1]))
     gross_ppe = (np.array(gross_ppe[::-1]))
-    net_ppe = (np.array(gross_ppe[::-1]))
+    net_ppe = (np.array(net_ppe[::-1]))
     total_debt = (np.array(total_debt[::-1]))
     current_debt = (np.array(current_debt[::-1]))
     long_term_debt = (np.array(long_term_debt[::-1]))
@@ -296,7 +296,7 @@ def generate_model(
             forecast_capex = (capex_pct * full_revenue[i])
             full_capex.append(forecast_capex * -1)
 
-            forecast_gross_ppe = (max(0, full_gross_ppe[-1] + abs(full_capex[i])))
+            forecast_gross_ppe = (max(0, full_gross_ppe[i-1] + abs(full_capex[i])))
             full_gross_ppe.append(forecast_gross_ppe)
 
             forecast_depreciation = (max(0, abs(full_capex[i]) * depreciation_pct))
@@ -304,7 +304,7 @@ def generate_model(
 
             accumulated_depr += forecast_depreciation
 
-            forecast_net_ppe = (max(0, full_gross_ppe[i] - accumulated_depr))
+            forecast_net_ppe = (max(0, full_gross_ppe[i] - abs(accumulated_depr)))
             full_net_ppe.append(forecast_net_ppe)
 
             forecast_total_debt = (total_debt_pct * full_revenue[i])

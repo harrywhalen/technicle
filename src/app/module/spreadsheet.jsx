@@ -49,7 +49,7 @@ export default function Spreadsheet({
   if (dataLoading) {
     return (
       <div style={{
-        width: '1000px',
+        width: '52.1vw',
         height: '400px',
         display: 'flex',
         alignItems: 'center',
@@ -66,7 +66,7 @@ export default function Spreadsheet({
   return (
     <div
       style={{
-        width: '1000px',
+        width: '52.1vw',
         backgroundColor: '#ffffff',
         border: '3px solid #1f3a60',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -82,7 +82,7 @@ export default function Spreadsheet({
         licenseKey="non-commercial-and-evaluation"
         stretchH="all"
         width="100%"
-        height="auto"
+        height="46vh"
         readOnly={false}
         contextMenu={true}
         afterChange={afterChange}
