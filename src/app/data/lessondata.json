@@ -4,15 +4,15 @@
 
     "inputs": {
       "name": "Income Statement", 
-      "includeRows": ["Revenue", "Accounts Receivable", "Gross Profit", "Operating Expenses", 
+      "includeRows": ["Revenue", "Cost of Goods Sold", "Gross Profit", "Operating Expenses", 
                     "Operating Expense", "EBITDA", "Depreciation", "Interest Expense",  "Interest Income",
                    "EBT", "Tax Provision", "Net Income", "", "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue"]
     }
   },
 
     "1": {
-      "name": "What's an Income Statement",
-      "textBoxContent": "The income statement—also called the profit and loss statement (P&L)—shows a company’s financial performance over a specific period of time. It tells us how much revenue the business earned, what it spent to earn that revenue, and how much profit (or loss) it generated as a result.",
+      "name": "What's an Income Statement?",
+      "textBoxContent": "The income statement, also called the profit and loss statement (P&L), shows a company’s financial performance over a specific period of time. It tells us how much revenue the business earned, what it spent to earn that revenue, and how much profit (or loss) it generated as a result.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {
@@ -204,7 +204,7 @@
     },
         "3": {
       "name": "Revenue Growth Rate",
-      "textBoxContent": "A way to forecast revenue growth is by using YoY growth from historical data. This is done by calculating the percentage change in revenue from one year to the next. Use the Excel formula =(Current Year Revenue - Prior Year Revenue) / ABS(Prior Year Revenue) to find YoY forecasted growth in the highlighted cell. If you are sturggling use the hint button",
+      "textBoxContent": "A way to forecast revenue growth is by using year on year growth from historical data. This is done by calculating the percentage change in revenue from one year to the next. Use the Excel formula =(Current Year Revenue - Prior Year Revenue) / ABS(Prior Year Revenue) to find YoY forecasted growth in the highlighted cell. If you get stuck use the hint button",
       "hint":"Use this formula: =((E1-D1) / D1)",
       "Qtype": "cells",
       "quiz": {
@@ -476,7 +476,7 @@
     },
     "6": {
       "name": "How do we Forecast COGS?",
-      "textBoxContent": "COGS is typically forecasted as a % of revenue. To find COGS as a % of revenue, Divide the most recent COGS by Revenue in the most recent year of historical data.",
+      "textBoxContent": "COGS is typically forecasted as a % of revenue. To find COGS as a % of revenue, Divide COGS by Revenue in the most recent year of historical data.",
       "hint":"=E2/E1",
       "Qtype": "cells",
       "quiz": {
@@ -715,12 +715,12 @@
     "9": {
       "name": "Operating Expenses",
       "textBoxContent": "Operating expenses are the costs a company incurs from its core business operations, excluding the cost of goods sold. They include items like salaries, rent, marketing, and R&D.",
-      "hint":"=E4/E1",
+      "hint":"Just click the thing",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "What could another example of SG&A be?",
-        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
-        "correctAnswer": "Salaries of the sales team"
+        "question": "What is operating expense in 2016?",
+        "options": [ "46022", "32603", "40241", "43328"],
+        "correctAnswer": "43328"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
@@ -789,10 +789,10 @@
       "10": {
       "name": "How to forecast Operating Expenses",
       "textBoxContent": "Like many other metrics, Operating Expenses can be forecast as a % of revenue. To do this, divide Operating expense in 2017 by Revenue in 2017",
-      "hint":"shling",
+      "hint":"=E4/E1",
       "Qtype": "cells",
       "quiz": {
-        "question": "What could another example of SG&A be?",
+        "question": "Find Opex as a % of revenue",
         "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
         "correctAnswer": "Salaries of the sales team"
       },
@@ -861,7 +861,7 @@
       "hint":"=F1*$B$15",
       "Qtype": "cells",
       "quiz": {
-        "question": "What could another example of SG&A be?",
+        "question": "Forecast Opex",
         "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
         "correctAnswer": "Salaries of the sales team"
       },

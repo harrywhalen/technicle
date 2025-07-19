@@ -12,8 +12,8 @@ def to_millions(arr):
 
 def ratioRounder(x):
     if isinstance(x, (list, np.ndarray)):
-        return [round(float(i), 2) for i in x]
-    return round(float(x), 2)
+        return [round(float(i), 3) for i in x]
+    return round(float(x), 3)
 
 
 def generate_model(
@@ -77,34 +77,35 @@ def generate_model(
     print("=== END INPUT CHECK ===\n")
     # ========== END DEBUG ==========
 
-    revenue = np.array(revenue[::-1])
-    sgna = np.array(sgna[::-1])
-    rnd = np.array(rnd[::-1])
-    cogs = np.array(cogs[::-1])
-    niav = np.array(niav[::-1])
-    depreciation = np.array(depreciation[::-1])
+    revenue = np.array(to_millions(revenue[::-1]))
+    sgna = np.array(to_millions(sgna[::-1]))
+    rnd = np.array(to_millions(rnd[::-1]))
+    cogs = np.array(to_millions(cogs[::-1]))
+    niav = np.array(to_millions(niav[::-1]))
+    depreciation = np.array(to_millions(depreciation[::-1]))
 
-    accounts_receivable = np.array(accounts_receivable[::-1])
-    accounts_payable = np.array(accounts_payable[::-1])
-    inventory = np.array(inventory[::-1])
-    capex = (np.array(capex[::-1]))
-    gross_ppe = (np.array(gross_ppe[::-1]))
-    net_ppe = (np.array(net_ppe[::-1]))
-    total_debt = (np.array(total_debt[::-1]))
-    current_debt = (np.array(current_debt[::-1]))
-    long_term_debt = (np.array(long_term_debt[::-1]))
-    interest_expense = (np.array(interest_expense[::-1]))
-    interest_income = np.array(interest_income[::-1])
-    common_stock = np.array(common_stock[::-1])
-    retained_earnings = np.array(retained_earnings[::-1])
-    cash = np.array(cash[::-1])
+    accounts_receivable = np.array(to_millions(accounts_receivable[::-1]))
+    accounts_payable = np.array(to_millions(accounts_payable[::-1]))
+    inventory = np.array(to_millions(inventory[::-1]))
+    capex = np.array(to_millions(capex[::-1]))
+    gross_ppe = np.array(to_millions(gross_ppe[::-1]))
+    net_ppe = np.array(to_millions(net_ppe[::-1]))
+    total_debt = np.array(to_millions(total_debt[::-1]))
+    current_debt = np.array(to_millions(current_debt[::-1]))
+    long_term_debt = np.array(to_millions(long_term_debt[::-1]))
+    interest_expense = np.array(to_millions(interest_expense[::-1]))
+    interest_income = np.array(to_millions(interest_income[::-1]))
+    common_stock = np.array(to_millions(common_stock[::-1]))
+    retained_earnings = np.array(to_millions(retained_earnings[::-1]))
+    cash = np.array(to_millions(cash[::-1]))
 
-    change_AR = np.array(change_AR[::-1])
-    change_AP = np.array(change_AP[::-1])
-    change_inventory = np.array(change_inventory[::-1])
-    stock_buybacks = np.array(stock_buybacks[::-1])
+    change_AR = np.array(to_millions(change_AR[::-1]))
+    change_AP = np.array(to_millions(change_AP[::-1]))
+    change_inventory = np.array(to_millions(change_inventory[::-1]))
+    stock_buybacks = np.array(to_millions(stock_buybacks[::-1]))
 
-    div_paid = (np.array(div_paid[::-1]))
+    div_paid = np.array(to_millions(div_paid[::-1]))
+
     
     # Fake zero arrays for other metrics same length as revenue or years
     zeros = np.zeros(max(len(revenue), years))
@@ -114,7 +115,7 @@ def generate_model(
     niav_avg = sum(niav) / len(niav)
 
     if len(revenue) > 1 and revenue[0] > 0:
-        revenue_growth = (revenue[-1] / revenue[0])**(1 / (len(revenue) - 1)) - 1
+        revenue_growth = (revenue[-1] - revenue[-2]) / revenue[-2]
     else:
         revenue_growth = 0
 
@@ -187,7 +188,7 @@ def generate_model(
     else:
         depreciation_pct = 0.1
 
-    opex_pct = (sgna_pct + rnd_pct)
+    
 
 
     if len(stock_buybacks):
@@ -346,7 +347,8 @@ def generate_model(
         gross_profit.append(gp)
         ebitda_val = gp - full_rnd[i] - full_sgna[i] + full_depreciation[i]
         ebitda.append(ebitda_val)
-        opex.append( full_sgna[i] + full_rnd[i])
+        opex.append( full_sgna[i] + full_rnd[i] - full_depreciation[i])
+        #opex.append( full_sgna[i] + full_rnd[i])
         tl = (full_total_debt[i] + full_accounts_payable[i])        
         total_liabilities.append(tl)
         Debt_over_Ebitda.append(full_total_debt[i] / ebitda[i])
@@ -453,64 +455,69 @@ def generate_model(
         current_ratio.append(ta / tl)
 
 
+    #opex_pct = (sgna[-1] + sgna[-1] - depreciation[-1])/ revenue[-1]
+    opex_pct = (opex[3])/ revenue[3]
+
+
+
 
     return OrderedDict([
         # income statement
-        ("Revenue", to_millions(full_revenue)),
-        ("Cost of Goods Sold", to_millions(full_cogs)),
-        ("Gross Profit", to_millions(gross_profit)),
-        ("Selling General And Administration", to_millions(full_sgna)),
-        ("Research and Development", to_millions(full_rnd)),
-        ("EBITDA", to_millions(ebitda)),
-        ("Net Income", to_millions(net_income)),
+        ("Revenue", full_revenue),
+        ("Cost of Goods Sold", full_cogs),
+        ("Gross Profit", gross_profit),
+        ("Selling General And Administration", full_sgna),
+        ("Research and Development", full_rnd),
+        ("EBITDA", ebitda),
+        ("Net Income", net_income),
         ("", [""] * years),
 
         # ratios stay the same
         ("Gross Margin", ratioRounder(gross_margin)),
         ("Net Margin", ratioRounder(net_margin)),
-        ("EBT", to_millions(pretax_income)),
-        ("Tax Provision", to_millions(taxes)),
+        ("EBT", pretax_income),
+        ("Tax Provision", taxes),
         ("Tax Rate for Calcs", ratioRounder(tax_rates)),
-        ("Operating Expenses", to_millions(opex)),
-        ("Operating Income", to_millions(opinc)),
+        ("Operating Expenses", opex),
+        ("Operating Income", opinc),
 
         # Balance sheet
-        ("Cash and Cash Equivalents", to_millions(full_cash)),
-        ("Accounts Receivable", to_millions(full_accounts_receivable)),
-        ("Accounts Payable", to_millions(full_accounts_payable)),
-        ("Inventory", to_millions(full_inventory)),
-        ("Capital Expenditure", to_millions(full_capex)),
-        ("Gross PPE", to_millions(full_gross_ppe)),
-        ("Net PPE", to_millions(full_net_ppe)),
-        ("Total Assets", to_millions(total_assets)),
-        ("Depreciation", to_millions(full_depreciation)),
-        ("Total Debt", to_millions(full_total_debt)),
-        ("Current Debt", to_millions(full_current_debt)),
-        ("Long Term Debt", to_millions(full_long_term_debt)),
-        ("Total Liabilities", to_millions(total_liabilities)),
-        ("Interest Expense", to_millions(full_interest_expense)),
-        ("Interest Income", to_millions(full_interest_income)),
-        ("Common Stock", to_millions(full_common_stock)),
-        ("Dividends Paid", to_millions(full_div_paid)),
-        ("Retained Earnings", to_millions(full_retained_earnings)),
-        ("Total Equity", to_millions(total_equity)),
-        ("Net Working Capital", to_millions(net_WC)),
+        ("Cash and Cash Equivalents", full_cash),
+        ("Accounts Receivable", full_accounts_receivable),
+        ("Accounts Payable", full_accounts_payable),
+        ("Inventory", full_inventory),
+        ("Capital Expenditure", full_capex),
+        ("Gross PPE", full_gross_ppe),
+        ("Net PPE", full_net_ppe),
+        ("Total Assets", total_assets),
+        ("Depreciation", full_depreciation),
+        ("Total Debt", full_total_debt),
+        ("Current Debt", full_current_debt),
+        ("Long Term Debt", full_long_term_debt),
+        ("Total Liabilities", total_liabilities),
+        ("Interest Expense", full_interest_expense),
+        ("Interest Income", full_interest_income),
+        ("Common Stock", full_common_stock),
+        ("Dividends Paid", full_div_paid),
+        ("Retained Earnings", full_retained_earnings),
+        ("Total Equity", total_equity),
+        ("Net Working Capital", net_WC),
 
         # Cash flow
-        ("Net Income from Continuing Operations", to_millions(net_income)),
-        ("Cash Flow From Continuing Investing Activities", to_millions(full_CF_from_investing)),
-        ("Cash Flow From Continuing Operating Activities", to_millions(full_CF_from_operating)),
-        ("Cash Flow From Continuing Financing Activities", to_millions(full_CF_from_financing)),
-        ("Depreciation and Amortization", to_millions(DnA)),
-        ("Changes in Accounts Receivable", to_millions(full_change_AR)),
-        ("Changes in Accounts Payable", to_millions(full_change_AP)),
-        ("Changes in Inventory", to_millions(full_change_inventory)),
-        ("Changes in Cash", to_millions(change_in_cash)),
-        ("Stock Buy Backs", to_millions(full_stock_buybacks)),
+        ("Net Income from Continuing Operations", net_income),
+        ("Cash Flow From Continuing Investing Activities", full_CF_from_investing),
+        ("Cash Flow From Continuing Operating Activities", full_CF_from_operating),
+        ("Cash Flow From Continuing Financing Activities", full_CF_from_financing),
+        ("Depreciation and Amortization", DnA),
+        ("Changes in Accounts Receivable", full_change_AR),
+        ("Changes in Accounts Payable", full_change_AP),
+        ("Changes in Inventory", full_change_inventory),
+        ("Changes in Cash", change_in_cash),
+        ("Stock Buy Backs", full_stock_buybacks),
 
-        # assumptions (these are ratios/percentages, keep unchanged)
+        # assumptions (ratios/percentages)
         ("Inventory / COGS", ratioRounder(inventory_pct)),
-        ("Revenue Growth Rate", ratioRounder(revenue_growth)),
+        ("Revenue Growth Rate", (revenue_growth)),
         ("SGnA / Revenue", ratioRounder(sgna_pct)),
         ("RnD / Revenue", ratioRounder(rnd_pct)),
         ("Opex / Revenue", ratioRounder(opex_pct)),
@@ -527,11 +534,9 @@ def generate_model(
         ("Return On Assets", ratioRounder(ROA)),
         ("Current Ratio", ratioRounder(current_ratio)),
         ("Debt / Ebitda", ratioRounder(Debt_over_Ebitda)),
-        ("Changes in Working Cap", to_millions(change_WC)),
-
-
-
+        ("Changes in Working Cap", change_WC),
     ])
+
 
 
 app = Flask(__name__)

@@ -3,18 +3,18 @@ import React from "react";
 
 export default function DaProg({totalProgress}) {
 
-const DaProgWidth = ((totalProgress / 1400) * 1000)
+const DaProgWidth = ((totalProgress / 1400) * 100)
 
   return (
 <div
- style={{ position: 'relative', width: '200px', marginTop: '50px', marginLeft: '40px',}}
+ style={{ position: 'relative', width: '45%', marginTop: '50px', marginLeft: '2%', marginRight: '2%',}}
 >
 
 <div
 style = {{
     position: 'absolute',
-    height: '15px',
-    width: '730px',
+    height: '1.6vh',
+    width: '100%',
     backgroundColor: '#184c94',
     borderWidth: '2px',
     borderStyle: 'solid',
@@ -29,8 +29,8 @@ style = {{
 <div
 style = {{
     position: 'absolute',
-    height: '15px',
-    width: `${DaProgWidth}px`,
+    height: '1.6vh',
+    width: `${DaProgWidth}%`,
     backgroundColor: '#00bfff',
     borderWidth: '2px',
     borderStyle: 'solid',

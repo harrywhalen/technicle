@@ -15,7 +15,7 @@ export default function ModuleTitle({title1, title2, subtitle1, subtitle2}) {
         style={{
           // width: '96px', // 120px * 0.8
           color: "#1f3a60",
-          fontSize: "15px",
+          fontSize: ".8vw",
           fontWeight: "bold",
           height: '17px',
 
@@ -28,7 +28,7 @@ export default function ModuleTitle({title1, title2, subtitle1, subtitle2}) {
         style={{
           // width: '96px',
           color: "#1f3a60",
-          fontSize: "15px",
+          fontSize: ".8vw",
           fontWeight: "bold",
         }}
       >
@@ -38,7 +38,7 @@ export default function ModuleTitle({title1, title2, subtitle1, subtitle2}) {
       <div
         style={{
           color: "#1f3a60",
-          fontSize: "11.2px", // 14px * 0.8
+          fontSize: ".6vw", // 14px * 0.8
         }}
       >
         {subtitle1}
@@ -47,7 +47,7 @@ export default function ModuleTitle({title1, title2, subtitle1, subtitle2}) {
       <div
         style={{
           color: "#1f3a60",
-          fontSize: "11.2px",
+          fontSize: ".6vw",
           fontWeight: "bold",
         }}
       >
