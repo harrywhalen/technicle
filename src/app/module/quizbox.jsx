@@ -14,17 +14,21 @@ export default function QuizBox({
   nextReady,
   setNextReady,
   advanceStep,
-  tempBS, // <-- Expect this prop controlling wiggle
+  wiggleTime, // <-- Expect this prop controlling wiggle
 }) {
   const [isWiggling, setIsWiggling] = useState(false);
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+
   useEffect(() => {
-    if (tempBS) {
+    if (wiggleTime && mounted) {
       setIsWiggling(true);
       const timer = setTimeout(() => setIsWiggling(false), 500); // wiggle for 1 sec
       return () => clearTimeout(timer);
     }
-  }, [tempBS]);
+  }, [wiggleTime]);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -64,7 +68,9 @@ export default function QuizBox({
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
             borderRadius: "10px 10px 0px 0px",
             padding: "0px 15px 0px 15px",
+            marginTop: '5vh',
           }}
+          
         >
           <h4 style={{ fontSize: "1.5em", textAlign: "center", height: "40px" }}>
             {question || "No quiz question provided."}
@@ -90,7 +96,7 @@ export default function QuizBox({
                       marginRight: "10px",
                       transform: "scale(1.4)",
                       fontSize: "1.1em",
-                      marginTop: "20px",
+                      marginTop: "2.1vh",
                     }}
                   />
                   {option}
@@ -125,8 +131,8 @@ export default function QuizBox({
                     marginTop: "25px",
                     transition: "background-color 0.3s ease",
                     position: "relative",
-                    height: "55px",
-                    width: "120px",
+                    height: "6vh",
+                    width: "6vw",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.backgroundColor = "#297bbd")

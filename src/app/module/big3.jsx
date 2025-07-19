@@ -40,7 +40,7 @@ const Big3 = forwardRef((
     playSound,
     highestStep,
     totalSteps,
-    tempBS,
+    wiggleTime,
     showCoordinates,
     hotTableComponent,
     tabLocked,
@@ -63,7 +63,7 @@ const Big3 = forwardRef((
     marginLeft: '10vw', // 180px → approx relative to screen
     borderRadius: '0.9375rem', // 15px → rem
     boxShadow: '0 0.25rem 1.125rem rgba(0, 0, 0, 0.1)', // 4px 18px → rem
-    marginTop: '6.25rem', // 100px → rem
+    marginTop: '11vh', // 100px → rem
     boxSizing: 'border-box',
   }}
 >
@@ -71,7 +71,6 @@ const Big3 = forwardRef((
     style={{
       display: 'flex',
       flexDirection: 'row',
-      gap: '0.9375rem', // 15px → rem
     }}
   >
     <div
@@ -132,7 +131,7 @@ const Big3 = forwardRef((
           nextReady={nextReady}
           setNextReady={setNextReady}
           advanceStep={advanceStep}
-          tempBS={tempBS}
+          wiggleTime={wiggleTime}
         />
       </div>
     </div>

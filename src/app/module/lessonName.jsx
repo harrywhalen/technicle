@@ -7,7 +7,7 @@ export default function LessonName({content}) {
       style={{
         height: '6rem', // 90px → rem
         width: '90vw', // 1000px → viewport-based width
-        maxWidth: '62.5rem', // Limits it to 1000px max
+        maxWidth: '52vw', // Limits it to 1000px max
         backgroundColor: '#ffffff',
         borderColor: '#1f3a60',
         borderWidth: '0.1875rem', // 3px → rem
