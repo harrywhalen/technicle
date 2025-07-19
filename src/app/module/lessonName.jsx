@@ -15,12 +15,12 @@ export default function LessonName({content}) {
         borderRadius: '0.625rem', // 10px → rem
         boxShadow: '0 0.25rem 0.5rem rgba(0,0,0,0.1)', // 4px 8px → rem
         color: '#1f3a60',
-        fontSize: '3.5vw', // 70px → rem (you may want to scale this down for smaller screens)
+        fontSize: '3.4rem', // 70px → rem (you may want to scale this down for smaller screens)
         fontWeight: 650,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: '0.9375rem', // 15px → rem
+        marginBottom: '1rem', // 15px → rem
         textAlign: 'center',
       }}
     >

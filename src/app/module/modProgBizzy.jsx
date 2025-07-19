@@ -7,14 +7,14 @@ const DaProgWidth = ((highestStep / (totalSteps - 1))*52)
 console.log("FUCK AAAAAAAHHHHHH",highestStep/totalSteps, highestStep, totalSteps)
   return (
 <div
- style={{ position: 'relative', width: '20px', marginRight: '51vw', marginBottom: '35px'}}
+ style={{ position: 'relative', width: '20px', marginBottom: '2rem'}}
 >
 
 <div
 style = {{
     position: 'absolute',
-    height: '15px',
-    width: '52vw',
+    height: '.9rem',
+    width: '52rem',
     backgroundColor: '#184c94',
     borderWidth: '2px',
     borderStyle: 'solid',
@@ -31,8 +31,8 @@ style = {{
 <div
 style = {{
     position: 'absolute',
-    height: '15px',
-    width: `${DaProgWidth}vw`,
+    height: '.9rem',
+    width: `${DaProgWidth}rem`,
     backgroundColor: '#00bfff',
     borderWidth: '2px',
     borderStyle: 'solid',

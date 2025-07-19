@@ -14,18 +14,16 @@ export default function QuizBox({
   nextReady,
   setNextReady,
   advanceStep,
-  wiggleTime, // <-- Expect this prop controlling wiggle
+  wiggleTime,
 }) {
   const [isWiggling, setIsWiggling] = useState(false);
-
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-
 
   useEffect(() => {
     if (wiggleTime && mounted) {
       setIsWiggling(true);
-      const timer = setTimeout(() => setIsWiggling(false), 500); // wiggle for 1 sec
+      const timer = setTimeout(() => setIsWiggling(false), 500);
       return () => clearTimeout(timer);
     }
   }, [wiggleTime]);
@@ -52,7 +50,7 @@ export default function QuizBox({
 
       <div
         style={{
-          width: "25vw",
+          width: "25rem",
           animation: isWiggling ? "wiggle 1s ease-in-out" : "none",
         }}
       >
@@ -62,17 +60,16 @@ export default function QuizBox({
             flexDirection: "column",
             backgroundColor: "#ffffff",
             borderColor: "#1f3a60",
-            borderWidth: "3px",
+            borderWidth: "0.2rem",
             borderStyle: "solid",
             color: "#1f3a60",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-            borderRadius: "10px 10px 0px 0px",
-            padding: "0px 15px 0px 15px",
-            marginTop: '4vh',
+            boxShadow: "0 0.25rem 0.5rem rgba(0, 0, 0, 0.1)",
+            borderRadius: "1rem 1rem 0rem 0rem",
+            padding: "0rem 1rem 0rem 1rem",
+            marginTop: "1rem",
           }}
-          
         >
-          <h4 style={{ fontSize: "1.2vw", textAlign: "center", height: "4vh" }}>
+          <h4 style={{ fontSize: "1.3rem", textAlign: "center", height: "2rem" }}>
             {question || "No quiz question provided."}
           </h4>
           <div
@@ -80,12 +77,12 @@ export default function QuizBox({
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              padding: "0vh 2.5vw 3vh 2.5vw",
+              padding: "0rem 1.5rem 2rem 1.5rem",
             }}
           >
             {Qtype === "MCQ" && options && options.length > 0 ? (
               options.map((option, index) => (
-                <label key={index}>
+                <label key={index} style={{ fontSize: "1rem", margin: ".5rem 0" }}>
                   <input
                     type="radio"
                     name="dcf_quiz_option"
@@ -93,17 +90,15 @@ export default function QuizBox({
                     checked={selectedOption === option}
                     onChange={handleOptionChange}
                     style={{
-                      marginRight: "10px",
-                      transform: "scale(1.4vw)",
-                      fontSize: ".8vw",
-                      marginTop: "2.1vh",
+                      marginRight: "0.6rem",
+                      transform: "scale(1.2)",
                     }}
                   />
                   {option}
                 </label>
               ))
             ) : Qtype === "MCQ" ? (
-              <p style={{ fontSize: ".8vw", color: "#888" }}>
+              <p style={{ fontSize: "1rem", color: "#888" }}>
                 No options available for this quiz.
               </p>
             ) : null}
@@ -121,18 +116,18 @@ export default function QuizBox({
                   style={{
                     backgroundColor: nextReady ? "#00bfff" : "#3498db",
                     color: "white",
-                    padding: "10px 20px",
+                    padding: "0.625rem 1.25rem",
                     border: "none",
-                    borderRadius: "5px",
+                    borderRadius: "0.5rem",
                     cursor: "pointer",
-                    fontSize: "1vw",
+                    fontSize: "1rem",
                     fontWeight: "bold",
                     display: "block",
-                    marginTop: "25px",
+                    marginTop: "1rem",
                     transition: "background-color 0.3s ease",
                     position: "relative",
-                    height: "6vh",
-                    width: "6vw",
+                    height: "3rem",
+                    width: "8rem",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.backgroundColor = "#297bbd")
@@ -168,11 +163,10 @@ export default function QuizBox({
           </div>
         </div>
 
-        {/* Bottom status line */}
         <div
           style={{
-            height: "3px",
-            borderRadius: "0px 0px 15px 15px",
+            height: "0.2rem",
+            borderRadius: "0rem 0rem 1rem 1rem",
             backgroundColor: "#1f3a60",
           }}
         />
