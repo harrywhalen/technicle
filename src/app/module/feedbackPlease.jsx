@@ -76,7 +76,7 @@ export default function FeedbackPLZ() {
         flexDirection: 'column',
         gap: '1rem',
         boxSizing: 'border-box',
-        marginTop: '1rem',
+        marginTop: '1.5rem',
       }}
     >
       <div

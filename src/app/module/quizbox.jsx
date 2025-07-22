@@ -77,7 +77,7 @@ export default function QuizBox({
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              padding: "0rem 1.5rem 2rem 1.5rem",
+              padding: "0rem 1.5rem 1.3rem 1.5rem",
             }}
           >
             {Qtype === "MCQ" && options && options.length > 0 ? (
@@ -123,11 +123,11 @@ export default function QuizBox({
                     fontSize: "1rem",
                     fontWeight: "bold",
                     display: "block",
-                    marginTop: "1rem",
+                    marginTop: ".5rem",
                     transition: "background-color 0.3s ease",
                     position: "relative",
                     height: "3rem",
-                    width: "8rem",
+                    width: "7rem",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.backgroundColor = "#297bbd")
@@ -145,6 +145,7 @@ export default function QuizBox({
                       style={{
                         position: "absolute",
                         top: 0,
+                        
                         left: "-75%",
                         height: "100%",
                         width: "50%",

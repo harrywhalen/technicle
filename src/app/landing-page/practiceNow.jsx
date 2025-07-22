@@ -18,7 +18,7 @@ onClick={() => router.push('/moduleSelector')}
         padding: '10px 25px', // Padding inside button
         borderWidth: "4px",      // 3px * 0.8
         borderStyle: "solid",
-        borderColor: "#1f3a60",     // 30px * 0.8
+        borderColor: "#314f7b",     // 30px * 0.8
         borderRadius: '50px',
         cursor: 'pointer', // Hand cursor on hover
         fontSize: '1.5em',

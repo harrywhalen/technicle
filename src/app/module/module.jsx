@@ -38,9 +38,12 @@ const moduleDatabase = {
   // Add the rest of your modules here...
 };
 
-// Create a separate component that uses useSearchParams
-function ModuleContent({setModDone}) {
-  const searchParams = useSearchParams();
+export default function Module({setModDone, hotRef}) {
+
+  const classes = [];
+
+   const searchParams = useSearchParams();
+
   const moduleId = parseInt(searchParams.get("moduleId")); // 👈 Get moduleId from URL
 
   // If moduleId is missing or invalid, render fallback
@@ -66,7 +69,8 @@ function ModuleContent({setModDone}) {
   const correctAnswer = currentStepContent?.quiz.correctAnswer;
 
   const hotTableComponent = useRef(null);
-  const { setCurrentSheet } = useSpreadsheetValidator(hotTableComponent);
+  const { setCurrentSheet, getIncorrectCellsROW, getIncorrectCellsCOL, getCorrectCellsCOL, getCorrectCellsROW, DEBUG_GOONER, clearCORCellsArrays, clearINCCellsArrays, } = useSpreadsheetValidator(hotTableComponent);
+
 
   const highestStepIdRef = useRef(1);
 
@@ -74,15 +78,21 @@ function ModuleContent({setModDone}) {
 
   const [tabLocked, setTabLocked] = useState(true);
 
-  useEffect(() => {
-    console.log("== useEffect ==");
-    console.log("Before check: highest =", highestStepIdRef.current, "current =", currentActiveStepId);
+  const [preAnswer, setPreAnswer] = useState(true)
 
-    if (currentActiveStepId >= highestStepIdRef.current) {
-      console.log("Updating highest step to:", currentActiveStepId);
-      highestStepIdRef.current = currentActiveStepId;
-    } else console.log("Already higher step reached, current:", currentActiveStepId, "highest:", highestStepIdRef.current);
-  }, [currentActiveStepId]);
+  const [updateME, setUpdateME] = useState(0)
+
+
+useEffect(() => {
+
+
+  if (currentActiveStepId >= highestStepIdRef.current) {
+    console.log("Updating highest step to:", currentActiveStepId);
+    highestStepIdRef.current = currentActiveStepId;
+
+  } else console.log("Already higher step reached, current:", currentActiveStepId, "highest:", highestStepIdRef.current);
+}, [currentActiveStepId]);
+
 
   function columnToLetter(col) {
     let temp = '';
@@ -141,44 +151,41 @@ function ModuleContent({setModDone}) {
     setTimeout(() => setWiggleTime(false), 1100); // just to keep consistent
   };
 
-  const playCorrectSoundMCQ = () => {
-    const audio = new Audio("/sounds/correct.mp3");
-    audio.play().catch(error => {
-      console.error("Error playing sound:", error);
-    });
-  };
+const playCorrectSoundMCQ = () => {
+  const audio = new Audio("/sounds/correct.mp3");
+  audio.volume = 0.3;  // Set volume to 30%
+  audio.play().catch(error => {
+    console.error("Error playing sound:", error);
+  });
+};
 
-  const playWrongSoundMCQ = () => {
-    const audio = new Audio("/sounds/wrong.mp3");
-    setIsCorrect(null);
-    audio.play().catch(error => {
-      console.error("Error playing sound:", error);
-    });
-  };
+const playWrongSoundMCQ = () => {
+  const audio = new Audio("/sounds/wrong.mp3");
+  setIsCorrect(null);
+  audio.volume = 0.3;  // Set volume to 30%
+  audio.play().catch(error => {
+    console.error("Error playing sound:", error);
+  });
+};
+const playComplete = () => {
+  setTimeout(() => {
+    const audio = new Audio("/sounds/complete.mp3");
 
-  const playComplete = () => {
-    setTimeout(() => {
-      const audio = new Audio("/sounds/complete.mp3");
-      audio.play().catch(error => {
-        console.error("Error playing sound:", error);
-      });
-    }, 200); // 250 milliseconds = 0.25 seconds
-  };
-
-  const handleCheckAnswers = () => {
-    if (spreadGangRef.current) {
-      spreadGangRef.current.checkAllAnswers();
-    }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("LOOKY HERE", highestStepIdRef.current, currentActiveStepId)
-    setIsCorrect(null);
+const handleCheckAnswers = () => {
+  if (spreadGangRef.current) {
+    spreadGangRef.current.checkAllAnswers();
     
-    if (Qtype === "MCQ") {
-      const result = selectedOption === correctAnswer;
-      setIsCorrect(result);
+  }
+};
+
+const handleSubmit = (event) => {
+  
+  event.preventDefault();
+    setIsCorrect(null);
+  if (Qtype === "MCQ") {
+    const result = selectedOption === correctAnswer;
+    setIsCorrect(result);
+
 
       setTimeout(() => setIsCorrect(result), 10);
     } else {
@@ -355,8 +362,49 @@ function ModuleContent({setModDone}) {
         setModDone(true);
         return prevId; // Stay on current step
       }
-    });
-  };
+
+    };
+
+      const refresh = () => {
+        // Reset current sheet to initial display data (with quiz cells empty)
+        const quizCells = sheetQuizCells[activeTab] || [];
+        const blankCells = sheetBlankCells[activeTab] || [];
+        const blankForecastCells = sheetBlankForecasts[activeTab] || [];
+        const resetDisplayData = sheetsInitialData[activeTab].map((row, rowIndex) => 
+            row.map((cell, colIndex) => {
+                const isQuizCell = quizCells.some(q => q.row === rowIndex && q.col === colIndex);
+                const isBlankCell = blankCells.some(q => q.row === rowIndex && q.col === colIndex);
+                const isBlankForecastCell = blankForecastCells.some(q => q.row === rowIndex && q.col === colIndex);
+                return (isQuizCell || isBlankCell || isBlankForecastCell) ? '' : cell;
+
+            })
+        );
+        
+        setSheetsDisplayData(prev => ({
+            ...prev,
+            [activeTab]: [...resetDisplayData]
+        }));
+        console.log("Reset to:", resetDisplayData);
+    };
+
+const advanceStep = () => {
+    clearCORCellsArrays();
+    clearINCCellsArrays();
+    setPreAnswer(true)
+    setUpdateME((prev => prev + 1))
+  setCurrentActiveStepId((prevId) => {
+    const nextStep = prevId + 1; // number math
+    setNextReady(false);
+    if (modContent[nextStep.toString()]) {
+      return nextStep;
+    } else {
+      playComplete();
+      setModDone(true);
+      return prevId; // Stay on current step
+    }
+  });
+};
+
 
   useEffect(() => {
     if (currentStepContent) {
@@ -439,7 +487,12 @@ function ModuleContent({setModDone}) {
             hotTableComponent={hotTableComponent}
             tabLocked={tabLocked}
             sheetBlankForecasts={sheetBlankForecasts}
-            content={modContent}
+            content = {modContent}
+            preAnswer={preAnswer}
+            getIncorrectCellsROW={getIncorrectCellsROW}
+            setPreAnswer={setPreAnswer}
+            updateME={updateME}
+
           />
         ) : (
           <p style={{ color: '#1f3a60', textAlign: 'center', marginTop: '3.125rem' }}>

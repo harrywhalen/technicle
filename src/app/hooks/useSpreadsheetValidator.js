@@ -3,6 +3,23 @@ import { useCallback, useRef } from 'react';
 export const useSpreadsheetValidator = (hotRef) => {
   const encodedAnswersRef = useRef(null);
   const currentSheetRef = useRef('intro'); // Track current sheet
+  const correctCellsRef = useRef([]);
+  const incorrectCellsROWRef = useRef([]);
+  const incorrectCellsCOLRef = useRef([]);
+  const correctCellsROWRef = useRef([]);
+  const correctCellsCOLRef = useRef([]);
+
+    const clearCORCellsArrays = () => {
+    console.log('clearing correctCellsROWRef.current', correctCellsROWRef.current)
+    correctCellsROWRef.current = [];
+    correctCellsCOLRef.current = [];
+  };
+
+    const clearINCCellsArrays = () => {
+    console.log('clearing incorrectCellsROWRef.current', incorrectCellsROWRef.current)
+    incorrectCellsROWRef.current = [];
+    incorrectCellsCOLRef.current = [];
+  };
 
   // Helper: Allow ±5% difference for numeric values
   const isApproximatelyEqual = (a, b, percentageTolerance = 0.025) => {
@@ -42,6 +59,9 @@ export const useSpreadsheetValidator = (hotRef) => {
     currentSheetRef.current = sheetKey;
   }, []);
 
+    const correctCells = [];
+    const incorrectCells = [];
+
   // Check individual cell (called on each user input)
   const checkCell = useCallback((row, col, sheetKey = null) => {
     const hot = hotRef.current?.hotInstance;
@@ -56,26 +76,37 @@ export const useSpreadsheetValidator = (hotRef) => {
 
     if (correctValue === undefined) return;
 
+
+
     hot.setCellMeta(row, col, 'className', '');
 
     if (cellValue && cellValue.toString().trim() !== '') {
       if (isApproximatelyEqual(cellValue, correctValue)) {
         hot.setCellMeta(row, col, 'className', 'correct-cell');
+          correctCellsROWRef.current.push(row);
+          correctCellsCOLRef.current.push(col);
+          console.log('setting correctCellsCOLRef.current', correctCellsCOLRef.current)
+
       } else {
         hot.setCellMeta(row, col, 'className', 'incorrect-cell');
+          incorrectCellsROWRef.current.push(row);
+          incorrectCellsCOLRef.current.push(col);
+
       }
     }
 
     hot.render();
+    return { correctCells, incorrectCells };
   }, [hotRef, decodeAnswers]);
+  
 
   // Validate all test cells for current sheet
   const validateCurrentSheet = useCallback(() => {
     const hot = hotRef.current?.hotInstance;
     if (!hot || !encodedAnswersRef.current) return;
-
     const correctAnswers = decodeAnswers(encodedAnswersRef.current);
     if (!correctAnswers) return;
+
 
     const currentSheet = currentSheetRef.current;
     let score = 0;
@@ -92,13 +123,20 @@ export const useSpreadsheetValidator = (hotRef) => {
         if (isApproximatelyEqual(cellValue, correctValue)) {
           score++;
           hot.setCellMeta(row, col, 'className', 'correct-cell');
+          correctCellsROWRef.current.push(row);
+          correctCellsCOLRef.current.push(col);
+          console.log('setting correctCellsCOLRef.current', correctCellsCOLRef.current)
         } else {
           hot.setCellMeta(row, col, 'className', 'incorrect-cell');
+          incorrectCellsROWRef.current.push(row);
+          incorrectCellsCOLRef.current.push(col);
         }
       }
     });
 
     hot.render();
+        console.log("Correct cells:", getCorrectCells());
+    console.log("Incorrect rows:", getIncorrectCellsROW());
     return {
       score,
       total,
@@ -129,8 +167,14 @@ export const useSpreadsheetValidator = (hotRef) => {
         if (isApproximatelyEqual(cellValue, correctValue)) {
           score++;
           hot.setCellMeta(row, col, 'className', 'correct-cell');
+          correctCellsROWRef.current.push(row);
+          correctCellsCOLRef.current.push(col);
+          console.log('setting correctCellsCOLRef.current', correctCellsCOLRef.current)
+
         } else {
           hot.setCellMeta(row, col, 'className', 'incorrect-cell');
+          incorrectCellsROWRef.current.push(row);
+          incorrectCellsCOLRef.current.push(col);
         }
       }
     });
@@ -176,12 +220,25 @@ export const useSpreadsheetValidator = (hotRef) => {
     };
   }, [hotRef, decodeAnswers]);
 
+  const DEBUG_GOONER= () => [1, 2, 5, 8];
+  const getCorrectCellsROW = () => correctCellsROWRef.current;
+  const getCorrectCellsCOL = () => correctCellsCOLRef.current;
+  const getIncorrectCellsROW = () => incorrectCellsROWRef.current;
+  const getIncorrectCellsCOL = () => incorrectCellsCOLRef.current;
+
   return {
     checkCell,
     validateAllCells,
     validateCurrentSheet,
     setCorrectAnswers,
     setCurrentSheet,
-    getScore
+    getScore,
+    getCorrectCellsROW,
+    getCorrectCellsCOL,
+    getIncorrectCellsROW,
+    getIncorrectCellsCOL,
+    DEBUG_GOONER,
+    clearINCCellsArrays,
+    clearCORCellsArrays,
   };
 };

@@ -4,7 +4,7 @@ import QuizBox from "./quizbox.jsx";
 
 
 export default function RightSide({content, question, options, correctAnswer, isCorrect, setIsCorrect, handleSubmit, selectedOption, setSelectedOption, Qtype, 
-  nextReady, setNextReady, advanceStep, wiggleTime}) {
+  nextReady, setNextReady, advanceStep, wiggleTime, content2, contentBOLD}) {
   return (
 <div
   style={{
@@ -31,7 +31,7 @@ export default function RightSide({content, question, options, correctAnswer, is
 
 
         
-    <TextBox content={content} />
+    <TextBox content={content} content2={content2} contentBOLD={contentBOLD}/>
 
 
     <QuizBox

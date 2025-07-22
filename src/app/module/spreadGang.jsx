@@ -18,14 +18,25 @@ const SpreadGang = forwardRef(({
   sheetsDisplayData, setSheetsDisplayData,
   sheetBlankCells, Qtype, TargetTab, nextReady,
   setNextReady, currentActiveStepId, playSound, showCoordinates,
-  tabLocked, sheetBlankForecasts, content,
+  tabLocked, sheetBlankForecasts, content, preAnswer,
+  setPreAnswer, updateME,
 }, ref) => {
 const sheetMappings = content?.SheetMappings || {};
 
+
   const hotTableComponent = useRef(null);
-  const { checkCell, validateAllCells, setCorrectAnswers, getScore, setCurrentSheet } = useSpreadsheetValidator(hotTableComponent);
+  const { checkCell, validateAllCells, setCorrectAnswers, getScore, setCurrentSheet, 
+    getCorrectCellsROW,  getCorrectCellsCOL, getIncorrectCellsROW, getIncorrectCellsCOL, DEBUG_GOONER,
+    clearCORCellsArrays, clearINCCellsArrays,
+  } = useSpreadsheetValidator(hotTableComponent);
 
   const [dataLoading, setDataLoading] = useState(true);
+
+  
+  const [correctCellsROW, setCorrectCellsROW] = useState(getCorrectCellsROW())
+  const [correctCellsCOL, setCorrectCellsCOL] = useState(getCorrectCellsCOL())
+  const [incorrectCellsROW, setIncorrectCellsROW] = useState(getIncorrectCellsROW())
+  const [incorrectCellsCOL, setIncorrectCellsCOL] = useState(getIncorrectCellsCOL())
 
 const filterDataForSheet = (fullData, sheetKey) => {
   const mapping = sheetMappings[sheetKey];
@@ -40,6 +51,15 @@ const filterDataForSheet = (fullData, sheetKey) => {
 };
 
 
+useEffect(() => {
+    clearCORCellsArrays();
+    clearINCCellsArrays();
+    setIncorrectCellsROW(getIncorrectCellsROW());
+    setCorrectCellsROW(getCorrectCellsROW());
+    setIncorrectCellsCOL(getIncorrectCellsCOL());
+    setCorrectCellsCOL(getCorrectCellsCOL());
+}, [updateME]);
+
   const triggerConfettiC = () => {
     confetti({
       particleCount: 100,
@@ -51,6 +71,7 @@ const filterDataForSheet = (fullData, sheetKey) => {
 
     const playCorrectSoundC = () => {
     const audio = new Audio("/sounds/correct.mp3");
+    audio.volume = 0.3;  // Set volume to 30%
     audio.play().catch(error => {
       console.error("Error playing sound:", error);
     });
@@ -58,6 +79,7 @@ const filterDataForSheet = (fullData, sheetKey) => {
 
       const playWrongSoundC = () => {
   const audio = new Audio("/sounds/wrong.mp3");
+  audio.volume = 0.3;  // Set volume to 30%
   audio.play().catch(error => {
     console.error("Error playing sound:", error);
   });
@@ -158,6 +180,17 @@ const filterDataForSheet = (fullData, sheetKey) => {
   }, [sheetQuizCells, sheetsData, setCorrectAnswers]);
 
 const checkAllAnswers = () => {
+    clearCORCellsArrays();
+    clearINCCellsArrays();
+    setPreAnswer(false)
+    setIncorrectCellsROW(getIncorrectCellsROW());
+    setCorrectCellsROW(getCorrectCellsROW());
+    setIncorrectCellsCOL(getIncorrectCellsCOL());
+    setCorrectCellsCOL(getCorrectCellsCOL());
+    //console.log('correctCellsCOL', correctCellsCOL)
+    //console.log('correctCellsROW', correctCellsROW)
+    //console.log('getCorrectCellsROW()', getCorrectCellsROW())
+    //console.log('getCorrectCellsCOL()', getCorrectCellsCOL())
   const result = validateAllCells(activeTab);
   if (result) {
     console.log(`Quiz Score: ${result.score}/${result.total} correct (${result.percentage}%)`);
@@ -169,9 +202,9 @@ const checkAllAnswers = () => {
     }
     else 
     playWrongSoundC();
+
   }
 };
-
 
   const getCurrentScore = () => {
     const result = getScore();
@@ -228,6 +261,13 @@ const checkAllAnswers = () => {
         onCellChange={handleCellChange}
         currentStepContent={currentStepContent}
         activeTab={activeTab}
+        preAnswer={preAnswer}
+        correctCellsROW={correctCellsROW}
+        correctCellsCOL={correctCellsCOL}
+        incorrectCellsROW = {incorrectCellsROW || []}
+        incorrectCellsCOL = {incorrectCellsCOL}
+        clearINCCellsArrays = {clearINCCellsArrays}
+        clearCORCellsArrays = {clearCORCellsArrays}
       />
       <Spreadbutt
         refresh={refresh}
