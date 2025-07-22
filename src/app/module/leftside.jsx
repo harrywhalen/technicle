@@ -38,6 +38,17 @@ hotTableComponent,
 tabLocked,
 sheetBlankForecasts,
 content,
+preAnswer,
+getIncorrectCellsROW,
+setPreAnswer,
+setCorrectCellsROW,
+correctCellsCOL, 
+setCorrectCellsCOL, 
+incorrectCellsROW,
+setIncorrectCellsROW, 
+incorrectCellsCOL, 
+setIncorrectCellsCOL,
+updateME,
 }) {
 
   return (
@@ -92,6 +103,15 @@ content,
             tabLocked={tabLocked}
             sheetBlankForecasts={sheetBlankForecasts}
             content = {content}
+            preAnswer={preAnswer}
+            incorrectCellsROW = {incorrectCellsROW}
+            incorrectCellsCOL = {incorrectCellsCOL}
+            getIncorrectCellsROW={getIncorrectCellsROW}
+            setPreAnswer={setPreAnswer}
+            setCorrectCellsCOL = {setCorrectCellsCOL}
+            setIncorrectCellsROW = {setIncorrectCellsROW}
+            setIncorrectCellsCOL = {setIncorrectCellsCOL}
+            updateME={updateME}
           />
 
           <div>

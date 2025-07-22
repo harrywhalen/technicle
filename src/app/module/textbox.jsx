@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 
-export default function TextBox({ content }) { // Now accepts a 'content' prop
+export default function TextBox({ content, content2, contentBOLD }) { // Now accepts a 'content' prop
     return(
         <div
             style={{
@@ -25,7 +25,7 @@ export default function TextBox({ content }) { // Now accepts a 'content' prop
                     borderRadius: '1rem',
                 }}
             >
-                {content || "No content provided."} {/* Displays the content passed via prop */}
+                {content} <strong>{contentBOLD}</strong> {content2}
             </div>
 
         </div>

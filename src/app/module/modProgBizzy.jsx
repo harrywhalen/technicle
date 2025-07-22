@@ -4,7 +4,6 @@ import React from "react";
 export default function DaProg({highestStep, totalSteps,}) {
 
 const DaProgWidth = ((highestStep / (totalSteps - 1))*52)
-console.log("FUCK AAAAAAAHHHHHH",highestStep/totalSteps, highestStep, totalSteps)
   return (
 <div
  style={{ position: 'relative', width: '20px', marginBottom: '2rem'}}

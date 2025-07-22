@@ -6,12 +6,12 @@ export default function ModComplete({ setModDone }) {
     <div
       style={{
         position: 'absolute',
-        height: '100vh',
-        width: '100vw',
+        height: '126.5vh',
+        width: '99.2vw',
         backgroundColor: 'rgba(69, 109, 166, 0.7)',
         zIndex: 162,
         display: 'flex',
-        alignItems: 'center',
+        //alignItems: 'center',
         justifyContent: 'center',
       }}
     >
@@ -23,6 +23,7 @@ export default function ModComplete({ setModDone }) {
           padding: '3.125rem 1.25rem', // 50px 20px
           position: 'absolute',
           zIndex: 163,
+          marginTop: '.25rem',
         }}
       >
         {/* Main Card */}
@@ -145,7 +146,7 @@ export default function ModComplete({ setModDone }) {
         >
           <input
             type="text"
-            placeholder="   Enter Feedback Here!"
+            placeholder="   This doesn't work rn"
             style={{
               position: 'absolute',
               height: '3rem', // 48px

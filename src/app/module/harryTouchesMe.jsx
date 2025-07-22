@@ -6,7 +6,7 @@ import contentBS from "../data/lessondataBS.json";
 // Simulated module content "database"
 const moduleDatabase = {
   1: {
-    title: 'React Basics',
+    title: 'The Income Statement',
     content: content,
   },
   2: {

@@ -12,8 +12,8 @@
 
     "1": {
       "name": "What's an Income Statement?",
-      "textBoxContent": "The income statement, also called the profit and loss statement (P&L), shows a company’s financial performance over a specific period of time. It tells us how much revenue the business earned, what it spent to earn that revenue, and how much profit (or loss) it generated as a result.",
-      "hint":"shling",
+      "textBoxContent1": "The income statement shows a company’s financial performance over a specific period of time. It tells us how much revenue the business earned, what it spent to earn that revenue, and how much profit or loss it generated as a result.",
+      "hint":"none",
       "Qtype": "MCQ",
       "quiz": {
         "question": "What is the purpose of the income statement?",
@@ -105,7 +105,7 @@
     },
     "2": {
       "name": "Revenue",
-      "textBoxContent": "Revenue is the total amount of money a company earns from its core operations, before any expenses are subtracted.",
+      "textBoxContent1": "Revenue is the total amount of money a company earns from its core operations, before any expenses are subtracted.",
       "hint":"It's stated in the textbox.",
       "Qtype": "MCQ",
       "quiz": {
@@ -204,7 +204,9 @@
     },
         "3": {
       "name": "Revenue Growth Rate",
-      "textBoxContent": "A way to forecast revenue growth is by using year on year growth from historical data. This is done by calculating the percentage change in revenue from one year to the next. Use the Excel formula =(Current Year Revenue - Prior Year Revenue) / ABS(Prior Year Revenue) to find YoY forecasted growth in the highlighted cell. If you get stuck use the hint button",
+      "textBoxContent1": "One way to forecast revenue growth is by using year on year growth from historical data. This is done by calculating the percentage change in revenue from one year to the next. Use the Excel formula",
+      "textBoxContent2": "to find YoY forecasted growth in the highlighted cell.",
+      "textBoxContentBOLD": "=(Current Year Revenue - Prior Year Revenue) / ABS(Prior Year Revenue)",
       "hint":"Use this formula: =((E1-D1) / D1)",
       "Qtype": "cells",
       "quiz": {
@@ -293,11 +295,11 @@
     },
      "4": {
       "name": "Forecasting Revenue",
-      "textBoxContent": "Now that you have your forecasted YoY growth for revenue, we can forecast revenue. Revenue is forecasted by growing last year’s revenue by the forecasted growth rate. Use the Excel formula =Prior Year Revenue * (1 + YoY Growth) in the highlighted cell and drag it to all 3 highlighted cells to forecast 3 years of revenue.",
+      "textBoxContent1": "Revenue is forecasted by multiplying the previous year's revenue by the revenue growth rate + 1.",
       "hint":"Use the formula: = E1 * (1 + $B$13) in the first cell and drag it to the other three",
       "Qtype": "cells",
       "quiz": {
-        "question": "What is Revenue?",
+        "question": "Forecast Revenue",
         "options": ["470", "3562", "2356", "-1458"],
         "correctAnswer": "2356"
       },
@@ -387,8 +389,8 @@
     },
     "5": {
       "name": "COGS",
-      "textBoxContent": "The second line in most income statements is Cost of Goods Sold. Cost of goods sold or COGS, is the direct expenses needed to make the product that is generating revenue.",
-      "hint":"shling",
+      "textBoxContent1": "The second line in most income statements is Cost of Goods Sold. Cost of goods sold or COGS, is the direct expenses needed to make the product that is generating revenue.",
+      "hint":"none",
       "Qtype": "MCQ",
       "quiz": {
         "question": "What does COGS stand for?",
@@ -476,7 +478,7 @@
     },
     "6": {
       "name": "How do we Forecast COGS?",
-      "textBoxContent": "COGS is typically forecasted as a % of revenue. To find COGS as a % of revenue, Divide COGS by Revenue in the most recent year of historical data.",
+      "textBoxContent1": "COGS is typically forecasted as a % of revenue. To find COGS as a % of revenue, Divide COGS by Revenue in the most recent year of historical data.",
       "hint":"=E2/E1",
       "Qtype": "cells",
       "quiz": {
@@ -555,11 +557,11 @@
     },
       "7": {
       "name": "Forecasting COGS",
-      "textBoxContent": "Now that we have COGS as a % of revenue we can multiply revenue for this year times our COGS % to get our COGS for this year.",
+      "textBoxContent1": "Now that we have COGS as a % of revenue we can multiply revenue for this year times our COGS % to get our COGS for this year.",
       "hint":"use this formula and drag it to the 3 cells =F1*$B$14",
       "Qtype": "cells",
       "quiz": {
-        "question": "What does COGS stand for?",
+        "question": "Forecast COGS",
         "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
         "correctAnswer": "Cost of Goods Sold"
       },
@@ -639,7 +641,7 @@
     },
     "8": {
       "name": "Gross Profit",
-      "textBoxContent": "Gross Profit is the difference between a company’s revenue and its Cost of Goods Sold (COGS). It shows how much the company earns from its core products or services before accounting for operating expenses, interest, taxes, or other costs.",
+      "textBoxContent1": "Gross Profit is the difference between a company’s revenue and its Cost of Goods Sold (COGS). It shows how much the company earns from its core products or services before accounting for operating expenses, interest, taxes, or other costs.",
       "hint":"use the formula =F1 - F2 and drag to fill all cells",
       "Qtype": "cells",
       "quiz": {
@@ -714,7 +716,7 @@
     },
     "9": {
       "name": "Operating Expenses",
-      "textBoxContent": "Operating expenses are the costs a company incurs from its core business operations, excluding the cost of goods sold. They include items like salaries, rent, marketing, and R&D.",
+      "textBoxContent1": "Operating expenses are the costs a company incurs from its core business operations, excluding the cost of goods sold. They include items like salaries, rent, marketing, and R&D.",
       "hint":"Just click the thing",
       "Qtype": "MCQ",
       "quiz": {
@@ -788,7 +790,7 @@
     },
       "10": {
       "name": "How to forecast Operating Expenses",
-      "textBoxContent": "Like many other metrics, Operating Expenses can be forecast as a % of revenue. To do this, divide Operating expense in 2017 by Revenue in 2017",
+      "textBoxContent1": "Like many other metrics, Operating Expenses can be forecast as a % of revenue. To do this, divide Operating expense in 2017 by Revenue in 2017",
       "hint":"=E4/E1",
       "Qtype": "cells",
       "quiz": {
@@ -857,7 +859,7 @@
     },
       "11": {
       "name": "Forecasting Operating Expenses",
-      "textBoxContent": "Now that we have Operating Expenses as a % of revenue, we can multiply revenue times that percent to forecast Operating Expenses.",
+      "textBoxContent1": "Now that we have Operating Expenses as a % of revenue, we can multiply revenue times that percent to forecast Operating Expenses.",
       "hint":"=F1*$B$15",
       "Qtype": "cells",
       "quiz": {
@@ -922,7 +924,7 @@
     },
         "12": {
       "name": "EBITDA",
-      "textBoxContent": "EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It measures a company’s operating performance by showing profit from core business activities before accounting for financial and non-cash expenses. EBITDA is often used to compare profitability across companies and industries.",
+      "textBoxContent1": "EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It measures a company’s operating performance by showing profit from core business activities before accounting for financial and non-cash expenses. EBITDA is often used to compare profitability across companies and industries.",
       "hint":"=F3-F4",
       "Qtype": "cells",
       "quiz": {
@@ -983,8 +985,8 @@
 
         "13": {
       "name": "Finish",
-      "textBoxContent": "The rest of the metrics on the income statement can't be forecasted without information from the Balance sheet or Cash flow statement. After you have completed the modules on the Balance sheet and Cash flow statement, their will be a final module wrapping up the model covering these and other metrics. Answer the final question to complete the module.",
-      "hint":"shling",
+      "textBoxContent1": "The rest of the metrics on the income statement can't be forecasted without information from the Balance sheet or Cash flow statement. After you have completed the modules on the Balance sheet and Cash flow statement, their will be a final module wrapping up the model covering these and other metrics. Answer the final question to complete the module.",
+      "hint":"none",
       "Qtype": "MCQ",
       "quiz": {
         "question": "How did you forecast COGS?",

@@ -32,7 +32,7 @@ export default function Navbar() {
         alignItems: 'center',
         padding: '0 5vw', // Responsive horizontal padding
         boxShadow: '0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2)', // 2px, 5px → rems
-        zIndex: 1001,
+        zIndex: 160,
         boxSizing: 'border-box',
       }}
     >

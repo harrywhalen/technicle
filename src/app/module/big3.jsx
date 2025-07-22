@@ -46,6 +46,17 @@ const Big3 = forwardRef((
     tabLocked,
     sheetBlankForecasts,
     content,
+    preAnswer,
+    setPreAnswer,
+    setCorrectCellsROW,
+    correctCellsCOL, 
+    setCorrectCellsCOL, 
+    incorrectCellsROW,
+    setIncorrectCellsROW, 
+    incorrectCellsCOL, 
+    setIncorrectCellsCOL,
+    updateME,
+    
   },
   ref  // <-- the forwarded ref is the 2nd parameter
 ) => {
@@ -113,12 +124,22 @@ const Big3 = forwardRef((
             tabLocked={tabLocked}
             sheetBlankForecasts={sheetBlankForecasts}
             content = {content}
+            preAnswer={preAnswer}
+            incorrectCellsROW = {incorrectCellsROW}
+            incorrectCellsCOL = {incorrectCellsCOL}
+            setPreAnswer={setPreAnswer}
+            setCorrectCellsCOL = {setCorrectCellsCOL}
+            setIncorrectCellsROW = {setIncorrectCellsROW}
+            setIncorrectCellsCOL = {setIncorrectCellsCOL}
+            updateME={updateME}
           />
 
         </div>
 
         <RightSide
-          content={currentStepContent.textBoxContent}
+          content={currentStepContent.textBoxContent1}
+          content2={currentStepContent.textBoxContent2}
+          contentBOLD={currentStepContent.textBoxContentBOLD}
           question={currentStepContent.quiz.question}
           options={currentStepContent.quiz.options}
           correctAnswer={currentStepContent.quiz.correctAnswer}

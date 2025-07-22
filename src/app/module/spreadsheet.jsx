@@ -22,10 +22,19 @@ export default function Spreadsheet({
   refresh,
   currentStepContent,
   activeTab,
+  preAnswer,
+  correctCellsROW,
+  correctCellsCOL,
+  incorrectCellsROW,
+  incorrectCellsCOL,
+  clearCellsArrays,
+  
 }) {
+
+
   // Column headers for the years
   const colHeaders = [
-    'Metric', '2014A', '2015A', '2016A', '2017A', '2018A',
+    'Metric', '2014A', '2015A', '2016A', '2017A', '2018P',
     '2019P', '2020P', '2021P', '2022P'
   ];
 
@@ -72,6 +81,7 @@ export default function Spreadsheet({
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         overflow: 'hidden',
       }}
+      className="custom-scroll-table" // 👈 Add this class
     >
       <HotTable
         ref={hotTableComponent}
@@ -113,7 +123,7 @@ export default function Spreadsheet({
           const classes = [];
 
           // Zebra striping
-          if (row % 2 === 1) {
+          if (row % 2 === 1 && !correctCellsROW.includes(row) && !incorrectCellsROW.includes(row)) {
             classes.push('even-row');
           }
 
@@ -123,28 +133,35 @@ export default function Spreadsheet({
             }
           }
 
-if (currentStepContent.Qtype === "cells") {
-  for (let i = 1; i <= 6; i++) {
-    const quizCel = currentStepContent[`Quizcel_${i}`];
-    if (
-      quizCel?.tab === activeTab &&
-      quizCel.row === row &&
-      quizCel.column === col
-    ) {
-      classes.push('quizcel');
-      break; // Optional: stop early if you found a match
-    }
-  }
-}
+          if (currentStepContent.Qtype === "cells") {
+            for (let i = 1; i <= 6; i++) {
+              const quizCel = currentStepContent[`Quizcel_${i}`];
+              if (
+                quizCel?.tab === activeTab &&
+                quizCel.row === row &&
+                quizCel.column === col
+              ) {
+                if (preAnswer) {
+                  classes.push('quizcel');
+                } else if (incorrectCellsCOL.includes(col) && incorrectCellsROW.includes(row)) {
+                  classes.push('incorrect-cell');
+                } else if (correctCellsCOL.includes(col) && correctCellsROW.includes(row)) {
+                  console.log("MISSION SUCCESS")
+                  console.log("Classes", classes)
+                  classes.push('correct-cell');
+                }
+              }
+            }
+          }
 
           if (highlightOn) {
-            if (row === 2 && col === 1) {
-              classes.push('shimmer-cell');
-            }
-            if (col >= 6) {
+            //if (row === 2 && col === 1) {
+              //classes.push('shimmer-cell');
+            //}
+            if (col >= 5) {
               classes.push('forecasted-cell');
             }
-            if (col >= 1 && (row === 6 || row === 8)) {
+            if (col >= 1 && (row === 2 || row === 4 || row === 8 || row === 10)) {
               classes.push('derived-cell');
             }
 

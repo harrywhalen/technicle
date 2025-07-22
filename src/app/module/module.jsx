@@ -38,7 +38,9 @@ const moduleDatabase = {
   // Add the rest of your modules here...
 };
 
-export default function Module({setModDone}) {
+export default function Module({setModDone, hotRef}) {
+
+  const classes = [];
 
    const searchParams = useSearchParams();
   const moduleId = parseInt(searchParams.get("moduleId")); // 👈 Get moduleId from URL
@@ -66,7 +68,7 @@ export default function Module({setModDone}) {
   const correctAnswer = currentStepContent?.quiz.correctAnswer;
 
   const hotTableComponent = useRef(null);
-const { setCurrentSheet } = useSpreadsheetValidator(hotTableComponent);
+  const { setCurrentSheet, getIncorrectCellsROW, getIncorrectCellsCOL, getCorrectCellsCOL, getCorrectCellsROW, DEBUG_GOONER, clearCORCellsArrays, clearINCCellsArrays, } = useSpreadsheetValidator(hotTableComponent);
 
   const highestStepIdRef = useRef(1);
 
@@ -74,10 +76,13 @@ const { setCurrentSheet } = useSpreadsheetValidator(hotTableComponent);
 
   const [tabLocked, setTabLocked] = useState(true);
 
+  const [preAnswer, setPreAnswer] = useState(true)
+
+  const [updateME, setUpdateME] = useState(0)
+
 
 useEffect(() => {
-  console.log("== useEffect ==");
-  console.log("Before check: highest =", highestStepIdRef.current, "current =", currentActiveStepId);
+
 
   if (currentActiveStepId >= highestStepIdRef.current) {
     console.log("Updating highest step to:", currentActiveStepId);
@@ -143,21 +148,22 @@ const triggerConfetti = () => {
     setTimeout(() => setWiggleTime(false), 1100); // just to keep consistent
   };
 
-  const playCorrectSoundMCQ = () => {
-    const audio = new Audio("/sounds/correct.mp3");
-    audio.play().catch(error => {
-      console.error("Error playing sound:", error);
-    });
-  };
-
-      const playWrongSoundMCQ = () => {
-  const audio = new Audio("/sounds/wrong.mp3");
-  setIsCorrect(null);
+const playCorrectSoundMCQ = () => {
+  const audio = new Audio("/sounds/correct.mp3");
+  audio.volume = 0.3;  // Set volume to 30%
   audio.play().catch(error => {
     console.error("Error playing sound:", error);
   });
 };
 
+const playWrongSoundMCQ = () => {
+  const audio = new Audio("/sounds/wrong.mp3");
+  setIsCorrect(null);
+  audio.volume = 0.3;  // Set volume to 30%
+  audio.play().catch(error => {
+    console.error("Error playing sound:", error);
+  });
+};
 const playComplete = () => {
   setTimeout(() => {
     const audio = new Audio("/sounds/complete.mp3");
@@ -170,14 +176,14 @@ const playComplete = () => {
 const handleCheckAnswers = () => {
   if (spreadGangRef.current) {
     spreadGangRef.current.checkAllAnswers();
+    
   }
 };
 
 const handleSubmit = (event) => {
-  event.preventDefault();
-  console.log("LOOKY HERE", highestStepIdRef.current, currentActiveStepId)
-    setIsCorrect(null);
   
+  event.preventDefault();
+    setIsCorrect(null);
   if (Qtype === "MCQ") {
     const result = selectedOption === correctAnswer;
     setIsCorrect(result);
@@ -328,12 +334,10 @@ useEffect(() => {
     };
 
       const refresh = () => {
-        console.log("bithc", sheetBlankForecasts.inputs);
         // Reset current sheet to initial display data (with quiz cells empty)
         const quizCells = sheetQuizCells[activeTab] || [];
         const blankCells = sheetBlankCells[activeTab] || [];
         const blankForecastCells = sheetBlankForecasts[activeTab] || [];
-        console.log("quizCells", quizCells)
         const resetDisplayData = sheetsInitialData[activeTab].map((row, rowIndex) => 
             row.map((cell, colIndex) => {
                 const isQuizCell = quizCells.some(q => q.row === rowIndex && q.col === colIndex);
@@ -352,14 +356,16 @@ useEffect(() => {
     };
 
 const advanceStep = () => {
+    clearCORCellsArrays();
+    clearINCCellsArrays();
+    setPreAnswer(true)
+    setUpdateME((prev => prev + 1))
   setCurrentActiveStepId((prevId) => {
     const nextStep = prevId + 1; // number math
     setNextReady(false);
     if (modContent[nextStep.toString()]) {
-      console.log("Advancing to step:", nextStep);
       return nextStep;
     } else {
-      console.log("No more steps.");
       playComplete();
       setModDone(true);
       return prevId; // Stay on current step
@@ -452,6 +458,10 @@ const advanceStep = () => {
             tabLocked={tabLocked}
             sheetBlankForecasts={sheetBlankForecasts}
             content = {modContent}
+            preAnswer={preAnswer}
+            getIncorrectCellsROW={getIncorrectCellsROW}
+            setPreAnswer={setPreAnswer}
+            updateME={updateME}
           />
         ) : (
           <p style={{ color: '#1f3a60', textAlign: 'center', marginTop: '3.125rem', }}>

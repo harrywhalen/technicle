@@ -59,14 +59,19 @@
   color: white;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
+  width: 5vw;
+  border-radius: 0px 10px 10px 0px;
 }
 
 .navLink:hover {
-  background-color: #34495e; /* Slightly lighter blue on hover */
+  background-color: #3d5b79; /* Slightly lighter blue on hover */
+  width: 5vw;
+  border-radius: 0px 10px 10px 0px;
 }
 
 .active {
   background-color: #3498db; /* Blue from your mockup for active link */
   font-weight: bold;
   border-radius: 0px 10px 10px 0px;
+  width: 5vw;
 }

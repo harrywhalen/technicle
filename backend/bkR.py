@@ -5,7 +5,9 @@ import numpy as np
 from collections import OrderedDict
 import json
 
-# Simplified generate_model expecting revenue only, others zeros internally
+# SendMe = True sends the model to Firebase
+SendMe = False
+
 
 def to_millions(arr):
     return [round(x / 1_000_000, 2) for x in arr]
@@ -567,13 +569,16 @@ def forecast(ticker):
 
 
 
-        def extract_metric(df, keyword, limit=4):
+        def extract_metric(df, keyword, limit=4, fallback=0):
             filtered = df.loc[df['Metric'].str.lower().str.contains(keyword.lower())]
             if filtered.empty:
-                return []
+                return [fallback] * limit
             vals = filtered.iloc[0, 1:].tolist()
-            vals = vals[:limit]
-            return [float(x) if x is not None else 0 for x in vals]
+            vals = [float(x) if x is not None else fallback for x in vals]
+            # Pad with fallback zeros if shorter than limit
+            if len(vals) < limit:
+                vals += [fallback] * (limit - len(vals))
+            return vals[:limit]
 
         # income statement
         revenue = extract_metric(income_df, 'revenue')
@@ -705,7 +710,7 @@ def forecast(ticker):
             "Depreciation and Amortization", "Changes in Accounts Receivable",
             "Changes in Accounts Payable", "Changes in Inventory", "Changes in Cash", "Inventory / COGS", "Revenue Growth Rate", 
             "SGnA / Revenue", "RnD / Revenue", "Capex / Revenue", "Accounts Receivable / Revenue", "Accounts Payable / COGS", 
-            "Inventory / COGS", "Interest Rate", "Dividend Payout Ratio", "Ebitda Margin", "Operating Margin", "Depreciation Rate",
+             "Interest Rate", "Dividend Payout Ratio", "Ebitda Margin", "Operating Margin", "Depreciation Rate",
             "Return On Equity", "Return On Assets", "Current Ratio", "Debt / Ebitda", "Changes in Working Cap", "COGS / Revenue", "Opex / Revenue",
             "Stock Buy Backs"
 
@@ -714,7 +719,7 @@ def forecast(ticker):
         ordered_forecast = OrderedDict((key, forecast_results[key]) for key in ordered_keys if key in forecast_results)
 
         response = {
-            #"raw_income_statement": income_df.to_dict(orient='records'),
+            "raw_income_statement": income_df.to_dict(orient='records'),
             "raw_balance_sheet": balance_df.to_dict(orient='records'),
             "raw_cash_flow_statement": cashflow_df.to_dict(orient='records'),
             "forecast": ordered_forecast

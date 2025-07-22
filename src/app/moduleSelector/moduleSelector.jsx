@@ -7,12 +7,12 @@ import ModGrid from "./modGrid.jsx";
 import Collapser from "./collapser.jsx";
 
 const modules = [
-  { id: 1, title1: "TEST MODULE", title2: "React Basics", subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
-  { id: 2, title1: "State Management", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
-  { id: 3, title1: "Hooks",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
-  { id: 4, title1: "Routing", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
-  { id: 5, title1: "Testing",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
-  { id: 6, title1: "Performance",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 38 },
+  { id: 1, title1: "The Income", title2: "Statement", subtitle1: "Basic Income Statement", subtitle2: "Forecasting", progress: 0 },
+  { id: 2, title1: "State Management", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
+  { id: 3, title1: "Hooks",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
+  { id: 4, title1: "Routing", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
+  { id: 5, title1: "Testing",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
+  { id: 6, title1: "Performance",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
   { id: 7, title1: "Deployment",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
   { id: 8, title1: "Advanced Patterns",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
   { id: 9, title1: "Security",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
