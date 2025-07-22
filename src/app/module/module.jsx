@@ -38,12 +38,9 @@ const moduleDatabase = {
   // Add the rest of your modules here...
 };
 
-export default function Module({setModDone, hotRef}) {
-
+function ModuleContent({setModDone, hotRef}) {
   const classes = [];
-
-   const searchParams = useSearchParams();
-
+  const searchParams = useSearchParams();
   const moduleId = parseInt(searchParams.get("moduleId")); // 👈 Get moduleId from URL
 
   // If moduleId is missing or invalid, render fallback
@@ -54,45 +51,30 @@ export default function Module({setModDone, hotRef}) {
   const modContent = moduleDatabase[moduleId]?.content;
 
   const [nextReady, setNextReady] = useState(false);
-
   const spreadGangRef = useRef(null);
-
   const [highlightOn, setHighlightOn] = useState(false);
   const [hintOn, setHintOn] = useState(false);
-
   const [currentActiveStepId, setCurrentActiveStepId] = useState(1);
   const [currentStepContent, setCurrentStepContent] = useState(modContent['1']);
-
   const [isCorrect, setIsCorrect] = useState(null); // null = no answer yet, true/false = result
   const [selectedOption, setSelectedOption] = useState("Discounted Cash Flow");
 
   const correctAnswer = currentStepContent?.quiz.correctAnswer;
-
   const hotTableComponent = useRef(null);
   const { setCurrentSheet, getIncorrectCellsROW, getIncorrectCellsCOL, getCorrectCellsCOL, getCorrectCellsROW, DEBUG_GOONER, clearCORCellsArrays, clearINCCellsArrays, } = useSpreadsheetValidator(hotTableComponent);
 
-
   const highestStepIdRef = useRef(1);
-
   const totalSteps = useMemo(() => Object.keys(modContent).length, [modContent]);
-
   const [tabLocked, setTabLocked] = useState(true);
+  const [preAnswer, setPreAnswer] = useState(true);
+  const [updateME, setUpdateME] = useState(0);
 
-  const [preAnswer, setPreAnswer] = useState(true)
-
-  const [updateME, setUpdateME] = useState(0)
-
-
-useEffect(() => {
-
-
-  if (currentActiveStepId >= highestStepIdRef.current) {
-    console.log("Updating highest step to:", currentActiveStepId);
-    highestStepIdRef.current = currentActiveStepId;
-
-  } else console.log("Already higher step reached, current:", currentActiveStepId, "highest:", highestStepIdRef.current);
-}, [currentActiveStepId]);
-
+  useEffect(() => {
+    if (currentActiveStepId >= highestStepIdRef.current) {
+      console.log("Updating highest step to:", currentActiveStepId);
+      highestStepIdRef.current = currentActiveStepId;
+    } else console.log("Already higher step reached, current:", currentActiveStepId, "highest:", highestStepIdRef.current);
+  }, [currentActiveStepId]);
 
   function columnToLetter(col) {
     let temp = '';
@@ -151,50 +133,53 @@ useEffect(() => {
     setTimeout(() => setWiggleTime(false), 1100); // just to keep consistent
   };
 
-const playCorrectSoundMCQ = () => {
-  const audio = new Audio("/sounds/correct.mp3");
-  audio.volume = 0.3;  // Set volume to 30%
-  audio.play().catch(error => {
-    console.error("Error playing sound:", error);
-  });
-};
+  const playCorrectSoundMCQ = () => {
+    const audio = new Audio("/sounds/correct.mp3");
+    audio.volume = 0.3;  // Set volume to 30%
+    audio.play().catch(error => {
+      console.error("Error playing sound:", error);
+    });
+  };
 
-const playWrongSoundMCQ = () => {
-  const audio = new Audio("/sounds/wrong.mp3");
-  setIsCorrect(null);
-  audio.volume = 0.3;  // Set volume to 30%
-  audio.play().catch(error => {
-    console.error("Error playing sound:", error);
-  });
-};
-const playComplete = () => {
-  setTimeout(() => {
-    const audio = new Audio("/sounds/complete.mp3");
-
-const handleCheckAnswers = () => {
-  if (spreadGangRef.current) {
-    spreadGangRef.current.checkAllAnswers();
-    
-  }
-};
-
-const handleSubmit = (event) => {
-  
-  event.preventDefault();
+  const playWrongSoundMCQ = () => {
+    const audio = new Audio("/sounds/wrong.mp3");
     setIsCorrect(null);
-  if (Qtype === "MCQ") {
-    const result = selectedOption === correctAnswer;
-    setIsCorrect(result);
+    audio.volume = 0.3;  // Set volume to 30%
+    audio.play().catch(error => {
+      console.error("Error playing sound:", error);
+    });
+  };
 
+  const playComplete = () => {
+    setTimeout(() => {
+      const audio = new Audio("/sounds/complete.mp3");
+      audio.volume = 0.3;
+      audio.play().catch(error => {
+        console.error("Error playing complete sound:", error);
+      });
+    }, 500);
+  };
 
+  const handleCheckAnswers = () => {
+    if (spreadGangRef.current) {
+      spreadGangRef.current.checkAllAnswers();
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsCorrect(null);
+    if (Qtype === "MCQ") {
+      const result = selectedOption === correctAnswer;
+      setIsCorrect(result);
       setTimeout(() => setIsCorrect(result), 10);
     } else {
       handleCheckAnswers();
     }
   };
 
-  let Qtype = currentStepContent?.Qtype
-  let TargetTab = currentStepContent?.targetTab
+  let Qtype = currentStepContent?.Qtype;
+  let TargetTab = currentStepContent?.targetTab;
 
   const sheetQuizCells = useMemo(() => {
     if (Qtype !== "cells") {
@@ -332,7 +317,7 @@ const handleSubmit = (event) => {
     const quizCells = sheetQuizCells[activeTab] || [];
     const blankCells = sheetBlankCells[activeTab] || [];
     const blankForecastCells = sheetBlankForecasts[activeTab] || [];
-    console.log("quizCells", quizCells)
+    console.log("quizCells", quizCells);
     const resetDisplayData = sheetsInitialData[activeTab].map((row, rowIndex) => 
       row.map((cell, colIndex) => {
         const isQuizCell = quizCells.some(q => q.row === rowIndex && q.col === colIndex);
@@ -350,61 +335,22 @@ const handleSubmit = (event) => {
   };
 
   const advanceStep = () => {
+    clearCORCellsArrays();
+    clearINCCellsArrays();
+    setPreAnswer(true);
+    setUpdateME((prev => prev + 1));
     setCurrentActiveStepId((prevId) => {
       const nextStep = prevId + 1; // number math
       setNextReady(false);
       if (modContent[nextStep.toString()]) {
-        console.log("Advancing to step:", nextStep);
         return nextStep;
       } else {
-        console.log("No more steps.");
         playComplete();
         setModDone(true);
         return prevId; // Stay on current step
       }
-
-    };
-
-      const refresh = () => {
-        // Reset current sheet to initial display data (with quiz cells empty)
-        const quizCells = sheetQuizCells[activeTab] || [];
-        const blankCells = sheetBlankCells[activeTab] || [];
-        const blankForecastCells = sheetBlankForecasts[activeTab] || [];
-        const resetDisplayData = sheetsInitialData[activeTab].map((row, rowIndex) => 
-            row.map((cell, colIndex) => {
-                const isQuizCell = quizCells.some(q => q.row === rowIndex && q.col === colIndex);
-                const isBlankCell = blankCells.some(q => q.row === rowIndex && q.col === colIndex);
-                const isBlankForecastCell = blankForecastCells.some(q => q.row === rowIndex && q.col === colIndex);
-                return (isQuizCell || isBlankCell || isBlankForecastCell) ? '' : cell;
-
-            })
-        );
-        
-        setSheetsDisplayData(prev => ({
-            ...prev,
-            [activeTab]: [...resetDisplayData]
-        }));
-        console.log("Reset to:", resetDisplayData);
-    };
-
-const advanceStep = () => {
-    clearCORCellsArrays();
-    clearINCCellsArrays();
-    setPreAnswer(true)
-    setUpdateME((prev => prev + 1))
-  setCurrentActiveStepId((prevId) => {
-    const nextStep = prevId + 1; // number math
-    setNextReady(false);
-    if (modContent[nextStep.toString()]) {
-      return nextStep;
-    } else {
-      playComplete();
-      setModDone(true);
-      return prevId; // Stay on current step
-    }
-  });
-};
-
+    });
+  };
 
   useEffect(() => {
     if (currentStepContent) {
@@ -487,12 +433,11 @@ const advanceStep = () => {
             hotTableComponent={hotTableComponent}
             tabLocked={tabLocked}
             sheetBlankForecasts={sheetBlankForecasts}
-            content = {modContent}
+            content={modContent}
             preAnswer={preAnswer}
             getIncorrectCellsROW={getIncorrectCellsROW}
             setPreAnswer={setPreAnswer}
             updateME={updateME}
-
           />
         ) : (
           <p style={{ color: '#1f3a60', textAlign: 'center', marginTop: '3.125rem' }}>

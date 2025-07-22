@@ -28,10 +28,10 @@ export default function Spreadsheet({
   incorrectCellsROW,
   incorrectCellsCOL,
   clearCellsArrays,
-  
 }) {
 
   const spreadsheetContainerRef = useRef(null);
+  const isDestroyedRef = useRef(false);
 
   // Improved scroll prevention with better event handling
   const handleWheel = useCallback((e) => {
@@ -73,8 +73,8 @@ export default function Spreadsheet({
       } else {
         // If we can't find the scrollable element, try to get it from the Handsontable instance
         const hotInstance = hotTableComponent.current?.hotInstance;
-        if (hotInstance) {
-          const scrollableElement = hotInstance.view.wt.wtTable.holder;
+        if (hotInstance && !isDestroyedRef.current) {
+          const scrollableElement = hotInstance.view?.wt?.wtTable?.holder;
           if (scrollableElement) {
             scrollableElement.scrollTop += e.deltaY;
             scrollableElement.scrollLeft += e.deltaX;
@@ -89,17 +89,20 @@ export default function Spreadsheet({
     const container = spreadsheetContainerRef.current;
     if (!container) return;
 
+    isDestroyedRef.current = false;
     let cleanupFunctions = [];
 
     // Function to set up scroll prevention
     const setupScrollPrevention = () => {
       const hotInstance = hotTableComponent.current?.hotInstance;
       
-      // Only proceed if Handsontable is fully initialized
-      if (!hotInstance) {
-        // Retry after a short delay
-        const retryTimeout = setTimeout(setupScrollPrevention, 100);
-        cleanupFunctions.push(() => clearTimeout(retryTimeout));
+      // Only proceed if Handsontable is fully initialized and not destroyed
+      if (!hotInstance || isDestroyedRef.current) {
+        // Retry after a short delay, but only if component hasn't been destroyed
+        if (!isDestroyedRef.current) {
+          const retryTimeout = setTimeout(setupScrollPrevention, 100);
+          cleanupFunctions.push(() => clearTimeout(retryTimeout));
+        }
         return;
       }
 
@@ -120,18 +123,15 @@ export default function Spreadsheet({
         document.removeEventListener('wheel', handleWheel, { capture: true });
       });
 
-      // Force a render to ensure all DOM elements are available
-      setTimeout(() => {
-        if (hotInstance) {
-          hotInstance.render();
-        }
-      }, 50);
+      // Remove the problematic render call that was causing the error
+      // The render call is not necessary here and was causing issues when called on destroyed instances
     };
 
     // Start the setup process
     setupScrollPrevention();
 
     return () => {
+      isDestroyedRef.current = true;
       cleanupFunctions.forEach(cleanup => cleanup());
     };
   }, [handleWheel, data, activeTab]); // Include data and activeTab to re-setup when component updates
@@ -177,14 +177,17 @@ export default function Spreadsheet({
   // Handsontable lifecycle hook to ensure scroll prevention is set up
   const afterInit = () => {
     console.log('Handsontable initialized - scroll prevention ready');
-    // Force a small delay to ensure DOM is fully ready
-    setTimeout(() => {
-      const container = spreadsheetContainerRef.current;
-      if (container) {
-        // Trigger a custom event to let our effect know Handsontable is ready
-        container.dispatchEvent(new CustomEvent('handsontable-ready'));
-      }
-    }, 50);
+    // Remove the problematic setTimeout that was calling render on potentially destroyed instances
+    const container = spreadsheetContainerRef.current;
+    if (container) {
+      // Trigger a custom event to let our effect know Handsontable is ready
+      container.dispatchEvent(new CustomEvent('handsontable-ready'));
+    }
+  };
+
+  // Add beforeDestroy hook to mark the instance as destroyed
+  const beforeDestroy = () => {
+    isDestroyedRef.current = true;
   };
 
   // Pad data to minimum 15 rows
@@ -239,6 +242,7 @@ export default function Spreadsheet({
         contextMenu={true}
         afterChange={afterChange}
         afterInit={afterInit}
+        beforeDestroy={beforeDestroy}
         manualRowResize={true}
         manualColumnResize={true}
         columnSorting={true}
