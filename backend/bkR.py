@@ -4,9 +4,12 @@ from flask_cors import CORS
 import numpy as np
 from collections import OrderedDict
 import json
+import firebase_admin
+from firebase_admin import credentials, firestore
+
 
 # SendMe = True sends the model to Firebase
-SendMe = False
+SendMe = True
 
 
 def to_millions(arr):
@@ -154,10 +157,8 @@ def generate_model(
     else:
         inventory_pct = 0.1 
 
-    capex_values = [abs(c) for c in capex if c != 0]
-    if capex_values:
-        capex_avg = sum(capex_values) / len(capex_values)
-        capex_pct = capex_avg / revenue_avg
+    if capex is not None and len(capex) > 0:
+        capex_pct = abs(capex[-1]) / revenue[-1]
     else:
         capex_pct = 0.04  # fallback: 4% of revenue
 
@@ -186,7 +187,7 @@ def generate_model(
 
     if len(depreciation) > 1 and depreciation[0] > 0:
         depreciation_avg = sum(depreciation) / len(depreciation)
-        depreciation_pct = (depreciation_avg / abs(capex_avg))
+        depreciation_pct = (depreciation[-1]/ abs(capex[-1]))
     else:
         depreciation_pct = 0.1
 
@@ -724,6 +725,20 @@ def forecast(ticker):
             "raw_cash_flow_statement": cashflow_df.to_dict(orient='records'),
             "forecast": ordered_forecast
         }
+
+        if not firebase_admin._apps:
+            # Initialize Firebase
+            cred = credentials.Certificate(r"C:\New folder\technicle\inconspicuous-folder\technicle-ad223-firebase-adminsdk-fbsvc-5678cccde2.json")
+            firebase_admin.initialize_app(cred)
+        db = firestore.client()
+        # Convert to ordered array format
+        ordered_data = [{"label": k, "values": v} for k, v in ordered_forecast.items()]
+
+        # Upload to Firestore
+        if SendMe is True:
+            doc_ref = db.collection("models").document(f"{ticker} 3 Statement")
+            doc_ref.set({"orderedData": ordered_data})
+
         return Response(
     json.dumps(response, indent=2, sort_keys=False),
     mimetype='application/json'
@@ -735,3 +750,4 @@ def forecast(ticker):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
