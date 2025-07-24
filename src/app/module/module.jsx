@@ -50,6 +50,8 @@ function ModuleContent({setModDone, hotRef}) {
 
   const modContent = moduleDatabase[moduleId]?.content;
 
+  const SpreadSheet_Selector = modContent.Bullshit.Spreadsheet_Selector
+
   const [nextReady, setNextReady] = useState(false);
   const spreadGangRef = useRef(null);
   const [highlightOn, setHighlightOn] = useState(false);
@@ -438,6 +440,7 @@ function ModuleContent({setModDone, hotRef}) {
             getIncorrectCellsROW={getIncorrectCellsROW}
             setPreAnswer={setPreAnswer}
             updateME={updateME}
+            SpreadSheet_Selector={SpreadSheet_Selector}
           />
         ) : (
           <p style={{ color: '#1f3a60', textAlign: 'center', marginTop: '3.125rem' }}>

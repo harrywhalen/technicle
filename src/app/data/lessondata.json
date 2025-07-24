@@ -1,5 +1,7 @@
 {
 
+"Bullshit": {"Spreadsheet_Selector": "MSFT 3 Statement",
+
 "SheetMappings": {
 
     "inputs": {
@@ -8,7 +10,9 @@
                     "Operating Expense", "EBITDA", "Depreciation", "Interest Expense",  "Interest Income",
                    "EBT", "Tax Provision", "Net Income", "", "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue"]
     }
-  },
+  }},
+
+
 
     "1": {
       "name": "What's an Income Statement?",

@@ -19,9 +19,9 @@ const SpreadGang = forwardRef(({
   sheetBlankCells, Qtype, TargetTab, nextReady,
   setNextReady, currentActiveStepId, playSound, showCoordinates,
   tabLocked, sheetBlankForecasts, content, preAnswer,
-  setPreAnswer, updateME,
+  setPreAnswer, updateME, SpreadSheet_Selector,
 }, ref) => {
-const sheetMappings = content?.SheetMappings || {};
+const sheetMappings = content?.Bullshit.SheetMappings || {};
 
 
   const hotTableComponent = useRef(null);
@@ -89,9 +89,9 @@ useEffect(() => {
     
     const fetchData = async () => {
       try {
-        const docRef = doc(db, "models", "MSFT 3 Statement");
+        const docRef = doc(db, "models", SpreadSheet_Selector);
         const docSnap = await getDoc(docRef);
-        const coldDocRef = doc(db, "models", "MSFT 3 Statement");
+        const coldDocRef = doc(db, "models", SpreadSheet_Selector);
         const coldDocSnap = await getDoc(coldDocRef);
         
         if (docSnap.exists()) {
