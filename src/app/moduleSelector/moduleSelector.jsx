@@ -7,7 +7,7 @@ import ModGrid from "./modGrid.jsx";
 import Collapser from "./collapser.jsx";
 
 const modules = [
-  { id: 1, title1: "The Income", title2: "Statement", subtitle1: "Basic Income Statement", subtitle2: "Forecasting", progress: 0 },
+  { id: 1, title1: "The Income", title2: "Statement", subtitle1: "Basic Income Statement", subtitle2: "Forecasting", progress: 100 },
   { id: 2, title1: "State Management", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
   { id: 3, title1: "Hooks",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
   { id: 4, title1: "Routing", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
