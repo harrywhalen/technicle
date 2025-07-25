@@ -49,6 +49,7 @@ setIncorrectCellsROW,
 incorrectCellsCOL, 
 setIncorrectCellsCOL,
 updateME,
+SpreadSheet_Selector,
 }) {
 
   return (
@@ -112,6 +113,7 @@ updateME,
             setIncorrectCellsROW = {setIncorrectCellsROW}
             setIncorrectCellsCOL = {setIncorrectCellsCOL}
             updateME={updateME}
+            SpreadSheet_Selector={SpreadSheet_Selector}
           />
 
           <div>

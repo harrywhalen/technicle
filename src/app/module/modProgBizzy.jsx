@@ -3,7 +3,7 @@ import React from "react";
 
 export default function DaProg({highestStep, totalSteps,}) {
 
-const DaProgWidth = ((highestStep / (totalSteps - 1))*52)
+const DaProgWidth = ((highestStep / (totalSteps - 2))*52)
   return (
 <div
  style={{ position: 'relative', width: '20px', marginBottom: '2rem'}}

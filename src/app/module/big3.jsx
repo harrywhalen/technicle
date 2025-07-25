@@ -56,6 +56,7 @@ const Big3 = forwardRef((
     incorrectCellsCOL, 
     setIncorrectCellsCOL,
     updateME,
+    SpreadSheet_Selector,
     
   },
   ref  // <-- the forwarded ref is the 2nd parameter
@@ -132,6 +133,7 @@ const Big3 = forwardRef((
             setIncorrectCellsROW = {setIncorrectCellsROW}
             setIncorrectCellsCOL = {setIncorrectCellsCOL}
             updateME={updateME}
+            SpreadSheet_Selector={SpreadSheet_Selector}
           />
 
         </div>

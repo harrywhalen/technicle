@@ -10,6 +10,8 @@ from firebase_admin import credentials, firestore
 
 # SendMe = True sends the model to Firebase
 SendMe = True
+ValidModel = True
+emptyCounter = 0
 
 
 def to_millions(arr):
@@ -59,6 +61,8 @@ def generate_model(
     depreciation_rate: float = 0.2,
     interest_rate: float = .05
 ):
+    
+
     
     # ========== DEBUG: Check inputs before processing ==========
     print("\n=== GENERATE_MODEL DEBUG - INPUT CHECK ===")
@@ -324,13 +328,13 @@ def generate_model(
 
             full_common_stock.append(common_stock[-1])
 
-            forecast_change_AR = (full_accounts_receivable[i-1] - full_accounts_receivable[i])
+            forecast_change_AR = ((full_accounts_receivable[i] - full_accounts_receivable[i-1]) * - 1)
             full_change_AR.append(forecast_change_AR)
             
-            forecast_change_AP = (full_accounts_payable[i-1] - full_accounts_payable[i])
+            forecast_change_AP = ((full_accounts_payable[i] - full_accounts_payable[i-1]))
             full_change_AP.append(forecast_change_AP)
 
-            forecast_change_inventory = (full_inventory[i-1] - full_inventory[i])
+            forecast_change_inventory = ((full_inventory[i] - full_inventory[i-1]))
             full_change_inventory.append(forecast_change_inventory)
 
 
@@ -461,10 +465,12 @@ def generate_model(
     #opex_pct = (sgna[-1] + sgna[-1] - depreciation[-1])/ revenue[-1]
     opex_pct = (opex[3])/ revenue[3]
 
+    revTRUE = np.all(full_revenue == 0)
 
 
-
-    return OrderedDict([
+    return {
+        "model": 
+        OrderedDict([
         # income statement
         ("Revenue", ratioRounder(full_revenue)),
         ("Cost of Goods Sold", ratioRounder(full_cogs)),
@@ -538,7 +544,11 @@ def generate_model(
         ("Current Ratio", ratioRounder(current_ratio)),
         ("Debt / Ebitda", ratioRounder(Debt_over_Ebitda)),
         ("Changes in Working Cap", ratioRounder(change_WC)),
-    ])
+    ]),
+    "revTRUE": revTRUE
+    }
+
+
 
 
 
@@ -549,6 +559,9 @@ CORS(app)
 @app.route('/api/forecast/<ticker>')
 def forecast(ticker):
     try:
+        global emptyCounter, ValidModel
+        emptyCounter = 0      # ✅ Reset here
+        ValidModel = True  
         # Income Statement
         ticker_obj = yf.Ticker(ticker)
         income_df = ticker_obj.financials.fillna(0)
@@ -571,8 +584,10 @@ def forecast(ticker):
 
 
         def extract_metric(df, keyword, limit=4, fallback=0):
+            global emptyCounter
             filtered = df.loc[df['Metric'].str.lower().str.contains(keyword.lower())]
             if filtered.empty:
+                emptyCounter += 1
                 return [fallback] * limit
             vals = filtered.iloc[0, 1:].tolist()
             vals = [float(x) if x is not None else fallback for x in vals]
@@ -696,6 +711,8 @@ def forecast(ticker):
             stock_buybacks=stock_buybacks
         )
 
+        model_dict = forecast_results["model"]
+
         ordered_keys = [
             "Revenue", "Cost of Goods Sold","Gross Profit", "Selling General And Administration", "Research and Development", 
             "Operating Expenses","EBITDA", "Depreciation", "Interest Expense", "Interest Income", 
@@ -717,7 +734,7 @@ def forecast(ticker):
 
         ]
 
-        ordered_forecast = OrderedDict((key, forecast_results[key]) for key in ordered_keys if key in forecast_results)
+        ordered_forecast = OrderedDict((key, model_dict[key]) for key in ordered_keys if key in model_dict)
 
         response = {
             "raw_income_statement": income_df.to_dict(orient='records'),
@@ -734,10 +751,17 @@ def forecast(ticker):
         # Convert to ordered array format
         ordered_data = [{"label": k, "values": v} for k, v in ordered_forecast.items()]
 
+        if emptyCounter > 10:
+            ValidModel = False
+
         # Upload to Firestore
-        if SendMe is True:
+        if SendMe is True and ValidModel is True:
+            print("Sending to Firebase")
             doc_ref = db.collection("models").document(f"{ticker} 3 Statement")
             doc_ref.set({"orderedData": ordered_data})
+            print("ValidModel", ValidModel, "emptyCounter", emptyCounter)
+        else: 
+            print("ValidModel", ValidModel, "emptyCounter", emptyCounter)
 
         return Response(
     json.dumps(response, indent=2, sort_keys=False),
