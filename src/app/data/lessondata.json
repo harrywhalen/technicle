@@ -1,6 +1,6 @@
 {
 
-"Bullshit": {"Spreadsheet_Selector": "MSFT 3 Statement",
+"Bullshit": {"Spreadsheet_Selector": "msft 3 Statement",
 
 "SheetMappings": {
 
@@ -54,57 +54,57 @@
         "BlankFOR_1":{
         "tab": "inputs",
         "row": 0,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_2":{
         "tab": "inputs",
         "row": 1,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_3":{
         "tab": "inputs",
         "row": 2,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       }
     },
     "2": {
@@ -149,57 +149,57 @@
         "BlankFOR_1":{
         "tab": "inputs",
         "row": 0,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_2":{
         "tab": "inputs",
         "row": 1,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_3":{
         "tab": "inputs",
         "row": 2,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       },
         "highlightRow":{
         "tab": "inputs",
@@ -240,57 +240,57 @@
         "BlankFOR_1":{
         "tab": "inputs",
         "row": 0,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_2":{
         "tab": "inputs",
         "row": 1,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_3":{
         "tab": "inputs",
         "row": 2,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       },
         "highlightRow":{
         "tab": "intro",
@@ -314,7 +314,7 @@
       "Quizcel_1":{
         "tab": "inputs",
         "row": 0,
-        "column": 5
+        "column": 4
       },
         "Quizcel_2":{
         "tab": "inputs",
@@ -339,52 +339,52 @@
         "BlankFOR_2":{
         "tab": "inputs",
         "row": 1,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_3":{
         "tab": "inputs",
         "row": 2,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       },
         "highlightRow":{
         "tab": "intro",
@@ -428,52 +428,52 @@
         "BlankFOR_2":{
         "tab": "inputs",
         "row": 1,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_3":{
         "tab": "inputs",
         "row": 2,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       },
         "highlightRow":{
         "tab": "inputs",
@@ -507,52 +507,52 @@
         "BlankFOR_2":{
         "tab": "inputs",
         "row": 1,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_3":{
         "tab": "inputs",
         "row": 2,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       },
         "highlightRow":{
         "tab": "intro",
@@ -576,7 +576,7 @@
       "Quizcel_1":{
         "tab": "inputs",
         "row": 1,
-        "column": 5
+        "column": 4
       },
         "Quizcel_2":{
         "tab": "inputs",
@@ -596,47 +596,47 @@
         "BlankFOR_3":{
         "tab": "inputs",
         "row": 2,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       },
         "highlightRow":{
         "tab": "intro",
@@ -660,7 +660,7 @@
       "Quizcel_4":{
         "tab": "inputs",
         "row": 2,
-        "column": 5
+        "column": 4
       },
       "Quizcel_5":{
         "tab": "inputs",
@@ -680,42 +680,42 @@
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       }
     },
     "9": {
@@ -735,7 +735,7 @@
       "Quizcel_1":{
         "tab": "intro",
         "row": 0,
-        "column": 5
+        "column": 4
       },
         "Quizcel_2":{
         "tab": "intro",
@@ -750,42 +750,42 @@
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       },
         "highlightRow":{
         "tab": "inputs",
@@ -819,42 +819,42 @@
         "BlankFOR_4":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       },
         "highlightRow":{
         "tab": "intro",
@@ -878,52 +878,52 @@
       "Quizcel_1":{
         "tab": "inputs",
         "row": 3,
-        "column": 5
+        "column": 4
       },
       "Quizcel_2":{
         "tab": "inputs",
         "row": 3,
-        "column": 6
+        "column": 4
       },
       "Quizcel_3":{
         "tab": "inputs",
         "row": 3,
-        "column": 7
+        "column": 6
       },
         "BlankFOR_5":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column":4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       }
     },
         "12": {
@@ -943,7 +943,7 @@
       "Quizcel_4":{
         "tab": "inputs",
         "row": 4,
-        "column": 5
+        "column": 4
       },
       "Quizcel_5":{
         "tab": "inputs",
@@ -958,32 +958,32 @@
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       }
     },
 
@@ -1004,7 +1004,7 @@
       "Quizcel_1":{
         "tab": "intro",
         "row": 0,
-        "column": 5
+        "column": 4
       },
         "Quizcel_2":{
         "tab": "intro",
@@ -1014,32 +1014,32 @@
         "BlankFOR_6":{
         "tab": "inputs",
         "row": 5,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_7":{
         "tab": "inputs",
         "row": 6,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_9":{
         "tab": "inputs",
         "row": 7,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_10":{
         "tab": "inputs",
         "row": 8,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_11":{
         "tab": "inputs",
         "row": 9,
-        "column": 5
+        "column": 4
       },
         "BlankFOR_12":{
         "tab": "inputs",
         "row": 10,
-        "column": 5
+        "column": 4
       },
         "highlightRow":{
         "tab": "intro",

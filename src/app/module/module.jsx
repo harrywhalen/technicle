@@ -7,6 +7,7 @@ import Big3 from "./big3.jsx";
 import lessonData from "../data/lessondata.json";
 import lessonDataBS from "../data/lessondataBS.json";
 import lessonDataCFS from "../data/lessondataCFS.json";
+import contentBERK from "../data/lessondataBERK.json";
 import { useSpreadsheetValidator } from '../hooks/useSpreadsheetValidator';
 import confetti from 'canvas-confetti';
 
@@ -25,7 +26,7 @@ const moduleDatabase = {
   },
   4: {
     title: 'Routing',
-    content: lessonData,
+    content: contentBERK,
   },
   5: {
     title: 'Testing',

@@ -7,10 +7,10 @@
     "inputs": {
       "name": "Income Statement", 
       "includeRows": ["Cash and Cash Equivalents",
-            "Accounts Receivable", "Accounts Payable", "Inventory", "Capital Expenditure",
+            "Accounts Receivable", "Inventory", "Accounts Payable",
             "Gross PPE", "Net PPE", "Total Assets",  "Total Debt", "Current Debt",
             "Long Term Debt", "Total Liabilities", 
-            "Common Stock", "Dividends Paid", "Retained Earnings", "Total Equity", "Net Working Capital"   
+            "Common Stock", "Retained Earnings", "Total Equity", "Net Working Capital"   
           ]
     }
   }},

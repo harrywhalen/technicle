@@ -7,9 +7,26 @@ import json
 import firebase_admin
 from firebase_admin import credentials, firestore
 
+if not firebase_admin._apps:
+    # Initialize Firebase
+    cred = credentials.Certificate(r"C:\New folder\technicle\inconspicuous-folder\technicle-ad223-firebase-adminsdk-fbsvc-5678cccde2.json")
+    firebase_admin.initialize_app(cred)
+db = firestore.client()
+
+SETticker = "msft"
+
+doc_ref = db.collection("raw_statements").document(SETticker)
+doc = doc_ref.get()
+
+data = doc.to_dict()
+orderedRAW_data = data.get("orderedData", [])
+
+label_map = {entry["label"].lower(): entry["values"] for entry in orderedRAW_data}
+
+#print("DATA",data)
 
 # SendMe = True sends the model to Firebase
-SendMe = False
+SendMe = True
 ValidModel = True
 emptyCounter = 0
 
@@ -86,37 +103,39 @@ def generate_model(
     print("=== END INPUT CHECK ===\n")
     # ========== END DEBUG ==========
 
-    revenue = np.array(to_millions(revenue[::-1]))
-    sgna = np.array(to_millions(sgna[::-1]))
-    rnd = np.array(to_millions(rnd[::-1]))
-    cogs = np.array(to_millions(cogs[::-1]))
-    niav = np.array(to_millions(niav[::-1]))
-    depreciation = np.array(to_millions(depreciation[::-1]))
+    revenue = np.array(to_millions(revenue))
+    sgna = np.array(to_millions(sgna))
+    rnd = np.array(to_millions(rnd))
+    cogs = np.array(to_millions(cogs))
+    niav = np.array(to_millions(niav))
+    depreciation = np.array(to_millions(depreciation))
 
-    accounts_receivable = np.array(to_millions(accounts_receivable[::-1]))
-    accounts_payable = np.array(to_millions(accounts_payable[::-1]))
-    inventory = np.array(to_millions(inventory[::-1]))
-    capex = np.array(to_millions(capex[::-1]))
-    gross_ppe = np.array(to_millions(gross_ppe[::-1]))
-    net_ppe = np.array(to_millions(net_ppe[::-1]))
-    total_debt = np.array(to_millions(total_debt[::-1]))
-    current_debt = np.array(to_millions(current_debt[::-1]))
-    long_term_debt = np.array(to_millions(long_term_debt[::-1]))
-    interest_expense = np.array(to_millions(interest_expense[::-1]))
-    interest_income = np.array(to_millions(interest_income[::-1]))
-    common_stock = np.array(to_millions(common_stock[::-1]))
-    retained_earnings = np.array(to_millions(retained_earnings[::-1]))
-    cash = np.array(to_millions(cash[::-1]))
+    accounts_receivable = np.array(to_millions(accounts_receivable))
+    accounts_payable = np.array(to_millions(accounts_payable))
+    inventory = np.array(to_millions(inventory))
+    capex = np.array(to_millions(capex))
+    gross_ppe = np.array(to_millions(gross_ppe))
+    net_ppe = np.array(to_millions(net_ppe))
+    total_debt = np.array(to_millions(total_debt))
+    current_debt = np.array(to_millions(current_debt))
+    long_term_debt = np.array(to_millions(long_term_debt))
+    interest_expense = np.array(to_millions(interest_expense))
+    interest_income = np.array(to_millions(interest_income))
+    common_stock = np.array(to_millions(common_stock))
+    retained_earnings = np.array(to_millions(retained_earnings))
+    cash = np.array(to_millions(cash))
 
-    change_AR = np.array(to_millions(change_AR[::-1]))
-    change_AP = np.array(to_millions(change_AP[::-1]))
-    change_inventory = np.array(to_millions(change_inventory[::-1]))
-    stock_buybacks = np.array(to_millions(stock_buybacks[::-1]))
+    change_AR = np.array(to_millions(change_AR))
+    change_AP = np.array(to_millions(change_AP))
+    change_inventory = np.array(to_millions(change_inventory))
+    stock_buybacks = np.array(to_millions(stock_buybacks))
 
-    div_paid = np.array(to_millions(div_paid[::-1]))
+    div_paid = np.array(to_millions(div_paid))
+
 
     
     # Fake zero arrays for other metrics same length as revenue or years
+    total_debt_avg = 0
     zeros = np.zeros(max(len(revenue), years))
 
     revenue_avg = sum(revenue) / len(revenue)
@@ -145,9 +164,8 @@ def generate_model(
 
     # balance sheet
         
-    if len(accounts_receivable) > 1 and accounts_receivable[0] > 0:
-        accounts_receivable_avg = sum(accounts_receivable) / len(accounts_receivable)
-        accounts_receivable_pct = (accounts_receivable_avg / revenue_avg)
+    if len(accounts_receivable) > 0 and len(revenue) > 0 and revenue[-1] != 0:
+        accounts_receivable_pct = accounts_receivable[-1] / revenue[-1]
     else:
         accounts_receivable_pct = 0
 
@@ -438,7 +456,6 @@ def generate_model(
 
         cic = (full_CF_from_investing[i] + full_CF_from_operating[i] + full_CF_from_financing[i])
         change_in_cash.append(cic)
-
         
     for i in range(years):
         if i == 0:
@@ -473,7 +490,7 @@ def generate_model(
 
 
     #opex_pct = (sgna[-1] + sgna[-1] - depreciation[-1])/ revenue[-1]
-    opex_pct = (opex[3])/ revenue[3]
+    opex_pct = (opex[2])/ revenue[2]
 
     revTRUE = np.all(full_revenue == 0)
 
@@ -575,123 +592,68 @@ def forecast(ticker):
         ValidModel = True  
         # Income Statement
         ticker_obj = yf.Ticker(ticker)
-        income_df = ticker_obj.financials.fillna(0)
-        income_df.columns = income_df.columns.map(str)
-        income_df = income_df.reset_index().rename(columns={"index": "Metric"})
-        income_df = income_df.iloc[::-1].reset_index(drop=True)
+        data = ticker_obj.financials.fillna(0)
+        data.columns = data.columns.map(str)
+        data = data.reset_index().rename(columns={"index": "Metric"})
+        data = data.iloc[::-1].reset_index(drop=True)
 
         # Balance Sheet
-        balance_df = ticker_obj.balance_sheet.fillna(0)
-        balance_df.columns = balance_df.columns.map(str)
-        balance_df = balance_df.reset_index().rename(columns={"index": "Metric"})
-        balance_df = balance_df.iloc[::-1].reset_index(drop=True)
+        data = ticker_obj.balance_sheet.fillna(0)
+        data.columns = data.columns.map(str)
+        data = data.reset_index().rename(columns={"index": "Metric"})
+        data = data.iloc[::-1].reset_index(drop=True)
 
         # Cash Flow Statement
-        cashflow_df = ticker_obj.cashflow.fillna(0)
-        cashflow_df.columns = cashflow_df.columns.map(str)
-        cashflow_df = cashflow_df.reset_index().rename(columns={"index": "Metric"})
-        cashflow_df = cashflow_df.iloc[::-1].reset_index(drop=True)
+        data = ticker_obj.cashflow.fillna(0)
+        data.columns = data.columns.map(str)
+        data = data.reset_index().rename(columns={"index": "Metric"})
+        data = data.iloc[::-1].reset_index(drop=True)
 
 
 
-        def extract_metric(df, keyword, limit=4, fallback=0):
+        def extract_metric(label, limit=3, fallback=0):
             global emptyCounter
-            filtered = df.loc[df['Metric'].str.lower().str.contains(keyword.lower())]
-            if filtered.empty:
+            values = label_map.get(label.lower())
+            if not values:
                 emptyCounter += 1
                 return [fallback] * limit
-            vals = filtered.iloc[0, 1:].tolist()
-            vals = [float(x) if x is not None else fallback for x in vals]
-            # Pad with fallback zeros if shorter than limit
-            if len(vals) < limit:
-                vals += [fallback] * (limit - len(vals))
-            return vals[:limit]
+            values = [float(x) if x is not None else fallback for x in values]
+            if len(values) < limit:
+                values += [fallback] * (limit - len(values))
+            return values[:limit]
+
+
 
         # income statement
-        revenue = extract_metric(income_df, 'revenue')
-        sgna = extract_metric(income_df, 'selling general and administrative')
-        rnd = extract_metric(income_df, 'research and development')
-        cogs = extract_metric(income_df, 'cost of revenue')
-        niav = extract_metric(income_df, 'net income')
-        depreciation = extract_metric(income_df, 'depreciation')
+        revenue = extract_metric('Revenue')
+        sgna = extract_metric('selling general and administrative')
+        rnd = extract_metric('research and development')
+        cogs = extract_metric('cost of goods sold')
+        niav = extract_metric('net income')
+        depreciation = extract_metric('depreciation and amortization')
 
         # balance sheet
-        accounts_receivable = extract_metric(balance_df, 'accounts receivable')
-        accounts_payable = extract_metric(balance_df, 'accounts payable')
-        inventory = extract_metric(balance_df, 'inventory')
-        gross_ppe = extract_metric(balance_df, 'gross ppe')
-        net_ppe = extract_metric(balance_df, 'net ppe')
-        total_debt = extract_metric(balance_df, 'total debt')
-        current_debt = extract_metric(balance_df, 'current debt')
-        long_term_debt = extract_metric(balance_df, 'long term debt')
-        interest_expense = extract_metric(income_df, 'interest expense')
-        interest_income = extract_metric(income_df, 'interest income')
-        common_stock = extract_metric(balance_df, 'common stock')
-        retained_earnings = extract_metric(balance_df, 'retained earnings')
-        cash = extract_metric(balance_df, 'cash and cash equivalents')
+        accounts_receivable = extract_metric('accounts receivable')
+        accounts_payable = extract_metric('accounts payable')
+        inventory = extract_metric('inventory')
+        gross_ppe = extract_metric('gross ppe')
+        net_ppe = extract_metric('net ppe')
+        total_debt = extract_metric('total debt')
+        current_debt = extract_metric('Short Term Debt')
+        long_term_debt = extract_metric('long term debt')
+        interest_expense = extract_metric('interest expense')
+        interest_income = extract_metric('interest income')
+        common_stock = extract_metric('common stock')
+        retained_earnings = extract_metric('retained earnings')
+        cash = extract_metric('cash and cash equivalents')
 
         # Cash flow
-        capex = extract_metric(cashflow_df, 'capital expenditure')
-        div_paid = extract_metric(cashflow_df, 'cash dividends paid')
-        change_AR = extract_metric(cashflow_df, 'changes In account receivables')
-        change_AP = extract_metric(cashflow_df, 'change in payable')
-        change_inventory = extract_metric(cashflow_df, 'change in inventory')
-        stock_buybacks = extract_metric(cashflow_df, "Repurchase Of Capital Stock")
-
-        # ========== DEBUG SECTION - ADD THIS HERE ==========
-        print(f"\n=== DEBUG INFO FOR TICKER: {ticker} ===")
-        
-        # Create a dictionary of all extracted metrics for debugging
-        metrics_debug = {
-            # Income Statement
-            'revenue': revenue,
-            'sgna': sgna,
-            'rnd': rnd,
-            'cogs': cogs,
-            'niav': niav,
-            'depreciation': depreciation,
-            'interest_expense': interest_expense,
-            'interest_income': interest_income,
-            
-            # Balance Sheet
-            'accounts_receivable': accounts_receivable,
-            'accounts_payable': accounts_payable,
-            'inventory': inventory,
-            'gross_ppe': gross_ppe,
-            'net_ppe': net_ppe,
-            'total_debt': total_debt,
-            'current_debt': current_debt,
-            'long_term_debt': long_term_debt,
-            'common_stock': common_stock,
-            'retained_earnings': retained_earnings,
-            'cash': cash,
-            
-            # Cash Flow
-            'capex': capex,
-            'div_paid': div_paid,
-            'change_AR': change_AR,
-            'change_AP': change_AP,
-            'change_inventory': change_inventory,
-            "Repurchase Of Capital Stock": stock_buybacks
-        }
-        
-        # Check for empty lists and print warnings
-        empty_metrics = []
-        for name, values in metrics_debug.items():
-            if not values or len(values) == 0:
-                empty_metrics.append(name)
-                print(f"⚠️  WARNING: {name} is EMPTY!")
-            else:
-                print(f"✅ {name}: {values} (length: {len(values)})")
-        
-        if empty_metrics:
-            print(f"\n🚨 FOUND {len(empty_metrics)} EMPTY METRICS: {empty_metrics}")
-            print("This is likely causing your index error!")
-        else:
-            print("✅ All metrics have data - the issue might be elsewhere")
-            
-        print("=== END DEBUG INFO ===\n")
-        # ========== END DEBUG SECTION ==========
+        capex = extract_metric('capital expenditure')
+        div_paid = extract_metric('cash dividends paid')
+        change_AR = extract_metric('changes In account receivables')
+        change_AP = extract_metric('change in payable')
+        change_inventory = extract_metric('change in inventory')
+        stock_buybacks = extract_metric("Repurchase Of Capital Stock")
 
         # Use named parameters to avoid order issues
         forecast_results = generate_model(
@@ -752,27 +714,21 @@ def forecast(ticker):
         ordered_forecast = OrderedDict((key, model_dict[key]) for key in ordered_keys if key in model_dict)
 
         response = {
-            "raw_income_statement": income_df.to_dict(orient='records'),
-            "raw_balance_sheet": balance_df.to_dict(orient='records'),
-            "raw_cash_flow_statement": cashflow_df.to_dict(orient='records'),
             "forecast": ordered_forecast
         }
 
-        if not firebase_admin._apps:
-            # Initialize Firebase
-            cred = credentials.Certificate(r"C:\New folder\technicle\inconspicuous-folder\technicle-ad223-firebase-adminsdk-fbsvc-5678cccde2.json")
-            firebase_admin.initialize_app(cred)
-        db = firestore.client()
+
+        
         # Convert to ordered array format
         ordered_data = [{"label": k, "values": v} for k, v in ordered_forecast.items()]
 
-        if emptyCounter > 10:
+        if emptyCounter > 20:
             ValidModel = False
 
         # Upload to Firestore
         if SendMe is True and ValidModel is True:
             print("Sending to Firebase")
-            doc_ref = db.collection("models").document(f"{ticker} 3 Statement")
+            doc_ref = db.collection("models").document(f"{SETticker} 3 Statement")
             doc_ref.set({"orderedData": ordered_data})
             print("ValidModel", ValidModel, "emptyCounter", emptyCounter)
         else: 
