@@ -8,19 +8,19 @@ import Collapser from "./collapser.jsx";
 
 const modules = [
   { id: 1, title1: "The Income", title2: "Statement", subtitle1: "Basic Income Statement", subtitle2: "Forecasting", progress: 100 },
-  { id: 2, title1: "State Management", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 3, title1: "Hooks",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 4, title1: "Routing", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 5, title1: "Testing",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 6, title1: "Performance",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 7, title1: "Deployment",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 8, title1: "Advanced Patterns",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 9, title1: "Security",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 10, title1: "Accessibility",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 11, title1: "DevOps",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 12, title1: "Wrap-up",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 13, title1: "DevOps",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
-  { id: 14, title1: "Wrap-up",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 0 },
+  { id: 2, title1: "State Management", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 3, title1: "Hooks",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 4, title1: "Routing", title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 5, title1: "Testing",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 6, title1: "Performance",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 7, title1: "Deployment",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 8, title1: "Advanced Patterns",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 9, title1: "Security",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 10, title1: "Accessibility",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 11, title1: "DevOps",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 12, title1: "Wrap-up",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 13, title1: "DevOps",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
+  { id: 14, title1: "Wrap-up",  title2: "React Basics",  subtitle1: "React Basics", subtitle2: "React Basics", progress: 100 },
 ];
 
 

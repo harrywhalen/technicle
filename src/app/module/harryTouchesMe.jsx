@@ -2,32 +2,33 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import lessonData from "../data/lessondata.json";
 import contentBS from "../data/lessondataBS.json";
+import contentBERK from "../data/lessondataBERK.json";
 
 // Simulated module content "database"
 const moduleDatabase = {
   1: {
     title: 'The Income Statement',
-    content: content,
+    content: lessonData,
   },
   2: {
     title: 'State Management',
     content: contentBS,
   },
   3: {
-    title: 'Hooks',
-    content: 'Dive into useState, useEffect, and custom hooks.',
+    title: 'Berk Hath',
+    content: contentBERK,
   },
   4: {
     title: 'Routing',
-    content: 'Understand client-side routing with React Router or Next.js.',
+    content: contentBERK,
   },
   5: {
     title: 'Testing',
-    content: 'Get started with Jest, React Testing Library, and Cypress.',
+    content: contentBERK,
   },
   6: {
     title: 'Performance',
-    content: 'Optimize your React apps for speed and efficiency.',
+    content: contentBERK,
   },
   // Add the rest of your modules here...
 };
@@ -51,28 +52,4 @@ export default function ModulePage() {
   if (!moduleData) {
     return <p style={{ padding: '2rem', fontSize: '18px' }}>Loading module...</p>;
   }
-
-  return (
-    <div
-      style={{
-        padding: '2rem',
-        fontFamily: 'Arial, sans-serif',
-        maxWidth: '800px',
-        margin: '0 auto',
-      }}
-    >
-      <h1 style={{ fontSize: '32px', color: '#333' }}>
-        {decodeURIComponent(moduleName || '')}
-      </h1>
-
-      <p style={{ fontSize: '18px', color: '#666' }}>
-        <strong>Action:</strong> {action}
-      </p>
-
-      <div style={{ marginTop: '2rem' }}>
-        <h2 style={{ fontSize: '24px', marginBottom: '1rem' }}>{moduleData.title}</h2>
-        <p style={{ fontSize: '16px', lineHeight: '1.6' }}>{moduleData.content}</p>
-      </div>
-    </div>
-  );
 }

@@ -6,7 +6,7 @@ export default function LessonName({content}) {
     <div
       style={{
         height: '6rem', // 90px → rem
-        width: '90vw', // 1000px → viewport-based width
+        //width: '90vw', // 1000px → viewport-based width
         maxWidth: '52vw', // Limits it to 1000px max
         backgroundColor: '#ffffff',
         borderColor: '#1f3a60',
@@ -22,6 +22,7 @@ export default function LessonName({content}) {
         alignItems: 'center',
         marginBottom: '1rem', // 15px → rem
         textAlign: 'center',
+        padding: '0rem 1rem 0rem 1rem',
       }}
     >
       <p>{content["1"].name}</p>

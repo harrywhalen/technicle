@@ -1,23 +1,37 @@
 {
 
-"Bullshit": {"Spreadsheet_Selector": "amzn 3 Statement",
+"Bullshit": {"Spreadsheet_Selector": "msft 3 Statement",
 
 "SheetMappings": {
 
     "inputs": {
       "name": "Income Statement", 
-      "includeRows": ["Cash and Cash Equivalents",
-            "Accounts Receivable", "Accounts Payable", "Inventory", "Capital Expenditure",
-            "Gross PPE", "Net PPE", "Total Assets",  "Total Debt", "Current Debt",
-            "Long Term Debt", "Total Liabilities", 
-            "Common Stock", "Dividends Paid", "Retained Earnings", "Total Equity", "Net Working Capital"   
+      "includeRows": ["Revenue", "Cost of Goods Sold","Gross Profit", "Selling General And Administrative", "Research and Development", 
+            "Operating Expenses","EBITDA", "Depreciation", "Interest Expense", "Interest Income", 
+            "EBT", "Tax Provision", "Tax Rate for Calcs",
+            "Net Income", "Gross Margin", "Net Margin", "", 
+            "Operating Income", "Cash and Cash Equivalents",
+            "Accounts Receivable", "Inventory", "Gross PPE", "Net PPE", "Total Assets", 
+            "Accounts Payable", "Current Debt",
+            "Long Term Debt", "Total Debt", "Total Liabilities", 
+            "Common Stock", "Retained Earnings", "Total Equity", "Net Working Capital",
+            
+            "Dividends Paid",  
+            "Net Income from Continuing Operations", "Cash Flow From Continuing Investing Activities",
+            "Cash Flow From Continuing Operating Activities", "Cash Flow From Continuing Financing Activities",
+            "Depreciation and Amortization", "Changes in Accounts Receivable", "Capital Expenditure",
+            "Changes in Accounts Payable", "Changes in Inventory", "Changes in Cash", "Changes in Current Debt", "Inventory / COGS", "Revenue Growth Rate", 
+            "SGnA / Revenue", "RnD / Revenue", "Capex / Revenue", "Accounts Receivable / Revenue", "Accounts Payable / COGS", 
+             "Interest Rate", "Dividend Payout Ratio", "Ebitda Margin", "Operating Margin", "Depreciation Rate",
+            "Return On Equity", "Return On Assets", "Current Ratio", "Debt / Ebitda", "Changes in Working Cap", "COGS / Revenue", "Opex / Revenue",
+            "Stock Buy Backs"
           ]
     }
   }},
 
     "1": {
-      "name": "What's a Balance Sheet",
-      "textBoxContent1": "The balance sheet—also called the statement of financial position—shows a company’s financial health at a specific point in time. It tells us what the business owns (assets), what it owes (liabilities), and how much value is left for the owners (equity). The balance sheet follows the formula: Assets = Liabilities + Equity.",
+      "name": "Berk Hath",
+      "textBoxContent1": "’s financial health at a specific point in time. It tells us what the business owns (assets), what it owes (liabilities), and how much value is left for the owners (equity). The balance sheet follows the formula: Assets = Liabilities + Equity.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {
