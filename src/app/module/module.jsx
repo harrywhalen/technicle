@@ -9,6 +9,7 @@ import lessonDataBS from "../data/lessondataBS.json";
 import lessonDataCFS from "../data/lessondataCFS.json";
 import contentBERK from "../data/lessondataBERK.json";
 import { useSpreadsheetValidator } from '../hooks/useSpreadsheetValidator';
+import { useProgressTracker } from '../hooks/useProgressTracker'; // NEW IMPORT
 import confetti from 'canvas-confetti';
 
 const moduleDatabase = {
@@ -42,7 +43,17 @@ const moduleDatabase = {
 function ModuleContent({setModDone, hotRef}) {
   const classes = [];
   const searchParams = useSearchParams();
-  const moduleId = parseInt(searchParams.get("moduleId")); // 👈 Get moduleId from URL
+  const moduleId = parseInt(searchParams.get("moduleId"));
+
+  // Initialize progress tracker
+  const { 
+    userProgress, 
+    updateLocalProgress, 
+    saveProgressImmediately,
+    markModuleComplete, 
+    isLoading: progressLoading,
+    hasPendingChanges 
+  } = useProgressTracker(moduleId);
 
   // If moduleId is missing or invalid, render fallback
   if (!moduleId || !moduleDatabase[moduleId]) {
@@ -50,34 +61,59 @@ function ModuleContent({setModDone, hotRef}) {
   }
 
   const modContent = moduleDatabase[moduleId]?.content;
-
-  const SpreadSheet_Selector = modContent.Bullshit.Spreadsheet_Selector
+  const SpreadSheet_Selector = modContent.Bullshit.Spreadsheet_Selector;
 
   const [nextReady, setNextReady] = useState(false);
   const spreadGangRef = useRef(null);
   const [highlightOn, setHighlightOn] = useState(false);
   const [hintOn, setHintOn] = useState(false);
+  
+  // Initialize with progress from Firebase (will be updated when data loads)
   const [currentActiveStepId, setCurrentActiveStepId] = useState(1);
   const [currentStepContent, setCurrentStepContent] = useState(modContent['1']);
-  const [isCorrect, setIsCorrect] = useState(null); // null = no answer yet, true/false = result
+  const [isCorrect, setIsCorrect] = useState(null);
   const [selectedOption, setSelectedOption] = useState("Discounted Cash Flow");
 
   const correctAnswer = currentStepContent?.quiz.correctAnswer;
   const hotTableComponent = useRef(null);
   const { setCurrentSheet, getIncorrectCellsROW, getIncorrectCellsCOL, getCorrectCellsCOL, getCorrectCellsROW, DEBUG_GOONER, clearCORCellsArrays, clearINCCellsArrays, } = useSpreadsheetValidator(hotTableComponent);
 
+  // Use ref to track highest step (will be synced with Firebase data)
   const highestStepIdRef = useRef(1);
   const totalSteps = useMemo(() => Object.keys(modContent).length, [modContent]);
   const [tabLocked, setTabLocked] = useState(true);
   const [preAnswer, setPreAnswer] = useState(true);
   const [updateME, setUpdateME] = useState(0);
 
+  // UPDATED: Initialize with saved progress when Firebase data loads
+  useEffect(() => {
+    if (!progressLoading && userProgress) {
+      console.log("Loading saved progress:", userProgress);
+      setCurrentActiveStepId(userProgress.currentStep);
+      highestStepIdRef.current = userProgress.highestStep;
+    }
+  }, [progressLoading, userProgress]);
+
+  // UPDATED: Update local progress when step changes (no Firebase write until exit)
+  useEffect(() => {
+    if (!progressLoading && currentActiveStepId > 0) {
+      updateLocalProgress(currentActiveStepId, highestStepIdRef.current);
+    }
+  }, [currentActiveStepId, progressLoading, updateLocalProgress]);
+
+  // Update highest step tracker
   useEffect(() => {
     if (currentActiveStepId >= highestStepIdRef.current) {
       console.log("Updating highest step to:", currentActiveStepId);
       highestStepIdRef.current = currentActiveStepId;
-    } else console.log("Already higher step reached, current:", currentActiveStepId, "highest:", highestStepIdRef.current);
-  }, [currentActiveStepId]);
+      // Update local progress with new highest step
+      if (!progressLoading) {
+        updateLocalProgress(currentActiveStepId, currentActiveStepId);
+      }
+    } else {
+      console.log("Already higher step reached, current:", currentActiveStepId, "highest:", highestStepIdRef.current);
+    }
+  }, [currentActiveStepId, progressLoading, updateLocalProgress]);
 
   function columnToLetter(col) {
     let temp = '';
@@ -129,16 +165,15 @@ function ModuleContent({setModDone, hotRef}) {
 
   const [wiggleTime, setWiggleTime] = useState(false);
 
-  // Example: trigger wiggle when something happens, e.g., on button click
   const triggerWiggle = () => {
     setWiggleTime(true);
     setIsCorrect(null);
-    setTimeout(() => setWiggleTime(false), 1100); // just to keep consistent
+    setTimeout(() => setWiggleTime(false), 1100);
   };
 
   const playCorrectSoundMCQ = () => {
     const audio = new Audio("/sounds/correct.mp3");
-    audio.volume = 0.3;  // Set volume to 30%
+    audio.volume = 0.3;
     audio.play().catch(error => {
       console.error("Error playing sound:", error);
     });
@@ -147,7 +182,7 @@ function ModuleContent({setModDone, hotRef}) {
   const playWrongSoundMCQ = () => {
     const audio = new Audio("/sounds/wrong.mp3");
     setIsCorrect(null);
-    audio.volume = 0.3;  // Set volume to 30%
+    audio.volume = 0.3;
     audio.play().catch(error => {
       console.error("Error playing sound:", error);
     });
@@ -276,10 +311,7 @@ function ModuleContent({setModDone, hotRef}) {
     console.log("sheetBlankForecasts:", sheetBlankForecasts);
   }, [sheetBlankForecasts]);
 
-  // Current active tab state
   const [activeTab, setActiveTab] = useState('inputs');
-
-  // Data for each sheet
   const [sheetsData, setSheetsData] = useState({
     intro: [],
     inputs: [],
@@ -304,11 +336,10 @@ function ModuleContent({setModDone, hotRef}) {
     sensitivity: []
   });
 
-  // Handle tab changes
   const handleTabChange = (newTabId) => {
     if (tabLocked === false) {
       setActiveTab(newTabId);
-      setCurrentSheet(newTabId); // Update validator's current sheet
+      setCurrentSheet(newTabId);
       console.log(`Switched to ${newTabId} sheet`);
       console.log(`Data for ${newTabId}:`, sheetsDisplayData[newTabId]);
     }
@@ -316,7 +347,6 @@ function ModuleContent({setModDone, hotRef}) {
 
   const refresh = () => {
     console.log("bithc", sheetBlankForecasts.inputs);
-    // Reset current sheet to initial display data (with quiz cells empty)
     const quizCells = sheetQuizCells[activeTab] || [];
     const blankCells = sheetBlankCells[activeTab] || [];
     const blankForecastCells = sheetBlankForecasts[activeTab] || [];
@@ -337,22 +367,40 @@ function ModuleContent({setModDone, hotRef}) {
     console.log("Reset to:", resetDisplayData);
   };
 
+  // UPDATED: Modified advanceStep with immediate save for module completion
   const advanceStep = () => {
     clearCORCellsArrays();
     clearINCCellsArrays();
     setPreAnswer(true);
     setUpdateME((prev => prev + 1));
+    
     setCurrentActiveStepId((prevId) => {
-      const nextStep = prevId + 1; // number math
+      const nextStep = prevId + 1;
       setNextReady(false);
+      
       if (modContent[nextStep.toString()]) {
+        if (nextStep > highestStepIdRef.current) {
+          highestStepIdRef.current = nextStep;
+        }
         return nextStep;
       } else {
+        // Module completed - save immediately to Firebase
         playComplete();
+        console.log("Module completed, saving progress immediately");
+        saveProgressImmediately(prevId, highestStepIdRef.current).then(() => {
+          markModuleComplete();
+          console.log("Module marked as complete");
+        });
         setModDone(true);
-        return prevId; // Stay on current step
+        return prevId;
       }
     });
+  };
+
+  // Optional: Manual save function for peace of mind
+  const handleManualSave = () => {
+    console.log("Manual save triggered");
+    saveProgressImmediately(currentActiveStepId, highestStepIdRef.current);
   };
 
   useEffect(() => {
@@ -363,7 +411,6 @@ function ModuleContent({setModDone, hotRef}) {
     }
   }, [currentStepContent]);
 
-  // Advance step when correct
   useEffect(() => {
     if (isCorrect === true) {
       setNextReady(true);
@@ -379,13 +426,27 @@ function ModuleContent({setModDone, hotRef}) {
     }
   }, [isCorrect]);
 
-  // Update step content & reset quiz state when step ID changes
   useEffect(() => {
     setCurrentStepContent(modContent[currentActiveStepId.toString()]);
     setIsCorrect(null);
-    setSelectedOption(""); // Or a default value if you prefer
+    setSelectedOption("");
     console.log("Step updated to:", currentActiveStepId);
   }, [currentActiveStepId, modContent]);
+
+  // Show loading while Firebase data is loading
+  if (progressLoading) {
+    return (
+      <div style={{ 
+        minHeight: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        color: '#1f3a60'
+      }}>
+        <p>Loading your progress...</p>
+      </div>
+    );
+  }
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'row' }}>
@@ -398,6 +459,32 @@ function ModuleContent({setModDone, hotRef}) {
         highestStep={highestStepIdRef.current}
       />
       <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+        {/* Optional: Progress indicator */}
+        {hasPendingChanges && (
+          <div style={{ 
+            background: '#fff3cd', 
+            padding: '8px 16px', 
+            borderBottom: '1px solid #ffeaa7',
+            fontSize: '14px',
+            color: '#856404'
+          }}>
+            Progress will be saved when you exit • 
+            <button 
+              onClick={handleManualSave} 
+              style={{ 
+                marginLeft: '8px', 
+                background: 'none', 
+                border: 'none', 
+                color: '#0066cc', 
+                cursor: 'pointer',
+                textDecoration: 'underline'
+              }}
+            >
+              Save now
+            </button>
+          </div>
+        )}
+        
         {currentStepContent ? (
           <Big3
             currentStepContent={currentStepContent}
@@ -453,7 +540,6 @@ function ModuleContent({setModDone, hotRef}) {
   );
 }
 
-// Loading component for Suspense fallback
 function ModuleLoading() {
   return (
     <div style={{ 
@@ -468,7 +554,6 @@ function ModuleLoading() {
   );
 }
 
-// Main component that wraps ModuleContent in Suspense
 export default function Module({setModDone}) {
   return (
     <Suspense fallback={<ModuleLoading />}>
