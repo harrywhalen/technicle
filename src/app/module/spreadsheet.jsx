@@ -785,6 +785,7 @@ export default function Spreadsheet({
         backgroundColor: '#f5f5f5',
         border: '3px solid #1f3a60',
         zIndex: '1',
+        color: "#000000",
       }}>
         Loading spreadsheet...
       </div>
