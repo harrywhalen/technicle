@@ -459,32 +459,7 @@ function ModuleContent({setModDone, hotRef}) {
         modContent={modContent}
         highestStep={highestStepIdRef.current}
       />
-      <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-        {/* Optional: Progress indicator */}
-        {hasPendingChanges && (
-          <div style={{ 
-            background: '#fff3cd', 
-            padding: '8px 16px', 
-            borderBottom: '1px solid #ffeaa7',
-            fontSize: '14px',
-            color: '#856404'
-          }}>
-            Progress will be saved when you exit • 
-            <button 
-              onClick={handleManualSave} 
-              style={{ 
-                marginLeft: '8px', 
-                background: 'none', 
-                border: 'none', 
-                color: '#0066cc', 
-                cursor: 'pointer',
-                textDecoration: 'underline'
-              }}
-            >
-              Save now
-            </button>
-          </div>
-        )}
+
         
         {currentStepContent ? (
           <Big3
@@ -537,7 +512,6 @@ function ModuleContent({setModDone, hotRef}) {
           </p>
         )}
       </div>
-    </div>
   );
 }
 
