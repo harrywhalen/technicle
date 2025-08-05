@@ -22,6 +22,8 @@ export default function Spreadsheet({
   refresh,
   currentStepContent,
   activeTab,
+  incorrectCellsROW,
+  correctCellsROW,
 }) {
   const spreadsheetContainerRef = useRef(null);
   const [isFormulaMode, setIsFormulaMode] = useState(false);
