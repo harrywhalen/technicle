@@ -21,6 +21,9 @@ export const useProgressTracker = (moduleId) => {
   useEffect(() => {
     if (user?.uid && moduleId) {
       loadUserProgress();
+    } else {
+      // If no user or moduleId, still allow the component to load with default progress
+      setIsLoading(false);
     }
   }, [user?.uid, moduleId]);
 
@@ -41,31 +44,55 @@ export const useProgressTracker = (moduleId) => {
           };
           setUserProgress(progress);
           lastSavedProgressRef.current = progress;
+        } else {
+          // Module exists in user doc but no progress for this specific module
+          console.log('No progress found for this module, starting fresh');
+          const defaultProgress = { highestStep: 1, currentStep: 1 };
+          setUserProgress(defaultProgress);
+          lastSavedProgressRef.current = defaultProgress;
         }
       } else {
-        // Create initial document (this is the only immediate write)
-        const initialProgress = { highestStep: 1, currentStep: 1 };
-        await setDoc(userDoc, {
-          userId: user.uid,
-          moduleProgress: {
-            [moduleId]: {
-              ...initialProgress,
-              lastVisited: new Date()
+        // No user document exists - set defaults and let the app work
+        console.log('No user progress document found, starting fresh');
+        const defaultProgress = { highestStep: 1, currentStep: 1 };
+        setUserProgress(defaultProgress);
+        lastSavedProgressRef.current = defaultProgress;
+        
+        // Try to create initial document, but don't block the UI if it fails
+        try {
+          await setDoc(userDoc, {
+            userId: user.uid,
+            moduleProgress: {
+              [moduleId]: {
+                ...defaultProgress,
+                lastVisited: new Date()
+              }
             }
-          }
-        });
-        lastSavedProgressRef.current = initialProgress;
+          });
+          console.log('Created initial progress document');
+        } catch (createError) {
+          console.error('Failed to create initial progress document, but continuing:', createError);
+          // Don't throw - allow the app to continue with local state
+        }
       }
     } catch (error) {
-      console.error('Error loading progress:', error);
+      console.error('Error loading progress, using defaults:', error);
+      // Always fall back to defaults if anything goes wrong
+      const defaultProgress = { highestStep: 1, currentStep: 1 };
+      setUserProgress(defaultProgress);
+      lastSavedProgressRef.current = defaultProgress;
     } finally {
+      // ALWAYS set loading to false, regardless of what happened above
       setIsLoading(false);
     }
   };
 
   // Internal save function - only writes if there are actual changes
   const saveProgressToFirebase = async (currentStep, highestStep, isImmediate = false) => {
-    if (!user?.uid || !moduleId) return;
+    if (!user?.uid || !moduleId) {
+      console.log('No user or moduleId, skipping save');
+      return;
+    }
 
     const newProgress = { currentStep, highestStep };
     const lastSaved = lastSavedProgressRef.current;
@@ -80,13 +107,31 @@ export const useProgressTracker = (moduleId) => {
     try {
       const userDoc = doc(db, 'userProgress', user.uid);
       
-      await updateDoc(userDoc, {
-        [`moduleProgress.${moduleId}`]: {
-          highestStep: Math.max(highestStep, lastSaved.highestStep),
-          currentStep: currentStep,
-          lastVisited: new Date()
-        }
-      });
+      // Check if document exists before trying to update
+      const docSnap = await getDoc(userDoc);
+      
+      if (docSnap.exists()) {
+        // Document exists, update it
+        await updateDoc(userDoc, {
+          [`moduleProgress.${moduleId}`]: {
+            highestStep: Math.max(highestStep, lastSaved.highestStep),
+            currentStep: currentStep,
+            lastVisited: new Date()
+          }
+        });
+      } else {
+        // Document doesn't exist, create it
+        await setDoc(userDoc, {
+          userId: user.uid,
+          moduleProgress: {
+            [moduleId]: {
+              highestStep: Math.max(highestStep, lastSaved.highestStep),
+              currentStep: currentStep,
+              lastVisited: new Date()
+            }
+          }
+        });
+      }
 
       lastSavedProgressRef.current = {
         currentStep,
@@ -95,7 +140,8 @@ export const useProgressTracker = (moduleId) => {
 
       console.log(`Progress saved to Firebase: Step ${currentStep}, Highest: ${Math.max(highestStep, lastSaved.highestStep)}`);
     } catch (error) {
-      console.error('Error saving progress:', error);
+      console.error('Error saving progress (non-blocking):', error);
+      // Don't throw - allow the app to continue with local progress
     }
   };
 
@@ -150,17 +196,42 @@ export const useProgressTracker = (moduleId) => {
 
   // Module completion handler
   const markModuleComplete = async () => {
-    if (!user?.uid || !moduleId) return;
+    if (!user?.uid || !moduleId) {
+      console.log('No user or moduleId, skipping module completion');
+      return;
+    }
 
     try {
       const userDoc = doc(db, 'userProgress', user.uid);
       
-      await updateDoc(userDoc, {
-        [`moduleProgress.${moduleId}.completed`]: true,
-        [`moduleProgress.${moduleId}.completedAt`]: new Date()
-      });
+      // Check if document exists first
+      const docSnap = await getDoc(userDoc);
+      
+      if (docSnap.exists()) {
+        await updateDoc(userDoc, {
+          [`moduleProgress.${moduleId}.completed`]: true,
+          [`moduleProgress.${moduleId}.completedAt`]: new Date()
+        });
+      } else {
+        // Create document with completion status
+        await setDoc(userDoc, {
+          userId: user.uid,
+          moduleProgress: {
+            [moduleId]: {
+              highestStep: userProgress.highestStep,
+              currentStep: userProgress.currentStep,
+              completed: true,
+              completedAt: new Date(),
+              lastVisited: new Date()
+            }
+          }
+        });
+      }
+      
+      console.log('Module marked as complete');
     } catch (error) {
-      console.error('Error marking module complete:', error);
+      console.error('Error marking module complete (non-blocking):', error);
+      // Don't throw - the user has still completed the module locally
     }
   };
 
@@ -214,7 +285,7 @@ export const useProgressTracker = (moduleId) => {
   };
 };
 
-// Updated ModuleContent integration
+// Updated ModuleContent integration with better error handling
 function ModuleContent({setModDone}) {
   const searchParams = useSearchParams();
   const moduleId = parseInt(searchParams.get("moduleId"));
@@ -276,7 +347,21 @@ function ModuleContent({setModDone}) {
     saveProgressImmediately(currentActiveStepId, highestStepIdRef.current);
   };
 
-  if (isLoading) {
+  // Show loading state but with a timeout fallback
+  const [showLoadingFallback, setShowLoadingFallback] = useState(false);
+  
+  useEffect(() => {
+    if (isLoading) {
+      // If still loading after 5 seconds, show fallback
+      const fallbackTimer = setTimeout(() => {
+        setShowLoadingFallback(true);
+      }, 5000);
+      
+      return () => clearTimeout(fallbackTimer);
+    }
+  }, [isLoading]);
+
+  if (isLoading && !showLoadingFallback) {
     return (
       <div style={{ 
         minHeight: '100vh', 
@@ -286,6 +371,41 @@ function ModuleContent({setModDone}) {
         color: '#1f3a60'
       }}>
         <p>Loading your progress...</p>
+      </div>
+    );
+  }
+
+  if (isLoading && showLoadingFallback) {
+    return (
+      <div style={{ 
+        minHeight: '100vh', 
+        display: 'flex', 
+        flexDirection: 'column',
+        alignItems: 'center', 
+        justifyContent: 'center',
+        color: '#1f3a60',
+        textAlign: 'center'
+      }}>
+        <p>Having trouble loading your progress...</p>
+        <button 
+          onClick={() => {
+            setIsLoading(false);
+            // Start fresh with default progress
+            setCurrentActiveStepId(1);
+            highestStepIdRef.current = 1;
+          }}
+          style={{
+            marginTop: '20px',
+            padding: '10px 20px',
+            backgroundColor: '#1f3a60',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer'
+          }}
+        >
+          Start Fresh
+        </button>
       </div>
     );
   }
