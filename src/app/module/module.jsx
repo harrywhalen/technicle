@@ -5,36 +5,37 @@ import Sidebar from "./sidebar.jsx";
 import LessonName from "./lessonName.jsx";
 import Big3 from "./big3.jsx";
 import lessonData from "../data/lessondata.json";
-import lessonDataBS from "../data/lessondataBS.json";
-import lessonDataCFS from "../data/lessondataCFS.json";
+import WC from "../data/WC.json";
+import contentCFS from "../data/lessondataCFS.json";
+import test from "../data/test.json";
 import contentBERK from "../data/lessondataBERK.json";
 import { useSpreadsheetValidator } from '../hooks/useSpreadsheetValidator';
 import confetti from 'canvas-confetti';
 
 const moduleDatabase = {
   1: {
-    title: 'React Basics',
+    title: 'The Income Statement',
     content: lessonData,
   },
   2: {
     title: 'State Management',
-    content: lessonDataBS,
+    content: WC,
   },
   3: {
-    title: 'Hooks',
-    content: lessonDataCFS,
+    title: 'Berk Hath',
+    content: contentCFS,
   },
   4: {
     title: 'Routing',
-    content: contentBERK,
+    content: test,
   },
   5: {
     title: 'Testing',
-    content: lessonData,
+    content: contentBERK,
   },
   6: {
     title: 'Performance',
-    content: lessonData,
+    content: contentBERK,
   },
   // Add the rest of your modules here...
 };

@@ -70,7 +70,7 @@
 }
 
 .active {
-  background-color: #3498db; /* Blue from your mockup for active link */
+  background-color: #3498db !important;
   font-weight: bold;
   border-radius: 0px 10px 10px 0px;
   width: 5vw;

@@ -120,3 +120,7 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #3498db #1f3a60;
 }
+
+.bold-metric {
+  font-weight: bold;
+}

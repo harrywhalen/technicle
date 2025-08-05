@@ -1,0 +1,4208 @@
+{
+
+"Bullshit": {"Spreadsheet_Selector": "aapl 3 Statement",
+
+"SheetMappings": {
+
+    "inputs": {
+      "name": "Income Statement", 
+      "includeRows": [
+
+            "Income Statement",
+            "Revenue", "Cost of Goods Sold", "Gross Profit", "Operating Expenses", 
+            "Operating Expense", "EBITDA", "Depreciation", "Interest Expense",  "Interest Income",
+            "EBT", "Tax Provision", "Net Income",
+            
+            " ",
+            "Balance Sheet",
+            "Cash and Cash Equivalents",
+            "Accounts Receivable", "Inventory", "Accounts Payable", 
+            "Deferred Tax Assets Net",
+            "Gross PPE", "Net PPE", "Other Current Assets", "Other Noncurrent Assets",
+            "Operating Current Assets",
+            "Total Assets",  
+            
+            "  ",
+            "Assumptions",
+            "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue",
+            "Total Debt", "Current Debt",
+            "Long Term Debt", "Other Current Liabilities", "Other Noncurrent Liabilities",
+            "Operating Current Liabilities", "Total Liabilities", 
+            "Common Stock", "Retained Earnings", "Total Equity", "Net Working Capital", 
+            "Days sales outstanding", "Days payable outstanding", "Days inventory outstanding", 
+            "Other Current Assets / Revenue",  "Other Current Liabilities / Revenue"
+          ]
+    }
+  }},
+
+    "1": {
+      "name": "What is a Balance Sheet",
+      "textBoxContent1": "The balance sheet shows what a company owns at a specific point in time. Different items like working capital, debt, stock and PPE show up as assets, liabilities, or equity and the key is that assets - liabilities = equity, if it doesn’t then your balance sheet doesn’t balance.",
+      "hint":"shling",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "How do we check if the Balance Sheet Balances?",
+        "options": ["Assets + Equity = Liabilities", "Revenue + COGS = Assets", "Assets + Liabilities = Equity", "Equity + Debt = Liabilities"],
+        "correctAnswer": "Assets + Liabilities = Equity"
+      },
+      "targetTab": "none",
+      "TabLocked": "False",
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 42,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 43,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 44,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 45,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_13":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_14":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "BlankFOR_15":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_16":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_17":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_18":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_21":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_22":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      }
+
+    },
+    "2": {
+      "name": "What is Working Capital",
+      "textBoxContent1": "In this lesson you will be learning about working capital, one of the most important pieces of the balance sheet and 3 statement model as a whole. Working capital represents the money a company has available to run its day-to-day operations, like paying suppliers, covering payroll, and managing inventory. It tells you whether a business can meet its short-term obligations using its short-term resources. Some working capital items are assets like accounts receivable, and some are liabilities, like accounts payable.",
+      "hint":"It's stated in the textbox.",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "What does Working Capital Represent?",
+        "options": ["Money for paying Salaries", "The dbt obligation of the company", "The money a company has to run its day to day operations", "The total stock owned by the company"],
+        "correctAnswer": "The money a company has to run its day to day operations"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 42,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 43,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 44,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 45,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_13":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_14":{
+        "tab": "inputs",
+        "row": 13,
+        "column": 4
+      },
+        "BlankFOR_15":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_16":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_17":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_18":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_21":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_22":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 13
+      },
+        "highlightRow2":{
+        "tab": "inputs",
+        "row": 14
+      },
+        "highlightRow3":{
+        "tab": "inputs",
+        "row": 18
+      },
+        "highlightRow4":{
+        "tab": "inputs",
+        "row": 22
+      },
+        "highlightRow5":{
+        "tab": "inputs",
+        "row": 26
+      }
+    },
+        "3": {
+      "name": "Accounts Receivable",
+      "textBoxContent1": "Accounts receivable is the money a company is owed by customers for goods or services it has delivered but hasn’t yet been paid for. When you buy something from a company with a credit card, you put Accounts Receivable on their balance sheet.",
+      "hint":"Use this formula: =((E1-D1) / D1)",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "Which of these would be considered Accounts Receivables?",
+        "options": ["A loan the company takes out", "The Cash a company owns", "A purchase a customer made on credit to the company", "A purchase the company made on credit"],
+        "correctAnswer": "A purchase a customer made on credit to the company"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 42,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 43,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 44,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 45,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_13":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_14":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_15":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_16":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_17":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_18":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_21":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_22":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 13
+      }
+    },
+     "4": {
+      "name": "Forecasting Accounts Receivable",
+      "textBoxContent1": "To forecast Accounts Receivable, we use DSO, or days sales outstanding. Days sales outstanding represents the average amount of time between a sale on credit and the payment of that sale. To find DSO we can divide our most recent Accounts Receivables by our most recent Revenue and then multiply it by 365",
+      "hint":"Use the formula: = E1 * (1 + $B$13) in the first cell and drag it to the other three",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Find Days Sales Outstanding",
+        "options": ["470", "3562", "2356", "-1458"],
+        "correctAnswer": "2356"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 42,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 43,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 44,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 45,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_13":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_14":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_15":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_16":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_17":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_18":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_21":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
+      }
+    },
+    "5": {
+      "name": "Accounts Receivable",
+      "textBoxContent1": "Now that we have found our historical DSO, we can use it to forecast Accounts Receivable. Multiply DSO by revenue for the year being forecasted and divide by 365 to get forecasted Accounts Receivable",
+      "hint":"shling",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Use DSO to Forecast Accounts Receivables",
+        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
+        "correctAnswer": "Cost of Goods Sold"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "projections"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 5
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 6
+      },
+        "Quizcel_4":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 7
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 42,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 43,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 44,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 45,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_13":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_14":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_15":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_16":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_17":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_18":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_21":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_22":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      }
+    },
+    "6": {
+      "name": "Inventory",
+      "textBoxContent1": "Inventory is the items a company has ready to sell but hasn’t sold yet. It is counted as an asset.",
+      "hint":"=E2/E1",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "Which of these would be considered Inventory",
+        "options": ["Items waiting to be sold", "Sales team bonuses", "The companies credit rating", "Stocks owned by the company"],
+        "correctAnswer": "Items waiting to be sold"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "projections"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 38,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 42,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 43,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 44,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 45,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_22":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 14
+      }
+    },
+      "7": {
+      "name": "Forecasting Inventory",
+      "textBoxContent1": "We use Days Inventory Outstanding to forecast Inventory. Days Inventory Outstanding can be found by dividing our most recent inventory by our most recent COGS and multiplying by 365",
+      "hint":"use this formula and drag it to the 3 cells =F1*$B$14",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Find DIO?",
+        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
+        "correctAnswer": "Cost of Goods Sold"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "projections"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 42,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 43,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 44,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 45,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_22":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
+      }
+    },
+    "8": {
+      "name": "Forecast Inventory",
+      "textBoxContent1": "Now that you have found Days Inventory Outstanding, we can forecast Inventory",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Gross Profit for the highlighted cells",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 5
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 6
+      },
+        "Quizcel_4":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 7
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 43,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 44,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 45,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "BlankFOR_44":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      }
+    },
+    "9": {
+      "name": "Other Current Assets",
+      "textBoxContent1": "Other current assets represent the junk pile of working capital assets. Less relevant or smaller items like Pre Paid expenses, interest receivable, insurance recoverables, or advances to suppliers are included in other current assets to simplify the accounting process.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "Would Accounts Receivable be included in Other Current Assets?",
+        "options": ["Yes", "No"],
+        "correctAnswer": "No"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 6
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 7
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 39,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 40,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_21":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 18
+      }
+    },
+    "10": {
+      "name": "Forecasting Other Current Assets",
+      "textBoxContent1": "We forecast other current assets as a % of revenue most of the time. We can’t use days outstanding here because we have many different items lumped into one group.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Find Other Current Assets / Revenue",
+        "options": ["Yes", "No"],
+        "correctAnswer": "No"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 44,
+        "column": 1
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 39,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_21":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      }
+    },
+    "11": {
+      "name": "Forecast Other Current Assets",
+      "textBoxContent1": "Now that we have found Other Current Assets as a % of revenue, we can simply multiply that percentage by revenue for each year we would like to forecast.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Gross Profit for the highlighted cells",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 5
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 6
+      },
+        "Quizcel_4":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 7
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 39,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "Blankcel_4":{
+        "tab": "inputs",
+        "row": 45,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_21":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_26":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      }
+    },
+    "12": {
+      "name": "Operating Current Assets",
+      "textBoxContent1": "Operating current assets are the working capital assets a company owns. ",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "Calculate Operating Current Assets",
+        "options": ["Accounts Receivable", "Inventory", "Other Noncurrent Assets", "Other Current Assets"],
+        "correctAnswer": "Other Noncurrent Assets"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 5
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 6
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 7
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 39,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_28":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 20
+      }
+    },
+    "13": {
+      "name": "Calculating Operating Current Assets",
+      "textBoxContent1": "To calculate Operating Current Assets, simply add up all working capital assets. In this model, that would be Accounts Receivables, Inventory, and Other Current Assets.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Gross Profit for the highlighted cells",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 4
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 5
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 6
+      },
+        "Quizcel_4":{
+        "tab": "inputs",
+        "row": 20,
+        "column": 7
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 39,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      }
+    },
+    "14": {
+      "name": "Accounts Payable",
+      "textBoxContent1": "Accounts Payable is the first Working Capital Liability we will cover. It represents the purchases that the company has made but not yet paid for. Think of it as the reverse of Accounts Receivables. If one company purchases something on credit, the purchasing company gains accounts payable on their balance sheet and the selling company gains accounts receivable on their balance sheet until the purchasing company pays.",
+      "hint":"=E4/E1",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "What happens to the purchasing companies balance sheet when it pays its accounts payable?",
+        "options": [ "Cash Decreases and Net Working Capital Decreases", "Accounts Payables Decreaes and cash decreases", "PPE decreases", "Cash increases and Accounts Receivable increases"],
+        "correctAnswer": "Accounts Payables Decreaes and cash decreases"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+        "Blankcel_3":{
+        "tab": "inputs",
+        "row": 39,
+        "column": 1
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 21
+      }
+    },
+      "15": {
+      "name": "Forecasting Accounts Payable",
+      "textBoxContent1": "The best way to forecast Accounts Payable is using Days Payable Outstanding. We find Days Payable Outstanding by Dividing the most recent Accounts Payable by the most recent COGS and multiplying it by 365",
+      "hint":"shling",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Find Days Payable Outstanding",
+        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
+        "correctAnswer": "Salaries of the sales team"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 39,
+        "column": 1
+      },
+        "Quizcel_2":{
+        "tab": "intro",
+        "row": 14,
+        "column": 4
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_30":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
+      }
+    },
+      "16": {
+      "name": "Forecast Accounts Payable",
+      "textBoxContent1": "Using Days Payable outstanding, we can forecast Accounts Payable.",
+      "hint":"=F1*$B$15",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Forecast Accounts Payables",
+        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
+        "correctAnswer": "Salaries of the sales team"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 4
+      },
+      "Quizcel_2":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 5
+      },
+      "Quizcel_3":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 6
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 22,
+        "column": 7
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      }
+    },
+      "17": {
+      "name": "Other Current Liabilities",
+      "textBoxContent1": "Other current liabilities is the miscellaneous bucket on the liabilities side of the balance sheet, similar to other current assets. It captures short-term obligations that don’t warrant individual line items due to immateriality or irregularity. Common examples include accrued expenses, deferred revenues, taxes payable, dividends payable, and wages payable.",
+      "hint":"=F3-F4",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "Which of these would be in Other Current Liabilities",
+        "options": [ "Revenue", "Accounts Payables", "Long Term Debt", "Accounts Receivables"],
+        "correctAnswer": "Accounts Payables"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+      "Quizcel_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 6
+      },
+      "Quizcel_6":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 7
+      },
+        "Blankcel_5":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 26
+      }
+    },
+      "18": {
+      "name": "Forecasting Other Current Liabilities",
+      "textBoxContent1": "We forecast Other Current Liabilities as a % of revenue most of the time.",
+      "hint":"=F3-F4",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Find Other Current Liabilities / Revenue",
+        "options": [ "Beakers to study new lemonade flavors", "A company vacation", "Paying your friend to test new flavors", "Depreciation of Lab Coats"],
+        "correctAnswer": "A company vacation"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 41,
+        "column": 1
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      }
+    },
+        "19": {
+      "name": "Forecast Other Current Liabilities",
+      "textBoxContent1": "Using OCL as a % of revenue, we can forecast it by multiplying it by revenue for the desired year.",
+      "hint":"=F3-F4",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Calculate Other Current Liabilities",
+        "options": [ "Beakers to study new lemonade flavors", "A company vacation", "Paying your friend to test new flavors", "Depreciation of Lab Coats"],
+        "correctAnswer": "A company vacation"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+      "Quizcel_2":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 5
+      },
+      "Quizcel_3":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 6
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 7
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_34":{
+        "tab": "inputs",
+        "row": 26,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      }
+    },
+    "20": {
+      "name": "Operating Current Liabilities",
+      "textBoxContent1": "Operating Current Liabilities represents the total of Working Capital Liabilities.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "How would an increase in Accounts Receivable change Operating Current Liabilities",
+        "options": [ "No effect", "By Decreasing it", "By Increasing it"],
+        "correctAnswer": "No effect"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 5
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 6
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 18,
+        "column": 7
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_36":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 28
+      }
+    },
+    "21": {
+      "name": "Forecasting Operating Current Liabilities",
+      "textBoxContent1": "To calculate Operating Current Liabilities, add up Accounts Payable and Other Current Liabilities",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Gross Profit for the highlighted cells",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 4
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 5
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 6
+      },
+        "Quizcel_4":{
+        "tab": "inputs",
+        "row": 28,
+        "column": 7
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      }
+    },
+        "22": {
+      "name": "Net Working Capital",
+      "textBoxContent1": "Now that we have all of our working capital assets and liabilities, we can find Net Working Capital. Net Working Capital is the difference between operating current assets and operating current liabilities. It represents the amount of short-term liquidity a company has to run its operations. A positive NWC means the company can cover its short-term obligations with its short-term assets. A negative NWC could signal liquidity risk or highly efficient working capital management, depending on the business model.",
+      "hint":"shling",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "What does Net Working Capital tell us?",
+        "options": [ "The companies Profit Margins", "The companies debt burden", "The companies ability to pay short term expenses", "The companies Revenue Potential"],
+        "correctAnswer": "The companies ability to pay short term expenses"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "BlankFOR_41":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+        "BlankFOR_42":{
+        "tab": "inputs",
+        "row": 35,
+        "column": 4
+      },
+        "BlankFOR_43":{
+        "tab": "inputs",
+        "row": 34,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 33
+      }
+    },
+        "23": {
+      "name": "Forecasting Net Working Capital",
+      "textBoxContent1": "Net working capital is Operating Current Assets - Operating Current Liabilities",
+      "hint":"shling",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Find NWC",
+        "options": [ "as a % of Revenue based on historical data", "By totalling forecasted costs", "By subtracting Operational Expenses from Gross Profit", "By forecasting as a % of Gross Profit"],
+        "correctAnswer": "as a % of Revenue based on historical data"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 4
+      },
+      "Quizcel_2":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 5
+      },
+      "Quizcel_3":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 6
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 33,
+        "column": 7
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 4
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 4
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 4
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 4
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 4
+      },
+        "BlankFOR_19":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 4
+      },
+        "BlankFOR_20":{
+        "tab": "inputs",
+        "row": 11,
+        "column": 4
+      },
+        "BlankFOR_23":{
+        "tab": "inputs",
+        "row": 15,
+        "column": 4
+      },
+        "BlankFOR_24":{
+        "tab": "inputs",
+        "row": 16,
+        "column": 4
+      },
+        "BlankFOR_25":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 4
+      },
+        "BlankFOR_27":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+        "BlankFOR_29":{
+        "tab": "inputs",
+        "row": 21,
+        "column": 4
+      },
+        "BlankFOR_31":{
+        "tab": "inputs",
+        "row": 23,
+        "column": 4
+      },
+        "BlankFOR_32":{
+        "tab": "inputs",
+        "row": 24,
+        "column": 4
+      },
+        "BlankFOR_33":{
+        "tab": "inputs",
+        "row": 25,
+        "column": 4
+      },
+        "BlankFOR_35":{
+        "tab": "inputs",
+        "row": 27,
+        "column": 4
+      },
+        "BlankFOR_37":{
+        "tab": "inputs",
+        "row": 29,
+        "column": 4
+      },
+        "BlankFOR_38":{
+        "tab": "inputs",
+        "row": 30,
+        "column": 4
+      },
+        "BlankFOR_39":{
+        "tab": "inputs",
+        "row": 31,
+        "column": 4
+      },
+        "BlankFOR_40":{
+        "tab": "inputs",
+        "row": 32,
+        "column": 4
+      },
+        "highlightRow":{
+        "tab": "intro",
+        "row": 0
+      }
+    }
+  }

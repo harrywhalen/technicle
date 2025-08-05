@@ -6,32 +6,25 @@
 
     "inputs": {
       "name": "Income Statement", 
-      "includeRows": ["Revenue", "Cost of Goods Sold","Gross Profit", "Selling General And Administrative", "Research and Development", 
-            "Operating Expenses","EBITDA", "Depreciation", "Interest Expense", "Interest Income", 
-            "EBT", "Tax Provision", "Tax Rate for Calcs",
-            "Net Income", "Gross Margin", "Net Margin", "", 
-            "Operating Income", "Cash and Cash Equivalents",
-            "Accounts Receivable", "Inventory", "Gross PPE", "Net PPE", "Total Assets", 
-            "Accounts Payable", "Current Debt",
-            "Long Term Debt", "Total Debt", "Total Liabilities", 
-            "Common Stock", "Retained Earnings", "Total Equity", "Net Working Capital",
-            
-            "Dividends Paid",  
-            "Net Income from Continuing Operations", "Cash Flow From Continuing Investing Activities",
-            "Cash Flow From Continuing Operating Activities", "Cash Flow From Continuing Financing Activities",
-            "Depreciation and Amortization", "Changes in Accounts Receivable", "Capital Expenditure",
-            "Changes in Accounts Payable", "Changes in Inventory", "Changes in Cash", "Changes in Current Debt", "Inventory / COGS", "Revenue Growth Rate", 
-            "SGnA / Revenue", "RnD / Revenue", "Capex / Revenue", "Accounts Receivable / Revenue", "Accounts Payable / COGS", 
-             "Interest Rate", "Dividend Payout Ratio", "Ebitda Margin", "Operating Margin", "Depreciation Rate",
-            "Return On Equity", "Return On Assets", "Current Ratio", "Debt / Ebitda", "Changes in Working Cap", "COGS / Revenue", "Opex / Revenue",
-            "Stock Buy Backs"
+      "includeRows": ["Cash and Cash Equivalents",
+            "Accounts Receivable", "Inventory", "Accounts Payable", 
+            "Deferred Tax Assets Net",
+            "Gross PPE", "Net PPE", "Other Current Assets", "Other Noncurrent Assets",
+            "Total Assets",  "Total Debt", "Current Debt",
+            "Long Term Debt", "Other Current Liabilities", "Other Noncurrent Liabilities",
+            "Total Liabilities", 
+            "Common Stock", "Retained Earnings", "Total Equity", "Net Working Capital", 
+            "Days sales outstanding", "Days payable outstanding", "Days inventory outstanding", 
+            "Deferred Tax / Pretax",         "Other Current Assets / Revenue", 
+            "Other Non Current Assets / Revenue", "Other Current Liabilities / Revenue",
+            "Other Non Current Liabilities / Revenue"
           ]
     }
   }},
 
     "1": {
-      "name": "Berk Hath",
-      "textBoxContent1": "’s financial health at a specific point in time. It tells us what the business owns (assets), what it owes (liabilities), and how much value is left for the owners (equity). The balance sheet follows the formula: Assets = Liabilities + Equity.",
+      "name": "What is a Balance Sheet",
+      "textBoxContent1": "The balance sheet shows what a company owns at a specific point in time. Different items like working capital, debt, stock and capex show up as assets, liabilities, or equity and the key is that assets - liabilities = equity, if it doesn’t then your balance sheet doesn’t balance.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {
@@ -44,8 +37,8 @@
 
     },
     "2": {
-      "name": "Cash",
-      "textBoxContent1": "SKLFJSDFJSD:LK.",
+      "name": "What is Working Capital",
+      "textBoxContent1": "In this lesson you will be learning about working capital, one of the most important pieces of the balance sheet, and 3 statement model as a whole. Working capital represents the money a company has available to run its day-to-day operations, like paying suppliers, covering payroll, and managing inventory. It tells you whether a business can meet its short-term obligations using its short-term resources. Some working capital items are assets like accounts receivable, and some are liabilities, like accounts payable.",
       "hint":"It's stated in the textbox.",
       "Qtype": "MCQ",
       "quiz": {
@@ -56,16 +49,6 @@
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "inputs"
-      },
-      "Quizcel_1":{
-        "tab": "inputs",
-        "row": 0,
-        "column": 2
-      },
-        "Quizcel_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 4
       },
         "Blankcel_1":{
         "tab": "inputs",
@@ -139,14 +122,22 @@
       },
         "highlightRow":{
         "tab": "inputs",
-        "row": 0
+        "row": 1
+      },
+        "highlightRow2":{
+        "tab": "inputs",
+        "row": 2
+      },
+        "highlightRow3":{
+        "tab": "inputs",
+        "row": 6
       }
     },
         "3": {
-      "name": "Revenue Growth Rate",
-      "textBoxContent1": "A way to forecast revenue growth is by using YoY growth from historical data. This is done by calculating the percentage change in revenue from one year to the next. Use the Excel formula =(Current Year Revenue - Prior Year Revenue) / ABS(Prior Year Revenue) to find YoY forecasted growth in the highlighted cell. If you are sturggling use the hint button",
+      "name": "Accounts Receivable",
+      "textBoxContent1": "Accounts receivable is the money a company is owed by customers for goods or services it has delivered but hasn’t yet been paid for.It represents sales made on credit and is recorded as a current asset on the balance sheet.",
       "hint":"Use this formula: =((E1-D1) / D1)",
-      "Qtype": "cells",
+      "Qtype": "MCQ",
       "quiz": {
         "question": "Find the forecasted revenue growth rate",
         "options": ["470", "3562", "2356", "-1458"],
@@ -155,11 +146,6 @@
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "inputs"
-      },
-      "Quizcel_1":{
-        "tab": "inputs",
-        "row": 12,
-        "column": 1
       },
         "Blankcel_1":{
         "tab": "inputs",
@@ -227,12 +213,12 @@
         "column": 5
       },
         "highlightRow":{
-        "tab": "intro",
-        "row": 0
+        "tab": "inputs",
+        "row": 1
       }
     },
      "4": {
-      "name": "Forecasting Revenue",
+      "name": "Forecasting Accounts Receivable",
       "textBoxContent1": "Now that you have your forecasted YoY growth for revenue, we can forecast revenue. Revenue is forecasted by growing last year’s revenue by the forecasted growth rate. Use the Excel formula =Prior Year Revenue * (1 + YoY Growth) in the highlighted cell and drag it to all 3 highlighted cells to forecast 3 years of revenue.",
       "hint":"Use the formula: = E1 * (1 + $B$13) in the first cell and drag it to the other three",
       "Qtype": "cells",
@@ -247,18 +233,8 @@
       },
       "Quizcel_1":{
         "tab": "inputs",
-        "row": 0,
-        "column": 5
-      },
-        "Quizcel_2":{
-        "tab": "inputs",
-        "row": 0,
-        "column": 6
-      },
-        "Quizcel_3":{
-        "tab": "inputs",
-        "row": 0,
-        "column": 7
+        "row": 15,
+        "column": 1
       },
         "Blankcel_1":{
         "tab": "inputs",
@@ -270,9 +246,14 @@
         "row": 13,
         "column": 1
       },
-        "BlankFOR_2":{
+        "BlankFOR_1":{
         "tab": "inputs",
         "row": 1,
+        "column": 5
+      },
+        "BlankFOR_2":{
+        "tab": "inputs",
+        "row": 0,
         "column": 5
       },
         "BlankFOR_3":{
@@ -329,174 +310,6 @@
       "name": "Accounts Receivable",
       "textBoxContent1": "The second line in most income statements is Cost of Goods Sold. Cost of goods sold or COGS, is the direct expenses needed to make the product that is generating revenue.",
       "hint":"shling",
-      "Qtype": "MCQ",
-      "quiz": {
-        "question": "What does COGS stand for?",
-        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
-        "correctAnswer": "Cost of Goods Sold"
-      },
-      "targetTab": "none",
-      "spreadsheetConfig": {
-        "initialTab": "projections"
-      },
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 1,
-        "column": 13
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
-      },
-        "Blankcel_1":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
-        "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 5
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 1
-      }
-    },
-    "6": {
-      "name": "How do we Forecast COGS?",
-      "textBoxContent1": "COGS is typically forecasted as a % of revenue. To find COGS as a % of revenue, Divide the most recent COGS by Revenue in the most recent year of historical data.",
-      "hint":"=E2/E1",
-      "Qtype": "cells",
-      "quiz": {
-        "question": "Enter COGS / Revenue into the highlighted cell",
-        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
-        "correctAnswer": "Cost of Goods Sold"
-      },
-      "targetTab": "none",
-      "spreadsheetConfig": {
-        "initialTab": "projections"
-      },
-      "Quizcel_1":{
-        "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "Blankcel_1":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 5
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
-    },
-      "7": {
-      "name": "Forecasting COGS",
-      "textBoxContent1": "Now that we have COGS as a % of revenue we can multiply revenue for this year times our COGS % to get our COGS for this year.",
-      "hint":"use this formula and drag it to the 3 cells =F1*$B$14",
       "Qtype": "cells",
       "quiz": {
         "question": "What does COGS stand for?",
@@ -521,6 +334,165 @@
         "tab": "inputs",
         "row": 1,
         "column": 7
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "Blankcel_2":{
+        "tab": "inputs",
+        "row": 13,
+        "column": 1
+      },
+        "BlankFOR_2":{
+        "tab": "inputs",
+        "row": 0,
+        "column": 5
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      }
+    },
+    "6": {
+      "name": "Inventory",
+      "textBoxContent1": "COGS is typically forecasted as a % of revenue. To find COGS as a % of revenue, Divide the most recent COGS by Revenue in the most recent year of historical data.",
+      "hint":"=E2/E1",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "Enter COGS / Revenue into the highlighted cell",
+        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
+        "correctAnswer": "Cost of Goods Sold"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "projections"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 13,
+        "column": 1
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "BlankFOR_2":{
+        "tab": "inputs",
+        "row": 0,
+        "column": 5
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 2
+      }
+    },
+      "7": {
+      "name": "Forecasting Inventory",
+      "textBoxContent1": "Now that we have COGS as a % of revenue we can multiply revenue for this year times our COGS % to get our COGS for this year.",
+      "hint":"use this formula and drag it to the 3 cells =F1*$B$14",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "What does COGS stand for?",
+        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
+        "correctAnswer": "Cost of Goods Sold"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "projections"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 17,
+        "column": 1
       },
         "Blankcel_1":{
         "tab": "inputs",
@@ -578,7 +550,7 @@
       }
     },
     "8": {
-      "name": "Inventory",
+      "name": "Forecast Inventory",
       "textBoxContent1": "Gross Profit is the difference between a company’s revenue and its Cost of Goods Sold (COGS). It shows how much the company earns from its core products or services before accounting for operating expenses, interest, taxes, or other costs.",
       "hint":"use the formula =F1 - F2 and drag to fill all cells",
       "Qtype": "cells",
@@ -591,17 +563,17 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_4":{
+      "Quizcel_1":{
         "tab": "inputs",
         "row": 2,
         "column": 5
       },
-      "Quizcel_5":{
+        "Quizcel_2":{
         "tab": "inputs",
         "row": 2,
         "column": 6
       },
-      "Quizcel_6":{
+        "Quizcel_3":{
         "tab": "inputs",
         "row": 2,
         "column": 7
@@ -653,28 +625,33 @@
       }
     },
     "9": {
-      "name": "Prepaid Expenses",
-      "textBoxContent1": "Operating expenses are the costs a company incurs from its core business operations, excluding the cost of goods sold. They include items like salaries, rent, marketing, and R&D.",
-      "hint":"=E4/E1",
+      "name": "Other Current Assets",
+      "textBoxContent1": "Gross Profit is the difference between a company’s revenue and its Cost of Goods Sold (COGS). It shows how much the company earns from its core products or services before accounting for operating expenses, interest, taxes, or other costs.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "What could another example of SG&A be?",
-        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
-        "correctAnswer": "Salaries of the sales team"
+        "question": "Enter Gross Profit for the highlighted cells",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
-        "initialTab": "valuations"
+        "initialTab": "intro"
       },
       "Quizcel_1":{
-        "tab": "intro",
-        "row": 0,
+        "tab": "inputs",
+        "row": 2,
         "column": 5
       },
         "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
+        "tab": "inputs",
+        "row": 2,
+        "column": 6
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 7
       },
         "Blankcel_1":{
         "tab": "inputs",
@@ -723,11 +700,230 @@
       },
         "highlightRow":{
         "tab": "inputs",
-        "row": 3
+        "row": 6
       }
     },
-      "10": {
-      "name": "Short term investments",
+    "10": {
+      "name": "Forecasting Other Current Assets",
+      "textBoxContent1": "Gross Profit is the difference between a company’s revenue and its Cost of Goods Sold (COGS). It shows how much the company earns from its core products or services before accounting for operating expenses, interest, taxes, or other costs.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Gross Profit for the highlighted cells",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 6
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 7
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      }
+    },
+    "11": {
+      "name": "Forecast Other Current Assets",
+      "textBoxContent1": "Gross Profit is the difference between a company’s revenue and its Cost of Goods Sold (COGS). It shows how much the company earns from its core products or services before accounting for operating expenses, interest, taxes, or other costs.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Gross Profit for the highlighted cells",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+      "Quizcel_1":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 5
+      },
+        "Quizcel_2":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 6
+      },
+        "Quizcel_3":{
+        "tab": "inputs",
+        "row": 2,
+        "column": 7
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      }
+    },
+    "12": {
+      "name": "Accounts Payable",
+      "textBoxContent1": "Operating expenses are the costs a company incurs from its core business operations, excluding the cost of goods sold. They include items like salaries, rent, marketing, and R&D.",
+      "hint":"=E4/E1",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "What could another example of SG&A be?",
+        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
+        "correctAnswer": "Salaries of the sales team"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+        "Blankcel_1":{
+        "tab": "inputs",
+        "row": 14,
+        "column": 1
+      },
+        "BlankFOR_3":{
+        "tab": "inputs",
+        "row": 0,
+        "column": 5
+      },
+        "BlankFOR_4":{
+        "tab": "inputs",
+        "row": 3,
+        "column": 5
+      },
+        "BlankFOR_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      },
+        "highlightRow":{
+        "tab": "inputs",
+        "row": 6
+      }
+    },
+      "13": {
+      "name": "Forecasting Accounts Payable",
       "textBoxContent1": "Like many other metrics, Operating Expenses can be forecast as a % of revenue. To do this, divide Operating expense in 2017 by Revenue in 2017",
       "hint":"shling",
       "Qtype": "cells",
@@ -742,7 +938,7 @@
       },
       "Quizcel_1":{
         "tab": "inputs",
-        "row": 14,
+        "row": 16,
         "column": 1
       },
         "Quizcel_2":{
@@ -795,8 +991,8 @@
         "row": 0
       }
     },
-      "11": {
-      "name": "PPE",
+      "14": {
+      "name": "Forecast Accounts Payable",
       "textBoxContent1": "Now that we have Operating Expenses as a % of revenue, we can multiply revenue times that percent to forecast Operating Expenses.",
       "hint":"=F1*$B$15",
       "Qtype": "cells",
@@ -811,17 +1007,17 @@
       },
       "Quizcel_1":{
         "tab": "inputs",
-        "row": 3,
+        "row": 6,
         "column": 5
       },
       "Quizcel_2":{
         "tab": "inputs",
-        "row": 3,
+        "row": 6,
         "column": 6
       },
       "Quizcel_3":{
         "tab": "inputs",
-        "row": 3,
+        "row": 6,
         "column": 7
       },
         "BlankFOR_5":{
@@ -860,8 +1056,188 @@
         "column": 5
       }
     },
-        "12": {
-      "name": "Accoutns Payable",
+        "15": {
+      "name": "Other Current Liabilities",
+      "textBoxContent1": "EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It measures a company’s operating performance by showing profit from core business activities before accounting for financial and non-cash expenses. EBITDA is often used to compare profitability across companies and industries.",
+      "hint":"=F3-F4",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Ebitda into the highlighted cells",
+        "options": [ "Beakers to study new lemonade flavors", "A company vacation", "Paying your friend to test new flavors", "Depreciation of Lab Coats"],
+        "correctAnswer": "A company vacation"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+      "Quizcel_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 6
+      },
+      "Quizcel_6":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 7
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      }
+    },
+        "16": {
+      "name": "Forecasting Other Current Liabilities",
+      "textBoxContent1": "EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It measures a company’s operating performance by showing profit from core business activities before accounting for financial and non-cash expenses. EBITDA is often used to compare profitability across companies and industries.",
+      "hint":"=F3-F4",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Ebitda into the highlighted cells",
+        "options": [ "Beakers to study new lemonade flavors", "A company vacation", "Paying your friend to test new flavors", "Depreciation of Lab Coats"],
+        "correctAnswer": "A company vacation"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+      "Quizcel_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 6
+      },
+      "Quizcel_6":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 7
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      }
+    },
+        "17": {
+      "name": "Forecast Other Current Liabilities",
+      "textBoxContent1": "EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It measures a company’s operating performance by showing profit from core business activities before accounting for financial and non-cash expenses. EBITDA is often used to compare profitability across companies and industries.",
+      "hint":"=F3-F4",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Enter Ebitda into the highlighted cells",
+        "options": [ "Beakers to study new lemonade flavors", "A company vacation", "Paying your friend to test new flavors", "Depreciation of Lab Coats"],
+        "correctAnswer": "A company vacation"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "valuations"
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 5
+      },
+      "Quizcel_5":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 6
+      },
+      "Quizcel_6":{
+        "tab": "inputs",
+        "row": 4,
+        "column": 7
+      },
+        "BlankFOR_6":{
+        "tab": "inputs",
+        "row": 5,
+        "column": 5
+      },
+        "BlankFOR_7":{
+        "tab": "inputs",
+        "row": 6,
+        "column": 5
+      },
+        "BlankFOR_9":{
+        "tab": "inputs",
+        "row": 7,
+        "column": 5
+      },
+        "BlankFOR_10":{
+        "tab": "inputs",
+        "row": 8,
+        "column": 5
+      },
+        "BlankFOR_11":{
+        "tab": "inputs",
+        "row": 9,
+        "column": 5
+      },
+        "BlankFOR_12":{
+        "tab": "inputs",
+        "row": 10,
+        "column": 5
+      }
+    },
+        "18": {
+      "name": "Other WC Items",
       "textBoxContent1": "EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It measures a company’s operating performance by showing profit from core business activities before accounting for financial and non-cash expenses. EBITDA is often used to compare profitability across companies and industries.",
       "hint":"=F3-F4",
       "Qtype": "cells",
@@ -921,11 +1297,11 @@
       }
     },
 
-        "13": {
-      "name": "Accrued Expenses",
+        "19": {
+      "name": "Net Working Capital",
       "textBoxContent1": "The rest of the metrics on the income statement can't be forecasted without information from the Balance sheet or Cash flow statement. After you have completed the modules on the Balance sheet and Cash flow statement, their will be a final module wrapping up the model covering these and other metrics. Answer the final question to complete the module.",
       "hint":"shling",
-      "Qtype": "MCQ",
+      "Qtype": "cells",
       "quiz": {
         "question": "How did you forecast COGS?",
         "options": [ "as a % of Revenue based on historical data", "By totalling forecasted costs", "By subtracting Operational Expenses from Gross Profit", "By forecasting as a % of Gross Profit"],
@@ -936,18 +1312,28 @@
         "initialTab": "valuations"
       },
       "Quizcel_1":{
-        "tab": "intro",
-        "row": 0,
+        "tab": "inputs",
+        "row": 19,
+        "column": 4
+      },
+      "Quizcel_2":{
+        "tab": "inputs",
+        "row": 19,
         "column": 5
       },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
+      "Quizcel_3":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 6
+      },
+      "Quizcel_4":{
+        "tab": "inputs",
+        "row": 19,
+        "column": 7
       },
         "BlankFOR_6":{
         "tab": "inputs",
-        "row": 5,
+        "row": 12,
         "column": 5
       },
         "BlankFOR_7":{

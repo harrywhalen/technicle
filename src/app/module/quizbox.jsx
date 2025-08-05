@@ -69,7 +69,7 @@ export default function QuizBox({
             marginTop: "1rem",
           }}
         >
-          <h4 style={{ fontSize: "1.3rem", textAlign: "center", height: "2rem" }}>
+          <h4 style={{ fontSize: "1.3rem", textAlign: "center", height: "3.5rem",}}>
             {question || "No quiz question provided."}
           </h4>
           <div
@@ -78,6 +78,8 @@ export default function QuizBox({
               flexDirection: "column",
               alignItems: "center",
               padding: "0rem 1.5rem 1.3rem 1.5rem",
+              //marginBottom: '1rem'
+              
             }}
           >
             {Qtype === "MCQ" && options && options.length > 0 ? (
