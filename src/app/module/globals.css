@@ -124,7 +124,6 @@ body {
 
 .bold-metric {
   font-weight: bold;
-=======
 /* Excel-like copy cell selection with dotted border */
 .copy-cell-selected {
   border: 2px dotted #007ACC !important;
@@ -156,4 +155,5 @@ body {
 
   }
 
+}
 }
