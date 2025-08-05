@@ -121,6 +121,10 @@ body {
   scrollbar-color: #3498db #1f3a60;
 }
 
+
+.bold-metric {
+  font-weight: bold;
+=======
 /* Excel-like copy cell selection with dotted border */
 .copy-cell-selected {
   border: 2px dotted #007ACC !important;
@@ -151,4 +155,5 @@ body {
     border: 2px dotted #33cc00 !important;
 
   }
+
 }

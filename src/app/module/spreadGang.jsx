@@ -22,7 +22,7 @@ const SpreadGang = forwardRef(({
   setPreAnswer, updateME, SpreadSheet_Selector,
 }, ref) => {
 const sheetMappings = content?.Bullshit.SheetMappings || {};
-
+//console.log('sheetMappings',sheetMappings)
 
   const hotTableComponent = useRef(null);
   const { checkCell, validateAllCells, setCorrectAnswers, getScore, setCurrentSheet, 

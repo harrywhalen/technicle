@@ -13,7 +13,7 @@ if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-SETticker = "msft"
+SETticker = "aapl"
 
 doc_ref = db.collection("raw_statements").document(SETticker)
 doc = doc_ref.get()
@@ -53,14 +53,21 @@ def generate_model(
 
     # balance sheet
     accounts_receivable: list,
+    deferred_tax_net: list,
     accounts_payable: list,
     inventory: list,
+    other_current_assets: list,
+    other_noncurrent_assets: list,
+    other_current_liabilities: list,
+    other_noncurrent_liabilities: list,
     gross_ppe: list,
     net_ppe: list,
     total_debt: list,
     current_debt: list,
     long_term_debt: list,
-    common_stock: list,
+    long_term_debt_current: list,
+    long_term_debt_noncurrent: list,
+    common_stock_shares: list,
     retained_earnings: list,
     cash: list,
 
@@ -71,6 +78,12 @@ def generate_model(
     change_AP: list,
     change_inventory: list,
     stock_buybacks: list,
+    year1_debt: list,
+    year2_debt: list,
+    year3_debt: list,
+    year4_debt: list,
+    year5_debt: list,
+    after5_debt: list,
 
     years: int = 7,
     tax_rate: float = 0.2,
@@ -89,7 +102,7 @@ def generate_model(
         'interest_income': interest_income, 'accounts_receivable': accounts_receivable,
         'accounts_payable': accounts_payable, 'inventory': inventory, 'gross_ppe': gross_ppe,
         'net_ppe': net_ppe, 'total_debt': total_debt, 'current_debt': current_debt,
-        'long_term_debt': long_term_debt, 'common_stock': common_stock,
+        'long_term_debt': long_term_debt, 'common_stock': common_stock_shares,
         'retained_earnings': retained_earnings, 'cash': cash, 'capex': capex,
         'div_paid': div_paid, 'change_AR': change_AR, 'change_AP': change_AP,
         'change_inventory': change_inventory, 'stock_buybacks': stock_buybacks
@@ -111,17 +124,24 @@ def generate_model(
     depreciation = np.array(to_millions(depreciation))
 
     accounts_receivable = np.array(to_millions(accounts_receivable))
+    deferred_tax_net = np.array(to_millions(deferred_tax_net))
     accounts_payable = np.array(to_millions(accounts_payable))
     inventory = np.array(to_millions(inventory))
+    other_current_assets = np.array(to_millions(other_current_assets))
+    other_noncurrent_assets = np.array(to_millions(other_noncurrent_assets))
+    other_current_liabilities = np.array(to_millions(other_current_liabilities))
+    other_noncurrent_liabilities = np.array(to_millions(other_noncurrent_liabilities))
     capex = np.array(to_millions(capex))
     gross_ppe = np.array(to_millions(gross_ppe))
     net_ppe = np.array(to_millions(net_ppe))
     total_debt = np.array(to_millions(total_debt))
     current_debt = np.array(to_millions(current_debt))
     long_term_debt = np.array(to_millions(long_term_debt))
+    long_term_debt_current = np.array(to_millions(long_term_debt_current))
+    long_term_debt_noncurrent = np.array(to_millions(long_term_debt_noncurrent))
     interest_expense = np.array(to_millions(interest_expense))
     interest_income = np.array(to_millions(interest_income))
-    common_stock = np.array(to_millions(common_stock))
+    common_stock_shares = np.array(to_millions(common_stock_shares))
     retained_earnings = np.array(to_millions(retained_earnings))
     cash = np.array(to_millions(cash))
 
@@ -129,6 +149,12 @@ def generate_model(
     change_AP = np.array(to_millions(change_AP))
     change_inventory = np.array(to_millions(change_inventory))
     stock_buybacks = np.array(to_millions(stock_buybacks))
+    year1_debt = np.array(to_millions(year1_debt))
+    year2_debt = np.array(to_millions(year2_debt))
+    year3_debt = np.array(to_millions(year3_debt))
+    year4_debt = np.array(to_millions(year4_debt))
+    year5_debt = np.array(to_millions(year5_debt))
+    after5_debt = np.array(to_millions(after5_debt))
 
     div_paid = np.array(to_millions(div_paid))
 
@@ -166,16 +192,19 @@ def generate_model(
         
     if len(accounts_receivable) > 0 and len(revenue) > 0 and revenue[-1] != 0:
         accounts_receivable_pct = accounts_receivable[-1] / revenue[-1]
+        DSO =  ((accounts_receivable[-1] / revenue[-1])*365)
     else:
         accounts_receivable_pct = 0
 
     if len(accounts_payable) > 0 and len(cogs) > 0 and cogs[-1] != 0:
         accounts_payable_pct = accounts_payable[-1] / cogs[-1]
+        DPO =  ((accounts_payable[-1] / cogs[-1])*365)
     else:
         accounts_payable_pct = 0
 
     if len(inventory) > 0 and len(cogs) > 0 and cogs[-1] != 0:
         inventory_pct = abs(inventory[-1]) / cogs[-1]
+        DIO =  ((inventory[-1] / cogs[-1])*365)
     else:
         inventory_pct = 0.1 
 
@@ -221,8 +250,12 @@ def generate_model(
     else:
         stock_buybacks_pct = 0.2
 
+    other_current_assets_pct = other_current_assets[-1] / revenue[-1]
+    other_noncurrent_assets_pct = other_noncurrent_assets[-1] / revenue[-1]
+    other_current_liabilities_pct = other_current_liabilities[-1] / revenue[-1]
+    other_noncurrent_liabilities_pct = other_noncurrent_liabilities[-1] / revenue[-1]
 
-    
+
     full_revenue = []
     full_cogs = []
     full_rnd = []
@@ -253,7 +286,7 @@ def generate_model(
 
     full_interest_income = []
 
-    full_common_stock = []
+    full_common_stock_shares = []
 
     full_retained_earnings = []
 
@@ -262,6 +295,16 @@ def generate_model(
     accumulated_depr = 0
 
     full_stock_buybacks=[]
+
+    full_long_term_debt_current = []
+    full_long_term_debt_noncurrent = []
+
+    full_deferred_tax_net = []
+
+    full_other_current_assets = []
+    full_other_noncurrent_assets = []
+    full_other_current_liabilities = []
+    full_other_noncurrent_liabilities = []
 
     for i in range(years): 
         if i < len(revenue):
@@ -297,9 +340,7 @@ def generate_model(
             full_current_debt.append(current_debt[i])
             full_long_term_debt.append(long_term_debt[i])
 
-            full_interest_expense.append(interest_expense[i])
-
-            full_common_stock.append(common_stock[i])
+            full_common_stock_shares.append(common_stock_shares[i])
 
             full_change_AR.append(change_AR[i])
 
@@ -310,17 +351,20 @@ def generate_model(
             forecast_change_current_debt = ((full_current_debt[i] - full_current_debt[i-1]))
             full_change_current_debt.append(forecast_change_current_debt)
 
-
+            full_other_current_assets.append(other_current_assets[i])
+            full_other_noncurrent_assets.append(other_noncurrent_assets[i])
+            full_other_current_liabilities.append(other_current_liabilities[i])
+            full_other_noncurrent_liabilities.append(other_noncurrent_liabilities[i])
 
 
         else:
-            forecast_accounts_receivable = (accounts_receivable_pct * full_revenue[i])
+            forecast_accounts_receivable = ((DSO/365) * full_revenue[i])
             full_accounts_receivable.append(forecast_accounts_receivable)
 
-            forecast_accounts_payable = (accounts_payable_pct * full_cogs[i])
+            forecast_accounts_payable = ((DPO/365) * full_cogs[i])
             full_accounts_payable.append(forecast_accounts_payable)
 
-            forecast_inventory = (inventory_pct * full_cogs[i])
+            forecast_inventory = ((DIO/365) * full_cogs[i])
             full_inventory.append(forecast_inventory)
 
             forecast_capex = (capex_pct * full_revenue[i])
@@ -346,9 +390,9 @@ def generate_model(
             forecast_long_term_debt = (long_term_debt_pct * full_total_debt[i])
             full_long_term_debt.append(forecast_long_term_debt)
 
-            full_interest_expense.append(full_total_debt[i] * interest_rate)
+            
 
-            full_common_stock.append(common_stock[-1])
+            full_common_stock_shares.append(common_stock_shares[-1])
 
             forecast_change_AR = ((full_accounts_receivable[i] - full_accounts_receivable[i-1]) * - 1)
             full_change_AR.append(forecast_change_AR)
@@ -362,31 +406,55 @@ def generate_model(
             forecast_change_current_debt = ((full_current_debt[i] - full_current_debt[i-1]))
             full_change_current_debt.append(forecast_change_current_debt)
 
+            full_other_current_assets.append(other_current_assets_pct * full_revenue[i])
+            full_other_noncurrent_assets.append(other_noncurrent_assets_pct * full_revenue[i])
+            full_other_current_liabilities.append(other_current_liabilities_pct * full_revenue[i])
+            full_other_noncurrent_liabilities.append(other_noncurrent_liabilities_pct * full_revenue[i])
 
 
 
 
 
-
-
+    for i in range(years): 
+        if i < len(accounts_receivable):
+            full_long_term_debt_current.append(long_term_debt_current[i])
+            full_long_term_debt_noncurrent.append(long_term_debt_noncurrent[i])
+        elif i == 3:
+            full_long_term_debt_current.append(year2_debt[1])
+            full_long_term_debt_noncurrent.append(year3_debt[1] + year4_debt[1] + year5_debt[1] + after5_debt[1])
+        elif i == 4:
+            full_long_term_debt_current.append(year3_debt[1])
+            full_long_term_debt_noncurrent.append(year4_debt[1] + year5_debt[1] + after5_debt[1])
+        elif i == 5:
+            full_long_term_debt_current.append(year4_debt[1])
+            full_long_term_debt_noncurrent.append(year5_debt[1] + after5_debt[1])
+        elif i == 6:
+            full_long_term_debt_current.append(year5_debt[1])
+            full_long_term_debt_noncurrent.append(after5_debt[1])
+        else:
+            full_long_term_debt_current.append(None)
+            full_long_term_debt_noncurrent.append(None)
 
     (gross_profit, ebitda, ebit, pretax_income, net_income, gross_margin, net_margin, opex, opinc, total_liabilities, DnA, 
      full_CF_from_investing, full_CF_from_operating, ebitda_margin, op_marg, ROE, ROA, current_ratio, Debt_over_Ebitda, 
-     change_WC, net_WC, current_assets, current_liabilities,
-     ) = [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []
+     change_WC, net_WC, operating_current_assets, operating_current_liabilities, real_total_debt,
+     ) = [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []
 
     for i in range(years):
-        current_assets.append(full_accounts_receivable[i] + full_inventory[i])
-        current_liabilities.append(full_accounts_payable[i] + full_current_debt[i])
+        rtd = (full_long_term_debt_current[i] + full_long_term_debt_noncurrent[i])
+        real_total_debt.append(rtd)
+        full_interest_expense.append(real_total_debt[i] * interest_rate)
+        operating_current_assets.append(full_accounts_receivable[i] + full_inventory[i] + full_other_current_assets[i])
+        operating_current_liabilities.append(full_accounts_payable[i] + full_other_current_liabilities[i])
         gp = full_revenue[i] - full_cogs[i]
         gross_profit.append(gp)
         ebitda_val = gp - full_rnd[i] - full_sgna[i] + full_depreciation[i]
         ebitda.append(ebitda_val)
         opex.append( full_sgna[i] + full_rnd[i] - full_depreciation[i])
         #opex.append( full_sgna[i] + full_rnd[i])
-        tl = (full_total_debt[i] + full_accounts_payable[i])        
+        tl = (real_total_debt[i] + full_accounts_payable[i])        
         total_liabilities.append(tl)
-        Debt_over_Ebitda.append(full_total_debt[i] / ebitda[i])
+        Debt_over_Ebitda.append(real_total_debt[i] / ebitda[i])
         DnA.append(full_depreciation[i])
         ebit_val = (ebitda_val - full_depreciation[i])
         ebit.append(ebit_val)
@@ -406,17 +474,20 @@ def generate_model(
         full_CF_from_operating.append(cfo)
         ebitda_margin.append(ebitda_val / full_revenue[i])
         op_marg.append(opinc[i] / full_revenue[i])
+        CCC = (DSO + DIO - DPO)
         change_WC.append(full_change_AR[i] + full_change_inventory[i] - full_change_AP[i])
-        net_WC.append(full_accounts_receivable[i] + full_inventory[i] - full_accounts_payable[i])
+        net_WC.append(operating_current_assets[i] - operating_current_liabilities[i])
 
-        
-    
+    deferred_tax_pct = (deferred_tax_net[-1] / pretax_income[-1])
+
     for i in range(years):
         if i < len(stock_buybacks):  # Provided values
             full_stock_buybacks.append(stock_buybacks[i])
+            full_deferred_tax_net.append(deferred_tax_net[i])
             
         else:
             full_stock_buybacks.append((net_income[i] * stock_buybacks_pct)*-1)
+            full_deferred_tax_net.append(pretax_income[i] * deferred_tax_pct)
 
 
     for i in range(years):
@@ -431,7 +502,7 @@ def generate_model(
             forecast_retained_earnings = ((full_retained_earnings[i-1] + net_income[i]) - abs(full_div_paid[i]) - abs(full_stock_buybacks[i]))
             full_retained_earnings.append(forecast_retained_earnings)
 
-    total_equity = [full_retained_earnings[0] + full_common_stock[0]]
+    total_equity = [full_retained_earnings[0] + full_common_stock_shares[0]]
     change_debt = [0]
     change_common_stock = [0]
     full_CF_from_financing = [0]
@@ -441,13 +512,13 @@ def generate_model(
 
 
     for i in range(1, years):
-        te = (full_retained_earnings[i] + full_common_stock[i])
+        te = (full_retained_earnings[i] + full_common_stock_shares[i])
         total_equity.append(te)
 
-        cd = (full_total_debt[i] - full_total_debt[i-1])
+        cd = (real_total_debt[i] - real_total_debt[i-1])
         change_debt.append(cd)
 
-        ccs = (full_common_stock[i] - full_common_stock[i-1])
+        ccs = (full_common_stock_shares[i] - full_common_stock_shares[i-1])
         change_common_stock.append(ccs)
 
         cff = (cd + (ccs - abs(full_div_paid[i])) - abs(full_stock_buybacks[i]) )
@@ -506,7 +577,13 @@ def generate_model(
         ("Research and Development", ratioRounder(full_rnd)),
         ("EBITDA", ratioRounder(ebitda)),
         ("Net Income", ratioRounder(net_income)),
-        ("", [""] * years),
+        ("Income Statement", [""] * years),
+        ("Balance Sheet", [""] * years),
+        ("Cash Flow Statement", [""] * years),
+        ("Assumptions", [""] * years),
+        (" ", [""] * years),
+        ("  ", [""] * years),
+        ("c", [""] * years),
 
         # ratios
         ("Gross Margin", ratioRounder(gross_margin)),
@@ -520,20 +597,25 @@ def generate_model(
         # Balance sheet
         ("Cash and Cash Equivalents", ratioRounder(full_cash)),
         ("Accounts Receivable", ratioRounder(full_accounts_receivable)),
+        ("Deferred Tax Assets Net", ratioRounder(full_deferred_tax_net)),
         ("Accounts Payable", ratioRounder(full_accounts_payable)),
         ("Inventory", ratioRounder(full_inventory)),
         ("Capital Expenditure", ratioRounder(full_capex)),
         ("Gross PPE", ratioRounder(full_gross_ppe)),
         ("Net PPE", ratioRounder(full_net_ppe)),
+        ("Other Current Assets", ratioRounder(full_other_current_assets)),
+        ("Other Noncurrent Assets", ratioRounder(full_other_noncurrent_assets)),
         ("Total Assets", ratioRounder(total_assets)),
         ("Depreciation", ratioRounder(full_depreciation)),
-        ("Total Debt", ratioRounder(full_total_debt)),
-        ("Current Debt", ratioRounder(full_current_debt)),
-        ("Long Term Debt", ratioRounder(full_long_term_debt)),
+        ("Total Debt", ratioRounder(real_total_debt)),
+        ("Current Debt", ratioRounder(full_long_term_debt_current)),
+        ("Long Term Debt", ratioRounder(full_long_term_debt_noncurrent)),
+        ("Other Current Liabilities", ratioRounder(full_other_current_liabilities)),
+        ("Other Noncurrent Liabilities", ratioRounder(full_other_noncurrent_liabilities)),
         ("Total Liabilities", ratioRounder(total_liabilities)),
         ("Interest Expense", ratioRounder(full_interest_expense)),
         ("Interest Income", ratioRounder(full_interest_income)),
-        ("Common Stock", ratioRounder(full_common_stock)),
+        ("Common Stock", ratioRounder(full_common_stock_shares)),
         ("Dividends Paid", ratioRounder(full_div_paid)),
         ("Retained Earnings", ratioRounder(full_retained_earnings)),
         ("Total Equity", ratioRounder(total_equity)),
@@ -561,7 +643,19 @@ def generate_model(
         ("Capex / Revenue", ratioRounder(capex_pct)),
         ("COGS / Revenue", ratioRounder(cogs_pct)),
         ("Accounts Receivable / Revenue", ratioRounder(accounts_receivable_pct)),
+
+        ("Days sales outstanding", ratioRounder(DSO)),
+        ("Days payable outstanding", ratioRounder(DPO)),
+        ("Days inventory outstanding", ratioRounder(DIO)),
+        ("Deferred Tax / Pretax", ratioRounder(deferred_tax_pct)),
+        ("Cash Conversion Cycle", ratioRounder(CCC)),
         ("Accounts Payable / COGS", ratioRounder(accounts_payable_pct)),
+        ("Other Current Assets / Revenue", ratioRounder(other_current_assets_pct)),
+        ("Operating Current Assets", ratioRounder(operating_current_assets)),
+        ("Other Non Current Assets / Revenue", ratioRounder(other_noncurrent_assets_pct)),
+        ("Other Current Liabilities / Revenue", ratioRounder(other_current_liabilities_pct)),
+        ("Operating Current Liabilities", ratioRounder(operating_current_liabilities)),
+        ("Other Non Current Liabilities / Revenue", ratioRounder(other_noncurrent_liabilities_pct)),
         ("Interest Rate", ratioRounder(interest_rate)),
         ("Dividend Payout Ratio", ratioRounder(div_paid_pct)),
         ("Ebitda Margin", ratioRounder(ebitda_margin)),
@@ -572,12 +666,14 @@ def generate_model(
         ("Current Ratio", ratioRounder(current_ratio)),
         ("Debt / Ebitda", ratioRounder(Debt_over_Ebitda)),
         ("Changes in Working Cap", ratioRounder(change_WC)),
+        ("year 1 debt", ratioRounder(after5_debt)),
+        ("year 2 debt", ratioRounder(year2_debt)),
+        ("year 3 debt", ratioRounder(year3_debt)),
+        ("year 4 debt", ratioRounder(year4_debt)),
+        ("year 5 debt", ratioRounder(year5_debt)),
     ]),
     "revTRUE": revTRUE
     }
-
-
-
 
 
 
@@ -634,26 +730,41 @@ def forecast(ticker):
 
         # balance sheet
         accounts_receivable = extract_metric('accounts receivable')
+        deferred_tax_net = extract_metric('Deferred Tax Assets')
         accounts_payable = extract_metric('accounts payable')
         inventory = extract_metric('inventory')
-        gross_ppe = extract_metric('gross ppe')
-        net_ppe = extract_metric('net ppe')
+        other_current_assets = extract_metric('Other Current Assets')
+        other_noncurrent_assets = extract_metric('Other Noncurrent Assets')
+        other_current_liabilities = extract_metric('Other Current Liabilities')
+        other_noncurrent_liabilities = extract_metric('Other Noncurrent Liabilities')
+        gross_ppe = extract_metric('Gross Property Plant And Equipment')
+        net_ppe = extract_metric('Net Property Plant And Equipment')
         total_debt = extract_metric('total debt')
-        current_debt = extract_metric('Short Term Debt')
+        ShortTerm_debt = extract_metric('Short Term Debt')
+        long_term_debt_current = extract_metric('Long Term Debt current')
+        long_term_debt_noncurrent = extract_metric('Long Term Debt noncurrent')
         long_term_debt = extract_metric('long term debt')
         interest_expense = extract_metric('interest expense')
         interest_income = extract_metric('interest income')
-        common_stock = extract_metric('common stock')
-        retained_earnings = extract_metric('retained earnings')
+        common_stock_shares = extract_metric("Common Stock Shares Outstanding")
+        common_stock_value = extract_metric('common stock value')
+        retained_earnings = extract_metric('Retained Earnings')
         cash = extract_metric('cash and cash equivalents')
 
         # Cash flow
-        capex = extract_metric('capital expenditure')
-        div_paid = extract_metric('cash dividends paid')
+        capex = extract_metric('capital expenditures')
+        div_paid = extract_metric('Dividends paid')
         change_AR = extract_metric('changes In account receivables')
         change_AP = extract_metric('change in payable')
         change_inventory = extract_metric('change in inventory')
-        stock_buybacks = extract_metric("Repurchase Of Capital Stock")
+        stock_buybacks = extract_metric("Stock Buybacks")
+
+        year1_debt = extract_metric("1 year debt payments")
+        year2_debt = extract_metric("2 year debt payments")
+        year3_debt = extract_metric("3 year debt payments")
+        year4_debt = extract_metric("4 year debt payments")
+        year5_debt = extract_metric("5 year debt payments")
+        after5_debt = extract_metric(">5 year debt payments")
 
         # Use named parameters to avoid order issues
         forecast_results = generate_model(
@@ -671,9 +782,11 @@ def forecast(ticker):
             gross_ppe=gross_ppe,
             net_ppe=net_ppe,
             total_debt=total_debt,
-            current_debt=current_debt,
+            current_debt=ShortTerm_debt,
             long_term_debt=long_term_debt,
-            common_stock=common_stock,
+            long_term_debt_current=long_term_debt_current,
+            long_term_debt_noncurrent=long_term_debt_noncurrent,
+            common_stock_shares=common_stock_shares,
             retained_earnings=retained_earnings,
             cash=cash,
             capex=capex,
@@ -681,33 +794,60 @@ def forecast(ticker):
             change_AR=change_AR,
             change_AP=change_AP,
             change_inventory=change_inventory,
-            stock_buybacks=stock_buybacks
+            stock_buybacks=stock_buybacks,
+            year1_debt=year1_debt,
+            year2_debt=year2_debt,
+            year3_debt=year3_debt,
+            year4_debt=year4_debt,
+            year5_debt=year5_debt,
+            after5_debt=after5_debt,
+            deferred_tax_net=deferred_tax_net,
+            other_current_assets=other_current_assets,
+            other_noncurrent_assets=other_noncurrent_assets,
+            other_current_liabilities=other_current_liabilities,
+            other_noncurrent_liabilities=other_noncurrent_liabilities,
         )
+
 
         model_dict = forecast_results["model"]
 
         ordered_keys = [
+            "Income Statement",
             "Revenue", "Cost of Goods Sold","Gross Profit", "Selling General And Administrative", "Research and Development", 
             "Operating Expenses","EBITDA", "Depreciation", "Interest Expense", "Interest Income", 
             "EBT", "Tax Provision", "Tax Rate for Calcs",
-            "Net Income", "Gross Margin", "Net Margin", "", 
-            "Operating Income", 
+            "Net Income", "Gross Margin", "Net Margin",
+            "Operating Income",  
             
+            " ", 
+            "Balance Sheet",
             "Cash and Cash Equivalents",
-            "Accounts Receivable", "Inventory", "Gross PPE", "Net PPE", "Total Assets", 
+            "Accounts Receivable", "Inventory", "Deferred Tax Assets Net", "Gross PPE", "Net PPE", "Other Current Assets", "Other Noncurrent Assets",
+            "Operating Current Assets", "Total Assets", 
             "Accounts Payable", "Current Debt",
-            "Long Term Debt", "Total Debt", "Total Liabilities", 
+            "Long Term Debt", "Total Debt", "Other Current Liabilities", "Other Noncurrent Liabilities", "Operating Current Liabilities", "Total Liabilities", 
             "Common Stock", "Retained Earnings", "Total Equity", "Net Working Capital",
             
+            "  ", 
+            "Cash Flow Statement",
             "Dividends Paid",  
             "Net Income from Continuing Operations", "Cash Flow From Continuing Investing Activities",
             "Cash Flow From Continuing Operating Activities", "Cash Flow From Continuing Financing Activities",
             "Depreciation and Amortization", "Changes in Accounts Receivable", "Capital Expenditure",
-            "Changes in Accounts Payable", "Changes in Inventory", "Changes in Cash", "Changes in Current Debt", "Inventory / COGS", "Revenue Growth Rate", 
-            "SGnA / Revenue", "RnD / Revenue", "Capex / Revenue", "Accounts Receivable / Revenue", "Accounts Payable / COGS", 
+            "Changes in Accounts Payable", "Changes in Inventory", "Changes in Cash", "Changes in Current Debt", 
+            
+            "c", 
+            "Assumptions",
+            "Inventory / COGS", "Revenue Growth Rate",
+             "COGS / Revenue", "Opex / Revenue", 
+            "SGnA / Revenue", "RnD / Revenue", "Capex / Revenue", "Accounts Receivable / Revenue", "Days sales outstanding", 
+            "Days inventory outstanding",  "Days payable outstanding","Cash Conversion Cycle", "Days payable outstanding", 
+            "Accounts Payable / COGS", "Deferred Tax / Pretax",
              "Interest Rate", "Dividend Payout Ratio", "Ebitda Margin", "Operating Margin", "Depreciation Rate",
-            "Return On Equity", "Return On Assets", "Current Ratio", "Debt / Ebitda", "Changes in Working Cap", "COGS / Revenue", "Opex / Revenue",
-            "Stock Buy Backs"
+            "Return On Equity", "Return On Assets", "Current Ratio", "Debt / Ebitda", "Changes in Working Cap",
+            "year 1 debt", "year 2 debt", "year 3 debt", "year 4 debt", "year 5 debt", 
+            "Stock Buy Backs", "Other Current Assets / Revenue", "Other Non Current Assets / Revenue", "Other Current Liabilities / Revenue",
+            "Other Non Current Liabilities / Revenue",
 
         ]
 
@@ -741,8 +881,8 @@ def forecast(ticker):
 
     except Exception as e:
         print("Error:", e)
-        return jsonify({'error': str(e)})
 
+        return jsonify({'error': str(e)})
 if __name__ == '__main__':
     app.run(debug=True)
 

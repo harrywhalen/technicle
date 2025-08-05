@@ -2,7 +2,9 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import lessonData from "../data/lessondata.json";
 import contentBS from "../data/lessondataBS.json";
+import contentCFS from "../data/lessondataCFS.json";
 import contentBERK from "../data/lessondataBERK.json";
+import test from "../data/test.json";
 
 // Simulated module content "database"
 const moduleDatabase = {
@@ -16,11 +18,11 @@ const moduleDatabase = {
   },
   3: {
     title: 'Berk Hath',
-    content: contentBERK,
+    content: contentCFS,
   },
   4: {
     title: 'Routing',
-    content: contentBERK,
+    content: test,
   },
   5: {
     title: 'Testing',

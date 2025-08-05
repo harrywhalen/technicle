@@ -849,7 +849,22 @@ export default function Spreadsheet({
         cells={(row, col) => {
           const classes = [];
 
-          if (row % 2 === 1) {
+
+          const metricName = data[row]?.[0];
+
+
+          if (col === 0) {
+        // Example: Make it bold if the metric is "Revenue" or "EBITDA"
+        if (["Income Statement", "Balance Sheet", "Cash Flow Statement", "Assumptions"].includes(metricName)) {
+          classes.push('bold-metric');
+        }
+      }
+
+
+
+          // Zebra striping
+          if (row % 2 === 1 && !correctCellsROW.includes(row) && !incorrectCellsROW.includes(row)) {
+
             classes.push('even-row');
           }
 
@@ -865,6 +880,30 @@ export default function Spreadsheet({
 
           if (currentStepContent.highlightRow && currentStepContent.highlightRow.tab === activeTab) {
             if (row === currentStepContent.highlightRow.row) {
+              classes.push('quizcel');
+            }
+          }
+
+          if (currentStepContent.highlightRow2 && currentStepContent.highlightRow2.tab === activeTab) {
+            if (row === currentStepContent.highlightRow2.row) {
+              classes.push('quizcel');
+            }
+          }
+
+          if (currentStepContent.highlightRow3 && currentStepContent.highlightRow3.tab === activeTab) {
+            if (row === currentStepContent.highlightRow3.row) {
+              classes.push('quizcel');
+            }
+          }
+
+          if (currentStepContent.highlightRow4 && currentStepContent.highlightRow4.tab === activeTab) {
+            if (row === currentStepContent.highlightRow4.row) {
+              classes.push('quizcel');
+            }
+          }
+
+          if (currentStepContent.highlightRow5 && currentStepContent.highlightRow5.tab === activeTab) {
+            if (row === currentStepContent.highlightRow5.row) {
               classes.push('quizcel');
             }
           }
