@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import FeedbackPLZ from "./feedbackPlease.jsx"; 
+import FeedbackPLZ from "./feedbackPlease.jsx";
+import ClientAuthWrapper from '../components/ClientAuthWrapper.jsx'; // Import the wrapper instead
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,8 +35,10 @@ export default function RootLayout({
           margin: 0,
         }}
       >
-        <div style={{ flex: 1 }}>{children}</div>
-        <FeedbackPLZ />
+        <ClientAuthWrapper>
+          <div style={{ flex: 1 }}>{children}</div>
+          <FeedbackPLZ />
+        </ClientAuthWrapper>
       </body>
     </html>
   );

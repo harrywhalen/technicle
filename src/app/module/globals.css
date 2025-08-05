@@ -121,6 +121,39 @@ body {
   scrollbar-color: #3498db #1f3a60;
 }
 
+
 .bold-metric {
   font-weight: bold;
+=======
+/* Excel-like copy cell selection with dotted border */
+.copy-cell-selected {
+  border: 2px dotted #007ACC !important;
+  border-radius: 2px;
+  position: relative;
+  z-index: 10;
+  animation: copyPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Ensure the dotted border appears above other cell styling */
+.handsontable td.copy-cell-selected {
+  border: 3px dotted #007ACC !important;
+  box-sizing: border-box;
+  animation: copyPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Optional: Add a subtle animation to make it more noticeable */
+.copy-cell-selected {
+  animation: copyPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes copyPulse {
+  0% {
+    border: 2px dotted #007ACC !important;
+
+  }
+  100% {
+    border: 2px dotted #33cc00 !important;
+
+  }
+
 }
