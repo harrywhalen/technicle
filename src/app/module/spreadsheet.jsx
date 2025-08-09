@@ -5,7 +5,7 @@ import { HotTable } from '@handsontable/react';
 import { HyperFormula } from 'hyperformula';
 import { registerAllModules } from 'handsontable/registry';
 import 'handsontable/dist/handsontable.full.min.css';
-import lessonData from "../data/lessondata.json"; // Import the JSON file
+import lessonData from "../data/lessondata.json";
 
 import './globals.css';
 
@@ -800,7 +800,10 @@ export default function Spreadsheet({
       style={{
         width: '52.1vw',
         backgroundColor: '#ffffff',
-        border: '3px solid #1f3a60',
+        borderTop: '3px solid #1f3a60',
+        borderLeft: '3px solid #1f3a60',
+        borderBottom: '3px solid #1f3a60',
+        borderRight: 'none',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         overflow: 'hidden',
       }}
@@ -880,44 +883,21 @@ export default function Spreadsheet({
             classes.push('copy-cell-selected');
           }
 
-          if (currentStepContent.highlightRow && currentStepContent.highlightRow.tab === activeTab) {
-            if (row === currentStepContent.highlightRow.row) {
+          if (currentStepContent.highlightRows && currentStepContent.highlightRows.tab === activeTab) {
+            if (Object.values(currentStepContent.highlightRows.rows).includes(row)) {
               classes.push('quizcel');
             }
           }
-
-          if (currentStepContent.highlightRow2 && currentStepContent.highlightRow2.tab === activeTab) {
-            if (row === currentStepContent.highlightRow2.row) {
-              classes.push('quizcel');
-            }
-          }
-
-          if (currentStepContent.highlightRow3 && currentStepContent.highlightRow3.tab === activeTab) {
-            if (row === currentStepContent.highlightRow3.row) {
-              classes.push('quizcel');
-            }
-          }
-
-          if (currentStepContent.highlightRow4 && currentStepContent.highlightRow4.tab === activeTab) {
-            if (row === currentStepContent.highlightRow4.row) {
-              classes.push('quizcel');
-            }
-          }
-
-          if (currentStepContent.highlightRow5 && currentStepContent.highlightRow5.tab === activeTab) {
-            if (row === currentStepContent.highlightRow5.row) {
-              classes.push('quizcel');
-            }
-          }
-
+          
           if (currentStepContent.Qtype === "cells") {
-            for (let i = 1; i <= 6; i++) {
-              const quizCel = currentStepContent[`Quizcel_${i}`];
+            for (let i = 0; i <= 200; i++) {
+              const quizCel = currentStepContent[`Quizcels_ROW_${i}`];
               if (
                 quizCel?.tab === activeTab &&
-                quizCel.row === row &&
-                quizCel.column === col
+                i === row &&
+                Object.values(quizCel.cols).includes(col)
               ) {
+                console.log("passed dinklecheck")
                 classes.push('quizcel');
                 break;
               }
