@@ -94,6 +94,7 @@ def generate_model(
     after5_debt: list,
 
     years: int = 7,
+    repayment_years: int = 9,
     tax_rate: float = 0.2,
     dividend_payout_ratio: float = 0.25,
     depreciation_rate: float = 0.2,
@@ -476,27 +477,37 @@ def generate_model(
         if i < len(accounts_receivable):
             full_long_term_debt_current.append(long_term_debt_current[i])
             full_long_term_debt_noncurrent.append(long_term_debt_noncurrent[i])
-            full_repayment_long_term_debt.append(repayment_long_term_debt[i])
         elif i == 3:
-            full_repayment_long_term_debt.append(year1_debt[1])
             full_long_term_debt_current.append(year2_debt[1])
             full_long_term_debt_noncurrent.append(year3_debt[1] + year4_debt[1] + year5_debt[1] + after5_debt[1])
         elif i == 4:
-            full_repayment_long_term_debt.append(year2_debt[1])
             full_long_term_debt_current.append(year3_debt[1])
             full_long_term_debt_noncurrent.append(year4_debt[1] + year5_debt[1] + after5_debt[1])
         elif i == 5:
-            full_repayment_long_term_debt.append(year3_debt[1])
             full_long_term_debt_current.append(year4_debt[1])
             full_long_term_debt_noncurrent.append(year5_debt[1] + after5_debt[1])
         elif i == 6:
-            full_repayment_long_term_debt.append(year4_debt[1])
             full_long_term_debt_current.append(year5_debt[1])
             full_long_term_debt_noncurrent.append(after5_debt[1])
         else:
-            full_repayment_long_term_debt.append(None)
-            full_long_term_debt_current.append(None)
-            full_long_term_debt_noncurrent.append(None)
+            full_long_term_debt_current.append(0)
+            full_long_term_debt_noncurrent.append(0)
+
+    for i in range(repayment_years): 
+        if i < len(accounts_receivable):
+            full_repayment_long_term_debt.append(repayment_long_term_debt[i])
+        elif i == 3:
+            full_repayment_long_term_debt.append(year1_debt[1])
+        elif i == 4:
+            full_repayment_long_term_debt.append(year2_debt[1])
+        elif i == 5:
+            full_repayment_long_term_debt.append(year3_debt[1])
+        elif i == 6:
+            full_repayment_long_term_debt.append(year4_debt[1])
+        elif i == 7:
+            full_repayment_long_term_debt.append(year5_debt[1])
+        else:
+            full_repayment_long_term_debt.append(after5_debt[1])
 
     (gross_profit, ebitda, ebit, pretax_income, net_income, gross_margin, net_margin, opex, opinc, total_liabilities, DnA, 
      full_CF_from_operating, ebitda_margin, op_marg, ROE, ROA, current_ratio, Debt_over_Ebitda, 
@@ -963,7 +974,7 @@ def forecast(ticker):
             "Accounts Payable / COGS", "Deferred Tax / Pretax",
              "Interest Rate", "Dividend Payout Ratio", "Ebitda Margin", "Operating Margin", "Depreciation Rate",
             "Return On Equity", "Return On Assets", "Current Ratio", "Debt / Ebitda", "Changes in Working Cap",
-            "year 1 debt", "year 2 debt", "year 3 debt", "year 4 debt", "year 5 debt", 
+            "year 1 debt", "year 2 debt", "year 3 debt", "year 4 debt", "year 5 debt", ">5 year debt payments",
             "Other Current Assets / Revenue", "Other Non Current Assets / Revenue", "Other Current Liabilities / Revenue",
             "Other Non Current Liabilities / Revenue",
 
