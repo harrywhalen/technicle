@@ -1,229 +1,316 @@
 {
 
-"Bullshit": {"Spreadsheet_Selector": "amzn 3 Statement",
+"Bullshit": {"Spreadsheet_Selector": "aapl 3 Statement",
 
 "SheetMappings": {
 
     "inputs": {
       "name": "Income Statement", 
-      "includeRows": ["Cash and Cash Equivalents",
-            "Accounts Receivable", "Accounts Payable", "Inventory", "Capital Expenditure",
-            "Gross PPE", "Net PPE", "Total Assets",  "Total Debt", "Current Debt",
-            "Long Term Debt", "Total Liabilities", 
-            "Common Stock", "Dividends Paid", "Retained Earnings", "Total Equity", "Net Working Capital"   
+      "includeRows": [
+
+            "Income Statement",
+            "Revenue", "Cost of Goods Sold","Gross Profit", "Selling General And Administrative", "Research and Development", 
+            "Operating Expenses","EBITDA", "Depreciation", "Interest Expense", "Interest Income", "Investing Income",
+            "EBT", "Tax Provision", "Tax Rate for Calcs",
+            "Net Income", "Gross Margin", "Net Margin",
+            "Operating Income",  
+            
+            " ", 
+            "Balance Sheet",
+            "Cash and Cash Equivalents",
+            "Accounts Receivable", "Inventory", "Deferred Tax Assets Net", "Deferred Tax Liabilities","Deferred Tax Net",
+            "Gross PPE", "Net PPE", "Accumulated Depreciation","Other Current Assets", "Other Noncurrent Assets",
+            "Operating Current Assets", "Total Assets", 
+            "Accounts Payable", "Current Debt",
+            "Long Term Debt", "Total Debt", "Other Current Liabilities", "Other Noncurrent Liabilities", "Operating Current Liabilities", "Total Liabilities", 
+            "Common Stock", "Retained Earnings", "Total Equity", "Net Working Capital",
+            
+            "  ", 
+            "Cash Flow Statement",
+            "Net Income from Continuing Operations", 
+            "Depreciation and Amortization", "Changes in Accounts Receivable", 
+            "Changes in Accounts Payable", "Changes in Inventory", "Changes in Other Working Capital",
+            "Stock Compensation",
+            "Cash Flow From Continuing Operating Activities", 
+            "Marketable Securities Current", "Marketable Securities Noncurrent", 
+            "Changes in Marketable Securities",
+            "Capital Expenditure", "Cash Flow From Continuing Investing Activities",
+            "Dividends Paid",  "Stock Buy Backs",
+            "Issuance of Long Term Debt", "Repayment of Long Term Debt", "Stock Issued",
+            "Cash Flow From Continuing Financing Activities",  "Changes in Cash","Begining Cash", "Ending Cash",
+
+            
+            "c", 
+            "Assumptions",
+            "Inventory / COGS", "Revenue Growth Rate",
+             "COGS / Revenue", "Opex / Revenue", 
+            "SGnA / Revenue", "RnD / Revenue", "Capex / Revenue", "Accounts Receivable / Revenue", "Days sales outstanding", 
+            "Days inventory outstanding",  "Days payable outstanding","Cash Conversion Cycle", "Days payable outstanding", 
+            "Accounts Payable / COGS", "Deferred Tax / Pretax",
+             "Interest Rate", "Dividend Payout Ratio", "Ebitda Margin", "Operating Margin", "Depreciation Rate",
+            "Return On Equity", "Return On Assets", "Current Ratio", "Debt / Ebitda", "Changes in Working Cap",
+            "year 1 debt", "year 2 debt", "year 3 debt", "year 4 debt", "year 5 debt", 
+            "Other Current Assets / Revenue", "Other Non Current Assets / Revenue", "Other Current Liabilities / Revenue",
+            "Other Non Current Liabilities / Revenue"
           ]
     }
   }},
 
     "1": {
-      "name": "What's a Balance Sheet",
-      "textBoxContent1": "The balance sheet—also called the statement of financial position—shows a company’s financial health at a specific point in time. It tells us what the business owns (assets), what it owes (liabilities), and how much value is left for the owners (equity). The balance sheet follows the formula: Assets = Liabilities + Equity.",
+      "name": "What is PPE?",
+      "textBoxContent1": "Property Plant and Equiptment is the physical investment a company makes in its own production. For software companies like Microsoft, this could be servers, for Manufacturing companies like Boeing, it could be an aircraft assembly plant.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "What is the purpose of the income statement?",
-        "options": ["To show the company’s financial position at a specific point in time", "To track the changes in cash during a period", "To summarize a company’s revenues and expenses over a period, showing profit or loss", "To report how much equity the company’s shareholders own"],
-        "correctAnswer": "To summarize a company’s revenues and expenses over a period, showing profit or loss"
+        "question": "Which of these would be an exampele of PPE?",
+        "options": ["Excecutive Compensation", "The materials used to make a good", "A new manufacturing plant", "Stock Buybacks"],
+        "correctAnswer": "A new manufacturing plant"
       },
       "targetTab": "none",
-      "TabLocked": "False"
+      "TabLocked": "False",
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      },
+              "BlankFORs_COL_4":{
+        "tab": "inputs",
+        "rows":{
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "56":  58,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }}
 
     },
     "2": {
-      "name": "Cash",
-      "textBoxContent1": "SKLFJSDFJSD:LK.",
+      "name": "Capex",
+      "textBoxContent1": "Capex shows up on the balance sheet and represents capital spent on new PPE.",
       "hint":"It's stated in the textbox.",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "What is Revenue in 2014?",
-        "options": ["470", "3562", "365817", "-1458"],
-        "correctAnswer": "365817"
+        "question": "Which financial statement does Capex Appear on?",
+        "options": ["None", "Cash Flow Statement", "Balance Sheet", "Income Statement"],
+        "correctAnswer": "Cash Flow Statement"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-      "Quizcel_1":{
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 0,
-        "column": 2
-      },
-        "Quizcel_2":{
+        "rows":{
+            "1": 41,
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 1,
-        "column": 4
-      },
-        "Blankcel_1":{
+        "rows":{
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "56":  58,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
-        "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "Blankcel_3":{
-        "tab": "inputs",
-        "row": 12,
-        "column": 1
-      },
-        "BlankFOR_1":{
-        "tab": "inputs",
-        "row": 0,
-        "column": 5
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 5
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 0
-      }
+        "rows":{
+            "1":  58
+      }}
     },
         "3": {
-      "name": "Revenue Growth Rate",
-      "textBoxContent1": "A way to forecast revenue growth is by using YoY growth from historical data. This is done by calculating the percentage change in revenue from one year to the next. Use the Excel formula =(Current Year Revenue - Prior Year Revenue) / ABS(Prior Year Revenue) to find YoY forecasted growth in the highlighted cell. If you are sturggling use the hint button",
+      "name": "Capex / Revenue",
+      "textBoxContent1": "We typically forecast capex as a % of revenue.",
       "hint":"Use this formula: =((E1-D1) / D1)",
       "Qtype": "cells",
       "quiz": {
-        "question": "Find the forecasted revenue growth rate",
-        "options": ["470", "3562", "2356", "-1458"],
-        "correctAnswer": "2356"
+        "question": "Find Capex as a % of revenue",
+        "options": ["A loan the company takes out", "The Cash a company owns", "A purchase a customer made on credit to the company", "A purchase the company made on credit"],
+        "correctAnswer": "A purchase a customer made on credit to the company"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_77":{
         "tab": "inputs",
-        "row": 12,
-        "column": 1
-      },
-        "Blankcel_1":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "rows":{
+            "1": 41,
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "BlankFOR_1":{
-        "tab": "inputs",
-        "row": 0,
-        "column": 5
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 5
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
+        "rows":{
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }}
     },
      "4": {
-      "name": "Forecasting Revenue",
-      "textBoxContent1": "Now that you have your forecasted YoY growth for revenue, we can forecast revenue. Revenue is forecasted by growing last year’s revenue by the forecasted growth rate. Use the Excel formula =Prior Year Revenue * (1 + YoY Growth) in the highlighted cell and drag it to all 3 highlighted cells to forecast 3 years of revenue.",
+      "name": "Forecasting Capex",
+      "textBoxContent1": "Once you have found capex as a % of revenue, you can forecast it.",
       "hint":"Use the formula: = E1 * (1 + $B$13) in the first cell and drag it to the other three",
       "Qtype": "cells",
       "quiz": {
-        "question": "What is Revenue?",
+        "question": "Find Days Sales Outstanding",
         "options": ["470", "3562", "2356", "-1458"],
         "correctAnswer": "2356"
       },
@@ -231,345 +318,355 @@
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_58":{
         "tab": "inputs",
-        "row": 0,
-        "column": 5
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 0,
-        "column": 6
-      },
-        "Quizcel_3":{
+        "rows":{
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 0,
-        "column": 7
-      },
-        "Blankcel_1":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
-        "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 5
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
+        "rows":{
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }}
     },
     "5": {
-      "name": "Accounts Receivable",
-      "textBoxContent1": "The second line in most income statements is Cost of Goods Sold. Cost of goods sold or COGS, is the direct expenses needed to make the product that is generating revenue.",
+      "name": "Gross PPE",
+      "textBoxContent1": "Gross PPE shows up on the balance sheet is the total PPE a company owns before depreciation.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "What does COGS stand for?",
-        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
-        "correctAnswer": "Cost of Goods Sold"
+        "question": "Does Gross PPE accout for depreciation?",
+        "options": ["Yes", "No"],
+        "correctAnswer": "No"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 1,
-        "column": 13
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
-      },
-        "Blankcel_1":{
+        "Quizcels_ROW_15":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "BlankFOR_2":{
+        "rows":{
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 1,
-        "column": 5
-      },
-        "BlankFOR_3":{
+        "rows":{
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 1
-      }
+        "rows":{
+            "1":  26
+      }}
     },
     "6": {
-      "name": "How do we Forecast COGS?",
-      "textBoxContent1": "COGS is typically forecasted as a % of revenue. To find COGS as a % of revenue, Divide the most recent COGS by Revenue in the most recent year of historical data.",
+      "name": "Forecasting Gross PPE",
+      "textBoxContent1": "To forecast Gross PPE, we add capex to last year's PPE.",
       "hint":"=E2/E1",
       "Qtype": "cells",
       "quiz": {
-        "question": "Enter COGS / Revenue into the highlighted cell",
-        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
-        "correctAnswer": "Cost of Goods Sold"
+        "question": "Forecast Gross PPE",
+        "options": ["Items waiting to be sold", "Sales team bonuses", "The companies credit rating", "Stocks owned by the company"],
+        "correctAnswer": "Items waiting to be sold"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_26":{
         "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "Blankcel_1":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "BlankFOR_2":{
+        "rows":{
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 1,
-        "column": 5
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
+        "rows":{
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }}
     },
       "7": {
-      "name": "Forecasting COGS",
-      "textBoxContent1": "Now that we have COGS as a % of revenue we can multiply revenue for this year times our COGS % to get our COGS for this year.",
+      "name": "Depreciation",
+      "textBoxContent1": "Depreciation is the gradual loss of value of an asset over its lifetime.",
       "hint":"use this formula and drag it to the 3 cells =F1*$B$14",
-      "Qtype": "cells",
+      "Qtype": "MCQ",
       "quiz": {
-        "question": "What does COGS stand for?",
-        "options": ["Capital Optimization & Growth Strategy", "Cost of Goods Sold", "Credit Operations & Governance Structure", "Cashflow-Oriented Growth System"],
-        "correctAnswer": "Cost of Goods Sold"
+        "question": "Does Depreciation mean the increase or decrease in the value of an asset?",
+        "options": ["Increase", "Decrease"],
+        "correctAnswer": "Decrease"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_42":{
         "tab": "inputs",
-        "row": 1,
-        "column": 5
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 1,
-        "column": 6
-      },
-        "Quizcel_3":{
+        "rows":{
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 1,
-        "column": 7
-      },
-        "Blankcel_1":{
+        "rows":{
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
+        "rows":{
+            "1":  8
+      }}
     },
     "8": {
-      "name": "Inventory",
-      "textBoxContent1": "Gross Profit is the difference between a company’s revenue and its Cost of Goods Sold (COGS). It shows how much the company earns from its core products or services before accounting for operating expenses, interest, taxes, or other costs.",
+      "name": "Forecasting Depreciation",
+      "textBoxContent1": "We forecast depreciation as a % of revenue.",
       "hint":"use the formula =F1 - F2 and drag to fill all cells",
       "Qtype": "cells",
       "quiz": {
-        "question": "Enter Gross Profit for the highlighted cells",
+        "question": "Find Depreciation as a % of revenue",
         "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
         "correctAnswer": "Gordon Growth Model"
       },
@@ -577,393 +674,492 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_4":{
+        "Quizcels_ROW_89":{
         "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-      "Quizcel_5":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 2,
-        "column": 6
-      },
-      "Quizcel_6":{
+        "rows":{
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 2,
-        "column": 7
-      },
-        "Blankcel_1":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      }
+        "rows":{
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }}
     },
     "9": {
-      "name": "Prepaid Expenses",
-      "textBoxContent1": "Operating expenses are the costs a company incurs from its core business operations, excluding the cost of goods sold. They include items like salaries, rent, marketing, and R&D.",
-      "hint":"=E4/E1",
+      "name": "Forecast Depreciation",
+      "textBoxContent1": "Once you have found depreciation as a % of revenue, you can forecast it.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Forecast Depreciation",
+        "options": ["Yes", "No"],
+        "correctAnswer": "No"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+        "Quizcels_ROW_8":{
+        "tab": "inputs",
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
+        "tab": "inputs",
+        "rows":{
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
+        "tab": "inputs",
+        "rows":{
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }}
+    },
+    "10": {
+      "name": "Accumulated Depreciation",
+      "textBoxContent1": "Accumulated Depreciation is the total amount of depreciation on assets from all years",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "What could another example of SG&A be?",
-        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
-        "correctAnswer": "Salaries of the sales team"
+        "question": "How is Accumulated Depreciation different than regular Depreciation?",
+        "options": ["It represents the depreciation on assets from all years", "It represents the depreciation on all assets the company has owned", "It represents the depreciation for Property Plant and Equiptment in a single metric"],
+        "correctAnswer": "It represents the depreciation on assets from all years"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
-        "initialTab": "valuations"
+        "initialTab": "intro"
       },
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 0,
-        "column": 5
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
-      },
-        "Blankcel_1":{
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "BlankFOR_4":{
+        "rows":{
+            "3": 43,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
+        "rows":{
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "23":  27,
+            "24":  28,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 3
-      }
+        "rows":{
+            "1":  28
+      }}
     },
-      "10": {
-      "name": "Short term investments",
-      "textBoxContent1": "Like many other metrics, Operating Expenses can be forecast as a % of revenue. To do this, divide Operating expense in 2017 by Revenue in 2017",
-      "hint":"shling",
+    "11": {
+      "name": "Find Accumulated Depreciation",
+      "textBoxContent1": "To find Accumulated Depreciation add up last year's accumulated depreciation and this year's depreciation.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
       "Qtype": "cells",
       "quiz": {
-        "question": "What could another example of SG&A be?",
-        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
-        "correctAnswer": "Salaries of the sales team"
+        "question": "Forecast Accumulated Depreciation",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
-        "initialTab": "valuations"
+        "initialTab": "intro"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_28":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_4":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-        "BlankFOR_5":{
+        "rows":{
+            "3": 43,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
+        "rows":{
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "23":  27,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }}
     },
-      "11": {
-      "name": "PPE",
-      "textBoxContent1": "Now that we have Operating Expenses as a % of revenue, we can multiply revenue times that percent to forecast Operating Expenses.",
-      "hint":"=F1*$B$15",
-      "Qtype": "cells",
-      "quiz": {
-        "question": "What could another example of SG&A be?",
-        "options": [ "Freight charges for shipping raw materials", "Depreciation of manufacturing equipmen", "Salaries of the sales team", "Cost of raw materials used in production"],
-        "correctAnswer": "Salaries of the sales team"
-      },
-      "targetTab": "none",
-      "spreadsheetConfig": {
-        "initialTab": "valuations"
-      },
-      "Quizcel_1":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 5
-      },
-      "Quizcel_2":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 6
-      },
-      "Quizcel_3":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 7
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      }
-    },
-        "12": {
-      "name": "Accoutns Payable",
-      "textBoxContent1": "EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It measures a company’s operating performance by showing profit from core business activities before accounting for financial and non-cash expenses. EBITDA is often used to compare profitability across companies and industries.",
-      "hint":"=F3-F4",
-      "Qtype": "cells",
-      "quiz": {
-        "question": "Enter Ebitda into the highlighted cells",
-        "options": [ "Beakers to study new lemonade flavors", "A company vacation", "Paying your friend to test new flavors", "Depreciation of Lab Coats"],
-        "correctAnswer": "A company vacation"
-      },
-      "targetTab": "none",
-      "spreadsheetConfig": {
-        "initialTab": "valuations"
-      },
-      "Quizcel_4":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-      "Quizcel_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 6
-      },
-      "Quizcel_6":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 7
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 5
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 5
-      }
-    },
-
-        "13": {
-      "name": "Accrued Expenses",
-      "textBoxContent1": "The rest of the metrics on the income statement can't be forecasted without information from the Balance sheet or Cash flow statement. After you have completed the modules on the Balance sheet and Cash flow statement, their will be a final module wrapping up the model covering these and other metrics. Answer the final question to complete the module.",
-      "hint":"shling",
+    "12": {
+      "name": "Net PPE",
+      "textBoxContent1": "Net PPE is PPE with depreciation factored in.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "How did you forecast COGS?",
-        "options": [ "as a % of Revenue based on historical data", "By totalling forecasted costs", "By subtracting Operational Expenses from Gross Profit", "By forecasting as a % of Gross Profit"],
-        "correctAnswer": "as a % of Revenue based on historical data"
+        "question": "What does High Net PPE indicate about a company?",
+        "options": ["Poor Net margin", "Quick Inventory turnover", "High physical investment spend", "Strong Earnings"],
+        "correctAnswer": "High physical investment spend"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
-        "initialTab": "valuations"
+        "initialTab": "intro"
       },
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 0,
-        "column": 5
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
-      },
-        "BlankFOR_6":{
+        "Quizcels_ROW_20":{
         "tab": "inputs",
-        "row": 5,
-        "column": 5
-      },
-        "BlankFOR_7":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 6,
-        "column": 5
-      },
-        "BlankFOR_9":{
+        "rows":{
+            "3": 43,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 7,
-        "column": 5
-      },
-        "BlankFOR_10":{
+        "rows":{
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "23":  27,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 8,
-        "column": 5
+        "rows":{
+            "1":  27
+      }}
+    },
+    "13": {
+      "name": "Find Net PPE",
+      "textBoxContent1": "We find it by subtracting accumulated depreciation from gross PPE.",
+      "hint":"use the formula =F1 - F2 and drag to fill all cells",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "Calculate Net PPE",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
       },
-        "BlankFOR_11":{
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "intro"
+      },
+        "Quizcels_ROW_27":{
         "tab": "inputs",
-        "row": 9,
-        "column": 5
-      },
-        "BlankFOR_12":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 10,
-        "column": 5
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
+        "rows":{
+            "3": 43,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
+        "tab": "inputs",
+        "rows":{
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "26":  30,
+            "28":  32,
+            "30":  34,
+            "31":  35,
+            "32":  36,
+            "35":  38,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "61":  63,
+            "62":  64,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }}
     }
   }

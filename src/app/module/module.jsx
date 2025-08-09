@@ -7,7 +7,7 @@ import Big3 from "./big3.jsx";
 import lessonData from "../data/lessondata.json";
 import WC from "../data/WC.json";
 import contentCFS from "../data/lessondataCFS.json";
-import test from "../data/test.json";
+import utopian from "../data/utopian.json";
 import contentBERK from "../data/lessondataBERK.json";
 import { useSpreadsheetValidator } from '../hooks/useSpreadsheetValidator';
 import { useProgressTracker } from '../hooks/useProgressTracker'; // NEW IMPORT
@@ -28,7 +28,7 @@ const moduleDatabase = {
   },
   4: {
     title: 'Routing',
-    content: test,
+    content: utopian,
   },
   5: {
     title: 'Testing',
@@ -239,23 +239,18 @@ function ModuleContent({setModDone, hotRef}) {
       sensitivity: []
     };
 
-    const tabsToInclude = new Set();
-
-    if (currentStepContent?.Quizcel_1?.tab)
-      tabsToInclude.add(currentStepContent.Quizcel_1.tab);
-
-    for (const tab of tabsToInclude) {
-      result[tab] = [];
-    }
-
-    for (let i = 1; i <= 6; i++) {
-      const quizCel = currentStepContent[`Quizcel_${i}`];
+    for (let i = 0; i <= 160; i++) {
+      const quizCel = currentStepContent[`Quizcels_ROW_${i}`];
       if (quizCel) {
-        const { tab, row, column } = quizCel;
-        result[tab]?.push({ row, col: column });
+      for (const [val, col] of Object.entries(quizCel.cols)) {
+      console.log("Val", val, "Col", col)
+        const { tab, cols } = quizCel;
+        result[tab]?.push({ row: i, col });
+      }
+
       }
     }
-
+    
     return result;
   }, [currentStepContent, Qtype]);
 
@@ -268,14 +263,14 @@ function ModuleContent({setModDone, hotRef}) {
       sensitivity: []
     };
 
-    for (let i = 1; i <= 100; i++) {
-      const blankCel = currentStepContent[`Blankcel_${i}`];
-      if (blankCel?.tab) {
-        result[blankCel.tab] ??= [];
-        result[blankCel.tab].push({
-          row: blankCel.row,
-          col: blankCel.column
-        });
+    for (let i = 0; i <= 160; i++) {
+      const blankCel = currentStepContent[`Blankcels_COL_${i}`];
+      if (blankCel) {
+      for (const [val, row] of Object.entries(blankCel.rows)) {
+        const { tab, rows } = blankCel;
+        result[tab]?.push({ col: i, row });
+      }
+
       }
     }
 
@@ -291,19 +286,21 @@ function ModuleContent({setModDone, hotRef}) {
       sensitivity: []
     };
 
-    for (let i = 1; i <= 100; i++) {
-      const BlankFOR = currentStepContent[`BlankFOR_${i}`];
-      if (!BlankFOR?.tab) continue;
 
-      result[BlankFOR.tab] ??= [];
+for (let i = 0; i <= 16; i++) {
+  const BlankFOR = currentStepContent[`BlankFORs_COL_${i}`];
+  if (BlankFOR && i < 10) {
+    const { tab, rows } = BlankFOR;
+    result[tab] ??= [];
 
-      for (let c = BlankFOR.column; c <= 9; c++) {
-        result[BlankFOR.tab].push({
-          row: BlankFOR.row,
-          col: c
-        });
+    for (const [_, row] of Object.entries(rows)) {
+      for (let c = i; c <= 9; c++) {
+        result[tab].push({ col: c, row });
       }
     }
+  }
+}
+
 
     return result;
   }, [currentStepContent]);
@@ -347,7 +344,7 @@ function ModuleContent({setModDone, hotRef}) {
   };
 
   const refresh = () => {
-    console.log("bithc", sheetBlankForecasts.inputs);
+    //console.log("bithc", sheetBlankForecasts.inputs);
     const quizCells = sheetQuizCells[activeTab] || [];
     const blankCells = sheetBlankCells[activeTab] || [];
     const blankForecastCells = sheetBlankForecasts[activeTab] || [];

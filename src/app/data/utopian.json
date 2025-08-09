@@ -1,0 +1,129 @@
+{
+
+"Bullshit": {"Spreadsheet_Selector": "aapl 3 Statement",
+
+"SheetMappings": {
+
+    "inputs": {
+      "name": "Income Statement", 
+      "includeRows": [
+
+            "Income Statement",
+            "Revenue", "Cost of Goods Sold", "Gross Profit", "Operating Expenses", 
+            "Operating Expense", "EBITDA", "Depreciation", "Interest Expense",  "Interest Income",
+            "EBT", "Tax Provision", "Net Income",
+            
+            " ",
+            "Balance Sheet",
+            "Cash and Cash Equivalents",
+            "Accounts Receivable", "Inventory", "Accounts Payable", 
+            "Deferred Tax Assets Net",
+            "Gross PPE", "Net PPE", "Other Current Assets", "Other Noncurrent Assets",
+            "Operating Current Assets",
+            "Total Assets",  
+            
+            "  ",
+            "Assumptions",
+            "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue",
+            "Total Debt", "Current Debt",
+            "Long Term Debt", "Other Current Liabilities", "Other Noncurrent Liabilities",
+            "Operating Current Liabilities", "Total Liabilities", 
+            "Common Stock", "Retained Earnings", "Total Equity", "Net Working Capital", 
+            "Days sales outstanding", "Days payable outstanding", "Days inventory outstanding", 
+            "Other Current Assets / Revenue",  "Other Current Liabilities / Revenue"
+          ]
+    }
+  }},
+
+    "1": {
+      "name": "What is a Balance Sheet",
+      "textBoxContent1": "The balance sheet shows what a company owns at a specific point in time. Different items like working capital, debt, stock and PPE show up as assets, liabilities, or equity and the key is that assets - liabilities = equity, if it doesn’t then your balance sheet doesn’t balance.",
+      "hint":"shling",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "How do we check if the Balance Sheet Balances?",
+        "options": ["Assets + Equity = Liabilities", "Revenue + COGS = Assets", "Assets + Liabilities = Equity", "Equity + Debt = Liabilities"],
+        "correctAnswer": "Assets + Liabilities = Equity"
+      },
+      "targetTab": "none",
+      "TabLocked": "False",
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      },
+        "Quizcels_ROW_5":{
+        "tab": "inputs",
+        "cols":{
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4,
+            "5": 5
+    }}, 
+        "Blankcels_COL_1":{
+        "tab": "inputs",
+        "rows":{
+            "1": 41,
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
+        "tab": "inputs",
+        "rows":{
+            "1":  5,
+            "2":  6,
+            "3":  7,
+            "4":  8,
+            "5":  32,
+            "6":  2,
+            "7":  4
+        }}
+    },
+        "2": {
+      "name": "AAAAAAAHHHHHH",
+      "textBoxContent1": "The balance sheet shows what a company owns at a specific point in time. Different items like working capital, debt, stock and PPE show up as assets, liabilities, or equity and the key is that assets - liabilities = equity, if it doesn’t then your balance sheet doesn’t balance.",
+      "hint":"shling",
+      "Qtype": "cells",
+      "quiz": {
+        "question": "How do we check if the Balance Sheet Balances?",
+        "options": ["Assets + Equity = Liabilities", "Revenue + COGS = Assets", "Assets + Liabilities = Equity", "Equity + Debt = Liabilities"],
+        "correctAnswer": "Assets + Liabilities = Equity"
+      },
+      "targetTab": "none",
+      "TabLocked": "False",
+      "spreadsheetConfig": {
+        "initialTab": "inputs"
+      },
+        "Quizcels_ROW_5":{
+        "tab": "inputs",
+        "cols":{
+            "1": 3,
+            "2": 4,
+            "3": 5,
+            "4": 6,
+            "5": 7
+    }}, 
+        "Blankcels_COL_1":{
+        "tab": "inputs",
+        "rows":{
+            "1": 41,
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
+        "tab": "inputs",
+        "rows":{
+            "1":  12,
+            "2":  6,
+            "3":  7,
+            "4":  8,
+            "5":  32,
+            "6":  2,
+            "7":  4
+        }}
+    }
+
+}

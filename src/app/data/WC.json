@@ -50,216 +50,51 @@
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-        "Blankcel_1":{
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "rows":{
+            "1": 41,
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 42,
-        "column": 1
-      },
-        "Blankcel_3":{
-        "tab": "inputs",
-        "row": 43,
-        "column": 1
-      },
-        "Blankcel_4":{
-        "tab": "inputs",
-        "row": 44,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 45,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_13":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_14":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "BlankFOR_15":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_16":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_17":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_18":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_21":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_22":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
 
     },
     "2": {
@@ -276,236 +111,60 @@
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-        "Blankcel_1":{
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "rows":{
+            "1": 41,
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 42,
-        "column": 1
-      },
-        "Blankcel_3":{
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 43,
-        "column": 1
-      },
-        "Blankcel_4":{
-        "tab": "inputs",
-        "row": 44,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 45,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_13":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_14":{
-        "tab": "inputs",
-        "row": 13,
-        "column": 4
-      },
-        "BlankFOR_15":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_16":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_17":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_18":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_21":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_22":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 13
-      },
-        "highlightRow2":{
-        "tab": "inputs",
-        "row": 14
-      },
-        "highlightRow3":{
-        "tab": "inputs",
-        "row": 18
-      },
-        "highlightRow4":{
-        "tab": "inputs",
-        "row": 22
-      },
-        "highlightRow5":{
-        "tab": "inputs",
-        "row": 26
-      }
+        "rows":{
+            "1":  15,
+            "2":  16,
+            "3":  20,
+            "4":  24,
+            "5":  28
+      }}
     },
         "3": {
       "name": "Accounts Receivable",
@@ -521,219 +180,54 @@
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-        "Blankcel_1":{
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "rows":{
+            "1": 41,
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 42,
-        "column": 1
-      },
-        "Blankcel_3":{
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 43,
-        "column": 1
-      },
-        "Blankcel_4":{
-        "tab": "inputs",
-        "row": 44,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 45,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_13":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_14":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_15":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_16":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_17":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_18":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_21":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_22":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 13
+        "rows":{ "1" :15}
       }
     },
      "4": {
@@ -750,214 +244,55 @@
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_41":{
         "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 42,
-        "column": 1
-      },
-        "Blankcel_3":{
+        "rows":{
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 43,
-        "column": 1
-      },
-        "Blankcel_4":{
-        "tab": "inputs",
-        "row": 44,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 45,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_13":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_14":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_15":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_16":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_17":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_18":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_21":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }
       }
     },
     "5": {
@@ -974,231 +309,57 @@
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_15":{
         "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 15,
-        "column": 5
-      },
-        "Quizcel_3":{
+        "rows":{
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 15,
-        "column": 6
-      },
-        "Quizcel_4":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 7
-      },
-        "Blankcel_2":{
-        "tab": "inputs",
-        "row": 42,
-        "column": 1
-      },
-        "Blankcel_3":{
-        "tab": "inputs",
-        "row": 43,
-        "column": 1
-      },
-        "Blankcel_4":{
-        "tab": "inputs",
-        "row": 44,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 45,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_13":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_14":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_15":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_16":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_17":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_18":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_21":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_22":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
     "6": {
       "name": "Inventory",
@@ -1214,179 +375,60 @@
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_15":{
         "tab": "inputs",
-        "row": 38,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 42,
-        "column": 1
-      },
-        "Blankcel_3":{
+        "rows":{
+            "2": 42,
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 43,
-        "column": 1
-      },
-        "Blankcel_4":{
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 44,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 45,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_22":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 14
+        "rows":{ "1" :16}
       }
     },
       "7": {
@@ -1403,175 +445,53 @@
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_42":{
         "tab": "inputs",
-        "row": 42,
-        "column": 1
-      },
-        "Blankcel_3":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 43,
-        "column": 1
-      },
-        "Blankcel_4":{
+        "rows":{
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 44,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 45,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_22":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
     "8": {
       "name": "Forecast Inventory",
@@ -1587,181 +507,54 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_16":{
         "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 16,
-        "column": 5
-      },
-        "Quizcel_3":{
+        "rows":{
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 16,
-        "column": 6
-      },
-        "Quizcel_4":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 7
-      },
-        "Blankcel_3":{
-        "tab": "inputs",
-        "row": 43,
-        "column": 1
-      },
-        "Blankcel_4":{
-        "tab": "inputs",
-        "row": 44,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 45,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "BlankFOR_44":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
     "9": {
       "name": "Other Current Assets",
@@ -1777,184 +570,57 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_16":{
         "tab": "inputs",
-        "row": 2,
-        "column": 5
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 2,
-        "column": 6
-      },
-        "Quizcel_3":{
+        "rows":{
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 2,
-        "column": 7
-      },
-        "Blankcel_3":{
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 39,
-        "column": 1
-      },
-        "Blankcel_4":{
-        "tab": "inputs",
-        "row": 40,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_21":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 18
+        "rows":{ "1" :20}
       }
     },
     "10": {
@@ -1971,166 +637,50 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_44":{
         "tab": "inputs",
-        "row": 44,
-        "column": 1
-      },
-        "Blankcel_3":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 39,
-        "column": 1
-      },
-        "Blankcel_5":{
+        "rows":{
+            "3": 43,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_21":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
     "11": {
       "name": "Forecast Other Current Assets",
@@ -2146,176 +696,52 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_20":{
         "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 20,
-        "column": 5
-      },
-        "Quizcel_3":{
+        "rows":{
+            "3": 43,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 20,
-        "column": 6
-      },
-        "Quizcel_4":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 7
-      },
-        "Blankcel_3":{
-        "tab": "inputs",
-        "row": 39,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "Blankcel_4":{
-        "tab": "inputs",
-        "row": 45,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_21":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_26":{
-        "tab": "inputs",
-        "row": 18,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
     "12": {
       "name": "Operating Current Assets",
@@ -2331,169 +757,55 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_20":{
         "tab": "inputs",
-        "row": 18,
-        "column": 5
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 18,
-        "column": 6
-      },
-        "Quizcel_3":{
+        "rows":{
+            "3": 43,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 18,
-        "column": 7
-      },
-        "Blankcel_3":{
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "18":  22,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 39,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_28":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 20
+        "rows":{ "1" :22}
       }
     },
     "13": {
@@ -2510,166 +822,51 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_22":{
         "tab": "inputs",
-        "row": 20,
-        "column": 4
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 20,
-        "column": 5
-      },
-        "Quizcel_3":{
+        "rows":{
+            "3": 43,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 20,
-        "column": 6
-      },
-        "Quizcel_4":{
-        "tab": "inputs",
-        "row": 20,
-        "column": 7
-      },
-        "Blankcel_3":{
-        "tab": "inputs",
-        "row": 39,
-        "column": 1
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
     "14": {
       "name": "Accounts Payable",
@@ -2685,149 +882,54 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-        "Blankcel_3":{
+        "Quizcels_ROW_22":{
         "tab": "inputs",
-        "row": 39,
-        "column": 1
-      },
-        "Blankcel_5":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "BlankFOR_6":{
+        "rows":{
+            "3": 43,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 21
+        "rows":{ "1" :24}
       }
     },
       "15": {
@@ -2844,155 +946,47 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_43":{
         "tab": "inputs",
-        "row": 39,
-        "column": 1
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 14,
-        "column": 4
-      },
-        "Blankcel_5":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "BlankFOR_6":{
+        "rows":{
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_30":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
       "16": {
       "name": "Forecast Accounts Payable",
@@ -3008,156 +1002,49 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_24":{
         "tab": "inputs",
-        "row": 22,
-        "column": 4
-      },
-      "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 22,
-        "column": 5
-      },
-      "Quizcel_3":{
+        "rows":{
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 22,
-        "column": 6
-      },
-      "Quizcel_4":{
-        "tab": "inputs",
-        "row": 22,
-        "column": 7
-      },
-        "Blankcel_5":{
-        "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
       "17": {
       "name": "Other Current Liabilities",
@@ -3166,161 +1053,59 @@
       "Qtype": "MCQ",
       "quiz": {
         "question": "Which of these would be in Other Current Liabilities",
-        "options": [ "Revenue", "Accounts Payables", "Long Term Debt", "Accounts Receivables"],
-        "correctAnswer": "Accounts Payables"
+        "options": [ "None", "Accounts Payables", "Long Term Debt", "Accounts Receivables"],
+        "correctAnswer": "None"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_4":{
+        "Quizcels_ROW_24":{
         "tab": "inputs",
-        "row": 4,
-        "column": 5
-      },
-      "Quizcel_5":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 4,
-        "column": 6
-      },
-      "Quizcel_6":{
+        "rows":{
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 4,
-        "column": 7
-      },
-        "Blankcel_5":{
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 26
+        "rows":{ "1" :28}
       }
     },
       "18": {
@@ -3337,136 +1122,45 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_4":{
+        "Quizcels_ROW_45":{
         "tab": "inputs",
-        "row": 41,
-        "column": 1
-      },
-        "BlankFOR_6":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "24":  28,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
         "19": {
       "name": "Forecast Other Current Liabilities",
@@ -3482,151 +1176,47 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_28":{
         "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-      "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 26,
-        "column": 5
-      },
-      "Quizcel_3":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 26,
-        "column": 6
-      },
-      "Quizcel_4":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 7
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_34":{
-        "tab": "inputs",
-        "row": 26,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
     "20": {
       "name": "Operating Current Liabilities",
@@ -3642,144 +1232,50 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_28":{
         "tab": "inputs",
-        "row": 29,
-        "column": 5
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 18,
-        "column": 6
-      },
-        "Quizcel_3":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 18,
-        "column": 7
-      },
-        "BlankFOR_6":{
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "25":  29,
+            "26":  30,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_36":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 28
+        "rows":{ "1" :30}
       }
     },
     "21": {
@@ -3796,141 +1292,46 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_30":{
         "tab": "inputs",
-        "row": 28,
-        "column": 4
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 28,
-        "column": 5
-      },
-        "Quizcel_3":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 28,
-        "column": 6
-      },
-        "Quizcel_4":{
-        "tab": "inputs",
-        "row": 28,
-        "column": 7
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "25":  29,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }}
     },
         "22": {
       "name": "Net Working Capital",
@@ -3946,124 +1347,49 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-        "BlankFOR_6":{
+        "Quizcels_ROW_30":{
         "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "25":  29,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "31":  35,
+            "32":  36
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "BlankFOR_41":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-        "BlankFOR_42":{
-        "tab": "inputs",
-        "row": 35,
-        "column": 4
-      },
-        "BlankFOR_43":{
-        "tab": "inputs",
-        "row": 34,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 33
+        "rows":{ "1" :35}
       }
     },
         "23": {
@@ -4080,129 +1406,44 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_35":{
         "tab": "inputs",
-        "row": 33,
-        "column": 4
-      },
-      "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 33,
-        "column": 5
-      },
-      "Quizcel_3":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 33,
-        "column": 6
-      },
-      "Quizcel_4":{
-        "tab": "inputs",
-        "row": 33,
-        "column": 7
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_19":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "BlankFOR_20":{
-        "tab": "inputs",
-        "row": 11,
-        "column": 4
-      },
-        "BlankFOR_23":{
-        "tab": "inputs",
-        "row": 15,
-        "column": 4
-      },
-        "BlankFOR_24":{
-        "tab": "inputs",
-        "row": 16,
-        "column": 4
-      },
-        "BlankFOR_25":{
-        "tab": "inputs",
-        "row": 17,
-        "column": 4
-      },
-        "BlankFOR_27":{
-        "tab": "inputs",
-        "row": 19,
-        "column": 4
-      },
-        "BlankFOR_29":{
-        "tab": "inputs",
-        "row": 21,
-        "column": 4
-      },
-        "BlankFOR_31":{
-        "tab": "inputs",
-        "row": 23,
-        "column": 4
-      },
-        "BlankFOR_32":{
-        "tab": "inputs",
-        "row": 24,
-        "column": 4
-      },
-        "BlankFOR_33":{
-        "tab": "inputs",
-        "row": 25,
-        "column": 4
-      },
-        "BlankFOR_35":{
-        "tab": "inputs",
-        "row": 27,
-        "column": 4
-      },
-        "BlankFOR_37":{
-        "tab": "inputs",
-        "row": 29,
-        "column": 4
-      },
-        "BlankFOR_38":{
-        "tab": "inputs",
-        "row": 30,
-        "column": 4
-      },
-        "BlankFOR_39":{
-        "tab": "inputs",
-        "row": 31,
-        "column": 4
-      },
-        "BlankFOR_40":{
-        "tab": "inputs",
-        "row": 32,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "intro",
-        "row": 0
-      }
+        "rows":{
+            "1":  6,
+            "2":  7,
+            "3":  8,
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "17":  21,
+            "19":  23,
+            "21":  25,
+            "22":  26,
+            "23":  27,
+            "25":  29,
+            "27":  31,
+            "28":  32,
+            "29":  33,
+            "30":  34,
+            "32":  36
+        }}
     }
   }
