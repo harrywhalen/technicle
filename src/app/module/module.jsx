@@ -7,8 +7,9 @@ import Big3 from "./big3.jsx";
 import lessonData from "../data/lessondata.json";
 import WC from "../data/WC.json";
 import contentCFS from "../data/lessondataCFS.json";
-import utopian from "../data/utopian.json";
+import debt1 from "../data/debt1.json";
 import contentBERK from "../data/lessondataBERK.json";
+import equity from "../data/equity.json";
 import { useSpreadsheetValidator } from '../hooks/useSpreadsheetValidator';
 import { useProgressTracker } from '../hooks/useProgressTracker'; // NEW IMPORT
 import confetti from 'canvas-confetti';
@@ -19,20 +20,20 @@ const moduleDatabase = {
     content: lessonData,
   },
   2: {
-    title: 'State Management',
+    title: 'Working Capital',
     content: WC,
   },
   3: {
-    title: 'Berk Hath',
+    title: 'Capex',
     content: contentCFS,
   },
   4: {
-    title: 'Routing',
-    content: utopian,
+    title: 'Debt',
+    content: debt1,
   },
   5: {
-    title: 'Testing',
-    content: contentBERK,
+    title: 'Equity',
+    content: equity,
   },
   6: {
     title: 'Performance',

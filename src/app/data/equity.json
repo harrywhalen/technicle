@@ -7,7 +7,6 @@
     "inputs": {
       "name": "Income Statement", 
       "includeRows": [
-
             "Income Statement",
             "Revenue", "Cost of Goods Sold","Gross Profit", "Selling General And Administrative", "Research and Development", 
             "Operating Expenses","EBITDA", "Depreciation", "Interest Expense", "Interest Income", "Investing Income",
@@ -18,7 +17,7 @@
             " ", 
             "Balance Sheet",
             "Cash and Cash Equivalents",
-            "Accounts Receivable", "Inventory", "Deferred Tax Assets Net", "Deferred Tax Liabilities","Deferred Tax Net",
+            "Accounts Receivable", "Inventory", "Deferred Tax Assets", "Deferred Tax Liabilities","Deferred Tax Net",
             "Gross PPE", "Net PPE", "Accumulated Depreciation","Other Current Assets", "Other Noncurrent Assets",
             "Operating Current Assets", "Total Assets", 
             "Accounts Payable", "Current Debt",
@@ -49,7 +48,7 @@
             "Accounts Payable / COGS", "Deferred Tax / Pretax",
              "Interest Rate", "Dividend Payout Ratio", "Ebitda Margin", "Operating Margin", "Depreciation Rate",
             "Return On Equity", "Return On Assets", "Current Ratio", "Debt / Ebitda", "Changes in Working Cap",
-            "year 1 debt", "year 2 debt", "year 3 debt", "year 4 debt", "year 5 debt", 
+            "year 1 debt", "year 2 debt", "year 3 debt", "year 4 debt", "year 5 debt", ">5 year debt payments",
             "Other Current Assets / Revenue", "Other Non Current Assets / Revenue", "Other Current Liabilities / Revenue",
             "Other Non Current Liabilities / Revenue"
           ]
@@ -57,14 +56,14 @@
   }},
 
     "1": {
-      "name": "What is PPE?",
-      "textBoxContent1": "Property Plant and Equiptment is the physical investment a company makes in its own production. For software companies like Microsoft, this could be servers, for Manufacturing companies like Boeing, it could be an aircraft assembly plant.",
+      "name": "Debt",
+      "textBoxContent1": "Debt is the amount of money a company or individual owes to lenders or creditors, typically including loans, bonds, and other borrowed funds that must be repaid over time with interest.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "Which of these would be an exampele of PPE?",
-        "options": ["Excecutive Compensation", "The materials used to make a good", "A new manufacturing plant", "Stock Buybacks"],
-        "correctAnswer": "A new manufacturing plant"
+        "question": "What is the companies total debt burden in 2015?",
+        "options": ["$85,750", "$105,103", "$96,662", "$9,822"],
+        "correctAnswer": "$105,103"
       },
       "targetTab": "none",
       "TabLocked": "False",
@@ -74,8 +73,6 @@
         "BlankFORs_COL_4":{
         "tab": "inputs",
         "rows":{
-            "3":  8,
-            "4":  9,
             "5":  10,
             "6":  11,
             "7":  12,
@@ -92,14 +89,8 @@
             "20":  24,
             "21":  25,
             "22":  26,
-            "23":  27,
-            "24":  28,
-            "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
-            "32":  36,
-            "35":  38,
+            "26":  29,
+            "28":  33,
             "37":  40,
             "38":  41,
             "39":  42,
@@ -117,29 +108,36 @@
             "53":  55,
             "54":  56,
             "55":  57,
-            "56":  58,
             "57":  59,
             "58":  60,
             "59":  61,
             "60":  62,
-            "61":  63,
-            "62":  64,
+            "62":  63,
             "63":  65,
             "64":  66,
             "65":  67,
             "66":  68
-        }}
+        }},
+        "highlightRows":{
+        "tab": "inputs",
+        "rows":{
+            "1":  9,
+            "2":  35,
+            "3":  36,
+            "4":  37,
+            "5":  64
+      }}
 
     },
     "2": {
-      "name": "Capex",
-      "textBoxContent1": "Capex shows up on the balance sheet and represents capital spent on new PPE.",
+      "name": "Debt Repayment",
+      "textBoxContent1": "Because loans take place over many years, a company can see what its debt repayment will look like in the future in a way it can't with other metrics like revenue. As you can see in the highlighted row, we already have all the debt repayment info we need. The final value in the the Repayment row represents the repayment owed for that year and beoynd.",
       "hint":"It's stated in the textbox.",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "Which financial statement does Capex Appear on?",
-        "options": ["None", "Cash Flow Statement", "Balance Sheet", "Income Statement"],
-        "correctAnswer": "Cash Flow Statement"
+        "question": "What can we determine from the last number in the debt repayment row?",
+        "options": ["The debt owed for that year and beyond", "The Debt repaymnet for that year", "The Interest Expense for the prior year", "The Current Debt for that year"],
+        "correctAnswer": "The debt owed for that year and beyond"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
@@ -157,7 +155,6 @@
         "BlankFORs_COL_4":{
         "tab": "inputs",
         "rows":{
-            "3":  8,
             "4":  9,
             "5":  10,
             "6":  11,
@@ -175,14 +172,12 @@
             "20":  24,
             "21":  25,
             "22":  26,
-            "23":  27,
-            "24":  28,
             "26":  30,
-            "28":  32,
-            "30":  34,
+            "28":  33,
+            "30":  35,
             "31":  35,
             "32":  36,
-            "35":  38,
+            "35":  37,
             "37":  40,
             "38":  41,
             "39":  42,
@@ -200,13 +195,11 @@
             "53":  55,
             "54":  56,
             "55":  57,
-            "56":  58,
             "57":  59,
             "58":  60,
             "59":  61,
             "60":  62,
-            "61":  63,
-            "62":  64,
+            "62":  63,
             "63":  65,
             "64":  66,
             "65":  67,
@@ -215,18 +208,18 @@
         "highlightRows":{
         "tab": "inputs",
         "rows":{
-            "1":  58
+            "1":  64
       }}
     },
         "3": {
-      "name": "Capex / Revenue",
-      "textBoxContent1": "We typically forecast capex as a % of revenue.",
+      "name": "Current Debt",
+      "textBoxContent1": "Debt on a company's balance sheet is split into current and long term debt. Current debt is the principle owed in the next 12 months and long term debt is the rest. ",
       "hint":"Use this formula: =((E1-D1) / D1)",
-      "Qtype": "cells",
+      "Qtype": "MCQ",
       "quiz": {
-        "question": "Find Capex as a % of revenue",
-        "options": ["A loan the company takes out", "The Cash a company owns", "A purchase a customer made on credit to the company", "A purchase the company made on credit"],
-        "correctAnswer": "A purchase a customer made on credit to the company"
+        "question": "How much repayment does this company owe in the 12 months after 2016?",
+        "options": ["$95,281", "$9,822", "$85,750", "$10,912"],
+        "correctAnswer": "$10,912"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
@@ -249,7 +242,6 @@
         "BlankFORs_COL_4":{
         "tab": "inputs",
         "rows":{
-            "3":  8,
             "4":  9,
             "5":  10,
             "6":  11,
@@ -267,14 +259,12 @@
             "20":  24,
             "21":  25,
             "22":  26,
-            "23":  27,
-            "24":  28,
             "26":  30,
-            "28":  32,
-            "30":  34,
+            "28":  33,
+            "30":  35,
             "31":  35,
             "32":  36,
-            "35":  38,
+            "35":  37,
             "37":  40,
             "38":  41,
             "39":  42,
@@ -296,21 +286,25 @@
             "58":  60,
             "59":  61,
             "60":  62,
-            "61":  63,
-            "62":  64,
+            "62":  63,
             "63":  65,
             "64":  66,
             "65":  67,
             "66":  68
-        }}
+        }},
+        "highlightRows":{
+        "tab": "inputs",
+        "rows":{
+            "1":  35
+      }}
     },
      "4": {
-      "name": "Forecasting Capex",
-      "textBoxContent1": "Once you have found capex as a % of revenue, you can forecast it.",
+      "name": "Find Current Debt",
+      "textBoxContent1": "Since we have our repayment schedule, we can simply find Repayment of debt in the year after current debt and that will be current debt. It may seem confusing at first, but remember current debt is the debt owed in the next 12 months and repayment of debt is debt paid in the last accounting period, which in this case is 12 months.",
       "hint":"Use the formula: = E1 * (1 + $B$13) in the first cell and drag it to the other three",
       "Qtype": "cells",
       "quiz": {
-        "question": "Find Days Sales Outstanding",
+        "question": "Forecast Current Debt",
         "options": ["470", "3562", "2356", "-1458"],
         "correctAnswer": "2356"
       },
@@ -318,7 +312,7 @@
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-        "Quizcels_ROW_58":{
+        "Quizcels_ROW_35":{
         "tab": "inputs",
         "cols":{
             "1": 4,
@@ -337,7 +331,6 @@
         "BlankFORs_COL_4":{
         "tab": "inputs",
         "rows":{
-            "3":  8,
             "4":  9,
             "5":  10,
             "6":  11,
@@ -355,14 +348,11 @@
             "20":  24,
             "21":  25,
             "22":  26,
-            "23":  27,
-            "24":  28,
             "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
+            "28":  33,
+            "30":  35,
             "32":  36,
-            "35":  38,
+            "35":  37,
             "37":  40,
             "38":  41,
             "39":  42,
@@ -384,8 +374,7 @@
             "58":  60,
             "59":  61,
             "60":  62,
-            "61":  63,
-            "62":  64,
+            "62":  63,
             "63":  65,
             "64":  66,
             "65":  67,
@@ -393,12 +382,12 @@
         }}
     },
     "5": {
-      "name": "Gross PPE",
-      "textBoxContent1": "Gross PPE shows up on the balance sheet is the total PPE a company owns before depreciation.",
+      "name": "Long Term Debt",
+      "textBoxContent1": "Long term debt is all the debt that isnt due in the next 12 months. So if we want to find it using our debt repayment schedule, we can just total all of the debt due after the next year.",
       "hint":"shling",
       "Qtype": "MCQ",
       "quiz": {
-        "question": "Does Gross PPE accout for depreciation?",
+        "question": "Is Current Debt included in Long Term Debt?",
         "options": ["Yes", "No"],
         "correctAnswer": "No"
       },
@@ -425,7 +414,6 @@
         "BlankFORs_COL_4":{
         "tab": "inputs",
         "rows":{
-            "3":  8,
             "4":  9,
             "5":  10,
             "6":  11,
@@ -443,14 +431,11 @@
             "20":  24,
             "21":  25,
             "22":  26,
-            "23":  27,
-            "24":  28,
             "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
+            "28":  33,
+            "30":  35,
             "32":  36,
-            "35":  38,
+            "35":  37,
             "37":  40,
             "38":  41,
             "39":  42,
@@ -472,8 +457,7 @@
             "58":  60,
             "59":  61,
             "60":  62,
-            "61":  63,
-            "62":  64,
+            "62":  63,
             "63":  65,
             "64":  66,
             "65":  67,
@@ -482,16 +466,16 @@
         "highlightRows":{
         "tab": "inputs",
         "rows":{
-            "1":  26
+            "1":  36
       }}
     },
     "6": {
-      "name": "Forecasting Gross PPE",
+      "name": "Find Long Term Debt",
       "textBoxContent1": "To forecast Gross PPE, we add capex to last year's PPE.",
       "hint":"=E2/E1",
       "Qtype": "cells",
       "quiz": {
-        "question": "Forecast Gross PPE",
+        "question": "Forecast Long Term Debt",
         "options": ["Items waiting to be sold", "Sales team bonuses", "The companies credit rating", "Stocks owned by the company"],
         "correctAnswer": "Items waiting to be sold"
       },
@@ -499,7 +483,7 @@
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-        "Quizcels_ROW_26":{
+        "Quizcels_ROW_36":{
         "tab": "inputs",
         "cols":{
             "1": 4,
@@ -518,7 +502,6 @@
         "BlankFORs_COL_4":{
         "tab": "inputs",
         "rows":{
-            "3":  8,
             "4":  9,
             "5":  10,
             "6":  11,
@@ -535,14 +518,10 @@
             "17":  21,
             "20":  24,
             "21":  25,
-            "23":  27,
-            "24":  28,
+            "22":  26,
             "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
-            "32":  36,
-            "35":  38,
+            "28":  33,
+            "35":  37,
             "37":  40,
             "38":  41,
             "39":  42,
@@ -564,8 +543,7 @@
             "58":  60,
             "59":  61,
             "60":  62,
-            "61":  63,
-            "62":  64,
+            "62":  63,
             "63":  65,
             "64":  66,
             "65":  67,
@@ -573,14 +551,98 @@
         }}
     },
       "7": {
-      "name": "Depreciation",
-      "textBoxContent1": "Depreciation is the gradual loss of value of an asset over its lifetime.",
+      "name": "Total Debt",
+      "textBoxContent1": "Total Debt is Long term and Current Debt combined. To find it simply add the two.",
       "hint":"use this formula and drag it to the 3 cells =F1*$B$14",
-      "Qtype": "MCQ",
+      "Qtype": "cells",
       "quiz": {
         "question": "Does Depreciation mean the increase or decrease in the value of an asset?",
         "options": ["Increase", "Decrease"],
         "correctAnswer": "Decrease"
+      },
+      "targetTab": "none",
+      "spreadsheetConfig": {
+        "initialTab": "projections"
+      },
+        "Quizcels_ROW_37":{
+        "tab": "inputs",
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
+        "tab": "inputs",
+        "rows":{
+            "3": 43,
+            "4": 44,
+            "5": 45
+    }}, 
+        "BlankFORs_COL_4":{
+        "tab": "inputs",
+        "rows":{
+            "4":  9,
+            "5":  10,
+            "6":  11,
+            "7":  12,
+            "8":  13,
+            "9":  14,
+            "10":  15,
+            "11":  16,
+            "12":  16,
+            "13":  17,
+            "14":  18,
+            "15":  19,
+            "16":  20,
+            "17":  21,
+            "20":  24,
+            "21":  25,
+            "22":  26,
+            "26":  30,
+            "28":  33,
+            "37":  40,
+            "38":  41,
+            "39":  42,
+            "40":  43,
+            "42":  45,
+            "43":  46,
+            "45":  47,
+            "46":  48,
+            "47":  49,
+            "48":  50,
+            "49":  51,
+            "50":  52,
+            "51":  53,
+            "52":  54,
+            "53":  55,
+            "54":  56,
+            "55":  57,
+            "57":  59,
+            "58":  60,
+            "59":  61,
+            "60":  62,
+            "62":  63,
+            "63":  65,
+            "64":  66,
+            "65":  67,
+            "66":  68
+        }},
+        "highlightRows":{
+        "tab": "inputs",
+        "rows":{
+            "1":  8
+      }}
+    },
+      "8": {
+      "name": "Interest Expense",
+      "textBoxContent1": "Interest Expense represents the interest paid on all of the debt a company owes.",
+      "hint":"use this formula and drag it to the 3 cells =F1*$B$14",
+      "Qtype": "MCQ",
+      "quiz": {
+        "question": "Which of these could a low Interest Expense NOT indicate?",
+        "options": ["Low Debt", "Low Interest Rates","High Revenue", "Strong Credit Rating"],
+        "correctAnswer": "High Revenue"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
@@ -601,7 +663,6 @@
         "BlankFORs_COL_4":{
         "tab": "inputs",
         "rows":{
-            "3":  8,
             "4":  9,
             "5":  10,
             "6":  11,
@@ -618,14 +679,9 @@
             "17":  21,
             "20":  24,
             "21":  25,
-            "23":  27,
-            "24":  28,
+            "22":  26,
             "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
-            "32":  36,
-            "35":  38,
+            "28":  33,
             "37":  40,
             "38":  41,
             "39":  42,
@@ -647,8 +703,7 @@
             "58":  60,
             "59":  61,
             "60":  62,
-            "61":  63,
-            "62":  64,
+            "62":  63,
             "63":  65,
             "64":  66,
             "65":  67,
@@ -657,107 +712,24 @@
         "highlightRows":{
         "tab": "inputs",
         "rows":{
-            "1":  8
+            "1":  9
       }}
-    },
-    "8": {
-      "name": "Forecasting Depreciation",
-      "textBoxContent1": "We forecast depreciation as a % of revenue.",
-      "hint":"use the formula =F1 - F2 and drag to fill all cells",
-      "Qtype": "cells",
-      "quiz": {
-        "question": "Find Depreciation as a % of revenue",
-        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
-        "correctAnswer": "Gordon Growth Model"
-      },
-      "targetTab": "none",
-      "spreadsheetConfig": {
-        "initialTab": "intro"
-      },
-        "Quizcels_ROW_89":{
-        "tab": "inputs",
-        "cols":{
-            "1": 1
-    }}, 
-        "Blankcels_COL_1":{
-        "tab": "inputs",
-        "rows":{
-            "3": 43,
-            "4": 44,
-            "5": 45
-    }}, 
-        "BlankFORs_COL_4":{
-        "tab": "inputs",
-        "rows":{
-            "3":  8,
-            "4":  9,
-            "5":  10,
-            "6":  11,
-            "7":  12,
-            "8":  13,
-            "9":  14,
-            "10":  15,
-            "11":  16,
-            "12":  16,
-            "13":  17,
-            "14":  18,
-            "15":  19,
-            "16":  20,
-            "17":  21,
-            "20":  24,
-            "21":  25,
-            "23":  27,
-            "24":  28,
-            "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
-            "32":  36,
-            "35":  38,
-            "37":  40,
-            "38":  41,
-            "39":  42,
-            "40":  43,
-            "42":  45,
-            "43":  46,
-            "45":  47,
-            "46":  48,
-            "47":  49,
-            "48":  50,
-            "49":  51,
-            "50":  52,
-            "51":  53,
-            "52":  54,
-            "53":  55,
-            "54":  56,
-            "55":  57,
-            "57":  59,
-            "58":  60,
-            "59":  61,
-            "60":  62,
-            "61":  63,
-            "62":  64,
-            "63":  65,
-            "64":  66,
-            "65":  67,
-            "66":  68
-        }}
     },
     "9": {
-      "name": "Forecast Depreciation",
-      "textBoxContent1": "Once you have found depreciation as a % of revenue, you can forecast it.",
+      "name": "Forecasting Interest Expense",
+      "textBoxContent1": "In a simplified debt forecast like this, we can find interest expense by multiplying interest rate (found in assumptions) by total debt.",
       "hint":"use the formula =F1 - F2 and drag to fill all cells",
       "Qtype": "cells",
       "quiz": {
-        "question": "Forecast Depreciation",
-        "options": ["Yes", "No"],
-        "correctAnswer": "No"
+        "question": "Forecast Interest Expense",
+        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
+        "correctAnswer": "Gordon Growth Model"
       },
       "targetTab": "none",
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-        "Quizcels_ROW_8":{
+      "Quizcels_ROW_9":{
         "tab": "inputs",
         "cols":{
             "1": 4,
@@ -791,14 +763,9 @@
             "17":  21,
             "20":  24,
             "21":  25,
-            "23":  27,
-            "24":  28,
+            "22":  26,
             "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
-            "32":  36,
-            "35":  38,
+            "28":  33,
             "37":  40,
             "38":  41,
             "39":  42,
@@ -820,342 +787,7 @@
             "58":  60,
             "59":  61,
             "60":  62,
-            "61":  63,
-            "62":  64,
-            "63":  65,
-            "64":  66,
-            "65":  67,
-            "66":  68
-        }}
-    },
-    "10": {
-      "name": "Accumulated Depreciation",
-      "textBoxContent1": "Accumulated Depreciation is the total amount of depreciation on assets from all years",
-      "hint":"use the formula =F1 - F2 and drag to fill all cells",
-      "Qtype": "MCQ",
-      "quiz": {
-        "question": "How is Accumulated Depreciation different than regular Depreciation?",
-        "options": ["It represents the depreciation on assets from all years", "It represents the depreciation on all assets the company has owned", "It represents the depreciation for Property Plant and Equiptment in a single metric"],
-        "correctAnswer": "It represents the depreciation on assets from all years"
-      },
-      "targetTab": "none",
-      "spreadsheetConfig": {
-        "initialTab": "intro"
-      },
-        "Blankcels_COL_1":{
-        "tab": "inputs",
-        "rows":{
-            "3": 43,
-            "5": 45
-    }}, 
-        "BlankFORs_COL_4":{
-        "tab": "inputs",
-        "rows":{
-            "4":  9,
-            "5":  10,
-            "6":  11,
-            "7":  12,
-            "8":  13,
-            "9":  14,
-            "10":  15,
-            "11":  16,
-            "12":  16,
-            "13":  17,
-            "14":  18,
-            "15":  19,
-            "16":  20,
-            "17":  21,
-            "20":  24,
-            "21":  25,
-            "23":  27,
-            "24":  28,
-            "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
-            "32":  36,
-            "35":  38,
-            "37":  40,
-            "38":  41,
-            "39":  42,
-            "40":  43,
-            "42":  45,
-            "43":  46,
-            "45":  47,
-            "46":  48,
-            "47":  49,
-            "48":  50,
-            "49":  51,
-            "50":  52,
-            "51":  53,
-            "52":  54,
-            "53":  55,
-            "54":  56,
-            "55":  57,
-            "57":  59,
-            "58":  60,
-            "59":  61,
-            "60":  62,
-            "61":  63,
-            "62":  64,
-            "63":  65,
-            "64":  66,
-            "65":  67,
-            "66":  68
-        }},
-        "highlightRows":{
-        "tab": "inputs",
-        "rows":{
-            "1":  28
-      }}
-    },
-    "11": {
-      "name": "Find Accumulated Depreciation",
-      "textBoxContent1": "To find Accumulated Depreciation add up last year's accumulated depreciation and this year's depreciation.",
-      "hint":"use the formula =F1 - F2 and drag to fill all cells",
-      "Qtype": "cells",
-      "quiz": {
-        "question": "Forecast Accumulated Depreciation",
-        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
-        "correctAnswer": "Gordon Growth Model"
-      },
-      "targetTab": "none",
-      "spreadsheetConfig": {
-        "initialTab": "intro"
-      },
-        "Quizcels_ROW_28":{
-        "tab": "inputs",
-        "cols":{
-            "1": 4,
-            "2": 5,
-            "3": 6,
-            "4": 7
-    }}, 
-        "Blankcels_COL_1":{
-        "tab": "inputs",
-        "rows":{
-            "3": 43,
-            "5": 45
-    }}, 
-        "BlankFORs_COL_4":{
-        "tab": "inputs",
-        "rows":{
-            "4":  9,
-            "5":  10,
-            "6":  11,
-            "7":  12,
-            "8":  13,
-            "9":  14,
-            "10":  15,
-            "11":  16,
-            "12":  16,
-            "13":  17,
-            "14":  18,
-            "15":  19,
-            "16":  20,
-            "17":  21,
-            "20":  24,
-            "21":  25,
-            "23":  27,
-            "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
-            "32":  36,
-            "35":  38,
-            "37":  40,
-            "38":  41,
-            "39":  42,
-            "40":  43,
-            "42":  45,
-            "43":  46,
-            "45":  47,
-            "46":  48,
-            "47":  49,
-            "48":  50,
-            "49":  51,
-            "50":  52,
-            "51":  53,
-            "52":  54,
-            "53":  55,
-            "54":  56,
-            "55":  57,
-            "57":  59,
-            "58":  60,
-            "59":  61,
-            "60":  62,
-            "61":  63,
-            "62":  64,
-            "63":  65,
-            "64":  66,
-            "65":  67,
-            "66":  68
-        }}
-    },
-    "12": {
-      "name": "Net PPE",
-      "textBoxContent1": "Net PPE is PPE with depreciation factored in.",
-      "hint":"use the formula =F1 - F2 and drag to fill all cells",
-      "Qtype": "MCQ",
-      "quiz": {
-        "question": "What does High Net PPE indicate about a company?",
-        "options": ["Poor Net margin", "Quick Inventory turnover", "High physical investment spend", "Strong Earnings"],
-        "correctAnswer": "High physical investment spend"
-      },
-      "targetTab": "none",
-      "spreadsheetConfig": {
-        "initialTab": "intro"
-      },
-        "Quizcels_ROW_20":{
-        "tab": "inputs",
-        "cols":{
-            "1": 4,
-            "2": 5,
-            "3": 6,
-            "4": 7
-    }}, 
-        "Blankcels_COL_1":{
-        "tab": "inputs",
-        "rows":{
-            "3": 43,
-            "5": 45
-    }}, 
-        "BlankFORs_COL_4":{
-        "tab": "inputs",
-        "rows":{
-            "4":  9,
-            "5":  10,
-            "6":  11,
-            "7":  12,
-            "8":  13,
-            "9":  14,
-            "10":  15,
-            "11":  16,
-            "12":  16,
-            "13":  17,
-            "14":  18,
-            "15":  19,
-            "16":  20,
-            "17":  21,
-            "20":  24,
-            "21":  25,
-            "23":  27,
-            "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
-            "32":  36,
-            "35":  38,
-            "37":  40,
-            "38":  41,
-            "39":  42,
-            "40":  43,
-            "42":  45,
-            "43":  46,
-            "45":  47,
-            "46":  48,
-            "47":  49,
-            "48":  50,
-            "49":  51,
-            "50":  52,
-            "51":  53,
-            "52":  54,
-            "53":  55,
-            "54":  56,
-            "55":  57,
-            "57":  59,
-            "58":  60,
-            "59":  61,
-            "60":  62,
-            "61":  63,
-            "62":  64,
-            "63":  65,
-            "64":  66,
-            "65":  67,
-            "66":  68
-        }},
-        "highlightRows":{
-        "tab": "inputs",
-        "rows":{
-            "1":  27
-      }}
-    },
-    "13": {
-      "name": "Find Net PPE",
-      "textBoxContent1": "We find it by subtracting accumulated depreciation from gross PPE.",
-      "hint":"use the formula =F1 - F2 and drag to fill all cells",
-      "Qtype": "cells",
-      "quiz": {
-        "question": "Calculate Net PPE",
-        "options": ["Black-Scholes", "CAPM", "Gordon Growth Model", "FIFO"],
-        "correctAnswer": "Gordon Growth Model"
-      },
-      "targetTab": "none",
-      "spreadsheetConfig": {
-        "initialTab": "intro"
-      },
-        "Quizcels_ROW_27":{
-        "tab": "inputs",
-        "cols":{
-            "1": 4,
-            "2": 5,
-            "3": 6,
-            "4": 7
-    }}, 
-        "Blankcels_COL_1":{
-        "tab": "inputs",
-        "rows":{
-            "3": 43,
-            "5": 45
-    }}, 
-        "BlankFORs_COL_4":{
-        "tab": "inputs",
-        "rows":{
-            "4":  9,
-            "5":  10,
-            "6":  11,
-            "7":  12,
-            "8":  13,
-            "9":  14,
-            "10":  15,
-            "11":  16,
-            "12":  16,
-            "13":  17,
-            "14":  18,
-            "15":  19,
-            "16":  20,
-            "17":  21,
-            "20":  24,
-            "21":  25,
-            "26":  30,
-            "28":  32,
-            "30":  34,
-            "31":  35,
-            "32":  36,
-            "35":  38,
-            "37":  40,
-            "38":  41,
-            "39":  42,
-            "40":  43,
-            "42":  45,
-            "43":  46,
-            "45":  47,
-            "46":  48,
-            "47":  49,
-            "48":  50,
-            "49":  51,
-            "50":  52,
-            "51":  53,
-            "52":  54,
-            "53":  55,
-            "54":  56,
-            "55":  57,
-            "57":  59,
-            "58":  60,
-            "59":  61,
-            "60":  62,
-            "61":  63,
-            "62":  64,
+            "62":  63,
             "63":  65,
             "64":  66,
             "65":  67,
