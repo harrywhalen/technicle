@@ -131,6 +131,7 @@ useEffect(() => {
             const blankForecastCells = sheetBlankForecasts[sheetKey] || [];
             const displayFormat = sheetHotData.map((row, rowIndex) => 
               row.map((cell, colIndex) => {
+                //console.log()
                 const isQuizCell = quizCells.some(q => q.row === rowIndex && q.col === colIndex);
                 const isBlankCell = blankCells.some(q => q.row === rowIndex && q.col === colIndex);
                 const isBlankForecastCell = blankForecastCells.some(q => q.row === rowIndex && q.col === colIndex);

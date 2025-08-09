@@ -1,14 +1,17 @@
 {
 
-"Bullshit": {"Spreadsheet_Selector": "msft 3 Statement",
+"Bullshit": {"Spreadsheet_Selector": "aapl 3 Statement",
 
 "SheetMappings": {
 
     "inputs": {
       "name": "Income Statement", 
-      "includeRows": ["Revenue", "Cost of Goods Sold", "Gross Profit", "Operating Expenses", 
+      "includeRows": ["Income Statement", "Revenue", "Cost of Goods Sold", "Gross Profit", "Operating Expenses", 
                     "Operating Expense", "EBITDA", "Depreciation", "Interest Expense",  "Interest Income",
-                   "EBT", "Tax Provision", "Net Income", "", "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue"]
+                   "EBT", "Tax Provision", "Net Income",
+
+            "c",
+                   "Assumptions", "Revenue Growth Rate", "COGS / Revenue", "Opex / Revenue"]
     }
   }},
 
@@ -26,86 +29,34 @@
       },
       "targetTab": "none",
       "TabLocked": "False",
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 0,
-        "column": 1
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
-      },
-        "Blankcel_1":{
+
+        "Quizcels_ROW_5":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "Blankcel_3":{
+        "rows":{
+            "1": 14,
+            "2": 15,
+            "3": 16
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 12,
-        "column": 1
-      },
-        "BlankFOR_1":{
-        "tab": "inputs",
-        "row": 0,
-        "column": 4
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 4
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 4
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      }
+        "rows":{
+            "1":  1,
+            "2":  2,
+            "3":  3,
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }}
     },
     "2": {
       "name": "Revenue",
@@ -121,89 +72,36 @@
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_5":{
         "tab": "inputs",
-        "row": 0,
-        "column": 2
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 1,
-        "column": 4
-      },
-        "Blankcel_1":{
+        "rows":{
+            "1": 14,
+            "2": 15,
+            "3": 16
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "rows":{
+            "1":  1,
+            "2":  2,
+            "3":  3,
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "Blankcel_3":{
-        "tab": "inputs",
-        "row": 12,
-        "column": 1
-      },
-        "BlankFOR_1":{
-        "tab": "inputs",
-        "row": 0,
-        "column": 4
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 4
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 4
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 0
+        "rows":{ "1" :1}
       }
     },
         "3": {
@@ -222,76 +120,33 @@
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_14":{
         "tab": "inputs",
-        "row": 12,
-        "column": 1
-      },
-        "Blankcel_1":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "rows":{
+            "1": 14,
+            "2": 15,
+            "3": 16
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "BlankFOR_1":{
-        "tab": "inputs",
-        "row": 0,
-        "column": 4
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 4
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 4
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
+        "rows":{
+            "1":  1,
+            "2":  2,
+            "3":  3,
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }},
         "highlightRow":{
         "tab": "intro",
         "row": 0
@@ -311,81 +166,35 @@
       "spreadsheetConfig": {
         "initialTab": "inputs"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_1":{
         "tab": "inputs",
-        "row": 0,
-        "column": 4
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 0,
-        "column": 6
-      },
-        "Quizcel_3":{
+        "rows":{
+            "2": 15,
+            "3": 16
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 0,
-        "column": 7
-      },
-        "Blankcel_1":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
-        "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "BlankFOR_2":{
-        "tab": "inputs",
-        "row": 1,
-        "column": 4
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 4
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
+        "rows":{
+            "1":  1,
+            "2":  2,
+            "3":  3,
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }},
         "highlightRow":{
         "tab": "intro",
         "row": 0
@@ -405,79 +214,37 @@
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 1,
-        "column": 13
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
-      },
-        "Blankcel_1":{
+        "Quizcels_ROW_0":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Blankcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "BlankFOR_2":{
+        "rows":{
+            "2": 15,
+            "3": 16
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 1,
-        "column": 4
-      },
-        "BlankFOR_3":{
+        "rows":{
+            "2":  2,
+            "3":  3,
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 2,
-        "column": 4
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 1
+        "rows":{ "1" :2}
       }
     },
     "6": {
@@ -494,66 +261,31 @@
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_15":{
         "tab": "inputs",
-        "row": 13,
-        "column": 1
-      },
-        "Blankcel_1":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "BlankFOR_2":{
+        "rows":{
+            "2": 15,
+            "3": 16
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 1,
-        "column": 4
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 4
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
+        "rows":{
+            "2":  2,
+            "3":  3,
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }},
         "highlightRow":{
         "tab": "intro",
         "row": 0
@@ -573,71 +305,32 @@
       "spreadsheetConfig": {
         "initialTab": "projections"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_2":{
         "tab": "inputs",
-        "row": 1,
-        "column": 4
-      },
-        "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 1,
-        "column": 6
-      },
-        "Quizcel_3":{
+        "rows":{
+            "3": 16
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 1,
-        "column": 7
-      },
-        "Blankcel_1":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "BlankFOR_3":{
-        "tab": "inputs",
-        "row": 2,
-        "column": 4
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
+        "rows":{
+            "3":  3,
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }},
         "highlightRow":{
         "tab": "intro",
         "row": 0
@@ -657,66 +350,31 @@
       "spreadsheetConfig": {
         "initialTab": "intro"
       },
-      "Quizcel_4":{
+        "Quizcels_ROW_3":{
         "tab": "inputs",
-        "row": 2,
-        "column": 4
-      },
-      "Quizcel_5":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 2,
-        "column": 6
-      },
-      "Quizcel_6":{
+        "rows":{
+            "3": 16
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 2,
-        "column": 7
-      },
-        "Blankcel_1":{
-        "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "BlankFOR_4":{
-        "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      }
+        "rows":{
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }}
     },
     "9": {
       "name": "Operating Expenses",
@@ -732,64 +390,34 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 0,
-        "column": 4
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
-      },
-        "Blankcel_1":{
+        "Quizcels_ROW_0":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "BlankFOR_4":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
+        "rows":{
+            "3": 16
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
+        "rows":{
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }},
+        "highlightRows":{
         "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "highlightRow":{
-        "tab": "inputs",
-        "row": 3
+        "rows":{ "1" :4}
       }
     },
       "10": {
@@ -806,57 +434,28 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_16":{
         "tab": "inputs",
-        "row": 14,
-        "column": 1
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 14,
-        "column": 4
-      },
-        "BlankFOR_4":{
+        "cols":{
+            "1": 1
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-        "BlankFOR_5":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
-        "highlightRow":{
+        "rows":{
+            "4":  4,
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }},
+        "highlightRows":{
         "tab": "intro",
         "row": 0
       }
@@ -875,56 +474,29 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_1":{
+        "Quizcels_ROW_4":{
         "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-      "Quizcel_2":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 3,
-        "column": 4
-      },
-      "Quizcel_3":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 3,
-        "column": 6
-      },
-        "BlankFOR_5":{
-        "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column":4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      }
+        "rows":{
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }}
     },
         "12": {
       "name": "EBITDA",
@@ -940,51 +512,29 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_4":{
+        "Quizcels_ROW_5":{
         "tab": "inputs",
-        "row": 4,
-        "column": 4
-      },
-      "Quizcel_5":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 4,
-        "column": 6
-      },
-      "Quizcel_6":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 4,
-        "column": 7
-      },
-        "BlankFOR_6":{
-        "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
-        "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
-        "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      }
+        "rows":{
+            "5":  5,
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }}
     },
 
         "13": {
@@ -1001,46 +551,28 @@
       "spreadsheetConfig": {
         "initialTab": "valuations"
       },
-      "Quizcel_1":{
-        "tab": "intro",
-        "row": 0,
-        "column": 4
-      },
-        "Quizcel_2":{
-        "tab": "intro",
-        "row": 1,
-        "column": 4
-      },
-        "BlankFOR_6":{
+        "Quizcels_ROW_0":{
         "tab": "inputs",
-        "row": 5,
-        "column": 4
-      },
-        "BlankFOR_7":{
+        "cols":{
+            "1": 4,
+            "2": 5,
+            "3": 6,
+            "4": 7
+    }}, 
+        "Blankcels_COL_1":{
         "tab": "inputs",
-        "row": 6,
-        "column": 4
-      },
-        "BlankFOR_9":{
+        "rows":{
+    }}, 
+        "BlankFORs_COL_4":{
         "tab": "inputs",
-        "row": 7,
-        "column": 4
-      },
-        "BlankFOR_10":{
-        "tab": "inputs",
-        "row": 8,
-        "column": 4
-      },
-        "BlankFOR_11":{
-        "tab": "inputs",
-        "row": 9,
-        "column": 4
-      },
-        "BlankFOR_12":{
-        "tab": "inputs",
-        "row": 10,
-        "column": 4
-      },
+        "rows":{
+            "6":  6,
+            "7":  7,
+            "8":  8,
+            "9":  9,
+            "10":  10,
+            "11":  11
+        }},
         "highlightRow":{
         "tab": "intro",
         "row": 0
